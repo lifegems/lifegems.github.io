@@ -12,129 +12,224 @@ export class KingsService {
 
 let kings: any[] = [
   {
-    "kingName": "Joʹtham",
-    "endReignYear": "762 B.C.E.",
-    "kingNamePlain": "Jotham",
-    "kingNumber": 10,
-    "startReignYear": "777 B.C.E."
-  },
-  {
+    "kingNumber": 20,
     "kingName": "Zed·e·kiʹah",
-    "endReignYear": "607 B.C.E.",
     "kingNamePlain": "Zedekiah",
+    "startReignYear": "617 B.C.E.",
+    "endReignYear": "607 B.C.E.",
+    "highPriests": [],
+    "nextKing": null,
+    "sons": [],
+  },
+  {
+    "kingNumber": 19,
+    "kingName": "Je·hoiʹa·chin (Jec·o·niʹah)",
+    "kingNamePlain": "Jehoiachin",
+    "startReignYear": "618 B.C.E.",
+    "endReignYear": "617 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Zed·e·kiʹah",
+    "sons": ["Zed·e·kiʹah"],
+  },
+  {
     "kingNumber": 18,
-    "startReignYear": "617 B.C.E."
-  },
-  {
-    "kingName": "Je·hoiʹa·kim",
-    "endReignYear": "618 B.C.E.",
+    "kingName": "Je·hoiʹa·kim (E·liʹa·kim)",
     "kingNamePlain": "Jehoiakim",
+    "startReignYear": "628 B.C.E.",
+    "endReignYear": "618 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Je·hoiʹa·chin",
+    "sons": ["Je·hoiʹa·chin"],
+  },
+  {
     "kingNumber": 17,
-    "startReignYear": "628 B.C.E."
-  },
-  {
-    "kingName": "Je·hoʹa·haz",
-    "endReignYear": "628 B.C.E.",
+    "kingName": "Je·hoʹa·haz (Shalʹlum)",
     "kingNamePlain": "Jehoahaz",
-    "kingNumber": 16,
-    "startReignYear": "628 B.C.E."
-  },
-  {
-    "kingName": "Jo·siʹah",
+    "startReignYear": "628 B.C.E.",
     "endReignYear": "628 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Je·hoiʹa·kim",
+    "sons": [],
+  },
+  {
+    "kingNumber": 16,
+    "kingName": "Jo·siʹah",
     "kingNamePlain": "Josiah",
+    "startReignYear": "659 B.C.E.",
+    "endReignYear": "628 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Je·hoʹa·haz (Shalʹlum)",
+    "sons": ["Je·hoʹa·haz","Jo·haʹnan","Je·hoiʹa·kim","Zed·e·kiʹah"],
+  },
+  {
     "kingNumber": 15,
-    "startReignYear": "659 B.C.E."
-  },
-  {
     "kingName": "Aʹmon",
-    "endReignYear": "659 B.C.E.",
     "kingNamePlain": "Amon",
+    "startReignYear": "661 B.C.E.",
+    "endReignYear": "659 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Jo·siʹah",
+    "sons": ["Jo·siʹah"],
+  },
+  {
     "kingNumber": 14,
-    "startReignYear": "661 B.C.E."
-  },
-  {
     "kingName": "Ma·nasʹseh",
-    "endReignYear": "661 B.C.E.",
     "kingNamePlain": "Manasseh",
+    "startReignYear": "716 B.C.E.",
+    "endReignYear": "661 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Aʹmon",
+    "sons": ["Aʹmon"],
+  },
+  {
     "kingNumber": 13,
-    "startReignYear": "716 B.C.E."
-  },
-  {
     "kingName": "Hez·e·kiʹah",
-    "endReignYear": "716 B.C.E.",
     "kingNamePlain": "Hezekiah",
+    "startReignYear": "746 B.C.E.",
+    "endReignYear": "716 B.C.E.",
+    "highPriests": [
+       "Az·a·riʹah"
+    ],
+    "nextKing": "Ma·nasʹseh",
+    "sons": ["Ma·nasʹseh"],
+  },
+  {
     "kingNumber": 12,
-    "startReignYear": "746 B.C.E."
-  },
-  {
     "kingName": "Aʹhaz",
-    "endReignYear": "746 B.C.E.",
     "kingNamePlain": "Ahaz",
+    "startReignYear": "762 B.C.E.",
+    "endReignYear": "746 B.C.E.",
+    "highPriests": [
+       "Az·a·riʹah"
+    ],
+    "nextKing": "Hez·e·kiʹah",
+    "sons": ["Hez·e·kiʹah"],
+  },
+  {
     "kingNumber": 11,
-    "startReignYear": "762 B.C.E."
+    "kingName": "Joʹtham",
+    "kingNamePlain": "Jotham",
+    "startReignYear": "777 B.C.E.",
+    "endReignYear": "762 B.C.E.",
+    "highPriests": [
+       "Az·a·riʹah"
+    ],
+    "nextKing": "Aʹhaz",
+    "sons": ["Aʹhaz"],
   },
   {
+    "kingNumber": 10,
     "kingName": "Uz·ziʹah",
+    "kingNamePlain": "Uzziah",
+    "startReignYear": "829 B.C.E.",
     "endReignYear": "777 B.C.E.",
-    "kingNamePlain": "Uzziah (Azariah)",
+    "highPriests": [
+       "Az·a·riʹah"
+    ],
+    "nextKing": "Joʹtham",
+    "sons": ["Joʹtham"],
+  },
+  {
     "kingNumber": 9,
-    "startReignYear": "829 B.C.E."
-  },
-  {
     "kingName": "Am·a·ziʹah",
-    "endReignYear": "829 B.C.E.",
     "kingNamePlain": "Amaziah",
+    "startReignYear": "858 B.C.E.",
+    "endReignYear": "829 B.C.E.",
+    "highPriests": ["Jo·haʹnan"],
+    "nextKing": "Uz·ziʹah",
+    "sons": ["Uz·ziʹah"],
+  },
+  {
     "kingNumber": 8,
-    "startReignYear": "858 B.C.E."
-  },
-  {
     "kingName": "Je·hoʹash",
-    "endReignYear": "858 B.C.E.",
     "kingNamePlain": "Jehoash",
+    "startReignYear": "898 B.C.E.",
+    "endReignYear": "858 B.C.E.",
+    "highPriests": ["Je·hoiʹa·da"],
+    "nextKing": "Am·a·ziʹah",
+    "prophets": ["E·liʹshah"],
+    "sons": ["Am·a·ziʹah"],
+  },
+  {
     "kingNumber": 7,
-    "startReignYear": "898 B.C.E."
+    "kingName": "Queen Ath·a·liʹah",
+    "kingNamePlain": "Athaliah",
+    "startReignYear": "c. 905 B.C.E.",
+    "endReignYear": "898 B.C.E.",
+    "highPriests": ["Je·hoiʹa·da"],
+    "nextKing": "Je·hoʹash",
+    "prophets": ["E·liʹshah"],
+    "sons": [],
   },
   {
-    "kingName": "A·ha·ziʹah",
-    "endReignYear": "c. 905 B.C.E.",
-    "kingNamePlain": "Ahaziah",
     "kingNumber": 6,
-    "startReignYear": "c. 906 B.C.E."
+    "kingName": "A·ha·ziʹah",
+    "kingNamePlain": "Ahaziah",
+    "startReignYear": "c. 906 B.C.E.",
+    "endReignYear": "c. 905 B.C.E.",
+    "highPriests": ["Je·hoiʹa·da"],
+    "nextKing": "Ath·a·liʹah",
+    "prophets": ["E·liʹjah","E·liʹshah"],
+    "sons": ["Je·hoʹash"],
   },
   {
-    "kingName": "Je·hoʹram",
-    "endReignYear": "c. 906 B.C.E.",
-    "kingNamePlain": "Jehoram",
     "kingNumber": 5,
-    "startReignYear": "913 B.C.E."
+    "kingName": "Je·hoʹram",
+    "kingNamePlain": "Jehoram",
+    "startReignYear": "913 B.C.E.",
+    "endReignYear": "c. 906 B.C.E.",
+    "highPriests": ["Je·hoiʹa·da"],
+    "nextKing": "A·ha·ziʹah",
+    "prophets": ["E·liʹjah","E·liʹshah"],
+    "sons": ["A·ha·ziʹah"],
   },
   {
-    "kingName": "Je·hoshʹa·phat",
-    "endReignYear": "913 B.C.E.",
-    "kingNamePlain": "Jehoshaphat",
     "kingNumber": 4,
-    "startReignYear": "937 B.C.E."
+    "kingName": "Je·hoshʹa·phat",
+    "kingNamePlain": "Jehoshaphat",
+    "startReignYear": "937 B.C.E.",
+    "endReignYear": "913 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Je·hoʹram",
+    "prophets": ["E·liʹjah","E·liʹshah"],
+    "sons": ["Je·hoʹram"],
   },
   {
-    "kingName": "Aʹsa",
-    "endReignYear": "937 B.C.E",
-    "kingNamePlain": "Asa",
     "kingNumber": 3,
-    "startReignYear": "978 B.C.E."
+    "kingName": "Aʹsa",
+    "kingNamePlain": "Asa",
+    "startReignYear": "978 B.C.E.",
+    "endReignYear": "937 B.C.E",
+    "highPriests": [],
+    "nextKing": "Je·hoshʹa·phat",
+    "prophets": ["E·liʹjah","Az·a·riʹah"],
+    "sons": ["Je·hoshʹa·phat"],
   },
   {
-    "kingName": "A·biʹjah",
-    "endReignYear": "978 B.C.E.",
-    "kingNamePlain": "Abijah",
     "kingNumber": 2,
-    "startReignYear": "980 B.C.E."
+    "kingName": "A·biʹjah",
+    "kingNamePlain": "Abijah",
+    "startReignYear": "980 B.C.E.",
+    "endReignYear": "978 B.C.E.",
+    "highPriests": [],
+    "nextKing": "Aʹsa",
+    "prophets": [],
+    "sons": ["Aʹsa"],
   },
   {
-    "kingName": "Re·ho·boʹam",
-    "endReignYear": "980 B.C.E.",
-    "kingNamePlain": "Rehoboam",
     "kingNumber": 1,
-    "startReignYear": "997 B.C.E."
+    "kingName": "Re·ho·boʹam",
+    "kingNamePlain": "Rehoboam",
+    "age": 41,
+    "startReignYear": "997 B.C.E.",
+    "endReignYear": "980 B.C.E.",
+    "highPriests": [
+       "Az·a·riʹah"
+    ],
+    "nextKing": "A·biʹjah",
+    "prophets": [],
+    "sons": [
+       "A·biʹjah"
+    ],
   }
 ];

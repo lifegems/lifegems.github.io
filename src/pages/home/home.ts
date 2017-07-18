@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 import { KingsService } from '../../app/services/kings.service';
+import { KingsListModal } from './kings-list/kings-list.modal';
 
 import * as _ from 'underscore';
 
@@ -13,30 +14,64 @@ export class HomePage implements OnInit {
   public kings: any[];
   public selectedKing: any;
 
-  constructor(public navCtrl: NavController, private kingsService: KingsService) {}
+  public nextKingName: string;
+  public prevKingName: string;
+
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, private kingsService: KingsService) {}
 
   ngOnInit() {
     this.kingsService.getKings().subscribe((kings) => {
       this.kings = kings;
-      this.selectKing(1);
+      let king = this.getKing(1);
+      this.selectedKing = (king) ? king : this.selectedKing;
+      this.getPrevKingName();
+      this.getNextKingName();
     });
   }
 
-  selectKing(kingNo) {
+  getKing(kingNo) {
     let king = _.find(this.kings, (king) => {
       return (king.kingNumber == kingNo);
     });
-    this.selectedKing = (king) ? king : this.selectedKing;
+    return king;
+  }
+
+  showKingsListModal() {
+    let modal = this.modalCtrl.create(KingsListModal, {kings: this.kings, selectedKing: this.selectedKing});
+    modal.present();
+    modal.onDidDismiss((king) => {
+      this.selectedKing = king;
+      this.getPrevKingName();
+      this.getNextKingName();
+    });
   }
 
   nextKing() {
     let no = this.selectedKing.kingNumber + 1;
-    this.selectKing(no);
+    let king = this.getKing(no);
+    this.selectedKing = (king) ? king : this.selectedKing;
+    this.getNextKingName();
+    this.getPrevKingName();
   }
 
   prevKing() {
     let no = this.selectedKing.kingNumber - 1;
-    this.selectKing(no);
+    let king = this.getKing(no);
+    this.selectedKing = (king) ? king : this.selectedKing;
+    this.getNextKingName();
+    this.getPrevKingName();
+  }
+
+  getNextKingName() {
+    let no = this.selectedKing.kingNumber + 1;
+    let king = this.getKing(no);
+    this.nextKingName = (king) ? king.kingNamePlain : null;
+  }
+
+  getPrevKingName() {
+    let no = this.selectedKing.kingNumber - 1;
+    let king = this.getKing(no);
+    this.prevKingName = (king) ? king.kingNamePlain : null;
   }
 
   scroll(event) {

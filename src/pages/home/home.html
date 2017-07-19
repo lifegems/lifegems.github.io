@@ -27,14 +27,14 @@
       </ion-card-content>
 
       <ion-list>
-        <ion-item-group>
+        <ion-item-group style="border-bottom:0.5px solid white">
           <button ion-item color="secondary" *ngIf="selectedKing?.sons && selectedKing.sons.length > 0" (click)="toggleSons()">Sons  ({{selectedKing.sons.length}})</button>
           <span *ngIf="showSons">
             <ion-item *ngFor="let son of selectedKing.sons">{{son}}</ion-item>
           </span>
         </ion-item-group>
-        <ion-item-group>
-          <button ion-item color="secondary" *ngIf="selectedKing?.highPriests && selectedKing.highPriests.length > 0" (click)="togglePriests()">High Priest ({{selectedKing.highPriests.length}})</button>
+        <ion-item-group style="border-bottom:0.5px solid white">
+          <button ion-item color="secondary" *ngIf="selectedKing?.highPriests && selectedKing.highPriests.length > 0" (click)="togglePriests()">High Priests ({{selectedKing.highPriests.length}})</button>
           <span *ngIf="showPriests">
             <ion-item *ngFor="let priest of selectedKing.highPriests">{{priest}}</ion-item>
           </span>

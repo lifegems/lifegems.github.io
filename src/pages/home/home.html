@@ -17,7 +17,8 @@
       <ion-card-header text-center>{{selectedKing.startReignYear}} - {{selectedKing.endReignYear}}</ion-card-header>
       <ion-card-content>
         <ion-card-title>
-          <ion-label color="primary" stacked>King</ion-label>
+          <ion-label *ngIf="selectedKing.kingNumber != 7" color="primary" stacked>King</ion-label>
+          <ion-label *ngIf="selectedKing.kingNumber === 7" color="primary" stacked>Queen</ion-label>
           <span (click)="showKingsListModal()">
             {{selectedKing.kingName}}
             <span *ngIf="selectedKing?.age">({{selectedKing?.age}})</span>

@@ -25,7 +25,15 @@ let kings: any[] = [
       "Id·do"
     ],
     "sons": [
-       "A·biʹjah"
+       "A·biʹjah",
+       "Je'ush",
+       "Shem·a·riʹah",
+       "Zaʹham",
+       "A·biʹjah",
+       "Atʹtai",
+       "Ziʹza",
+       "She·loʹmith",
+       "(21 other sons)"
     ],
   },
   {
@@ -37,7 +45,10 @@ let kings: any[] = [
     "highPriests": ["Zadok"],
     "nextKing": "Aʹsa",
     "prophets": ["Id·do"],
-    "sons": ["Aʹsa"],
+    "sons": [
+      "Aʹsa",
+      "(21 other sons)"
+    ],
   },
   {
     "kingNumber": 3,
@@ -48,7 +59,9 @@ let kings: any[] = [
     "highPriests": ["Zadok"],
     "nextKing": "Je·hoshʹa·phat",
     "prophets": ["Az·a·riʹah", "Oded", "Hanani","Jehu (son of Hanani)", "Elijah", "Micaiah"],
-    "sons": ["Je·hoshʹa·phat"],
+    "sons": [
+      "Je·hoshʹa·phat"
+    ],
   },
   {
     "kingNumber": 4,
@@ -59,23 +72,34 @@ let kings: any[] = [
     "highPriests": ["Amariah"],
     "nextKing": "Je·hoʹram",
     "prophets": ["Jehu (son of Hanani)","Eliezer", "Jahaziel", "Elijah", "Elishah"],
-    "sons": ["Je·hoʹram"],
+    "sons": [
+      "Je·hoʹram",
+      "Az·a·riʹah",
+      "Je·hiʹel",
+      "Zech·a·riʹah",
+      "Miʹcha·el",
+      "Sheph·a·tiʹah"
+    ],
   },
   {
     "kingNumber": 5,
     "kingName": "Je·hoʹram",
     "kingNamePlain": "Jehoram",
+    "age": 32,
     "startReignYear": "913 B.C.E.",
     "endReignYear": "c. 906 B.C.E.",
     "highPriests": ["Amariah"],
     "nextKing": "A·ha·ziʹah",
     "prophets": ["Elijah", "Elishah"],
-    "sons": ["A·ha·ziʹah"],
+    "sons": [
+      "A·ha·ziʹah"
+    ],
   },
   {
     "kingNumber": 6,
     "kingName": "A·ha·ziʹah",
     "kingNamePlain": "Ahaziah",
+    "age": 22,
     "startReignYear": "c. 906 B.C.E.",
     "endReignYear": "c. 905 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
@@ -85,7 +109,7 @@ let kings: any[] = [
   },
   {
     "kingNumber": 7,
-    "kingName": "Queen Ath·a·liʹah",
+    "kingName": "Ath·a·liʹah",
     "kingNamePlain": "Athaliah",
     "startReignYear": "c. 905 B.C.E.",
     "endReignYear": "898 B.C.E.",
@@ -98,6 +122,7 @@ let kings: any[] = [
     "kingNumber": 8,
     "kingName": "Je·hoʹash",
     "kingNamePlain": "Jehoash",
+    "age": 7,
     "startReignYear": "898 B.C.E.",
     "endReignYear": "858 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
@@ -109,6 +134,7 @@ let kings: any[] = [
     "kingNumber": 9,
     "kingName": "Am·a·ziʹah",
     "kingNamePlain": "Amaziah",
+    "age": 25,
     "startReignYear": "858 B.C.E.",
     "endReignYear": "829 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
@@ -120,6 +146,7 @@ let kings: any[] = [
     "kingNumber": 10,
     "kingName": "Uz·ziʹah",
     "kingNamePlain": "Uzziah",
+    "age": 16,
     "startReignYear": "829 B.C.E.",
     "endReignYear": "777 B.C.E.",
     "highPriests": [
@@ -133,6 +160,7 @@ let kings: any[] = [
     "kingNumber": 11,
     "kingName": "Joʹtham",
     "kingNamePlain": "Jotham",
+    "age": 25,
     "startReignYear": "777 B.C.E.",
     "endReignYear": "762 B.C.E.",
     "highPriests": [
@@ -146,6 +174,7 @@ let kings: any[] = [
     "kingNumber": 12,
     "kingName": "Aʹhaz",
     "kingNamePlain": "Ahaz",
+    "age": 20,
     "startReignYear": "762 B.C.E.",
     "endReignYear": "746 B.C.E.",
     "highPriests": [
@@ -159,6 +188,7 @@ let kings: any[] = [
     "kingNumber": 13,
     "kingName": "Hez·e·kiʹah",
     "kingNamePlain": "Hezekiah",
+    "age": 25,
     "startReignYear": "746 B.C.E.",
     "endReignYear": "716 B.C.E.",
     "highPriests": ["Az·a·riʹah (II or III)"],
@@ -170,6 +200,7 @@ let kings: any[] = [
     "kingNumber": 14,
     "kingName": "Ma·nasʹseh",
     "kingNamePlain": "Manasseh",
+    "age": 12,
     "startReignYear": "716 B.C.E.",
     "endReignYear": "661 B.C.E.",
     "highPriests": ["Az·a·riʹah (II or III)"],
@@ -181,6 +212,7 @@ let kings: any[] = [
     "kingNumber": 15,
     "kingName": "Aʹmon",
     "kingNamePlain": "Amon",
+    "age": 22,
     "startReignYear": "661 B.C.E.",
     "endReignYear": "659 B.C.E.",
     "highPriests": ["Az·a·riʹah (II or III)"],
@@ -192,6 +224,7 @@ let kings: any[] = [
     "kingNumber": 16,
     "kingName": "Jo·siʹah",
     "kingNamePlain": "Josiah",
+    "age": 8,
     "startReignYear": "659 B.C.E.",
     "endReignYear": "628 B.C.E.",
     "highPriests": ["Hilkiah"],
@@ -203,6 +236,7 @@ let kings: any[] = [
     "kingNumber": 17,
     "kingName": "Je·hoʹa·haz (Shalʹlum)",
     "kingNamePlain": "Jehoahaz",
+    "age": 23,
     "startReignYear": "628 B.C.E.",
     "endReignYear": "628 B.C.E.",
     "highPriests": ["Hilkiah"],
@@ -214,6 +248,7 @@ let kings: any[] = [
     "kingNumber": 18,
     "kingName": "Je·hoiʹa·kim (E·liʹa·kim)",
     "kingNamePlain": "Jehoiakim",
+    "age": 25,
     "startReignYear": "628 B.C.E.",
     "endReignYear": "618 B.C.E.",
     "highPriests": ["Hilkiah"],
@@ -225,6 +260,7 @@ let kings: any[] = [
     "kingNumber": 19,
     "kingName": "Je·hoiʹa·chin (Jec·o·niʹah)",
     "kingNamePlain": "Jehoiachin",
+    "age": 18,
     "startReignYear": "618 B.C.E.",
     "endReignYear": "617 B.C.E.",
     "highPriests": ["Hilkiah"],
@@ -236,6 +272,7 @@ let kings: any[] = [
     "kingNumber": 20,
     "kingName": "Zed·e·kiʹah",
     "kingNamePlain": "Zedekiah",
+    "age": 21,
     "startReignYear": "617 B.C.E.",
     "endReignYear": "607 B.C.E.",
     "highPriests": ["Seraiah"],

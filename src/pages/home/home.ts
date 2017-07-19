@@ -17,6 +17,10 @@ export class HomePage implements OnInit {
   public nextKingName: string;
   public prevKingName: string;
 
+  public showSons: boolean = false;
+  public showPriests: boolean = false;
+  public showProphets: boolean = false;
+
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, private kingsService: KingsService) {}
 
   ngOnInit() {
@@ -83,6 +87,18 @@ export class HomePage implements OnInit {
         this.prevKing();
         break;
     }
+  }
+
+  toggleSons() {
+    this.showSons = !this.showSons;
+  }
+
+  togglePriests() {
+    this.showPriests = !this.showPriests;
+  }
+
+  toggleProphets() {
+    this.showProphets = !this.showProphets;
   }
 
 }

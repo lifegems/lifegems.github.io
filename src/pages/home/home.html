@@ -28,16 +28,22 @@
 
       <ion-list>
         <ion-item-group>
-          <ion-item-divider color="secondary" *ngIf="selectedKing?.sons && selectedKing.sons.length > 0">Sons</ion-item-divider>
-          <ion-item *ngFor="let son of selectedKing.sons">{{son}}</ion-item>
+          <button ion-item color="secondary" *ngIf="selectedKing?.sons && selectedKing.sons.length > 0" (click)="toggleSons()">Sons  ({{selectedKing.sons.length}})</button>
+          <span *ngIf="showSons">
+            <ion-item *ngFor="let son of selectedKing.sons">{{son}}</ion-item>
+          </span>
         </ion-item-group>
         <ion-item-group>
-          <ion-item-divider color="secondary" *ngIf="selectedKing?.highPriests && selectedKing.highPriests.length > 0">High Priest</ion-item-divider>
-          <ion-item *ngFor="let priest of selectedKing.highPriests">{{priest}}</ion-item>
+          <button ion-item color="secondary" *ngIf="selectedKing?.highPriests && selectedKing.highPriests.length > 0" (click)="togglePriests()">High Priest ({{selectedKing.highPriests.length}})</button>
+          <span *ngIf="showPriests">
+            <ion-item *ngFor="let priest of selectedKing.highPriests">{{priest}}</ion-item>
+          </span>
         </ion-item-group>
         <ion-item-group>
-          <ion-item-divider color="secondary" *ngIf="selectedKing?.prophets && selectedKing.prophets.length > 0">Prophets</ion-item-divider>
-          <ion-item *ngFor="let prophet of selectedKing.prophets">{{prophet}}</ion-item>
+          <button ion-item color="secondary" *ngIf="selectedKing?.prophets && selectedKing.prophets.length > 0" (click)="toggleProphets()">Prophets ({{selectedKing.prophets.length}})</button>
+          <span *ngIf="showProphets">
+            <ion-item *ngFor="let prophet of selectedKing.prophets">{{prophet}}</ion-item>
+          </span>
         </ion-item-group>
       </ion-list>
     </ion-card>

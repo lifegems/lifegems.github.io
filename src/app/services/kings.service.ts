@@ -19,7 +19,7 @@ let kings: any[] = [
     "startReignYear": "997 B.C.E.",
     "endReignYear": "980 B.C.E.",
     "highPriests": ["Zadok"],
-    "nextKing": "A·biʹjah",
+    "chosenOffspring": "A·biʹjah",
     "prophets": [
       "Shemaiah",
       "Id·do"
@@ -29,7 +29,6 @@ let kings: any[] = [
        "Je'ush",
        "Shem·a·riʹah",
        "Zaʹham",
-       "A·biʹjah",
        "Atʹtai",
        "Ziʹza",
        "She·loʹmith",
@@ -43,7 +42,7 @@ let kings: any[] = [
     "startReignYear": "980 B.C.E.",
     "endReignYear": "978 B.C.E.",
     "highPriests": ["Zadok"],
-    "nextKing": "Aʹsa",
+    "chosenOffspring": "Aʹsa",
     "prophets": ["Id·do"],
     "sons": [
       "Aʹsa",
@@ -57,7 +56,7 @@ let kings: any[] = [
     "startReignYear": "978 B.C.E.",
     "endReignYear": "937 B.C.E",
     "highPriests": ["Zadok"],
-    "nextKing": "Je·hoshʹa·phat",
+    "chosenOffspring": "Je·hoshʹa·phat",
     "prophets": ["Az·a·riʹah", "Oded", "Hanani","Jehu (son of Hanani)", "Elijah", "Micaiah"],
     "sons": [
       "Je·hoshʹa·phat"
@@ -70,7 +69,7 @@ let kings: any[] = [
     "startReignYear": "937 B.C.E.",
     "endReignYear": "913 B.C.E.",
     "highPriests": ["Amariah"],
-    "nextKing": "Je·hoʹram",
+    "chosenOffspring": "Je·hoʹram",
     "prophets": ["Jehu (son of Hanani)","Eliezer", "Jahaziel", "Elijah", "Elishah"],
     "sons": [
       "Je·hoʹram",
@@ -89,7 +88,7 @@ let kings: any[] = [
     "startReignYear": "913 B.C.E.",
     "endReignYear": "c. 906 B.C.E.",
     "highPriests": ["Amariah"],
-    "nextKing": "A·ha·ziʹah",
+    "chosenOffspring": "A·ha·ziʹah",
     "prophets": ["Elijah", "Elishah"],
     "sons": [
       "A·ha·ziʹah"
@@ -103,7 +102,7 @@ let kings: any[] = [
     "startReignYear": "c. 906 B.C.E.",
     "endReignYear": "c. 905 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
-    "nextKing": "Ath·a·liʹah",
+    "chosenOffspring": "Je·hoʹash",
     "prophets": ["E·liʹjah","E·liʹshah"],
     "sons": ["Je·hoʹash"],
   },
@@ -114,7 +113,7 @@ let kings: any[] = [
     "startReignYear": "c. 905 B.C.E.",
     "endReignYear": "898 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
-    "nextKing": "Je·hoʹash",
+    "chosenOffspring": null,
     "prophets": ["E·liʹshah"],
     "sons": [],
   },
@@ -126,7 +125,7 @@ let kings: any[] = [
     "startReignYear": "898 B.C.E.",
     "endReignYear": "858 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
-    "nextKing": "Am·a·ziʹah",
+    "chosenOffspring": "Am·a·ziʹah",
     "prophets": ["E·liʹshah"],
     "sons": ["Am·a·ziʹah"],
   },
@@ -138,7 +137,7 @@ let kings: any[] = [
     "startReignYear": "858 B.C.E.",
     "endReignYear": "829 B.C.E.",
     "highPriests": ["Je·hoiʹa·da"],
-    "nextKing": "Uz·ziʹah",
+    "chosenOffspring": "Uz·ziʹah",
     "prophets": ["E·liʹshah", "Jonah", "Hosea", "Amos"],
     "sons": ["Uz·ziʹah"],
   },
@@ -153,7 +152,7 @@ let kings: any[] = [
        "Az·a·riʹah II"
     ],
     "prophets": ["Micah", "Hosea", "Isaiah", "Joel (?)"],
-    "nextKing": "Joʹtham",
+    "chosenOffspring": "Joʹtham",
     "sons": ["Joʹtham"],
   },
   {
@@ -167,7 +166,7 @@ let kings: any[] = [
        "Az·a·riʹah II"
     ],
     "prophets": ["Micah", "Hosea", "Isaiah"],
-    "nextKing": "Aʹhaz",
+    "chosenOffspring": "Aʹhaz",
     "sons": ["Aʹhaz"],
   },
   {
@@ -181,7 +180,7 @@ let kings: any[] = [
        "Urijah (?)"
     ],
     "prophets": ["Micah", "Hosea", "Isaiah"],
-    "nextKing": "Hez·e·kiʹah",
+    "chosenOffspring": "Hez·e·kiʹah",
     "sons": ["Hez·e·kiʹah"],
   },
   {
@@ -193,7 +192,7 @@ let kings: any[] = [
     "endReignYear": "716 B.C.E.",
     "highPriests": ["Az·a·riʹah (II or III)"],
     "prophets": ["Micah", "Hosea", "Isaiah"],
-    "nextKing": "Ma·nasʹseh",
+    "chosenOffspring": "Ma·nasʹseh",
     "sons": ["Ma·nasʹseh"],
   },
   {
@@ -204,7 +203,7 @@ let kings: any[] = [
     "startReignYear": "716 B.C.E.",
     "endReignYear": "661 B.C.E.",
     "highPriests": ["Az·a·riʹah (II or III)"],
-    "nextKing": "Aʹmon",
+    "chosenOffspring": "Aʹmon",
     "prophets": ["Isaiah (?)"],
     "sons": ["Aʹmon"],
   },
@@ -217,7 +216,7 @@ let kings: any[] = [
     "endReignYear": "659 B.C.E.",
     "highPriests": ["Az·a·riʹah (II or III)"],
     "prophets": [],
-    "nextKing": "Jo·siʹah",
+    "chosenOffspring": "Jo·siʹah",
     "sons": ["Jo·siʹah"],
   },
   {
@@ -229,7 +228,7 @@ let kings: any[] = [
     "endReignYear": "628 B.C.E.",
     "highPriests": ["Hilkiah"],
     "prophets": ["Zephaniah", "Jeremiah", "Huldah"],
-    "nextKing": "Je·hoʹa·haz (Shalʹlum)",
+    "chosenOffspring": "Je·hoiʹa·kim",
     "sons": ["Je·hoʹa·haz","Jo·haʹnan","Je·hoiʹa·kim","Zed·e·kiʹah"],
   },
   {
@@ -241,7 +240,7 @@ let kings: any[] = [
     "endReignYear": "628 B.C.E.",
     "highPriests": ["Hilkiah"],
     "prophets": ["Jeremiah"],
-    "nextKing": "Je·hoiʹa·kim",
+    "chosenOffspring": null,
     "sons": [],
   },
   {
@@ -253,7 +252,7 @@ let kings: any[] = [
     "endReignYear": "618 B.C.E.",
     "highPriests": ["Hilkiah"],
     "prophets": ["Habakkuk (?), Jeremiah"],
-    "nextKing": "Je·hoiʹa·chin",
+    "chosenOffspring": "Je·hoiʹa·chin",
     "sons": ["Je·hoiʹa·chin"],
   },
   {
@@ -265,8 +264,8 @@ let kings: any[] = [
     "endReignYear": "617 B.C.E.",
     "highPriests": ["Hilkiah"],
     "prophets": ["Jeremiah"],
-    "nextKing": "Zed·e·kiʹah",
-    "sons": ["Zed·e·kiʹah", "Shealtiel"],
+    "chosenOffspring": "Shealtiel",
+    "sons": ["Shealtiel"],
   },
   {
     "kingNumber": 20,
@@ -277,7 +276,7 @@ let kings: any[] = [
     "endReignYear": "607 B.C.E.",
     "highPriests": ["Seraiah"],
     "prophets": ["Jeremiah", "Ezekiel"],
-    "nextKing": null,
+    "chosenOffspring": null,
     "sons": [],
   },
 ];

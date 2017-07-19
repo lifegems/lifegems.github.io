@@ -30,7 +30,7 @@
         <ion-item-group style="border-bottom:0.5px solid white">
           <button ion-item color="secondary" *ngIf="selectedKing?.sons && selectedKing.sons.length > 0" (click)="toggleSons()">Sons  ({{selectedKing.sons.length}})</button>
           <span *ngIf="showSons">
-            <ion-item *ngFor="let son of selectedKing.sons">{{son}}</ion-item>
+            <ion-item *ngFor="let son of selectedKing.sons" [ngClass]="{'bold':son == selectedKing?.chosenOffspring}">{{son}}</ion-item>
           </span>
         </ion-item-group>
         <ion-item-group style="border-bottom:0.5px solid white">

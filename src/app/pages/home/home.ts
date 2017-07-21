@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from 'ionic-angular';
-import { KingsService } from '../../app/services/kings.service';
+import { KingsService } from '../../services/kings.service';
 import { KingsListModal } from './kings-list/kings-list.modal';
 
 import * as _ from 'underscore';

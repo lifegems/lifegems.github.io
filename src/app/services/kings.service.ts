@@ -21,8 +21,9 @@ let kings: any[] = [
     "highPriests": ["Zadok"],
     "chosenOffspring": "A·biʹjah",
     "prophets": [
+      "A·hiʹjah",
+      "Id·do",
       "Shemaiah",
-      "Id·do"
     ],
     "sons": [
        "A·biʹjah",
@@ -32,8 +33,13 @@ let kings: any[] = [
        "Atʹtai",
        "Ziʹza",
        "She·loʹmith",
-       "(21 other sons)"
+       "(21 other sons)",
     ],
+    "wives": [
+      "Abʹi·ha·il",
+      "Maʹha·lath",
+      "Maʹa·cah"
+    ]
   },
   {
     "kingNumber": 2,
@@ -124,7 +130,7 @@ let kings: any[] = [
     "age": 7,
     "startReignYear": "898 B.C.E.",
     "endReignYear": "858 B.C.E.",
-    "highPriests": ["Je·hoiʹa·da"],
+    "highPriests": ["Je·hoiʹa·da","Zech·a·riʹah", "Jo·haʹnan"],
     "chosenOffspring": "Am·a·ziʹah",
     "prophets": ["E·liʹshah"],
     "sons": ["Am·a·ziʹah"],
@@ -136,7 +142,7 @@ let kings: any[] = [
     "age": 25,
     "startReignYear": "858 B.C.E.",
     "endReignYear": "829 B.C.E.",
-    "highPriests": ["Je·hoiʹa·da"],
+    "highPriests": ["Jo·haʹnan"],
     "chosenOffspring": "Uz·ziʹah",
     "prophets": ["E·liʹshah", "Jonah", "Hosea", "Amos"],
     "sons": ["Uz·ziʹah"],
@@ -274,7 +280,7 @@ let kings: any[] = [
     "age": 21,
     "startReignYear": "617 B.C.E.",
     "endReignYear": "607 B.C.E.",
-    "highPriests": ["Seraiah"],
+    "highPriests": ["Se·raiʹah"],
     "prophets": ["Jeremiah", "Ezekiel"],
     "chosenOffspring": null,
     "sons": [],

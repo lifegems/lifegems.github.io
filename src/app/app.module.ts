@@ -3,9 +3,9 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { KingsListModal } from '../pages/home/kings-list/kings-list.modal';
-import { ListPage } from '../pages/list/list';
+import { HomePage } from './pages/home/home';
+import { KingsListModal } from './pages/home/kings-list/kings-list.modal';
+import { ListPage } from './pages/list/list';
 
 import { KingsService } from './services/kings.service';
 

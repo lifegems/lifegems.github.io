@@ -8,11 +8,13 @@ import { KingsListModal } from './pages/kings/kings-list/kings-list.modal';
 // import { ListPage } from './pages/list/list';
 
 import { KingsService } from './services/kings.service';
+import { KingsEffects } from './effects/kings.effects';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { kingsReducer } from './reducers/kings.reducer';
 
 @NgModule({
@@ -26,6 +28,7 @@ import { kingsReducer } from './reducers/kings.reducer';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     StoreModule.forRoot({kings: kingsReducer}),
+    EffectsModule.forRoot([KingsEffects]),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

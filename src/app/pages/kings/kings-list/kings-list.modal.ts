@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform, NavParams, ViewController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   template: `
@@ -9,7 +10,7 @@ import { Platform, NavParams, ViewController } from 'ionic-angular';
       Choose King
     </ion-title>
     <ion-buttons>
-      <button ion-button (click)="dismiss(selectedKing)">
+      <button ion-button (click)="dismiss(0)">
         <span ion-text color="primary" showWhen="ios">Cancel</span>
         <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
       </button>
@@ -18,25 +19,31 @@ import { Platform, NavParams, ViewController } from 'ionic-angular';
 </ion-header>
 <ion-content>
    <ion-list>
-      <ion-item *ngFor="let king of kings" (click)="dismiss(king)">{{king.startReignYear}} - {{king.kingName}}</ion-item>
+      <ion-item *ngFor="let king of (kings$ | async)" (click)="dismiss(king.kingNumber)">{{king.startReignYear}} - {{king.kingName}}</ion-item>
    </ion-list>
 </ion-content>
 `
 })
 export class KingsListModal {
-   public kings: any[];
-   public selectedKing: any;
+   public kings$: any[];
+   public selectedKing$: any;
 
    constructor(
       public platform: Platform,
       public params: NavParams,
       public viewCtrl: ViewController
    ) {
-      this.kings = this.params.get('kings');
-      this.selectedKing = this.params.get('selectedKing');
+      this.kings$ = this.params.get('kings');
+      this.selectedKing$ = this.params.get('selectedKing');
    }
 
-   dismiss(king) {
-      this.viewCtrl.dismiss(king);
-   }
+  dismiss(kingNumber) {
+    if (kingNumber > 0) {
+      this.viewCtrl.dismiss(kingNumber);
+    } else {
+      this.selectedKing$.subscribe((kingNo) => {
+        this.viewCtrl.dismiss(kingNo);
+      });
+    }
+  }
 }

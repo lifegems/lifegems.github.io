@@ -4,86 +4,45 @@ import { KingsService } from '../../services/kings.service';
 import { KingsListModal } from './kings-list/kings-list.modal';
 import { Store } from '@ngrx/store';
 import * as KingsActions from '../../actions/kings.actions';
-import { KingsState } from '../../reducers/kings.reducer';
-
-import * as _ from 'underscore';
+import * as kingsState from '../../reducers/kings.reducer';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'kings.html',
-  styles: [`ion-content { }`]
+  templateUrl: 'kings.html'
 })
 export class KingsPage implements OnInit {
-  public kings: any[];
-  public selectedKing: any;
+  public kings$: Store<kingsState.KingsState[]>;
+  public selectedKing$: Store<number>;
+  public showPriests$: Store<boolean>;
+  public showProphets$: Store<boolean>;
+  public showSons$: Store<boolean>;
 
-  public nextKingName: string;
-  public prevKingName: string;
-
-  public showSons: boolean = false;
-  public showPriests: boolean = false;
-  public showProphets: boolean = false;
-
-  public kingsStore: any;
-
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, private kingsService: KingsService, private store: Store<KingsState>) {
-    this.kingsStore = this.store.select('kings');
-    this.store.dispatch(new KingsActions.NextAction());
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, private store: Store<kingsState.KingsState>) {
+    this.kings$ = this.store.select(kingsState.getKings);
+    this.selectedKing$ = this.store.select(kingsState.getSelectedKing);
+    this.showPriests$ = this.store.select(kingsState.getShowPriests);
+    this.showProphets$ = this.store.select(kingsState.getShowProphets);
+    this.showSons$ = this.store.select(kingsState.getShowSons);
   }
 
   ngOnInit() {
-    this.kingsService.getKings().subscribe((kings) => {
-      this.kings = kings;
-      let king = this.getKing(1);
-      this.selectedKing = (king) ? king : this.selectedKing;
-      this.getPrevKingName();
-      this.getNextKingName();
-    });
-  }
-
-  getKing(kingNo) {
-    let king = _.find(this.kings, (king) => {
-      return (king.kingNumber == kingNo);
-    });
-    return king;
+    this.store.dispatch(new KingsActions.InitKingsAction());
   }
 
   showKingsListModal() {
-    let modal = this.modalCtrl.create(KingsListModal, {kings: this.kings, selectedKing: this.selectedKing});
+    let modal = this.modalCtrl.create(KingsListModal, {kings: this.kings$, selectedKing: this.selectedKing$});
     modal.present();
-    modal.onDidDismiss((king) => {
-      this.selectedKing = king;
-      this.getPrevKingName();
-      this.getNextKingName();
+    modal.onDidDismiss((kingNumber) => {
+      this.store.dispatch(new KingsActions.SetKingAction(kingNumber));
     });
   }
 
   nextKing() {
-    let no = this.selectedKing.kingNumber + 1;
-    let king = this.getKing(no);
-    this.selectedKing = (king) ? king : this.selectedKing;
-    this.getNextKingName();
-    this.getPrevKingName();
+    this.store.dispatch(new KingsActions.NextAction());
   }
 
   prevKing() {
-    let no = this.selectedKing.kingNumber - 1;
-    let king = this.getKing(no);
-    this.selectedKing = (king) ? king : this.selectedKing;
-    this.getNextKingName();
-    this.getPrevKingName();
-  }
-
-  getNextKingName() {
-    let no = this.selectedKing.kingNumber + 1;
-    let king = this.getKing(no);
-    this.nextKingName = (king) ? king.kingNamePlain : null;
-  }
-
-  getPrevKingName() {
-    let no = this.selectedKing.kingNumber - 1;
-    let king = this.getKing(no);
-    this.prevKingName = (king) ? king.kingNamePlain : null;
+    this.store.dispatch(new KingsActions.PrevAction());
   }
 
   scroll(event) {
@@ -98,15 +57,15 @@ export class KingsPage implements OnInit {
   }
 
   toggleSons() {
-    this.showSons = !this.showSons;
+    this.store.dispatch(new KingsActions.ToggleSonsAction());
   }
 
   togglePriests() {
-    this.showPriests = !this.showPriests;
+    this.store.dispatch(new KingsActions.TogglePriestsAction());
   }
 
   toggleProphets() {
-    this.showProphets = !this.showProphets;
+    this.store.dispatch(new KingsActions.ToggleProphetsAction());
   }
 
 }

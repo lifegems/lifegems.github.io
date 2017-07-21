@@ -13,43 +13,42 @@
 </ion-header>
 
 <ion-content>
-    <ion-card (swipe)="scroll($event)">
-      <ion-card-header text-center>{{selectedKing.startReignYear}} - {{selectedKing.endReignYear}}</ion-card-header>
+  <span *ngFor="let king of (kings$ | async)">
+    <ion-card *ngIf="king.kingNumber == (selectedKing$ | async)" (swipe)="scroll($event)">
+      <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>
       <ion-card-content>
         <ion-card-title>
-          <ion-label *ngIf="selectedKing.kingNumber != 7" color="primary" stacked>King</ion-label>
-          <ion-label *ngIf="selectedKing.kingNumber === 7" color="primary" stacked>Queen</ion-label>
+          <ion-label *ngIf="king.kingNumber != 7" color="primary" stacked>King</ion-label>
+          <ion-label *ngIf="king.kingNumber === 7" color="primary" stacked>Queen</ion-label>
           <span (click)="showKingsListModal()">
-            {{selectedKing.kingName}}
-            <span style="color:cornflowerblue;font-size:14px">Age: {{selectedKing?.age||'?'}}</span>
+            {{king.kingName}}
+            <span style="color:cornflowerblue;font-size:14px">Age: {{king.age||'?'}}</span>
           </span>
         </ion-card-title>
       </ion-card-content>
 
       <ion-list>
         <ion-item-group style="border-bottom:0.5px solid white">
-          <button ion-item color="secondary" *ngIf="selectedKing?.sons && selectedKing.sons.length > 0" (click)="toggleSons()">Sons  ({{selectedKing.sons.length}})</button>
-          <span *ngIf="showSons">
-            <ion-item *ngFor="let son of selectedKing.sons" [ngClass]="{'bold':son == selectedKing?.chosenOffspring}">{{son}}</ion-item>
+          <button ion-item color="secondary" *ngIf="king?.sons && king.sons.length > 0" (click)="toggleSons()">Sons ({{king.sons.length}})</button>
+          <span *ngIf="showSons$ | async">
+            <ion-item *ngFor="let son of king?.sons" [ngClass]="{'bold':son == king?.chosenOffspring}">{{son}}</ion-item>
           </span>
         </ion-item-group>
         <ion-item-group style="border-bottom:0.5px solid white">
-          <button ion-item color="secondary" *ngIf="selectedKing?.highPriests && selectedKing.highPriests.length > 0" (click)="togglePriests()">High Priests ({{selectedKing.highPriests.length}})</button>
-          <span *ngIf="showPriests">
-            <ion-item *ngFor="let priest of selectedKing.highPriests">{{priest}}</ion-item>
+          <button ion-item color="secondary" *ngIf="king?.highPriests && king.highPriests.length > 0" (click)="togglePriests()">High Priests ({{king.highPriests.length}})</button>
+          <span *ngIf="showPriests$ | async">
+            <ion-item *ngFor="let priest of king?.highPriests">{{priest}}</ion-item>
           </span>
         </ion-item-group>
-        <ion-item-group>
-          <button ion-item color="secondary" *ngIf="selectedKing?.prophets && selectedKing.prophets.length > 0" (click)="toggleProphets()">Prophets ({{selectedKing.prophets.length}})</button>
-          <span *ngIf="showProphets">
-            <ion-item *ngFor="let prophet of selectedKing.prophets">{{prophet}}</ion-item>
+        <ion-item-group style="border-bottom:0.5px solid white">
+          <button ion-item color="secondary" *ngIf="king?.prophets && king.prophets.length > 0" (click)="toggleProphets()">Prophets ({{king.prophets.length}})</button>
+          <span *ngIf="showProphets$ | async">
+            <ion-item *ngFor="let prophet of king?.prophets">{{prophet}}</ion-item>
           </span>
         </ion-item-group>
       </ion-list>
-    </ion-card>
-  
-
-  
+    </ion-card> 
+  </span>  
 </ion-content>
 
 <ion-footer>
@@ -57,14 +56,20 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <button [disabled]="!prevKingName" (click)="prevKing()" block ion-button icon-left outline>
+          <button [disabled]="(selectedKing$ | async) == 1" (click)="prevKing()" block ion-button icon-left outline>
             <ion-icon name="arrow-back"></ion-icon>
-            {{prevKingName}}
+            <!-- {{prevKingName}} -->
+            <span *ngFor="let king of (kings$ | async)">
+              <span *ngIf="king.kingNumber === (selectedKing$ | async) - 1">{{king.kingNamePlain}}</span>
+            </span>
           </button>
         </ion-col>
         <ion-col>
-          <button [disabled]="!nextKingName" (click)="nextKing()" block ion-button icon-right outline>
-            {{nextKingName}}
+          <button [disabled]="(selectedKing$ | async) == 20" (click)="nextKing()" block ion-button icon-right outline>
+            <!-- {{nextKingName}} -->
+            <span *ngFor="let king of (kings$ | async)">
+              <span *ngIf="king.kingNumber === (selectedKing$ | async) + 1">{{king.kingNamePlain}}</span>
+            </span>
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
         </ion-col>

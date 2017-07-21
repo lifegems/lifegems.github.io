@@ -3,9 +3,9 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from './pages/home/home';
-import { KingsListModal } from './pages/home/kings-list/kings-list.modal';
-import { ListPage } from './pages/list/list';
+import { KingsPage } from './pages/kings/kings';
+import { KingsListModal } from './pages/kings/kings-list/kings-list.modal';
+// import { ListPage } from './pages/list/list';
 
 import { KingsService } from './services/kings.service';
 
@@ -15,8 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage,
+    KingsPage,
+    // ListPage,
     KingsListModal
   ],
   imports: [
@@ -26,8 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage,
+    KingsPage,
+    // ListPage,
     KingsListModal
   ],
   providers: [

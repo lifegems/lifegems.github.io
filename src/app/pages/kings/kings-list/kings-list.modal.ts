@@ -25,8 +25,8 @@ import { Observable } from 'rxjs/Observable';
 `
 })
 export class KingsListModal {
-   public kings$: any[];
-   public selectedKing$: any;
+   public kings$: Observable<any[]>;
+   public selectedKing$: Observable<any>;
 
    constructor(
       public platform: Platform,

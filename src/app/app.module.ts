@@ -5,7 +5,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { KingsPage } from './pages/kings/kings';
 import { KingsListModal } from './pages/kings/kings-list/kings-list.modal';
-// import { ListPage } from './pages/list/list';
 
 import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
@@ -21,7 +20,6 @@ import { kingsReducer } from './reducers/kings.reducer';
   declarations: [
     MyApp,
     KingsPage,
-    // ListPage,
     KingsListModal
   ],
   imports: [
@@ -34,7 +32,6 @@ import { kingsReducer } from './reducers/kings.reducer';
   entryComponents: [
     MyApp,
     KingsPage,
-    // ListPage,
     KingsListModal
   ],
   providers: [

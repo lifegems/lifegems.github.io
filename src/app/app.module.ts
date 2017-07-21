@@ -12,6 +12,9 @@ import { KingsService } from './services/kings.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { StoreModule } from '@ngrx/store';
+import { kingsReducer } from './reducers/kings.reducer';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    StoreModule.forRoot({kings: kingsReducer}),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

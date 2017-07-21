@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from 'ionic-angular';
 import { KingsService } from '../../services/kings.service';
 import { KingsListModal } from './kings-list/kings-list.modal';
+import { Store } from '@ngrx/store';
+import * as KingsActions from '../../actions/kings.actions';
+import { KingsState } from '../../reducers/kings.reducer';
 
 import * as _ from 'underscore';
 
@@ -21,7 +24,12 @@ export class KingsPage implements OnInit {
   public showPriests: boolean = false;
   public showProphets: boolean = false;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, private kingsService: KingsService) {}
+  public kingsStore: any;
+
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, private kingsService: KingsService, private store: Store<KingsState>) {
+    this.kingsStore = this.store.select('kings');
+    this.store.dispatch(new KingsActions.NextAction());
+  }
 
   ngOnInit() {
     this.kingsService.getKings().subscribe((kings) => {

@@ -1,17 +1,9 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Kings of Judah</ion-title>
-  </ion-navbar>
-</ion-header>
+import { Component, Input } from '@angular/core';
 
-<ion-content>
-  <ion-slides pager paginationType="progress" centeredSlides="true" (ionSlideDidChange)="updateKingNumber($event)">
-    <ion-slide *ngFor="let king of (kings$ | async)">
-      <app-person-card [king]="king"></app-person-card>
-      <!--<ion-card>
+@Component({
+   selector: 'app-person-card',
+   template: `
+   <ion-card>
         <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>
         <ion-card-content>
           <ion-card-title>
@@ -44,37 +36,13 @@
             </span>
           </ion-item-group>
         </ion-list>
-      </ion-card>-->
-    </ion-slide>
-  </ion-slides>
-  <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="showKingsListModal()">
-      <ion-icon name="md-albums"></ion-icon>
-    </button>
-  </ion-fab>
-</ion-content>
+      </ion-card>
+   `
+})
+export class PersonCardComponent {
+   @Input() king: any;
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <button [disabled]="(selectedKing$ | async) == 1" (click)="prevKing()" block small ion-button icon-only clear>
-            <ion-icon name="arrow-back"></ion-icon>
-            <!--<span *ngFor="let king of (kings$ | async)">
-              <span *ngIf="king.kingNumber === (selectedKing$ | async) - 1">{{king.kingNamePlain}}</span>
-            </span>-->
-          </button>
-        </ion-col>
-        <ion-col>
-          <button [disabled]="(selectedKing$ | async) == 20" (click)="nextKing()" block small ion-button icon-only clear>
-            <!--<span *ngFor="let king of (kings$ | async)">
-              <span *ngIf="king.kingNumber === (selectedKing$ | async) + 1">{{king.kingNamePlain}}</span>
-            </span>-->
-            <ion-icon name="arrow-forward"></ion-icon>
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-footer>
+   constructor() {
+      console.log(this.king);
+   }
+}

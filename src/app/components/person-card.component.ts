@@ -18,21 +18,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
         <ion-list>
           <app-expander *ngIf="king?.sons && king.sons.length > 0"
-            [list]="king?.sons"
-            [title]="'Sons'"
-            [boldItem]="king?.chosenOffspring"
+            [title]="'Sons'" [list]="king?.sons" [boldItem]="king?.chosenOffspring"
             [toggleExpander]="toggleSons"
             (toggleExpanderChange)="handleToggleSons()">
           </app-expander>
           <app-expander *ngIf="king?.highPriests && king.highPriests.length > 0"
-            [list]="king?.highPriests"
-            [title]="'High Priests'"
+            [title]="'High Priests'" [list]="king?.highPriests"
             [toggleExpander]="togglePriests"
             (toggleExpanderChange)="handleTogglePriests()">
           </app-expander>
           <app-expander *ngIf="king?.prophets && king.prophets.length > 0"
-            [list]="king?.prophets"
-            [title]="'Prophets'"
+            [title]="'Prophets'" [list]="king?.prophets"
             [toggleExpander]="toggleProphets"
             (toggleExpanderChange)="handleToggleProphets()">
           </app-expander>

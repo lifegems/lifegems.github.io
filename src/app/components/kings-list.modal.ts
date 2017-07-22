@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Choose King
+      Choose a king
     </ion-title>
     <ion-buttons>
       <button ion-button (click)="dismiss(0)">
@@ -18,11 +18,19 @@ import { Observable } from 'rxjs/Observable';
   </ion-toolbar>
 </ion-header>
 <ion-content>
-   <ion-list>
-      <ion-item *ngFor="let king of (kings$ | async)" (click)="dismiss(king.kingNumber)">{{king.startReignYear}} - {{king.kingName}}</ion-item>
+   <ion-list radio-group>
+      <ion-item *ngFor="let king of (kings$ | async)" (click)="dismiss(king.kingNumber)">
+        <span *ngIf="king.kingNumber != (selectedKing$ | async)">
+          {{king.kingName}} <div style="color:gray;float: right" text-right>{{king.startReignYear}}</div>
+        </span>
+        <span *ngIf="king.kingNumber == (selectedKing$ | async)" style="color:#488aff;">
+          {{king.kingName}} <div style="color:#488aff;float: right" text-right>{{king.startReignYear}}</div>
+        </span>
+      </ion-item>
    </ion-list>
 </ion-content>
-`
+`,
+styles: [`.selected {color: blue;}`]
 })
 export class KingsListModal {
    public kings$: Observable<any[]>;

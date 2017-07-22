@@ -3,8 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { KingsPage } from './pages/kings/kings';
-import { KingsListModal } from './pages/kings/kings-list/kings-list.modal';
+import { KingsComponent } from './containers/kings/kings.component';
+import { KingsListModal } from './components/kings-list/kings-list.modal';
 
 import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
@@ -19,7 +19,7 @@ import { kingsReducer } from './reducers/kings.reducer';
 @NgModule({
   declarations: [
     MyApp,
-    KingsPage,
+    KingsComponent,
     KingsListModal
   ],
   imports: [
@@ -31,7 +31,7 @@ import { kingsReducer } from './reducers/kings.reducer';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    KingsPage,
+    KingsComponent,
     KingsListModal
   ],
   providers: [

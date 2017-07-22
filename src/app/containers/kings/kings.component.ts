@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController, NavController, Slides } from 'ionic-angular';
-import { KingsListModal } from './kings-list/kings-list.modal';
+import { KingsListModal } from '../../components/kings-list/kings-list.modal';
 import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
@@ -11,7 +11,7 @@ import * as kingsState from '../../reducers/kings.reducer';
   selector: 'page-home',
   templateUrl: 'kings.html'
 })
-export class KingsPage implements OnInit {
+export class KingsComponent implements OnInit {
   public kings$: Store<kingsState.KingsState[]>;
   public selectedKing$: Store<number>;
   public showPriests$: Store<boolean>;

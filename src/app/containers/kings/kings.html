@@ -10,7 +10,11 @@
 <ion-content>
   <ion-slides pager paginationType="progress" centeredSlides="true" (ionSlideDidChange)="updateKingNumber($event)">
     <ion-slide *ngFor="let king of (kings$ | async)">
-      <app-person-card [king]="king"></app-person-card>
+      <app-person-card [king]="king" 
+        [toggleSons]="showSons$ | async" (toggleSonsChange)="toggleSons()"
+        [togglePriests]="showPriests$ | async" (togglePriestsChange)="togglePriests()"
+        [toggleProphets]="showProphets$ | async" (toggleProphetsChange)="toggleProphets()">
+      </app-person-card>
       <!--<ion-card>
         <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>
         <ion-card-content>

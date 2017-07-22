@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
    selector: 'app-person-card',
@@ -18,20 +18,20 @@ import { Component, Input } from '@angular/core';
 
         <ion-list>
           <ion-item-group style="border-bottom:0.5px solid white">
-            <button ion-item color="secondary" *ngIf="king?.sons && king.sons.length > 0" (click)="toggleSons()">Sons ({{king.sons.length}})</button>
-            <span *ngIf="showSons$ | async">
+            <button ion-item color="secondary" *ngIf="king?.sons && king.sons.length > 0" (click)="handleToggleSons()">Sons ({{king.sons.length}})</button>
+            <span *ngIf="toggleSons">
               <ion-item *ngFor="let son of king?.sons" [ngClass]="{'bold':son == king?.chosenOffspring}">{{son}}</ion-item>
             </span>
           </ion-item-group>
           <ion-item-group style="border-bottom:0.5px solid white">
-            <button ion-item color="secondary" *ngIf="king?.highPriests && king.highPriests.length > 0" (click)="togglePriests()">High Priests ({{king.highPriests.length}})</button>
-            <span *ngIf="showPriests$ | async">
+            <button ion-item color="secondary" *ngIf="king?.highPriests && king.highPriests.length > 0" (click)="handleTogglePriests()">High Priests ({{king.highPriests.length}})</button>
+            <span *ngIf="togglePriests">
               <ion-item *ngFor="let priest of king?.highPriests">{{priest}}</ion-item>
             </span>
           </ion-item-group>
           <ion-item-group style="border-bottom:0.5px solid white">
-            <button ion-item color="secondary" *ngIf="king?.prophets && king.prophets.length > 0" (click)="toggleProphets()">Prophets ({{king.prophets.length}})</button>
-            <span *ngIf="showProphets$ | async">
+            <button ion-item color="secondary" *ngIf="king?.prophets && king.prophets.length > 0" (click)="handleToggleProphets()">Prophets ({{king.prophets.length}})</button>
+            <span *ngIf="toggleProphets">
               <ion-item *ngFor="let prophet of king?.prophets">{{prophet}}</ion-item>
             </span>
           </ion-item-group>
@@ -42,7 +42,27 @@ import { Component, Input } from '@angular/core';
 export class PersonCardComponent {
    @Input() king: any;
 
-   constructor() {
-      console.log(this.king);
+   @Input()  toggleSons: boolean;
+   @Output() toggleSonsChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+   @Input()  togglePriests: boolean;
+   @Output() togglePriestsChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+   @Input()  toggleProphets: boolean;
+   @Output() toggleProphetsChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+   constructor() {}
+
+   handleToggleSons() {
+      this.toggleSons = !this.toggleSons;
+      this.toggleSonsChange.emit(this.toggleSons);
+   }
+
+   handleTogglePriests() {
+      this.togglePriests = !this.togglePriests;
+      this.togglePriestsChange.emit(this.togglePriests);
+   }
+
+   handleToggleProphets() {
+      this.toggleProphets = !this.toggleProphets;
+      this.toggleProphetsChange.emit(this.toggleProphets);
    }
 }

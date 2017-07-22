@@ -4,51 +4,53 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Kings of Judah</ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="showKingsListModal()">
-        <ion-icon name="md-list-box"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <span *ngFor="let king of (kings$ | async)">
-    <ion-card *ngIf="king.kingNumber == (selectedKing$ | async)" (swipe)="scroll($event)">
-      <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>
-      <ion-card-content>
-        <ion-card-title>
-          <ion-label *ngIf="king.kingNumber != 7" color="primary" stacked>King</ion-label>
-          <ion-label *ngIf="king.kingNumber === 7" color="primary" stacked>Queen</ion-label>
-          <span (click)="showKingsListModal()">
-            {{king.kingName}}
-            <span style="color:cornflowerblue;font-size:14px">Age: {{king.age||'?'}}</span>
-          </span>
-        </ion-card-title>
-      </ion-card-content>
+  <ion-slides pager paginationType="progress" centeredSlides="true" (ionSlideDidChange)="updateKingNumber($event)">
+    <ion-slide *ngFor="let king of (kings$ | async)">
+      <ion-card>
+        <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>
+        <ion-card-content>
+          <ion-card-title>
+            <ion-label *ngIf="king.kingNumber != 7" color="primary" stacked>King</ion-label>
+            <ion-label *ngIf="king.kingNumber === 7" color="primary" stacked>Queen</ion-label>
+            <span (click)="showKingsListModal()">
+              {{king.kingName}}
+              <span style="color:cornflowerblue;font-size:14px">Age: {{king.age||'?'}}</span>
+            </span>
+          </ion-card-title>
+        </ion-card-content>
 
-      <ion-list>
-        <ion-item-group style="border-bottom:0.5px solid white">
-          <button ion-item color="secondary" *ngIf="king?.sons && king.sons.length > 0" (click)="toggleSons()">Sons ({{king.sons.length}})</button>
-          <span *ngIf="showSons$ | async">
-            <ion-item *ngFor="let son of king?.sons" [ngClass]="{'bold':son == king?.chosenOffspring}">{{son}}</ion-item>
-          </span>
-        </ion-item-group>
-        <ion-item-group style="border-bottom:0.5px solid white">
-          <button ion-item color="secondary" *ngIf="king?.highPriests && king.highPriests.length > 0" (click)="togglePriests()">High Priests ({{king.highPriests.length}})</button>
-          <span *ngIf="showPriests$ | async">
-            <ion-item *ngFor="let priest of king?.highPriests">{{priest}}</ion-item>
-          </span>
-        </ion-item-group>
-        <ion-item-group style="border-bottom:0.5px solid white">
-          <button ion-item color="secondary" *ngIf="king?.prophets && king.prophets.length > 0" (click)="toggleProphets()">Prophets ({{king.prophets.length}})</button>
-          <span *ngIf="showProphets$ | async">
-            <ion-item *ngFor="let prophet of king?.prophets">{{prophet}}</ion-item>
-          </span>
-        </ion-item-group>
-      </ion-list>
-    </ion-card> 
-  </span>  
+        <ion-list>
+          <ion-item-group style="border-bottom:0.5px solid white">
+            <button ion-item color="secondary" *ngIf="king?.sons && king.sons.length > 0" (click)="toggleSons()">Sons ({{king.sons.length}})</button>
+            <span *ngIf="showSons$ | async">
+              <ion-item *ngFor="let son of king?.sons" [ngClass]="{'bold':son == king?.chosenOffspring}">{{son}}</ion-item>
+            </span>
+          </ion-item-group>
+          <ion-item-group style="border-bottom:0.5px solid white">
+            <button ion-item color="secondary" *ngIf="king?.highPriests && king.highPriests.length > 0" (click)="togglePriests()">High Priests ({{king.highPriests.length}})</button>
+            <span *ngIf="showPriests$ | async">
+              <ion-item *ngFor="let priest of king?.highPriests">{{priest}}</ion-item>
+            </span>
+          </ion-item-group>
+          <ion-item-group style="border-bottom:0.5px solid white">
+            <button ion-item color="secondary" *ngIf="king?.prophets && king.prophets.length > 0" (click)="toggleProphets()">Prophets ({{king.prophets.length}})</button>
+            <span *ngIf="showProphets$ | async">
+              <ion-item *ngFor="let prophet of king?.prophets">{{prophet}}</ion-item>
+            </span>
+          </ion-item-group>
+        </ion-list>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="showKingsListModal()">
+      <ion-icon name="md-albums"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
 
 <ion-footer>
@@ -56,20 +58,18 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <button [disabled]="(selectedKing$ | async) == 1" (click)="prevKing()" block ion-button icon-left outline>
+          <button [disabled]="(selectedKing$ | async) == 1" (click)="prevKing()" block small ion-button icon-only clear>
             <ion-icon name="arrow-back"></ion-icon>
-            <!-- {{prevKingName}} -->
-            <span *ngFor="let king of (kings$ | async)">
+            <!--<span *ngFor="let king of (kings$ | async)">
               <span *ngIf="king.kingNumber === (selectedKing$ | async) - 1">{{king.kingNamePlain}}</span>
-            </span>
+            </span>-->
           </button>
         </ion-col>
         <ion-col>
-          <button [disabled]="(selectedKing$ | async) == 20" (click)="nextKing()" block ion-button icon-right outline>
-            <!-- {{nextKingName}} -->
-            <span *ngFor="let king of (kings$ | async)">
+          <button [disabled]="(selectedKing$ | async) == 20" (click)="nextKing()" block small ion-button icon-only clear>
+            <!--<span *ngFor="let king of (kings$ | async)">
               <span *ngIf="king.kingNumber === (selectedKing$ | async) + 1">{{king.kingNamePlain}}</span>
-            </span>
+            </span>-->
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
         </ion-col>

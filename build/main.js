@@ -1,1 +1,1008 @@
-webpackJsonp([0],{106:function(n,l){function e(n){return new Promise(function(l,e){e(new Error("Cannot find module '"+n+"'."))})}e.keys=function(){return[]},e.resolve=e,n.exports=e,e.id=106},115:function(n,l){function e(n){return new Promise(function(l,e){e(new Error("Cannot find module '"+n+"'."))})}e.keys=function(){return[]},e.resolve=e,n.exports=e,e.id=115},128:function(n,l,e){"use strict";function t(n,l){switch(void 0===n&&(n=$),l.type){case S:return Object.assign({},n,{selectedKing:n.selectedKing<20?n.selectedKing+1:1});case A:return Object.assign({},n,{selectedKing:n.selectedKing>1?n.selectedKing-1:1});case R:return Object.assign({},n,{kings:l.payload});case C:return Object.assign({},n,{selectedKing:l.payload>=1&&l.payload<=20?l.payload:n.selectedKing});case I:return Object.assign({},n,{showPriests:!n.showPriests});case N:return Object.assign({},n,{showProphets:!n.showProphets});case O:return Object.assign({},n,{showSons:!n.showSons});default:return Object.assign({},n)}}function i(n){return fn._26(0,[(n()(),fn._5(0,null,null,7,"button",[["class","item item-block"],["ion-item",""],["menuClose",""]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==fn._17(n,6).close()&&t),"click"===l&&(t=!1!==i.openPage(n.context.$implicit)&&t),t},dn.b,dn.a)),fn._4(1097728,null,3,mn.a,[bn.a,kn.a,fn.k,fn.F,[2,yn.a]],null,null),fn._22(335544320,4,{contentLabel:0}),fn._22(603979776,5,{_buttons:1}),fn._22(603979776,6,{_icons:1}),fn._4(16384,null,0,Pn.a,[],null,null),fn._4(16384,null,0,En.a,[Sn.a],{menuClose:[0,"menuClose"]},null),(n()(),fn._24(2,["\n        ","\n      "]))],function(n,l){n(l,6,0,"")},function(n,l){n(l,7,0,l.context.$implicit.title)})}function _(n){return fn._26(0,[fn._22(402653184,1,{nav:0}),(n()(),fn._5(0,null,null,28,"ion-menu",[["role","navigation"]],null,null,null,An.b,An.a)),fn._4(245760,null,2,Cn.a,[Sn.a,fn.k,kn.a,Rn.a,fn.F,wn.a,On.g,In.a,Nn.a],{content:[0,"content"]},null),fn._22(335544320,2,{menuContent:0}),fn._22(335544320,3,{menuNav:0}),fn._21(6144,null,Mn.a,null,[Cn.a]),(n()(),fn._24(0,["\n  "])),(n()(),fn._5(0,null,0,10,"ion-header",[],null,null,null,null,null)),fn._4(16384,null,0,Fn.a,[kn.a,fn.k,fn.F,[2,Tn.a]],null,null),(n()(),fn._24(null,["\n    "])),(n()(),fn._5(0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,jn.b,jn.a)),fn._4(49152,null,0,Dn.a,[kn.a,fn.k,fn.F],null,null),(n()(),fn._24(3,["\n      "])),(n()(),fn._5(0,null,3,2,"ion-title",[],null,null,null,vn.b,vn.a)),fn._4(49152,null,0,Ln.a,[kn.a,fn.k,fn.F,[2,Dn.a],[2,zn.a]],null,null),(n()(),fn._24(0,["Menu"])),(n()(),fn._24(3,["\n    "])),(n()(),fn._24(null,["\n  "])),(n()(),fn._24(0,["\n\n  "])),(n()(),fn._5(0,null,0,9,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Kn.b,Kn.a)),fn._4(4374528,[[2,4]],0,Bn.a,[kn.a,Rn.a,In.a,fn.k,fn.F,Nn.a,wn.a,fn.z,[2,Tn.a],[2,$n.a]],null,null),(n()(),fn._24(1,["\n    "])),(n()(),fn._5(0,null,1,5,"ion-list",[],null,null,null,null,null)),fn._4(16384,null,0,Jn.a,[kn.a,fn.k,fn.F,Rn.a,On.g,In.a],null,null),(n()(),fn._24(null,["\n      "])),(n()(),fn._1(16777216,null,null,1,null,i)),fn._4(802816,null,0,Hn.h,[fn.P,fn.M,fn.s],{ngForOf:[0,"ngForOf"]},null),(n()(),fn._24(null,["\n    "])),(n()(),fn._24(1,["\n  "])),(n()(),fn._24(0,["\n\n"])),(n()(),fn._24(null,["\n\n"])),(n()(),fn._24(null,["\n"])),(n()(),fn._5(0,null,null,2,"ion-nav",[["swipeBackEnabled","false"]],null,null,null,xn.b,xn.a)),fn._4(4374528,[[1,4],["content",4]],0,Yn.a,[[2,Tn.a],[2,$n.a],Nn.a,kn.a,Rn.a,fn.k,fn.z,fn.F,fn.j,On.g,Un.a,[2,Gn.a],In.a,fn.l],{swipeBackEnabled:[0,"swipeBackEnabled"],root:[1,"root"]},null),fn._21(6144,null,Mn.a,null,[Yn.a])],function(n,l){var e=l.component;n(l,2,0,fn._17(l,33)),n(l,26,0,e.pages);n(l,33,0,"false",e.rootPage)},function(n,l){n(l,10,0,fn._17(l,11)._sbPadding),n(l,19,0,fn._17(l,20).statusbarPadding,fn._17(l,20)._hasRefresher)})}function o(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,2,"ion-label",[["color","primary"],["stacked",""]],null,null,null,null,null)),Xn._4(16384,null,0,nl.a,[ll.a,Xn.k,Xn.F,[8,null],[8,""],[8,null],[8,null]],{color:[0,"color"]},null),(n()(),Xn._24(null,["King"]))],function(n,l){n(l,1,0,"primary")},null)}function a(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,2,"ion-label",[["color","primary"],["stacked",""]],null,null,null,null,null)),Xn._4(16384,null,0,nl.a,[ll.a,Xn.k,Xn.F,[8,null],[8,""],[8,null],[8,null]],{color:[0,"color"]},null),(n()(),Xn._24(null,["Queen"]))],function(n,l){n(l,1,0,"primary")},null)}function u(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,6,"button",[["class","item item-block"],["color","secondary"],["ion-item",""]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.toggleSons()&&t),t},el.b,el.a)),Xn._4(1097728,null,3,tl.a,[il.a,ll.a,Xn.k,Xn.F,[2,_l.a]],{color:[0,"color"]},null),Xn._22(335544320,3,{contentLabel:0}),Xn._22(603979776,4,{_buttons:1}),Xn._22(603979776,5,{_icons:1}),Xn._4(16384,null,0,ol.a,[],null,null),(n()(),Xn._24(2,["Sons (",")"]))],function(n,l){n(l,1,0,"secondary")},function(n,l){n(l,6,0,l.parent.context.$implicit.sons.length)})}function r(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,8,"ion-item",[["class","item item-block"]],null,null,null,el.b,el.a)),Xn._4(278528,null,0,al.g,[Xn.s,Xn.t,Xn.k,Xn.F],{ngClass:[0,"ngClass"]},null),Xn._20(["bold"]),Xn._4(1097728,null,3,tl.a,[il.a,ll.a,Xn.k,Xn.F,[2,_l.a]],null,null),Xn._22(335544320,6,{contentLabel:0}),Xn._22(603979776,7,{_buttons:1}),Xn._22(603979776,8,{_icons:1}),Xn._4(16384,null,0,ol.a,[],null,null),(n()(),Xn._24(2,["",""]))],function(n,l){n(l,1,0,n(l,2,0,l.context.$implicit==(null==l.parent.parent.context.$implicit?null:l.parent.parent.context.$implicit.chosenOffspring)))},function(n,l){n(l,8,0,l.context.$implicit)})}function s(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,4,"span",[],null,null,null,null,null)),(n()(),Xn._24(null,["\n              "])),(n()(),Xn._1(16777216,null,null,1,null,r)),Xn._4(802816,null,0,al.h,[Xn.P,Xn.M,Xn.s],{ngForOf:[0,"ngForOf"]},null),(n()(),Xn._24(null,["\n            "]))],function(n,l){n(l,3,0,null==l.parent.context.$implicit?null:l.parent.context.$implicit.sons)},null)}function h(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,6,"button",[["class","item item-block"],["color","secondary"],["ion-item",""]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.togglePriests()&&t),t},el.b,el.a)),Xn._4(1097728,null,3,tl.a,[il.a,ll.a,Xn.k,Xn.F,[2,_l.a]],{color:[0,"color"]},null),Xn._22(335544320,9,{contentLabel:0}),Xn._22(603979776,10,{_buttons:1}),Xn._22(603979776,11,{_icons:1}),Xn._4(16384,null,0,ol.a,[],null,null),(n()(),Xn._24(2,["High Priests (",")"]))],function(n,l){n(l,1,0,"secondary")},function(n,l){n(l,6,0,l.parent.context.$implicit.highPriests.length)})}function c(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,6,"ion-item",[["class","item item-block"]],null,null,null,el.b,el.a)),Xn._4(1097728,null,3,tl.a,[il.a,ll.a,Xn.k,Xn.F,[2,_l.a]],null,null),Xn._22(335544320,12,{contentLabel:0}),Xn._22(603979776,13,{_buttons:1}),Xn._22(603979776,14,{_icons:1}),Xn._4(16384,null,0,ol.a,[],null,null),(n()(),Xn._24(2,["",""]))],null,function(n,l){n(l,6,0,l.context.$implicit)})}function g(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,4,"span",[],null,null,null,null,null)),(n()(),Xn._24(null,["\n              "])),(n()(),Xn._1(16777216,null,null,1,null,c)),Xn._4(802816,null,0,al.h,[Xn.P,Xn.M,Xn.s],{ngForOf:[0,"ngForOf"]},null),(n()(),Xn._24(null,["\n            "]))],function(n,l){n(l,3,0,null==l.parent.context.$implicit?null:l.parent.context.$implicit.highPriests)},null)}function p(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,6,"button",[["class","item item-block"],["color","secondary"],["ion-item",""]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.toggleProphets()&&t),t},el.b,el.a)),Xn._4(1097728,null,3,tl.a,[il.a,ll.a,Xn.k,Xn.F,[2,_l.a]],{color:[0,"color"]},null),Xn._22(335544320,15,{contentLabel:0}),Xn._22(603979776,16,{_buttons:1}),Xn._22(603979776,17,{_icons:1}),Xn._4(16384,null,0,ol.a,[],null,null),(n()(),Xn._24(2,["Prophets (",")"]))],function(n,l){n(l,1,0,"secondary")},function(n,l){n(l,6,0,l.parent.context.$implicit.prophets.length)})}function f(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,6,"ion-item",[["class","item item-block"]],null,null,null,el.b,el.a)),Xn._4(1097728,null,3,tl.a,[il.a,ll.a,Xn.k,Xn.F,[2,_l.a]],null,null),Xn._22(335544320,18,{contentLabel:0}),Xn._22(603979776,19,{_buttons:1}),Xn._22(603979776,20,{_icons:1}),Xn._4(16384,null,0,ol.a,[],null,null),(n()(),Xn._24(2,["",""]))],null,function(n,l){n(l,6,0,l.context.$implicit)})}function d(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,4,"span",[],null,null,null,null,null)),(n()(),Xn._24(null,["\n              "])),(n()(),Xn._1(16777216,null,null,1,null,f)),Xn._4(802816,null,0,al.h,[Xn.P,Xn.M,Xn.s],{ngForOf:[0,"ngForOf"]},null),(n()(),Xn._24(null,["\n            "]))],function(n,l){n(l,3,0,null==l.parent.context.$implicit?null:l.parent.context.$implicit.prophets)},null)}function m(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,67,"ion-slide",[],null,null,null,ul.b,ul.a)),Xn._4(180224,null,0,rl.a,[Xn.k,Xn.F,sl.a],null,null),(n()(),Xn._24(0,["\n      "])),(n()(),Xn._5(0,null,0,63,"ion-card",[],null,null,null,null,null)),Xn._4(16384,null,0,hl.a,[ll.a,Xn.k,Xn.F],null,null),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._5(0,null,null,2,"ion-card-header",[["text-center",""]],null,null,null,null,null)),Xn._4(16384,null,0,cl.a,[ll.a,Xn.k,Xn.F],null,null),(n()(),Xn._24(null,[""," - ",""])),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._5(0,null,null,18,"ion-card-content",[],null,null,null,null,null)),Xn._4(16384,null,0,gl.a,[ll.a,Xn.k,Xn.F],null,null),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._5(0,null,null,14,"ion-card-title",[],null,null,null,null,null)),Xn._4(16384,null,0,pl.a,[ll.a,Xn.k,Xn.F],null,null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,1,null,o)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,1,null,a)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._5(0,null,null,4,"span",[],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.showKingsListModal()&&t),t},null,null)),(n()(),Xn._24(null,["\n              ","\n              "])),(n()(),Xn._5(0,null,null,1,"span",[["style","color:cornflowerblue;font-size:14px"]],null,null,null,null,null)),(n()(),Xn._24(null,["Age: ",""])),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._24(null,["\n\n        "])),(n()(),Xn._5(0,null,null,35,"ion-list",[],null,null,null,null,null)),Xn._4(16384,null,0,fl.a,[ll.a,Xn.k,Xn.F,dl.a,ml.g,bl.a],null,null),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._5(0,null,null,9,"ion-item-group",[["style","border-bottom:0.5px solid white"]],null,null,null,null,null)),Xn._4(16384,null,0,kl.a,[],null,null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,1,null,u)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,2,null,s)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),Xn._19(131072,al.b,[Xn.h]),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._5(0,null,null,9,"ion-item-group",[["style","border-bottom:0.5px solid white"]],null,null,null,null,null)),Xn._4(16384,null,0,kl.a,[],null,null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,1,null,h)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,2,null,g)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),Xn._19(131072,al.b,[Xn.h]),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._5(0,null,null,9,"ion-item-group",[["style","border-bottom:0.5px solid white"]],null,null,null,null,null)),Xn._4(16384,null,0,kl.a,[],null,null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,1,null,p)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),(n()(),Xn._24(null,["\n            "])),(n()(),Xn._1(16777216,null,null,2,null,d)),Xn._4(16384,null,0,al.i,[Xn.P,Xn.M],{ngIf:[0,"ngIf"]},null),Xn._19(131072,al.b,[Xn.h]),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._24(null,["\n      "])),(n()(),Xn._24(0,["\n    "]))],function(n,l){var e=l.component;n(l,17,0,7!=l.context.$implicit.kingNumber),n(l,20,0,7===l.context.$implicit.kingNumber),n(l,37,0,(null==l.context.$implicit?null:l.context.$implicit.sons)&&l.context.$implicit.sons.length>0),n(l,40,0,Xn._25(l,40,0,Xn._17(l,41).transform(e.showSons$))),n(l,48,0,(null==l.context.$implicit?null:l.context.$implicit.highPriests)&&l.context.$implicit.highPriests.length>0),n(l,51,0,Xn._25(l,51,0,Xn._17(l,52).transform(e.showPriests$))),n(l,59,0,(null==l.context.$implicit?null:l.context.$implicit.prophets)&&l.context.$implicit.prophets.length>0),n(l,62,0,Xn._25(l,62,0,Xn._17(l,63).transform(e.showProphets$)))},function(n,l){n(l,8,0,l.context.$implicit.startReignYear,l.context.$implicit.endReignYear),n(l,23,0,l.context.$implicit.kingName),n(l,25,0,l.context.$implicit.age||"?")})}function b(n){return Xn._26(0,[Xn._22(402653184,1,{slides:0}),(n()(),Xn._5(0,null,null,20,"ion-header",[],null,null,null,null,null)),Xn._4(16384,null,0,yl.a,[ll.a,Xn.k,Xn.F,[2,Pl.a]],null,null),(n()(),Xn._24(null,["\n  "])),(n()(),Xn._5(0,null,null,16,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,El.b,El.a)),Xn._4(49152,null,0,Sl.a,[Al.a,[2,Pl.a],[2,Cl.a],ll.a,Xn.k,Xn.F],null,null),(n()(),Xn._24(3,["\n    "])),(n()(),Xn._5(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,l,e){var t=!0;return"click"===l&&(t=!1!==Xn._17(n,9).toggle()&&t),t},Rl.b,Rl.a)),Xn._4(1097728,[[2,4]],0,wl.a,[[8,""],ll.a,Xn.k,Xn.F],null,null),Xn._4(1064960,null,0,Ol.a,[Il.a,[2,Pl.a],[2,wl.a],[2,Sl.a]],{menuToggle:[0,"menuToggle"]},null),Xn._4(16384,null,1,Nl.a,[ll.a,Xn.k,Xn.F,[2,Ml.a],[2,Sl.a]],null,null),Xn._22(603979776,2,{_buttons:1}),(n()(),Xn._24(0,["\n      "])),(n()(),Xn._5(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Xn._4(147456,null,0,Fl.a,[ll.a,Xn.k,Xn.F],{name:[0,"name"]},null),(n()(),Xn._24(0,["\n    "])),(n()(),Xn._24(3,["\n    "])),(n()(),Xn._5(0,null,3,2,"ion-title",[],null,null,null,Tl.b,Tl.a)),Xn._4(49152,null,0,jl.a,[ll.a,Xn.k,Xn.F,[2,Ml.a],[2,Sl.a]],null,null),(n()(),Xn._24(0,["Kings of Judah"])),(n()(),Xn._24(3,["\n  "])),(n()(),Xn._24(null,["\n"])),(n()(),Xn._24(null,["\n\n"])),(n()(),Xn._5(0,null,null,23,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Dl.b,Dl.a)),Xn._4(4374528,null,0,vl.a,[ll.a,dl.a,bl.a,Xn.k,Xn.F,Al.a,Ll.a,Xn.z,[2,Pl.a],[2,Cl.a]],null,null),(n()(),Xn._24(1,["\n  "])),(n()(),Xn._5(0,null,1,6,"ion-slides",[["centeredSlides","true"],["pager",""],["paginationType","progress"]],null,[[null,"ionSlideDidChange"]],function(n,l,e){var t=!0,i=n.component;return"ionSlideDidChange"===l&&(t=!1!==i.updateKingNumber(e)&&t),t},zl.b,zl.a)),Xn._4(1228800,[[1,4]],0,sl.a,[ll.a,dl.a,Xn.z,[2,Pl.a],Xn.k,Xn.F],{pager:[0,"pager"],paginationType:[1,"paginationType"],centeredSlides:[2,"centeredSlides"]},{ionSlideDidChange:"ionSlideDidChange"}),(n()(),Xn._24(0,["\n    "])),(n()(),Xn._1(16777216,null,0,2,null,m)),Xn._4(802816,null,0,al.h,[Xn.P,Xn.M,Xn.s],{ngForOf:[0,"ngForOf"]},null),Xn._19(131072,al.b,[Xn.h]),(n()(),Xn._24(0,["\n  "])),(n()(),Xn._24(1,["\n  "])),(n()(),Xn._5(0,null,0,11,"ion-fab",[["bottom",""],["right",""]],null,null,null,Kl.b,Kl.a)),Xn._4(1228800,null,2,Bl.a,[dl.a],null,null),Xn._22(335544320,21,{_mainButton:0}),Xn._22(603979776,22,{_fabLists:1}),(n()(),Xn._24(0,["\n    "])),(n()(),Xn._5(0,null,0,5,"button",[["color","primary"],["ion-fab",""]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.showKingsListModal()&&t),t},$l.b,$l.a)),Xn._4(49152,[[21,4]],0,Jl.a,[ll.a,Xn.k,Xn.F],{color:[0,"color"]},null),(n()(),Xn._24(0,["\n      "])),(n()(),Xn._5(0,null,0,1,"ion-icon",[["name","md-albums"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Xn._4(147456,null,0,Fl.a,[ll.a,Xn.k,Xn.F],{name:[0,"name"]},null),(n()(),Xn._24(0,["\n    "])),(n()(),Xn._24(0,["\n  "])),(n()(),Xn._24(1,["\n"])),(n()(),Xn._24(null,["\n\n"])),(n()(),Xn._5(0,null,null,40,"ion-footer",[],null,null,null,null,null)),Xn._4(16384,null,0,Hl.a,[ll.a,Xn.k,Xn.F,[2,Pl.a]],null,null),(n()(),Xn._24(null,["\n  "])),(n()(),Xn._5(0,null,null,36,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,xl.b,xl.a)),Xn._4(49152,null,0,Ml.a,[ll.a,Xn.k,Xn.F],null,null),(n()(),Xn._24(3,["\n    "])),(n()(),Xn._5(0,null,3,32,"ion-grid",[["class","grid"]],null,null,null,null,null)),Xn._4(16384,null,0,Yl.a,[],null,null),(n()(),Xn._24(null,["\n      "])),(n()(),Xn._5(0,null,null,28,"ion-row",[["class","row"]],null,null,null,null,null)),Xn._4(16384,null,0,Ul.a,[],null,null),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._5(0,null,null,11,"ion-col",[["class","col"]],null,null,null,null,null)),Xn._4(16384,null,0,Gl.a,[],null,null),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._5(0,null,null,7,"button",[["block",""],["clear",""],["icon-only",""],["ion-button",""],["small",""]],[[8,"disabled",0]],[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.prevKing()&&t),t},Rl.b,Rl.a)),Xn._4(1097728,null,0,wl.a,[[8,""],ll.a,Xn.k,Xn.F],{small:[0,"small"],clear:[1,"clear"],block:[2,"block"]},null),Xn._19(131072,al.b,[Xn.h]),(n()(),Xn._24(0,["\n            "])),(n()(),Xn._5(0,null,0,1,"ion-icon",[["name","arrow-back"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Xn._4(147456,null,0,Fl.a,[ll.a,Xn.k,Xn.F],{name:[0,"name"]},null),(n()(),Xn._24(0,["\n            "])),(n()(),Xn._24(0,["\n          "])),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._5(0,null,null,11,"ion-col",[["class","col"]],null,null,null,null,null)),Xn._4(16384,null,0,Gl.a,[],null,null),(n()(),Xn._24(null,["\n          "])),(n()(),Xn._5(0,null,null,7,"button",[["block",""],["clear",""],["icon-only",""],["ion-button",""],["small",""]],[[8,"disabled",0]],[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.nextKing()&&t),t},Rl.b,Rl.a)),Xn._4(1097728,null,0,wl.a,[[8,""],ll.a,Xn.k,Xn.F],{small:[0,"small"],clear:[1,"clear"],block:[2,"block"]},null),Xn._19(131072,al.b,[Xn.h]),(n()(),Xn._24(0,["\n            "])),(n()(),Xn._24(0,["\n            "])),(n()(),Xn._5(0,null,0,1,"ion-icon",[["name","arrow-forward"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Xn._4(147456,null,0,Fl.a,[ll.a,Xn.k,Xn.F],{name:[0,"name"]},null),(n()(),Xn._24(0,["\n          "])),(n()(),Xn._24(null,["\n        "])),(n()(),Xn._24(null,["\n      "])),(n()(),Xn._24(null,["\n    "])),(n()(),Xn._24(3,["\n  "])),(n()(),Xn._24(null,["\n"])),(n()(),Xn._24(null,["\n"]))],function(n,l){var e=l.component;n(l,9,0,"");n(l,14,0,"menu");n(l,27,0,"","progress","true"),n(l,30,0,Xn._25(l,30,0,Xn._17(l,31).transform(e.kings$)));n(l,40,0,"primary");n(l,43,0,"md-albums");n(l,64,0,"","","");n(l,68,0,"arrow-back");n(l,77,0,"","","");n(l,82,0,"arrow-forward")},function(n,l){var e=l.component;n(l,4,0,Xn._17(l,5)._hidden,Xn._17(l,5)._sbPadding),n(l,7,0,Xn._17(l,9).isHidden),n(l,13,0,Xn._17(l,14)._hidden),n(l,23,0,Xn._17(l,24).statusbarPadding,Xn._17(l,24)._hasRefresher),n(l,42,0,Xn._17(l,43)._hidden),n(l,51,0,Xn._17(l,52)._sbPadding),n(l,63,0,1==Xn._25(l,63,0,Xn._17(l,65).transform(e.selectedKing$))),n(l,67,0,Xn._17(l,68)._hidden),n(l,76,0,20==Xn._25(l,76,0,Xn._17(l,78).transform(e.selectedKing$))),n(l,81,0,Xn._17(l,82)._hidden)})}function k(n){return Xl._26(0,[(n()(),Xl._5(0,null,null,6,"ion-item",[["class","item item-block"]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.dismiss(n.context.$implicit.kingNumber)&&t),t},ne.b,ne.a)),Xl._4(1097728,null,3,le.a,[ee.a,te.a,Xl.k,Xl.F,[2,ie.a]],null,null),Xl._22(335544320,2,{contentLabel:0}),Xl._22(603979776,3,{_buttons:1}),Xl._22(603979776,4,{_icons:1}),Xl._4(16384,null,0,_e.a,[],null,null),(n()(),Xl._24(2,[""," - ",""]))],null,function(n,l){n(l,6,0,l.context.$implicit.startReignYear,l.context.$implicit.kingName)})}function y(n){return Xl._26(0,[(n()(),Xl._24(null,["\n"])),(n()(),Xl._5(0,null,null,28,"ion-header",[],null,null,null,null,null)),Xl._4(16384,null,0,oe.a,[te.a,Xl.k,Xl.F,[2,ae.a]],null,null),(n()(),Xl._24(null,["\n  "])),(n()(),Xl._5(0,null,null,24,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,ue.b,ue.a)),Xl._4(49152,null,0,re.a,[te.a,Xl.k,Xl.F],null,null),(n()(),Xl._24(3,["\n    "])),(n()(),Xl._5(0,null,3,2,"ion-title",[],null,null,null,se.b,se.a)),Xl._4(49152,null,0,he.a,[te.a,Xl.k,Xl.F,[2,re.a],[2,ce.a]],null,null),(n()(),Xl._24(0,["\n      Choose King\n    "])),(n()(),Xl._24(3,["\n    "])),(n()(),Xl._5(0,null,3,16,"ion-buttons",[],null,null,null,null,null)),Xl._4(16384,null,1,ge.a,[te.a,Xl.k,Xl.F,[2,re.a],[2,ce.a]],null,null),Xl._22(603979776,1,{_buttons:1}),(n()(),Xl._24(null,["\n      "])),(n()(),Xl._5(0,null,null,11,"button",[["ion-button",""]],null,[[null,"click"]],function(n,l,e){var t=!0,i=n.component;return"click"===l&&(t=!1!==i.dismiss(0)&&t),t},pe.b,pe.a)),Xl._4(1097728,[[1,4]],0,fe.a,[[8,""],te.a,Xl.k,Xl.F],null,null),(n()(),Xl._24(0,["\n        "])),(n()(),Xl._5(0,null,0,3,"span",[["color","primary"],["ion-text",""],["showWhen","ios"]],[[2,"hidden-show-when",null]],null,null,null,null)),Xl._4(147456,null,0,de.a,[[8,"ios"],me.a,Xl.z],null,null),Xl._4(16384,null,0,be.a,[te.a,Xl.k,Xl.F],{color:[0,"color"]},null),(n()(),Xl._24(null,["Cancel"])),(n()(),Xl._24(0,["\n        "])),(n()(),Xl._5(0,null,0,2,"ion-icon",[["name","md-close"],["role","img"],["showWhen","android, windows"]],[[2,"hide",null],[2,"hidden-show-when",null]],null,null,null,null)),Xl._4(147456,null,0,ke.a,[te.a,Xl.k,Xl.F],{name:[0,"name"]},null),Xl._4(147456,null,0,de.a,[[8,"android, windows"],me.a,Xl.z],null,null),(n()(),Xl._24(0,["\n      "])),(n()(),Xl._24(null,["\n    "])),(n()(),Xl._24(3,["\n  "])),(n()(),Xl._24(null,["\n"])),(n()(),Xl._24(null,["\n"])),(n()(),Xl._5(0,null,null,10,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ye.b,ye.a)),Xl._4(4374528,null,0,Pe.a,[te.a,me.a,Ee.a,Xl.k,Xl.F,Se.a,Ae.a,Xl.z,[2,ae.a],[2,Ce.a]],null,null),(n()(),Xl._24(1,["\n   "])),(n()(),Xl._5(0,null,1,6,"ion-list",[],null,null,null,null,null)),Xl._4(16384,null,0,Re.a,[te.a,Xl.k,Xl.F,me.a,we.g,Ee.a],null,null),(n()(),Xl._24(null,["\n      "])),(n()(),Xl._1(16777216,null,null,2,null,k)),Xl._4(802816,null,0,Oe.h,[Xl.P,Xl.M,Xl.s],{ngForOf:[0,"ngForOf"]},null),Xl._19(131072,Oe.b,[Xl.h]),(n()(),Xl._24(null,["\n   "])),(n()(),Xl._24(1,["\n"])),(n()(),Xl._24(null,["\n"]))],function(n,l){var e=l.component;n(l,20,0,"primary");n(l,24,0,"md-close"),n(l,38,0,Xl._25(l,38,0,Xl._17(l,39).transform(e.kings$)))},function(n,l){n(l,4,0,Xl._17(l,5)._sbPadding),n(l,18,0,!Xl._17(l,19).isMatch),n(l,23,0,Xl._17(l,24)._hidden,!Xl._17(l,25).isMatch),n(l,31,0,Xl._17(l,32).statusbarPadding,Xl._17(l,32)._hasRefresher)})}Object.defineProperty(l,"__esModule",{value:!0});e(0),e(51);var P=function(){function n(n,l,e){this.platform=n,this.params=l,this.viewCtrl=e,this.kings$=this.params.get("kings"),this.selectedKing$=this.params.get("selectedKing")}return n.prototype.dismiss=function(n){var l=this;n>0?this.viewCtrl.dismiss(n):this.selectedKing$.subscribe(function(n){l.viewCtrl.dismiss(n)})},n}(),E="[Kings] Init Kings",S="[Kings] Next King",A="[Kings] Previous King",C="[Kings] Set King",R="[Kings] Kings loaded",w="[Kings] Kings Failed to load",O="[Kings] Toggle view sons",I="[Kings] Toggle view priests",N="[Kings] Toggle view prophets",M=function(){return function(){this.type=S}}(),F=function(){return function(){this.type=A}}(),T=function(){return function(){this.type=E}}(),j=function(){return function(n){this.payload=n,this.type=R}}(),D=function(){return function(){this.type=w}}(),v=function(){return function(n){this.payload=n,this.type=C}}(),L=function(){return function(){this.type=I}}(),z=function(){return function(){this.type=N}}(),K=function(){return function(){this.type=O}}(),B=e(40),$={kings:[],selectedKing:1,showPriests:!1,showProphets:!1,showSons:!1},J=function(n){return n.kings},H=Object(B.t)(J,function(n){return n.kings}),x=Object(B.t)(J,function(n){return n.selectedKing}),Y=Object(B.t)(J,function(n){return n.showPriests}),U=Object(B.t)(J,function(n){return n.showProphets}),G=Object(B.t)(J,function(n){return n.showSons}),Z=(e(0),e(51),e(40),e(126)),V=(e.n(Z),e(166)),q=(e.n(V),function(){function n(n,l,e){this.navCtrl=n,this.modalCtrl=l,this.store=e,this.kings$=this.store.select(H),this.selectedKing$=this.store.select(x),this.showPriests$=this.store.select(Y),this.showProphets$=this.store.select(U),this.showSons$=this.store.select(G)}return n.prototype.ngOnInit=function(){this.store.dispatch(new T)},n.prototype.showKingsListModal=function(){var n=this,l=this.modalCtrl.create(P,{kings:this.kings$,selectedKing:this.selectedKing$});l.present(),l.onDidDismiss(function(l){n.store.dispatch(new v(l)),n.slides.slideTo(l-1)})},n.prototype.nextKing=function(){this.store.dispatch(new M),this.slides.slideNext()},n.prototype.prevKing=function(){this.store.dispatch(new F),this.slides.slidePrev()},n.prototype.updateKingNumber=function(n){this.store.dispatch(new v(n.realIndex+1))},n.prototype.toggleSons=function(){this.store.dispatch(new K)},n.prototype.togglePriests=function(){this.store.dispatch(new L)},n.prototype.toggleProphets=function(){this.store.dispatch(new z)},n}()),W=(e(0),e(51),e(61),e(62),function(){function n(n,l,e){this.platform=n,this.statusBar=l,this.splashScreen=e,this.rootPage=q,this.initializeApp(),this.pages=[{title:"Kings",component:q}]}return n.prototype.initializeApp=function(){var n=this;this.platform.ready().then(function(){n.statusBar.styleDefault(),n.splashScreen.hide()})},n.prototype.openPage=function(n){this.nav.setRoot(n.component)},n}()),Q=(e(0),e(4)),X=(e.n(Q),function(){function n(){}return n.prototype.getKings=function(){return Q.Observable.create(function(n){n.next(nn)})},n}()),nn=[{kingNumber:1,kingName:"Re·ho·boʹam",kingNamePlain:"Rehoboam",age:41,startReignYear:"997 B.C.E.",endReignYear:"980 B.C.E.",highPriests:["Zadok"],chosenOffspring:"A·biʹjah",prophets:["A·hiʹjah","Id·do","Shemaiah"],sons:["A·biʹjah","Je'ush","Shem·a·riʹah","Zaʹham","Atʹtai","Ziʹza","She·loʹmith","(21 other sons)"],wives:["Abʹi·ha·il","Maʹha·lath","Maʹa·cah"]},{kingNumber:2,kingName:"A·biʹjah",kingNamePlain:"Abijah",startReignYear:"980 B.C.E.",endReignYear:"978 B.C.E.",highPriests:["Zadok"],chosenOffspring:"Aʹsa",prophets:["Id·do"],sons:["Aʹsa","(21 other sons)"]},{kingNumber:3,kingName:"Aʹsa",kingNamePlain:"Asa",startReignYear:"978 B.C.E.",endReignYear:"937 B.C.E",highPriests:["Zadok"],chosenOffspring:"Je·hoshʹa·phat",prophets:["Az·a·riʹah","Oded","Hanani","Jehu (son of Hanani)","Elijah","Micaiah"],sons:["Je·hoshʹa·phat"]},{kingNumber:4,kingName:"Je·hoshʹa·phat",kingNamePlain:"Jehoshaphat",startReignYear:"937 B.C.E.",endReignYear:"913 B.C.E.",highPriests:["Amariah"],chosenOffspring:"Je·hoʹram",prophets:["Jehu (son of Hanani)","Eliezer","Jahaziel","Elijah","Elishah"],sons:["Je·hoʹram","Az·a·riʹah","Je·hiʹel","Zech·a·riʹah","Miʹcha·el","Sheph·a·tiʹah"]},{kingNumber:5,kingName:"Je·hoʹram",kingNamePlain:"Jehoram",age:32,startReignYear:"913 B.C.E.",endReignYear:"c. 906 B.C.E.",highPriests:["Amariah"],chosenOffspring:"A·ha·ziʹah",prophets:["Elijah","Elishah"],sons:["A·ha·ziʹah"]},{kingNumber:6,kingName:"A·ha·ziʹah",kingNamePlain:"Ahaziah",age:22,startReignYear:"c. 906 B.C.E.",endReignYear:"c. 905 B.C.E.",highPriests:["Je·hoiʹa·da"],chosenOffspring:"Je·hoʹash",prophets:["E·liʹjah","E·liʹshah"],sons:["Je·hoʹash"]},{kingNumber:7,kingName:"Ath·a·liʹah",kingNamePlain:"Athaliah",startReignYear:"c. 905 B.C.E.",endReignYear:"898 B.C.E.",highPriests:["Je·hoiʹa·da"],chosenOffspring:null,prophets:["E·liʹshah"],sons:[]},{kingNumber:8,kingName:"Je·hoʹash",kingNamePlain:"Jehoash",age:7,startReignYear:"898 B.C.E.",endReignYear:"858 B.C.E.",highPriests:["Je·hoiʹa·da","Zech·a·riʹah","Jo·haʹnan"],chosenOffspring:"Am·a·ziʹah",prophets:["E·liʹshah"],sons:["Am·a·ziʹah"]},{kingNumber:9,kingName:"Am·a·ziʹah",kingNamePlain:"Amaziah",age:25,startReignYear:"858 B.C.E.",endReignYear:"829 B.C.E.",highPriests:["Jo·haʹnan"],chosenOffspring:"Uz·ziʹah",prophets:["E·liʹshah","Jonah","Hosea","Amos"],sons:["Uz·ziʹah"]},{kingNumber:10,kingName:"Uz·ziʹah",kingNamePlain:"Uzziah",age:16,startReignYear:"829 B.C.E.",endReignYear:"777 B.C.E.",highPriests:["Az·a·riʹah II"],prophets:["Micah","Hosea","Isaiah","Joel (?)"],chosenOffspring:"Joʹtham",sons:["Joʹtham"]},{kingNumber:11,kingName:"Joʹtham",kingNamePlain:"Jotham",age:25,startReignYear:"777 B.C.E.",endReignYear:"762 B.C.E.",highPriests:["Az·a·riʹah II"],prophets:["Micah","Hosea","Isaiah"],chosenOffspring:"Aʹhaz",sons:["Aʹhaz"]},{kingNumber:12,kingName:"Aʹhaz",kingNamePlain:"Ahaz",age:20,startReignYear:"762 B.C.E.",endReignYear:"746 B.C.E.",highPriests:["Urijah (?)"],prophets:["Micah","Hosea","Isaiah"],chosenOffspring:"Hez·e·kiʹah",sons:["Hez·e·kiʹah"]},{kingNumber:13,kingName:"Hez·e·kiʹah",kingNamePlain:"Hezekiah",age:25,startReignYear:"746 B.C.E.",endReignYear:"716 B.C.E.",highPriests:["Az·a·riʹah (II or III)"],prophets:["Micah","Hosea","Isaiah"],chosenOffspring:"Ma·nasʹseh",sons:["Ma·nasʹseh"]},{kingNumber:14,kingName:"Ma·nasʹseh",kingNamePlain:"Manasseh",age:12,startReignYear:"716 B.C.E.",endReignYear:"661 B.C.E.",highPriests:["Az·a·riʹah (II or III)"],chosenOffspring:"Aʹmon",prophets:["Isaiah (?)"],sons:["Aʹmon"]},{kingNumber:15,kingName:"Aʹmon",kingNamePlain:"Amon",age:22,startReignYear:"661 B.C.E.",endReignYear:"659 B.C.E.",highPriests:["Az·a·riʹah (II or III)"],prophets:[],chosenOffspring:"Jo·siʹah",sons:["Jo·siʹah"]},{kingNumber:16,kingName:"Jo·siʹah",kingNamePlain:"Josiah",age:8,startReignYear:"659 B.C.E.",endReignYear:"628 B.C.E.",highPriests:["Hilkiah"],prophets:["Zephaniah","Jeremiah","Huldah"],chosenOffspring:"Je·hoiʹa·kim",sons:["Je·hoʹa·haz","Jo·haʹnan","Je·hoiʹa·kim","Zed·e·kiʹah"]},{kingNumber:17,kingName:"Je·hoʹa·haz (Shalʹlum)",kingNamePlain:"Jehoahaz",age:23,startReignYear:"628 B.C.E.",endReignYear:"628 B.C.E.",highPriests:["Hilkiah"],prophets:["Jeremiah"],chosenOffspring:null,sons:[]},{kingNumber:18,kingName:"Je·hoiʹa·kim (E·liʹa·kim)",kingNamePlain:"Jehoiakim",age:25,startReignYear:"628 B.C.E.",endReignYear:"618 B.C.E.",highPriests:["Hilkiah"],prophets:["Habakkuk (?), Jeremiah"],chosenOffspring:"Je·hoiʹa·chin",sons:["Je·hoiʹa·chin"]},{kingNumber:19,kingName:"Je·hoiʹa·chin (Jec·o·niʹah)",kingNamePlain:"Jehoiachin",age:18,startReignYear:"618 B.C.E.",endReignYear:"617 B.C.E.",highPriests:["Hilkiah"],prophets:["Jeremiah"],chosenOffspring:"Shealtiel",sons:["Shealtiel"]},{kingNumber:20,kingName:"Zed·e·kiʹah",kingNamePlain:"Zedekiah",age:21,startReignYear:"617 B.C.E.",endReignYear:"607 B.C.E.",highPriests:["Se·raiʹah"],prophets:["Jeremiah","Ezekiel"],chosenOffspring:null,sons:[]}],ln=e(0),en=e(91),tn=e(4),_n=(e.n(tn),e(177)),on=(e.n(_n),e(179)),an=(e.n(on),e(126)),un=(e.n(an),this&&this.__decorate||function(n,l,e,t){var i,_=arguments.length,o=_<3?l:null===t?t=Object.getOwnPropertyDescriptor(l,e):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)o=Reflect.decorate(n,l,e,t);else for(var a=n.length-1;a>=0;a--)(i=n[a])&&(o=(_<3?i(o):_>3?i(l,e,o):i(l,e))||o);return _>3&&o&&Object.defineProperty(l,e,o),o}),rn=this&&this.__metadata||function(n,l){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,l)},sn=function(){return function(n,l){var e=this;this.$actions=n,this.kingsService=l,this.$loadKings=this.$actions.ofType(E).switchMap(function(){return e.kingsService.getKings().map(function(n){return new j(n)}).catch(function(){return new D})})}}();un([Object(en.b)(),rn("design:type","function"==typeof(hn=void 0!==tn.Observable&&tn.Observable)&&hn||Object)],sn.prototype,"$loadKings",void 0),sn=un([Object(ln.p)(),rn("design:paramtypes",["function"==typeof(cn=void 0!==en.a&&en.a)&&cn||Object,"function"==typeof(gn=void 0!==X&&X)&&gn||Object])],sn);e(25),e(0),e(51),e(61),e(62),e(40),e(91);var hn,cn,gn,pn=function(){return function(){}}(),fn=e(0),dn=e(92),mn=e(37),bn=e(24),kn=e(1),yn=e(32),Pn=e(45),En=e(80),Sn=e(12),An=e(182),Cn=e(54),Rn=e(3),wn=e(15),On=e(9),In=e(8),Nn=e(6),Mn=e(33),Fn=e(48),Tn=e(7),jn=e(93),Dn=e(19),vn=e(94),Ln=e(39),zn=e(16),Kn=e(95),Bn=e(22),$n=e(14),Jn=e(46),Hn=e(11),xn=e(183),Yn=e(47),Un=e(31),Gn=e(17),Zn=e(61),Vn=e(62),qn=[],Wn=fn._3({encapsulation:2,styles:qn,data:{}}),Qn=fn._2("ng-component",W,function(n){return fn._26(0,[(n()(),fn._5(0,null,null,1,"ng-component",[],null,null,null,_,Wn)),fn._4(49152,null,0,W,[Rn.a,Zn.a,Vn.a],null,null)],null,null)},{},{},[]),Xn=e(0),nl=e(44),ll=e(1),el=e(92),tl=e(37),il=e(24),_l=e(32),ol=e(45),al=e(11),ul=e(184),rl=e(59),sl=e(38),hl=e(71),cl=e(73),gl=e(72),pl=e(74),fl=e(46),dl=e(3),ml=e(9),bl=e(8),kl=e(79),yl=e(48),Pl=e(7),El=e(185),Sl=e(16),Al=e(6),Cl=e(14),Rl=e(96),wl=e(18),Ol=e(81),Il=e(12),Nl=e(60),Ml=e(19),Fl=e(23),Tl=e(94),jl=e(39),Dl=e(95),vl=e(22),Ll=e(15),zl=e(186),Kl=e(187),Bl=e(53),$l=e(188),Jl=e(36),Hl=e(84),xl=e(93),Yl=e(77),Ul=e(78),Gl=e(76),Zl=e(57),Vl=e(40),ql=[],Wl=Xn._3({encapsulation:2,styles:ql,data:{}}),Ql=Xn._2("page-home",q,function(n){return Xn._26(0,[(n()(),Xn._5(0,null,null,1,"page-home",[],null,null,null,b,Wl)),Xn._4(114688,null,0,q,[Cl.a,Zl.a,Vl.l],null,null)],function(n,l){n(l,1,0)},null)},{},{},[]),Xl=e(0),ne=e(92),le=e(37),ee=e(24),te=e(1),ie=e(32),_e=e(45),oe=e(48),ae=e(7),ue=e(93),re=e(19),se=e(94),he=e(39),ce=e(16),ge=e(60),pe=e(96),fe=e(18),de=e(83),me=e(3),be=e(85),ke=e(23),ye=e(95),Pe=e(22),Ee=e(8),Se=e(6),Ae=e(15),Ce=e(14),Re=e(46),we=e(9),Oe=e(11),Ie=e(34),Ne=[],Me=Xl._3({encapsulation:2,styles:Ne,data:{}}),Fe=Xl._2("ng-component",P,function(n){return Xl._26(0,[(n()(),Xl._5(0,null,null,1,"ng-component",[],null,null,null,y,Me)),Xl._4(49152,null,0,P,[me.a,Ie.a,ae.a],null,null)],null,null)},{},{},[]),Te=e(0),je=e(11),De=e(120),ve=e(8),Le=e(12),ze=e(6),Ke=e(9),Be=e(82),$e=e(25),Je=e(122),He=e(121),xe=e(40),Ye=e(91),Ue=e(90),Ge=e(87),Ze=e(24),Ve=e(58),qe=e(15),We=e(57),Qe=e(86),Xe=e(31),nt=e(61),lt=e(62),et=e(180),tt=e(181),it=e(52),_t=e(17),ot=e(88),at=e(3),ut=e(1),rt=e(56),st=e(89),ht=e(41),ct=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,l){n.__proto__=l}||function(n,l){for(var e in l)l.hasOwnProperty(e)&&(n[e]=l[e])};return function(l,e){function t(){this.constructor=l}n(l,e),l.prototype=null===e?Object.create(e):(t.prototype=e.prototype,new t)}}(),gt=function(n){function l(l){return n.call(this,l,[et.a,tt.a,Qn,Ql,Fe],[et.a])||this}return ct(l,n),Object.defineProperty(l.prototype,"_LOCALE_ID_49",{get:function(){return null==this.__LOCALE_ID_49&&(this.__LOCALE_ID_49=Te._15(this.parent.get(Te.u,null))),this.__LOCALE_ID_49},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_NgLocalization_50",{get:function(){return null==this.__NgLocalization_50&&(this.__NgLocalization_50=new je.j(this._LOCALE_ID_49)),this.__NgLocalization_50},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_APP_ID_51",{get:function(){return null==this.__APP_ID_51&&(this.__APP_ID_51=Te._7()),this.__APP_ID_51},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_IterableDiffers_52",{get:function(){return null==this.__IterableDiffers_52&&(this.__IterableDiffers_52=Te._12()),this.__IterableDiffers_52},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_KeyValueDiffers_53",{get:function(){return null==this.__KeyValueDiffers_53&&(this.__KeyValueDiffers_53=Te._14()),this.__KeyValueDiffers_53},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_DomSanitizer_54",{get:function(){return null==this.__DomSanitizer_54&&(this.__DomSanitizer_54=new $e.s(this.parent.get($e.b))),this.__DomSanitizer_54},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Sanitizer_55",{get:function(){return null==this.__Sanitizer_55&&(this.__Sanitizer_55=this._DomSanitizer_54),this.__Sanitizer_55},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_HAMMER_GESTURE_CONFIG_56",{get:function(){return null==this.__HAMMER_GESTURE_CONFIG_56&&(this.__HAMMER_GESTURE_CONFIG_56=new Ue.a),this.__HAMMER_GESTURE_CONFIG_56},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_EVENT_MANAGER_PLUGINS_57",{get:function(){return null==this.__EVENT_MANAGER_PLUGINS_57&&(this.__EVENT_MANAGER_PLUGINS_57=[new $e.l(this.parent.get($e.b)),new $e.p(this.parent.get($e.b)),new $e.o(this.parent.get($e.b),this._HAMMER_GESTURE_CONFIG_56)]),this.__EVENT_MANAGER_PLUGINS_57},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_EventManager_58",{get:function(){return null==this.__EventManager_58&&(this.__EventManager_58=new $e.e(this._EVENT_MANAGER_PLUGINS_57,this.parent.get(Te.z))),this.__EventManager_58},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵDomSharedStylesHost_59",{get:function(){return null==this.__ɵDomSharedStylesHost_59&&(this.__ɵDomSharedStylesHost_59=new $e.n(this.parent.get($e.b))),this.__ɵDomSharedStylesHost_59},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵDomRendererFactory2_60",{get:function(){return null==this.__ɵDomRendererFactory2_60&&(this.__ɵDomRendererFactory2_60=new $e.m(this._EventManager_58,this._ɵDomSharedStylesHost_59)),this.__ɵDomRendererFactory2_60},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_RendererFactory2_61",{get:function(){return null==this.__RendererFactory2_61&&(this.__RendererFactory2_61=this._ɵDomRendererFactory2_60),this.__RendererFactory2_61},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵSharedStylesHost_62",{get:function(){return null==this.__ɵSharedStylesHost_62&&(this.__ɵSharedStylesHost_62=this._ɵDomSharedStylesHost_59),this.__ɵSharedStylesHost_62},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Testability_63",{get:function(){return null==this.__Testability_63&&(this.__Testability_63=new Te.N(this.parent.get(Te.z))),this.__Testability_63},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Meta_64",{get:function(){return null==this.__Meta_64&&(this.__Meta_64=new $e.h(this.parent.get($e.b))),this.__Meta_64},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Title_65",{get:function(){return null==this.__Title_65&&(this.__Title_65=new $e.j(this.parent.get($e.b))),this.__Title_65},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵi_66",{get:function(){return null==this.__ɵi_66&&(this.__ɵi_66=new Je.e),this.__ɵi_66},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_FormBuilder_67",{get:function(){return null==this.__FormBuilder_67&&(this.__FormBuilder_67=new Je.a),this.__FormBuilder_67},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Events_72",{get:function(){return null==this.__Events_72&&(this.__Events_72=new Ge.a),this.__Events_72},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Form_73",{get:function(){return null==this.__Form_73&&(this.__Form_73=new Ze.a),this.__Form_73},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Haptic_74",{get:function(){return null==this.__Haptic_74&&(this.__Haptic_74=new Ve.a(this._Platform_4)),this.__Haptic_74},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Keyboard_75",{get:function(){return null==this.__Keyboard_75&&(this.__Keyboard_75=new qe.a(this._Config_5,this._Platform_4,this.parent.get(Te.z),this._DomController_6)),this.__Keyboard_75},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_LocationStrategy_77",{get:function(){return null==this.__LocationStrategy_77&&(this.__LocationStrategy_77=He.b(this.parent.get(je.m),this._APP_BASE_HREF_69,this._Config_5)),this.__LocationStrategy_77},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_Location_78",{get:function(){return null==this.__Location_78&&(this.__Location_78=new je.e(this._LocationStrategy_77)),this.__Location_78},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_UrlSerializer_79",{get:function(){return null==this.__UrlSerializer_79&&(this.__UrlSerializer_79=it.d(this._DeepLinkConfigToken_10)),this.__UrlSerializer_79},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_DeepLinker_80",{get:function(){return null==this.__DeepLinker_80&&(this.__DeepLinker_80=_t.b(this._App_8,this._UrlSerializer_79,this._Location_78,this._ModuleLoader_13,this.componentFactoryResolver)),this.__DeepLinker_80},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ModalController_81",{get:function(){return null==this.__ModalController_81&&(this.__ModalController_81=new We.a(this._App_8,this._Config_5,this._DeepLinker_80)),this.__ModalController_81},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_TapClick_84",{get:function(){return null==this.__TapClick_84&&(this.__TapClick_84=new Qe.a(this._Config_5,this._Platform_4,this._DomController_6,this._App_8,this._GestureController_9)),this.__TapClick_84},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_TransitionController_86",{get:function(){return null==this.__TransitionController_86&&(this.__TransitionController_86=new Xe.a(this._Platform_4,this._Config_5)),this.__TransitionController_86},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_StatusBar_87",{get:function(){return null==this.__StatusBar_87&&(this.__StatusBar_87=new nt.a),this.__StatusBar_87},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_SplashScreen_88",{get:function(){return null==this.__SplashScreen_88&&(this.__SplashScreen_88=new lt.a),this.__SplashScreen_88},enumerable:!0,configurable:!0}),l.prototype.createInternal=function(){return this._CommonModule_0=new je.c,this._ErrorHandler_1=new De.a,this._ConfigToken_2=null,this._PlatformConfigToken_3=ot.b(),this._Platform_4=at.b(this.parent.get($e.b),this._PlatformConfigToken_3,this.parent.get(Te.z)),this._Config_5=ut.c(this._ConfigToken_2,this._Platform_4),this._DomController_6=new ve.a(this._Platform_4),this._MenuController_7=new Le.a,this._App_8=new ze.a(this._Config_5,this._Platform_4,this._MenuController_7),this._GestureController_9=new Ke.g(this._App_8),this._DeepLinkConfigToken_10=null,this._Compiler_11=new Te.i,this._NgModuleLoader_12=new Be.a(this._Compiler_11),this._ModuleLoader_13=rt.c(this._NgModuleLoader_12,this),this._APP_INITIALIZER_14=[Te._18,$e.r(this.parent.get($e.i,null),this.parent.get(Te.y,null)),st.a(this._Config_5),Ge.b(this._Platform_4,this._DomController_6),Qe.b(this._Config_5,this._Platform_4,this._DomController_6,this._App_8,this._GestureController_9),rt.d(this._Config_5,this._DeepLinkConfigToken_10,this._ModuleLoader_13,this.parent.get(Te.z))],this._ApplicationInitStatus_15=new Te.d(this._APP_INITIALIZER_14),this._ɵf_16=new Te._6(this.parent.get(Te.z),this.parent.get(Te.Z),this,this._ErrorHandler_1,this.componentFactoryResolver,this._ApplicationInitStatus_15),this._ApplicationRef_17=this._ɵf_16,this._ApplicationModule_18=new Te.e(this._ApplicationRef_17),this._BrowserModule_19=new $e.a(this.parent.get($e.a,null)),this._ɵba_20=new Je.d,this._FormsModule_21=new Je.b,this._ReactiveFormsModule_22=new Je.c,this._IonicModule_23=new He.a,this._ActionsSubject_24=new xe.a,this._ReducerManagerDispatcher_25=this._ActionsSubject_24,this.__INITIAL_STATE_26=void 0,this._INITIAL_STATE_27=xe.p(this.__INITIAL_STATE_26),this._INITIAL_REDUCERS_28={kings:t},this.__REDUCER_FACTORY_29=xe.q,this._META_REDUCERS_30=[],this._REDUCER_FACTORY_31=xe.s(this.__REDUCER_FACTORY_29,this._META_REDUCERS_30),this._ReducerManager_32=new xe.f(this._ReducerManagerDispatcher_25,this._INITIAL_STATE_27,this._INITIAL_REDUCERS_28,this._REDUCER_FACTORY_31),this._ReducerObservable_33=this._ReducerManager_32,this._ScannedActionsSubject_34=new xe.i,this._StoreRootModule_35=new xe.m(this._ActionsSubject_24,this._ReducerObservable_33,this._ScannedActionsSubject_34),this._ɵe_36=void 0,this._ɵg_37=new Ye.h(this._ɵe_36),this._EffectSources_38=new Ye.c(this._ɵg_37),this._State_39=new xe.j(this._ActionsSubject_24,this._ReducerObservable_33,this._ScannedActionsSubject_34,this._INITIAL_STATE_27),this._StateObservable_40=this._State_39,this._Store_41=new xe.l(this._StateObservable_40,this._ActionsSubject_24,this._ReducerManager_32),this._ɵh_42=new Ye.i(this._EffectSources_38,this._Store_41),this._Actions_43=new Ye.a(this._ScannedActionsSubject_34),this._KingsService_44=new X,this._KingsEffects_45=new sn(this._Actions_43,this._KingsService_44),this._ɵc_46=Ye.d(this._KingsEffects_45),this._ɵf_47=new Ye.g(this._EffectSources_38,this._ɵh_42,this._ɵc_46),this._AppModule_48=new pn,this._AppRootToken_68=W,this._APP_BASE_HREF_69="/",this._AppModule_48},l.prototype.getInternal=function(n,l){return n===je.c?this._CommonModule_0:n===Te.l?this._ErrorHandler_1:n===ut.b?this._ConfigToken_2:n===ot.a?this._PlatformConfigToken_3:n===at.a?this._Platform_4:n===ut.a?this._Config_5:n===ve.a?this._DomController_6:n===Le.a?this._MenuController_7:n===ze.a?this._App_8:n===Ke.g?this._GestureController_9:n===it.a?this._DeepLinkConfigToken_10:n===Te.i?this._Compiler_11:n===Be.a?this._NgModuleLoader_12:n===rt.b?this._ModuleLoader_13:n===Te.c?this._APP_INITIALIZER_14:n===Te.d?this._ApplicationInitStatus_15:n===Te._6?this._ɵf_16:n===Te.f?this._ApplicationRef_17:n===Te.e?this._ApplicationModule_18:n===$e.a?this._BrowserModule_19:n===Je.d?this._ɵba_20:n===Je.b?this._FormsModule_21:n===Je.c?this._ReactiveFormsModule_22:n===He.a?this._IonicModule_23:n===xe.a?this._ActionsSubject_24:n===xe.g?this._ReducerManagerDispatcher_25:n===xe.n?this.__INITIAL_STATE_26:n===xe.c?this._INITIAL_STATE_27:n===xe.b?this._INITIAL_REDUCERS_28:n===xe.o?this.__REDUCER_FACTORY_29:n===xe.d?this._META_REDUCERS_30:n===xe.e?this._REDUCER_FACTORY_31:n===xe.f?this._ReducerManager_32:n===xe.h?this._ReducerObservable_33:n===xe.i?this._ScannedActionsSubject_34:n===xe.m?this._StoreRootModule_35:n===Ye.f?this._ɵe_36:n===Ye.h?this._ɵg_37:n===Ye.c?this._EffectSources_38:n===xe.j?this._State_39:n===xe.k?this._StateObservable_40:n===xe.l?this._Store_41:n===Ye.i?this._ɵh_42:n===Ye.a?this._Actions_43:n===X?this._KingsService_44:n===sn?this._KingsEffects_45:n===Ye.e?this._ɵc_46:n===Ye.g?this._ɵf_47:n===pn?this._AppModule_48:n===Te.u?this._LOCALE_ID_49:n===je.k?this._NgLocalization_50:n===Te.b?this._APP_ID_51:n===Te.s?this._IterableDiffers_52:n===Te.t?this._KeyValueDiffers_53:n===$e.c?this._DomSanitizer_54:n===Te.I?this._Sanitizer_55:n===$e.f?this._HAMMER_GESTURE_CONFIG_56:n===$e.d?this._EVENT_MANAGER_PLUGINS_57:n===$e.e?this._EventManager_58:n===$e.n?this._ɵDomSharedStylesHost_59:n===$e.m?this._ɵDomRendererFactory2_60:n===Te.G?this._RendererFactory2_61:n===$e.q?this._ɵSharedStylesHost_62:n===Te.N?this._Testability_63:n===$e.h?this._Meta_64:n===$e.j?this._Title_65:n===Je.e?this._ɵi_66:n===Je.a?this._FormBuilder_67:n===ht.a?this._AppRootToken_68:n===je.a?this._APP_BASE_HREF_69:n===Ge.a?this._Events_72:n===Ze.a?this._Form_73:n===Ve.a?this._Haptic_74:n===qe.a?this._Keyboard_75:n===je.f?this._LocationStrategy_77:n===je.e?this._Location_78:n===it.b?this._UrlSerializer_79:n===_t.a?this._DeepLinker_80:n===We.a?this._ModalController_81:n===Qe.a?this._TapClick_84:n===Xe.a?this._TransitionController_86:n===nt.a?this._StatusBar_87:n===lt.a?this._SplashScreen_88:l},l.prototype.destroyInternal=function(){this._ɵf_16.ngOnDestroy(),this._ActionsSubject_24.ngOnDestroy(),this._ReducerManager_32.ngOnDestroy(),this._ScannedActionsSubject_34.ngOnDestroy(),this._State_39.ngOnDestroy(),this._ɵh_42.ngOnDestroy(),this.__ɵDomSharedStylesHost_59&&this._ɵDomSharedStylesHost_59.ngOnDestroy()},l}(Te._0),pt=new Te.w(gt,pn),ft=e(25),dt=e(0);Object(dt.T)(),Object(ft.k)().bootstrapModuleFactory(pt)}},[128]);
+webpackJsonp([0],{
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return INIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return NEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return PREV; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SETKING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return KINGSLOADED; });
+/* unused harmony export KINGSFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return TOGGLESONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return TOGGLEPRIESTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return TOGGLEPROPHETS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NextAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return PrevAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return InitKingsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return KingsLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return KingsFailedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return SetKingAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return TogglePriestsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return ToggleProphetsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return ToggleSonsAction; });
+var INIT = '[Kings] Init Kings';
+var NEXT = '[Kings] Next King';
+var PREV = '[Kings] Previous King';
+var SETKING = '[Kings] Set King';
+var KINGSLOADED = '[Kings] Kings loaded';
+var KINGSFAILED = '[Kings] Kings Failed to load';
+var TOGGLESONS = '[Kings] Toggle view sons';
+var TOGGLEPRIESTS = '[Kings] Toggle view priests';
+var TOGGLEPROPHETS = '[Kings] Toggle view prophets';
+var NextAction = (function () {
+    function NextAction() {
+        this.type = NEXT;
+    }
+    return NextAction;
+}());
+
+var PrevAction = (function () {
+    function PrevAction() {
+        this.type = PREV;
+    }
+    return PrevAction;
+}());
+
+var InitKingsAction = (function () {
+    function InitKingsAction() {
+        this.type = INIT;
+    }
+    return InitKingsAction;
+}());
+
+var KingsLoadedAction = (function () {
+    function KingsLoadedAction(payload) {
+        this.payload = payload;
+        this.type = KINGSLOADED;
+    }
+    return KingsLoadedAction;
+}());
+
+var KingsFailedAction = (function () {
+    function KingsFailedAction() {
+        this.type = KINGSFAILED;
+    }
+    return KingsFailedAction;
+}());
+
+var SetKingAction = (function () {
+    function SetKingAction(payload) {
+        this.payload = payload;
+        this.type = SETKING;
+    }
+    return SetKingAction;
+}());
+
+var TogglePriestsAction = (function () {
+    function TogglePriestsAction() {
+        this.type = TOGGLEPRIESTS;
+    }
+    return TogglePriestsAction;
+}());
+
+var ToggleProphetsAction = (function () {
+    function ToggleProphetsAction() {
+        this.type = TOGGLEPROPHETS;
+    }
+    return ToggleProphetsAction;
+}());
+
+var ToggleSonsAction = (function () {
+    function ToggleSonsAction() {
+        this.type = TOGGLESONS;
+    }
+    return ToggleSonsAction;
+}());
+
+//# sourceMappingURL=kings.actions.js.map
+
+/***/ }),
+
+/***/ 111:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 111;
+
+/***/ }),
+
+/***/ 152:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 152;
+
+/***/ }),
+
+/***/ 196:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_kings_list_modal__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__ = __webpack_require__(201);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var KingsComponent = (function () {
+    function KingsComponent(navCtrl, modalCtrl, store) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.store = store;
+        this.kings$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["a" /* getKings */]);
+        this.selectedKing$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["b" /* getSelectedKing */]);
+        this.showPriests$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["c" /* getShowPriests */]);
+        this.showProphets$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["d" /* getShowProphets */]);
+        this.showSons$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["e" /* getShowSons */]);
+    }
+    KingsComponent.prototype.ngOnInit = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["b" /* InitKingsAction */]());
+    };
+    KingsComponent.prototype.showKingsListModal = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__components_kings_list_modal__["a" /* KingsListModal */], { kings: this.kings$, selectedKing: this.selectedKing$ });
+        modal.present();
+        modal.onDidDismiss(function (kingNumber) {
+            _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["k" /* SetKingAction */](kingNumber));
+            _this.slides.slideTo(kingNumber - 1);
+        });
+    };
+    KingsComponent.prototype.nextKing = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["g" /* NextAction */]());
+        this.slides.slideNext();
+    };
+    KingsComponent.prototype.prevKing = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["i" /* PrevAction */]());
+        this.slides.slidePrev();
+    };
+    KingsComponent.prototype.updateKingNumber = function (event) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["k" /* SetKingAction */](event.realIndex + 1));
+    };
+    KingsComponent.prototype.toggleSons = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["q" /* ToggleSonsAction */]());
+    };
+    KingsComponent.prototype.togglePriests = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["o" /* TogglePriestsAction */]());
+    };
+    KingsComponent.prototype.toggleProphets = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["p" /* ToggleProphetsAction */]());
+    };
+    return KingsComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
+], KingsComponent.prototype, "slides", void 0);
+KingsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-home',
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Kings of Judah</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-slides pager paginationType=\"progress\" centeredSlides=\"true\" (ionSlideDidChange)=\"updateKingNumber($event)\">\n    <ion-slide *ngFor=\"let king of (kings$ | async)\">\n      <app-person-card [king]=\"king\" \n        [toggleSons]=\"showSons$ | async\" (toggleSonsChange)=\"toggleSons()\"\n        [togglePriests]=\"showPriests$ | async\" (togglePriestsChange)=\"togglePriests()\"\n        [toggleProphets]=\"showProphets$ | async\" (toggleProphetsChange)=\"toggleProphets()\">\n      </app-person-card>\n    </ion-slide>\n  </ion-slides>\n  <ion-fab right bottom>\n    <button ion-fab color=\"primary\" (click)=\"showKingsListModal()\">\n      <ion-icon name=\"md-albums\"></ion-icon>\n    </button>\n  </ion-fab>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <button [disabled]=\"(selectedKing$ | async) == 1\" (click)=\"prevKing()\" block small ion-button icon-only clear>\n            <ion-icon name=\"arrow-back\"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button [disabled]=\"(selectedKing$ | async) == 20\" (click)=\"nextKing()\" block small ion-button icon-only clear>\n            <ion-icon name=\"arrow-forward\"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */], __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]])
+], KingsComponent);
+
+//# sourceMappingURL=kings.component.js.map
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsListModal; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var KingsListModal = (function () {
+    function KingsListModal(platform, params, viewCtrl) {
+        this.platform = platform;
+        this.params = params;
+        this.viewCtrl = viewCtrl;
+        this.kings$ = this.params.get('kings');
+        this.selectedKing$ = this.params.get('selectedKing');
+    }
+    KingsListModal.prototype.dismiss = function (kingNumber) {
+        var _this = this;
+        if (kingNumber > 0) {
+            this.viewCtrl.dismiss(kingNumber);
+        }
+        else {
+            this.selectedKing$.subscribe(function (kingNo) {
+                _this.viewCtrl.dismiss(kingNo);
+            });
+        }
+    };
+    return KingsListModal;
+}());
+KingsListModal = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        template: "\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Choose a king\n    </ion-title>\n    <ion-buttons>\n      <button ion-button (click)=\"dismiss(0)\">\n        <span ion-text color=\"primary\" showWhen=\"ios\">Cancel</span>\n        <ion-icon name=\"md-close\" showWhen=\"android, windows\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n   <ion-list radio-group>\n      <ion-item *ngFor=\"let king of (kings$ | async)\" (click)=\"dismiss(king.kingNumber)\">\n        <span *ngIf=\"king.kingNumber != (selectedKing$ | async)\">\n          {{king.kingName}} <div style=\"color:gray;float: right\" text-right>{{king.startReignYear}}</div>\n        </span>\n        <span *ngIf=\"king.kingNumber == (selectedKing$ | async)\" style=\"color:#488aff;\">\n          {{king.kingName}} <div style=\"color:#488aff;float: right\" text-right>{{king.startReignYear}}</div>\n        </span>\n      </ion-item>\n   </ion-list>\n</ion-content>\n",
+        styles: [".selected {color: blue;}"]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
+], KingsListModal);
+
+//# sourceMappingURL=kings-list.modal.js.map
+
+/***/ }),
+
+/***/ 201:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["f"] = kingsReducer;
+/* unused harmony export getState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getKings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getSelectedKing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getShowPriests; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getShowProphets; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return getShowSons; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__ = __webpack_require__(101);
+
+
+var initState = {
+    kings: [],
+    selectedKing: 1,
+    showPriests: false,
+    showProphets: false,
+    showSons: false,
+};
+function kingsReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["f" /* NEXT */]:
+            return Object.assign({}, state, {
+                selectedKing: (state.selectedKing < 20) ? state.selectedKing + 1 : 1
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["h" /* PREV */]:
+            return Object.assign({}, state, {
+                selectedKing: (state.selectedKing > 1) ? state.selectedKing - 1 : 1
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["c" /* KINGSLOADED */]:
+            return Object.assign({}, state, {
+                kings: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["j" /* SETKING */]:
+            return Object.assign({}, state, {
+                selectedKing: (action.payload >= 1 && action.payload <= 20) ? action.payload : state.selectedKing
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["l" /* TOGGLEPRIESTS */]:
+            return Object.assign({}, state, {
+                showPriests: !state.showPriests
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["m" /* TOGGLEPROPHETS */]:
+            return Object.assign({}, state, {
+                showProphets: !state.showProphets
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["n" /* TOGGLESONS */]:
+            return Object.assign({}, state, {
+                showSons: !state.showSons
+            });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.kings; };
+var getKings = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["e" /* createSelector */])(getState, function (state) { return state.kings; });
+var getSelectedKing = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["e" /* createSelector */])(getState, function (state) { return state.selectedKing; });
+var getShowPriests = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["e" /* createSelector */])(getState, function (state) { return state.showPriests; });
+var getShowProphets = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["e" /* createSelector */])(getState, function (state) { return state.showProphets; });
+var getShowSons = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["e" /* createSelector */])(getState, function (state) { return state.showSons; });
+//# sourceMappingURL=kings.reducer.js.map
+
+/***/ }),
+
+/***/ 202:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var KingsService = (function () {
+    function KingsService() {
+    }
+    KingsService.prototype.getKings = function () {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            observer.next(kings);
+        });
+    };
+    return KingsService;
+}());
+KingsService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
+], KingsService);
+
+var kings = [
+    {
+        "kingNumber": 1,
+        "kingName": "Re·ho·boʹam",
+        "kingNamePlain": "Rehoboam",
+        "age": 41,
+        "startReignYear": "997 B.C.E.",
+        "endReignYear": "980 B.C.E.",
+        "highPriests": ["Zadok"],
+        "chosenOffspring": "A·biʹjah",
+        "prophets": [
+            "A·hiʹjah",
+            "Id·do",
+            "Shemaiah",
+        ],
+        "sons": [
+            "A·biʹjah",
+            "Je'ush",
+            "Shem·a·riʹah",
+            "Zaʹham",
+            "Atʹtai",
+            "Ziʹza",
+            "She·loʹmith",
+            "(21 other sons)",
+        ],
+        "wives": [
+            "Abʹi·ha·il",
+            "Maʹha·lath",
+            "Maʹa·cah"
+        ]
+    },
+    {
+        "kingNumber": 2,
+        "kingName": "A·biʹjah",
+        "kingNamePlain": "Abijah",
+        "startReignYear": "980 B.C.E.",
+        "endReignYear": "978 B.C.E.",
+        "highPriests": ["Zadok"],
+        "chosenOffspring": "Aʹsa",
+        "prophets": ["Id·do"],
+        "sons": [
+            "Aʹsa",
+            "(21 other sons)"
+        ],
+    },
+    {
+        "kingNumber": 3,
+        "kingName": "Aʹsa",
+        "kingNamePlain": "Asa",
+        "startReignYear": "978 B.C.E.",
+        "endReignYear": "937 B.C.E",
+        "highPriests": ["Zadok"],
+        "chosenOffspring": "Je·hoshʹa·phat",
+        "prophets": ["Az·a·riʹah", "Oded", "Hanani", "Jehu (son of Hanani)", "Elijah", "Micaiah"],
+        "sons": [
+            "Je·hoshʹa·phat"
+        ],
+    },
+    {
+        "kingNumber": 4,
+        "kingName": "Je·hoshʹa·phat",
+        "kingNamePlain": "Jehoshaphat",
+        "startReignYear": "937 B.C.E.",
+        "endReignYear": "913 B.C.E.",
+        "highPriests": ["Amariah"],
+        "chosenOffspring": "Je·hoʹram",
+        "prophets": ["Jehu (son of Hanani)", "Eliezer", "Jahaziel", "Elijah", "Elishah"],
+        "sons": [
+            "Je·hoʹram",
+            "Az·a·riʹah",
+            "Je·hiʹel",
+            "Zech·a·riʹah",
+            "Miʹcha·el",
+            "Sheph·a·tiʹah"
+        ],
+    },
+    {
+        "kingNumber": 5,
+        "kingName": "Je·hoʹram",
+        "kingNamePlain": "Jehoram",
+        "age": 32,
+        "startReignYear": "913 B.C.E.",
+        "endReignYear": "c. 906 B.C.E.",
+        "highPriests": ["Amariah"],
+        "chosenOffspring": "A·ha·ziʹah",
+        "prophets": ["Elijah", "Elishah"],
+        "sons": [
+            "A·ha·ziʹah"
+        ],
+    },
+    {
+        "kingNumber": 6,
+        "kingName": "A·ha·ziʹah",
+        "kingNamePlain": "Ahaziah",
+        "age": 22,
+        "startReignYear": "c. 906 B.C.E.",
+        "endReignYear": "c. 905 B.C.E.",
+        "highPriests": ["Je·hoiʹa·da"],
+        "chosenOffspring": "Je·hoʹash",
+        "prophets": ["E·liʹjah", "E·liʹshah"],
+        "sons": ["Je·hoʹash"],
+    },
+    {
+        "kingNumber": 7,
+        "kingName": "Ath·a·liʹah",
+        "kingNamePlain": "Athaliah",
+        "startReignYear": "c. 905 B.C.E.",
+        "endReignYear": "898 B.C.E.",
+        "highPriests": ["Je·hoiʹa·da"],
+        "chosenOffspring": null,
+        "prophets": ["E·liʹshah"],
+        "sons": [],
+    },
+    {
+        "kingNumber": 8,
+        "kingName": "Je·hoʹash",
+        "kingNamePlain": "Jehoash",
+        "age": 7,
+        "startReignYear": "898 B.C.E.",
+        "endReignYear": "858 B.C.E.",
+        "highPriests": ["Je·hoiʹa·da", "Zech·a·riʹah", "Jo·haʹnan"],
+        "chosenOffspring": "Am·a·ziʹah",
+        "prophets": ["E·liʹshah"],
+        "sons": ["Am·a·ziʹah"],
+    },
+    {
+        "kingNumber": 9,
+        "kingName": "Am·a·ziʹah",
+        "kingNamePlain": "Amaziah",
+        "age": 25,
+        "startReignYear": "858 B.C.E.",
+        "endReignYear": "829 B.C.E.",
+        "highPriests": ["Jo·haʹnan"],
+        "chosenOffspring": "Uz·ziʹah",
+        "prophets": ["E·liʹshah", "Jonah", "Hosea", "Amos"],
+        "sons": ["Uz·ziʹah"],
+    },
+    {
+        "kingNumber": 10,
+        "kingName": "Uz·ziʹah",
+        "kingNamePlain": "Uzziah",
+        "age": 16,
+        "startReignYear": "829 B.C.E.",
+        "endReignYear": "777 B.C.E.",
+        "highPriests": [
+            "Az·a·riʹah II"
+        ],
+        "prophets": ["Micah", "Hosea", "Isaiah", "Joel (?)"],
+        "chosenOffspring": "Joʹtham",
+        "sons": ["Joʹtham"],
+    },
+    {
+        "kingNumber": 11,
+        "kingName": "Joʹtham",
+        "kingNamePlain": "Jotham",
+        "age": 25,
+        "startReignYear": "777 B.C.E.",
+        "endReignYear": "762 B.C.E.",
+        "highPriests": [
+            "Az·a·riʹah II"
+        ],
+        "prophets": ["Micah", "Hosea", "Isaiah"],
+        "chosenOffspring": "Aʹhaz",
+        "sons": ["Aʹhaz"],
+    },
+    {
+        "kingNumber": 12,
+        "kingName": "Aʹhaz",
+        "kingNamePlain": "Ahaz",
+        "age": 20,
+        "startReignYear": "762 B.C.E.",
+        "endReignYear": "746 B.C.E.",
+        "highPriests": [
+            "Urijah (?)"
+        ],
+        "prophets": ["Micah", "Hosea", "Isaiah"],
+        "chosenOffspring": "Hez·e·kiʹah",
+        "sons": ["Hez·e·kiʹah"],
+    },
+    {
+        "kingNumber": 13,
+        "kingName": "Hez·e·kiʹah",
+        "kingNamePlain": "Hezekiah",
+        "age": 25,
+        "startReignYear": "746 B.C.E.",
+        "endReignYear": "716 B.C.E.",
+        "highPriests": ["Az·a·riʹah (II or III)"],
+        "prophets": ["Micah", "Hosea", "Isaiah"],
+        "chosenOffspring": "Ma·nasʹseh",
+        "sons": ["Ma·nasʹseh"],
+    },
+    {
+        "kingNumber": 14,
+        "kingName": "Ma·nasʹseh",
+        "kingNamePlain": "Manasseh",
+        "age": 12,
+        "startReignYear": "716 B.C.E.",
+        "endReignYear": "661 B.C.E.",
+        "highPriests": ["Az·a·riʹah (II or III)"],
+        "chosenOffspring": "Aʹmon",
+        "prophets": ["Isaiah (?)"],
+        "sons": ["Aʹmon"],
+    },
+    {
+        "kingNumber": 15,
+        "kingName": "Aʹmon",
+        "kingNamePlain": "Amon",
+        "age": 22,
+        "startReignYear": "661 B.C.E.",
+        "endReignYear": "659 B.C.E.",
+        "highPriests": ["Az·a·riʹah (II or III)"],
+        "prophets": [],
+        "chosenOffspring": "Jo·siʹah",
+        "sons": ["Jo·siʹah"],
+    },
+    {
+        "kingNumber": 16,
+        "kingName": "Jo·siʹah",
+        "kingNamePlain": "Josiah",
+        "age": 8,
+        "startReignYear": "659 B.C.E.",
+        "endReignYear": "628 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Zephaniah", "Jeremiah", "Huldah"],
+        "chosenOffspring": "Je·hoiʹa·kim",
+        "sons": ["Je·hoʹa·haz", "Jo·haʹnan", "Je·hoiʹa·kim", "Zed·e·kiʹah"],
+    },
+    {
+        "kingNumber": 17,
+        "kingName": "Je·hoʹa·haz (Shalʹlum)",
+        "kingNamePlain": "Jehoahaz",
+        "age": 23,
+        "startReignYear": "628 B.C.E.",
+        "endReignYear": "628 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Jeremiah"],
+        "chosenOffspring": null,
+        "sons": [],
+    },
+    {
+        "kingNumber": 18,
+        "kingName": "Je·hoiʹa·kim (E·liʹa·kim)",
+        "kingNamePlain": "Jehoiakim",
+        "age": 25,
+        "startReignYear": "628 B.C.E.",
+        "endReignYear": "618 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Habakkuk (?), Jeremiah"],
+        "chosenOffspring": "Je·hoiʹa·chin",
+        "sons": ["Je·hoiʹa·chin"],
+    },
+    {
+        "kingNumber": 19,
+        "kingName": "Je·hoiʹa·chin (Jec·o·niʹah)",
+        "kingNamePlain": "Jehoiachin",
+        "age": 18,
+        "startReignYear": "618 B.C.E.",
+        "endReignYear": "617 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Jeremiah"],
+        "chosenOffspring": "Shealtiel",
+        "sons": ["Shealtiel"],
+    },
+    {
+        "kingNumber": 20,
+        "kingName": "Zed·e·kiʹah",
+        "kingNamePlain": "Zedekiah",
+        "age": 21,
+        "startReignYear": "617 B.C.E.",
+        "endReignYear": "607 B.C.E.",
+        "highPriests": ["Se·raiʹah"],
+        "prophets": ["Jeremiah", "Ezekiel"],
+        "chosenOffspring": null,
+        "sons": [],
+    },
+];
+//# sourceMappingURL=kings.service.js.map
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(221);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 221:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_kings_kings_component__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_kings_list_modal__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_person_card_component__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_expander_component__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_kings_service__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__effects_kings_effects__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ngrx_store__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ngrx_effects__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__reducers_kings_reducer__ = __webpack_require__(201);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_4__containers_kings_kings_component__["a" /* KingsComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_person_card_component__["a" /* PersonCardComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__components_expander_component__["a" /* ExpanderComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components_kings_list_modal__["a" /* KingsListModal */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */]),
+            __WEBPACK_IMPORTED_MODULE_12__ngrx_store__["c" /* StoreModule */].forRoot({ kings: __WEBPACK_IMPORTED_MODULE_14__reducers_kings_reducer__["f" /* kingsReducer */] }),
+            __WEBPACK_IMPORTED_MODULE_13__ngrx_effects__["c" /* EffectsModule */].forRoot([__WEBPACK_IMPORTED_MODULE_9__effects_kings_effects__["a" /* KingsEffects */]]),
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_4__containers_kings_kings_component__["a" /* KingsComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components_kings_list_modal__["a" /* KingsListModal */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
+            { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+            __WEBPACK_IMPORTED_MODULE_8__services_kings_service__["a" /* KingsService */]
+        ]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 261:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_kings_kings_component__ = __webpack_require__(196);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.platform = platform;
+        this.statusBar = statusBar;
+        this.splashScreen = splashScreen;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__containers_kings_kings_component__["a" /* KingsComponent */];
+        this.initializeApp();
+        // used for an example of ngFor and navigation
+        this.pages = [
+            { title: 'Kings', component: __WEBPACK_IMPORTED_MODULE_4__containers_kings_kings_component__["a" /* KingsComponent */] }
+        ];
+    }
+    MyApp.prototype.initializeApp = function () {
+        var _this = this;
+        this.platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            _this.statusBar.styleDefault();
+            _this.splashScreen.hide();
+        });
+    };
+    MyApp.prototype.openPage = function (page) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.nav.setRoot(page.component);
+    };
+    return MyApp;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
+], MyApp.prototype, "nav", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/michalik/Documents/code/kings/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/michalik/Documents/code/kings/src/app/app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 285:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonCardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PersonCardComponent = (function () {
+    function PersonCardComponent() {
+        this.toggleSonsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.togglePriestsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.toggleProphetsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    PersonCardComponent.prototype.handleToggleSons = function () {
+        this.toggleSons = !this.toggleSons;
+        this.toggleSonsChange.emit(this.toggleSons);
+    };
+    PersonCardComponent.prototype.handleTogglePriests = function () {
+        this.togglePriests = !this.togglePriests;
+        this.togglePriestsChange.emit(this.togglePriests);
+    };
+    PersonCardComponent.prototype.handleToggleProphets = function () {
+        this.toggleProphets = !this.toggleProphets;
+        this.toggleProphetsChange.emit(this.toggleProphets);
+    };
+    return PersonCardComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], PersonCardComponent.prototype, "king", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], PersonCardComponent.prototype, "toggleSons", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], PersonCardComponent.prototype, "toggleSonsChange", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], PersonCardComponent.prototype, "togglePriests", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], PersonCardComponent.prototype, "togglePriestsChange", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], PersonCardComponent.prototype, "toggleProphets", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], PersonCardComponent.prototype, "toggleProphetsChange", void 0);
+PersonCardComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-person-card',
+        template: "\n   <ion-card>\n        <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>\n        <ion-card-content>\n          <ion-card-title>\n            <ion-label *ngIf=\"king.kingNumber != 7\" color=\"primary\" stacked>King</ion-label>\n            <ion-label *ngIf=\"king.kingNumber === 7\" color=\"primary\" stacked>Queen</ion-label>\n            <span (click)=\"showKingsListModal()\">\n              {{king.kingName}}\n              <span style=\"color:cornflowerblue;font-size:14px\">Age: {{king.age||'?'}}</span>\n            </span>\n          </ion-card-title>\n        </ion-card-content>\n\n        <ion-list>\n          <app-expander *ngIf=\"king?.sons && king.sons.length > 0\"\n            [title]=\"'Sons'\" [list]=\"king?.sons\" [boldItem]=\"king?.chosenOffspring\"\n            [toggleExpander]=\"toggleSons\"\n            (toggleExpanderChange)=\"handleToggleSons()\">\n          </app-expander>\n          <app-expander *ngIf=\"king?.highPriests && king.highPriests.length > 0\"\n            [title]=\"'High Priests'\" [list]=\"king?.highPriests\"\n            [toggleExpander]=\"togglePriests\"\n            (toggleExpanderChange)=\"handleTogglePriests()\">\n          </app-expander>\n          <app-expander *ngIf=\"king?.prophets && king.prophets.length > 0\"\n            [title]=\"'Prophets'\" [list]=\"king?.prophets\"\n            [toggleExpander]=\"toggleProphets\"\n            (toggleExpanderChange)=\"handleToggleProphets()\">\n          </app-expander>\n        </ion-list>\n      </ion-card>\n   "
+    }),
+    __metadata("design:paramtypes", [])
+], PersonCardComponent);
+
+//# sourceMappingURL=person-card.component.js.map
+
+/***/ }),
+
+/***/ 286:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExpanderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ExpanderComponent = (function () {
+    function ExpanderComponent() {
+        this.toggleExpanderChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ExpanderComponent.prototype.handleToggleExpander = function () {
+        this.toggleExpander = !this.toggleExpander;
+        this.toggleExpanderChange.emit(this.toggleExpander);
+    };
+    return ExpanderComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", String)
+], ExpanderComponent.prototype, "title", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", String)
+], ExpanderComponent.prototype, "boldItem", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Array)
+], ExpanderComponent.prototype, "list", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], ExpanderComponent.prototype, "toggleExpander", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ExpanderComponent.prototype, "toggleExpanderChange", void 0);
+ExpanderComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-expander',
+        template: "\n   <ion-item-group style=\"border-bottom:0.5px solid white\">\n      <button ion-item color=\"secondary\" *ngIf=\"list && list.length > 0\" (click)=\"handleToggleExpander()\">{{title}} ({{list.length}})</button>\n      <span *ngIf=\"toggleExpander\">\n         <ion-item *ngFor=\"let item of list\" [ngClass]=\"{'bold':item == boldItem}\">{{item}}</ion-item>\n      </span>\n   </ion-item-group>\n   "
+    })
+], ExpanderComponent);
+
+//# sourceMappingURL=expander.component.js.map
+
+/***/ }),
+
+/***/ 287:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsEffects; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_kings_service__ = __webpack_require__(202);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var KingsEffects = (function () {
+    function KingsEffects($actions, kingsService) {
+        var _this = this;
+        this.$actions = $actions;
+        this.kingsService = kingsService;
+        this.$loadKings = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["a" /* INIT */])
+            .switchMap(function () {
+            return _this.kingsService.getKings()
+                .map(function (kings) { return new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["e" /* KingsLoadedAction */](kings); })
+                .catch(function () { return new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["d" /* KingsFailedAction */](); });
+        });
+    }
+    return KingsEffects;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], KingsEffects.prototype, "$loadKings", void 0);
+KingsEffects = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_7__services_kings_service__["a" /* KingsService */]])
+], KingsEffects);
+
+//# sourceMappingURL=kings.effects.js.map
+
+/***/ })
+
+},[204]);
+//# sourceMappingURL=main.js.map

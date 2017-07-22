@@ -25206,3 +25206,7 @@ ion-navbar.toolbar {
 .bold {
   font-weight: bold;
 }
+
+.selected {
+  color: blue;
+}

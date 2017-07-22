@@ -17,24 +17,25 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
         </ion-card-content>
 
         <ion-list>
-          <ion-item-group style="border-bottom:0.5px solid white">
-            <button ion-item color="secondary" *ngIf="king?.sons && king.sons.length > 0" (click)="handleToggleSons()">Sons ({{king.sons.length}})</button>
-            <span *ngIf="toggleSons">
-              <ion-item *ngFor="let son of king?.sons" [ngClass]="{'bold':son == king?.chosenOffspring}">{{son}}</ion-item>
-            </span>
-          </ion-item-group>
-          <ion-item-group style="border-bottom:0.5px solid white">
-            <button ion-item color="secondary" *ngIf="king?.highPriests && king.highPriests.length > 0" (click)="handleTogglePriests()">High Priests ({{king.highPriests.length}})</button>
-            <span *ngIf="togglePriests">
-              <ion-item *ngFor="let priest of king?.highPriests">{{priest}}</ion-item>
-            </span>
-          </ion-item-group>
-          <ion-item-group style="border-bottom:0.5px solid white">
-            <button ion-item color="secondary" *ngIf="king?.prophets && king.prophets.length > 0" (click)="handleToggleProphets()">Prophets ({{king.prophets.length}})</button>
-            <span *ngIf="toggleProphets">
-              <ion-item *ngFor="let prophet of king?.prophets">{{prophet}}</ion-item>
-            </span>
-          </ion-item-group>
+          <app-expander *ngIf="king?.sons && king.sons.length > 0"
+            [list]="king?.sons"
+            [title]="'Sons'"
+            [boldItem]="king?.chosenOffspring"
+            [toggleExpander]="toggleSons"
+            (toggleExpanderChange)="handleToggleSons()">
+          </app-expander>
+          <app-expander *ngIf="king?.highPriests && king.highPriests.length > 0"
+            [list]="king?.highPriests"
+            [title]="'High Priests'"
+            [toggleExpander]="togglePriests"
+            (toggleExpanderChange)="handleTogglePriests()">
+          </app-expander>
+          <app-expander *ngIf="king?.prophets && king.prophets.length > 0"
+            [list]="king?.prophets"
+            [title]="'Prophets'"
+            [toggleExpander]="toggleProphets"
+            (toggleExpanderChange)="handleToggleProphets()">
+          </app-expander>
         </ion-list>
       </ion-card>
    `

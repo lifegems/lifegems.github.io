@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { KingsComponent } from './containers/kings/kings.component';
+import { KingsTimelineComponent } from './containers/kings-timeline.component';
 import { KingsListModal } from './components/kings-list.modal';
 import { PersonCardComponent } from './components/person-card.component';
 import { ExpanderComponent } from './components/expander.component';
@@ -22,6 +23,7 @@ import { kingsReducer } from './reducers/kings.reducer';
   declarations: [
     MyApp,
     KingsComponent,
+    KingsTimelineComponent,
     PersonCardComponent,
     ExpanderComponent,
     KingsListModal
@@ -36,6 +38,7 @@ import { kingsReducer } from './reducers/kings.reducer';
   entryComponents: [
     MyApp,
     KingsComponent,
+    KingsTimelineComponent,
     KingsListModal
   ],
   providers: [

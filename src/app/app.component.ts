@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { KingsComponent } from './containers/kings/kings.component';
+import { KingsTimelineComponent } from './containers/kings-timeline.component';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +21,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Kings', component: KingsComponent }
+      { title: 'Kings', component: KingsComponent },
+      { title: 'Timeline', component: KingsTimelineComponent },
     ];
 
   }

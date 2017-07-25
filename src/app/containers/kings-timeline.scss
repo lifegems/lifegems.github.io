@@ -1,0 +1,45 @@
+@mixin marker--year() {
+   background: darkblue;
+   float: left;
+   margin-left: 20px;
+}
+
+.box {
+   flex: 2;
+   &--red {
+      background-color: red;
+   }
+   &--blue {
+      background-color: blue;
+   }
+   &--green {
+      background-color: green;
+   }
+   &--yellow {
+      background-color: yellow;
+   }
+}
+
+scroll-content {
+   display: flex;
+   flex-direction: column;
+}
+
+ion-grid {
+   padding: 0;
+   height: 100%;
+}
+
+.timeline--line {
+   flex: 1;
+}
+
+.timeline--outer {
+   overflow: scroll;
+   height: 100%;
+}
+
+.timeline--inner {
+   width: 5000px;
+   height: 100%;
+}

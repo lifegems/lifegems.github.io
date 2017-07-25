@@ -16,8 +16,18 @@ import 'rxjs/add/operator/filter';
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content no-padding>
+   <div class="timeline--outer">
+      <div class="timeline--inner">
+         <ion-grid class="timeline--grid" no-padding>
+            <ion-row class="timeline--line">line</ion-row>
+            <ion-row class="box box--red">red</ion-row>
+            <ion-row class="box box--blue">blue</ion-row>
+            <ion-row class="box box--yellow">yellow</ion-row>
+            <ion-row class="box box--green">green</ion-row>
+         </ion-grid>
+      </div>
+   </div>
 </ion-content>
 
 <ion-footer>

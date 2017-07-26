@@ -5,8 +5,10 @@
 }
 
 .box {
+   // align-items: center;
    &--title {
-      position: absolute;
+      flex: 0 0 100%;
+      // position: absolute;
       color: #055863;
       font-weight: bold;
    }
@@ -40,8 +42,23 @@ ion-grid {
    height: 100%;
 }
 
+
+.tl {
+   &--item {
+      // border-left: 2px solid darkslategray;
+      // height: 15px;
+      // margin-left: 40px;
+      // padding-left: 6px;
+      position: relative;
+      display: inline-block;
+      list-style-type: none;
+   }
+
+   &--items {
+      
+   }
+}
 .timeline {
-   // background-color: darkslategrey;
    &--year {
       color: darkslategray;
       display: flex;
@@ -52,7 +69,7 @@ ion-grid {
          color: darkslategray;
          position: relative;
          content: "";
-         top: 40%;
+         top: 3vh;
          left: -50%;
          right: 0;
          height: 0px;

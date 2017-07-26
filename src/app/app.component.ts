@@ -12,7 +12,7 @@ import { KingsTimelineComponent } from './containers/kings-timeline.component';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = KingsComponent;
+  rootPage: any = KingsTimelineComponent;
 
   pages: Array<{title: string, component: any}>;
 

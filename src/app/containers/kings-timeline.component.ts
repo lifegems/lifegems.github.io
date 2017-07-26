@@ -25,6 +25,11 @@ import 'rxjs/add/operator/filter';
             </ion-row>
             <ion-row class="box box--2 box--color-1">
                <span class="box--title">KINGS OF JUDAH</span>
+               <ol class="tl--items">
+                  <li class="tl--item" *ngFor="let king of kings">
+                     <span>{{king}}</span>
+                  </li>
+               </ol>
             </ion-row>
             <ion-row class="box box--2 box--color-2">
                <span class="box--title">KINGS OF SAMARIA</span>
@@ -47,19 +52,30 @@ import 'rxjs/add/operator/filter';
 })
 export class KingsTimelineComponent implements OnInit {
    public years: number[];
+   public kings: string[];
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
+   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
 
-  ngOnInit() {
-   this.years = this.listYears();
-  }
+   ngOnInit() {
+      this.years = this.listYears();
+      this.kings = this.listKings();
+   }
 
-  listYears(): number[] {
-     let years: number[] = [];
-     for (let i = 1100; i >= 600; i = i - 10) {
-        years.push(i);
-     }
-     return years;
-  }
+   listYears(): number[] {
+      let years: number[] = [];
+      for (let i = 1100; i >= 600; i = i - 10) {
+         years.push(i);
+      }
+      return years;
+   }
+
+   listKings() {
+      return [
+         'Rehoboam', 'Abijah', 'Asa', 'Jehoshaphat', 'Jehoram',
+         'Ahaziah', 'Athaliah', 'Jehoash', 'Amaziah', 'Uzziah',
+         'Jotham', 'Ahaz', 'Hezekiah', 'Manasseh', 'Amon',
+         'Josiah', 'Jehoahaz', 'Jehoiakim', 'Jehoiachin', 'Zedekiah'
+      ];
+   }
 
 }

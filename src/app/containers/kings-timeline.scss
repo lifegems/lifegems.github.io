@@ -5,18 +5,28 @@
 }
 
 .box {
-   flex: 2;
-   &--red {
-      background-color: red;
+   &--title {
+      position: absolute;
+      color: #055863;
+      font-weight: bold;
    }
-   &--blue {
-      background-color: blue;
+   &--1 {
+      flex: 1;
    }
-   &--green {
-      background-color: green;
+   &--2 {
+      flex: 2;
    }
-   &--yellow {
-      background-color: yellow;
+   &--color-1 {
+      background-color: #0BC8E3;
+   }
+   &--color-2 {
+      background-color: #0890A3;
+   }
+   &--color-3 {
+      background-color: #1AB045;
+   }
+   &--color-4 {
+      background-color: #eae0c8;
    }
 }
 
@@ -30,8 +40,41 @@ ion-grid {
    height: 100%;
 }
 
-.timeline--line {
-   flex: 1;
+.timeline {
+   // background-color: darkslategrey;
+   &--year {
+      color: darkslategray;
+      display: flex;
+      align-items: flex-end;
+      margin-right: 20px;
+      margin-bottom: 3vh;
+      &::after {
+         color: darkslategray;
+         position: relative;
+         content: "";
+         top: 40%;
+         left: -50%;
+         right: 0;
+         height: 0px;
+         width: 0px;
+         margin: 0 auto;
+         border-left:10px solid transparent;
+         border-right:10px solid transparent;
+         border-top:10px solid darkslategray;
+      }
+   }
+   &--line {
+      &-sm {
+         margin-left: 4px;
+         height: 10px;
+         width: 1px;
+      }
+      &-md {
+         margin-left: 3px;
+         height: 20px;
+         width: 2px;
+      }
+   }
 }
 
 .timeline--outer {
@@ -40,6 +83,6 @@ ion-grid {
 }
 
 .timeline--inner {
-   width: 5000px;
+   width: 5600px;
    height: 100%;
 }

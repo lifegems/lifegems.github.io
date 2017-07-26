@@ -20,11 +20,21 @@ import 'rxjs/add/operator/filter';
    <div class="timeline--outer">
       <div class="timeline--inner">
          <ion-grid class="timeline--grid" no-padding>
-            <ion-row class="timeline--line">line</ion-row>
-            <ion-row class="box box--red">red</ion-row>
-            <ion-row class="box box--blue">blue</ion-row>
-            <ion-row class="box box--yellow">yellow</ion-row>
-            <ion-row class="box box--green">green</ion-row>
+            <ion-row class="box box--1">
+               <div *ngFor="let year of years" class="timeline timeline--year">{{year}} B.C.E.</div>
+            </ion-row>
+            <ion-row class="box box--2 box--color-1">
+               <span class="box--title">KINGS OF JUDAH</span>
+            </ion-row>
+            <ion-row class="box box--2 box--color-2">
+               <span class="box--title">KINGS OF SAMARIA</span>
+            </ion-row>
+            <ion-row class="box box--2 box--color-3">
+               <span class="box--title">PROPHETS</span>
+            </ion-row>
+            <ion-row class="box box--2 box--color-4">
+               <span class="box--title">HIGH PRIESTS</span>
+            </ion-row>
          </ion-grid>
       </div>
    </div>
@@ -36,9 +46,20 @@ import 'rxjs/add/operator/filter';
 `
 })
 export class KingsTimelineComponent implements OnInit {
+   public years: number[];
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+   this.years = this.listYears();
+  }
+
+  listYears(): number[] {
+     let years: number[] = [];
+     for (let i = 1100; i >= 600; i = i - 10) {
+        years.push(i);
+     }
+     return years;
+  }
 
 }

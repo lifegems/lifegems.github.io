@@ -233,11 +233,12 @@ const prophets: any[] = [
    { name: 'Jeremiah',  start: 645, end: 570, tier: 3 },
    { name: 'Habakkuk',  start: 633, end: 623, tier: 4 },
    { name: 'Obadiah',   start: 613, end: 600, tier: 1 },
-   { name: 'Ezekiel',   start: 610, end: 565, tier: 2 },
+   { name: 'Ezekiel',   start: 610, end: 591, tier: 2 },
    { name: 'Daniel',    start: 617, end: 535, tier: 3 },
 ];
 
 const events: any[] = [
-   { name: 'Destruction of Samaria',    start: 740, end: 740, tier: 1 },
-   { name: 'Destruction of Jerusalem',  start: 607, end: 607, tier: 1 },
+   { name: 'Destruction of Samaria',           start: 740, end: 740, tier: 1 },
+   { name: 'Destruction of Jerusalem',         start: 607, end: 607, tier: 1 },
+   { name: 'Freed from Babylonian Captivity',  start: 535, end: 535, tier: 1 },
 ];

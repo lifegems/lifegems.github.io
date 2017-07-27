@@ -30,7 +30,7 @@ import { ProfileModal } from '../components/profile.modal';
                   <li class="tl--item"
                     (click)="clickTimelineItem(king)"
                      [ngClass]="[
-                        'tl--row-2-' + king.tier,
+                        'tl--row-4-' + king.tier,
                         isItemShort(king.start, king.end) ? 'tl--side-1':'tl--bg-1'
                      ]"
                      [style.border-left-width]="getBorderWidth(king.start, king.end)"
@@ -81,7 +81,7 @@ import { ProfileModal } from '../components/profile.modal';
                   <li class="tl--item" 
                   (click)="clickTimelineItem(event)"
                      [ngClass]="[
-                        'tl--row-2-' + event.tier, 
+                        'tl--row-4-' + event.tier, 
                         isItemShort(event.start, event.end) ? 'tl--side-4':'tl--bg-4'
                      ]"
                      [style.border-left-width]="getBorderWidth(event.start, event.end)"
@@ -191,19 +191,19 @@ const kingsOfJudah: any[] = [
    { name: 'Jehoshaphat', start: 937, end: 913, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoshaphat" },
    { name: 'Jehoram',     start: 913, end: 906, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram" },
    { name: 'Ahaziah',     start: 906, end: 905, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah" },
-   { name: 'Athaliah',    start: 905, end: 898, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Athaliah" },
-   { name: 'Jehoash',     start: 898, end: 858, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash" },
-   { name: 'Amaziah',     start: 858, end: 829, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amaziah" },
+   { name: 'Athaliah',    start: 905, end: 898, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Athaliah" },
+   { name: 'Jehoash',     start: 898, end: 858, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash" },
+   { name: 'Amaziah',     start: 858, end: 829, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amaziah" },
    { name: 'Uzziah',      start: 829, end: 777, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Uzziah" },
    { name: 'Jotham',      start: 777, end: 762, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jotham" },
    { name: 'Ahaz',        start: 762, end: 746, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaz" },
-   { name: 'Hezekiah',    start: 746, end: 716, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hezekiah" },
-   { name: 'Manasseh',    start: 716, end: 661, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Manasseh" },
-   { name: 'Amon',        start: 661, end: 659, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amon" },
+   { name: 'Hezekiah',    start: 746, end: 716, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hezekiah" },
+   { name: 'Manasseh',    start: 716, end: 661, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Manasseh" },
+   { name: 'Amon',        start: 661, end: 659, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amon" },
    { name: 'Josiah',      start: 659, end: 628, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Josiah" },
-   { name: 'Jehoahaz',    start: 628, end: 628, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz" },
-   { name: 'Jehoiakim',   start: 628, end: 618, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiakim" },
-   { name: 'Jehoiachin',  start: 618, end: 617, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiachin" },
+   { name: 'Jehoahaz',    start: 628, end: 628, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz" },
+   { name: 'Jehoiakim',   start: 628, end: 618, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiakim" },
+   { name: 'Jehoiachin',  start: 618, end: 617, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiachin" },
    { name: 'Zedekiah',    start: 617, end: 607, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zedekiah" },
 ];
 

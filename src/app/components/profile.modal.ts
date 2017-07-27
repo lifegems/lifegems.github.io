@@ -23,7 +23,7 @@ import { Observable } from 'rxjs/Observable';
          <ion-card-title text-center>{{profile.name}}</ion-card-title>
          <ion-label text-center>{{getTimeFrame(profile.start, profile.end)}}</ion-label>
          <div text-center>
-            <a outline ion-button [attr.href]="profile.url">
+            <a outline ion-button target="_onblank" [attr.href]="profile.url">
                Online Library&nbsp;
                <ion-icon name="md-open"></ion-icon>
             </a>

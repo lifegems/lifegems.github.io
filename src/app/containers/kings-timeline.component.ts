@@ -23,27 +23,43 @@ import 'rxjs/add/operator/filter';
             <ion-row class="box box--1">
                <div [style.left]="getYearAlignment(year)" *ngFor="let year of listYears()" class="tl--year-marker">{{year}} B.C.E.</div>
             </ion-row>
-            <ion-row class="box box--2 box--color-1">
-               <span class="box--title">KINGS OF JUDAH</span>
+            <ion-row class="box box--2">
+               <!--<span class="box--title">KINGS OF JUDAH</span>-->
                <ol class="tl--items">
-                  <li [style.left]="getYearAlignment(king.start)" [style.width]="getWidth(king.start, king.end)" class="tl--item" *ngFor="let king of listKingsOfJudah()">
+                  <li class="tl--item"
+                     [ngClass]="[
+                        'tl--row-2-' + king.tier,
+                        isItemShort(king.start, king.end) ? 'tl--side-1':'tl--bg-1'
+                     ]"
+                     [style.border-left-width]="getBorderWidth(king.start, king.end)"
+                     [style.left]="getYearAlignment(king.start)" 
+                     [style.width]="getWidth(king.start, king.end)" 
+                     *ngFor="let king of listKingsOfJudah()">
                      <span>{{king.name}}</span>
                   </li>
                </ol>
             </ion-row>
-            <ion-row class="box box--2 box--color-2">
-               <span class="box--title">KINGS OF SAMARIA</span>
+            <ion-row class="box box--2">
+               <!--<span class="box--title">KINGS OF SAMARIA</span>-->
                <ol class="tl--items">
-                  <li [style.left]="getYearAlignment(king.start)" [style.width]="getWidth(king.start, king.end)" class="tl--item" *ngFor="let king of listKingsOfSamaria()">
+                  <li class="tl--item" 
+                     [ngClass]="[
+                        'tl--row-4-' + king.tier, 
+                        isItemShort(king.start, king.end) ? 'tl--side-2':'tl--bg-2'
+                     ]"
+                     [style.border-left-width]="getBorderWidth(king.start, king.end)"
+                     [style.left]="getYearAlignment(king.start)" 
+                     [style.width]="getWidth(king.start, king.end)" 
+                     *ngFor="let king of listKingsOfSamaria()">
                      <span>{{king.name}}</span>
                   </li>
                </ol>
             </ion-row>
-            <ion-row class="box box--2 box--color-3">
-               <span class="box--title">PROPHETS</span>
+            <ion-row class="box box--2 tl--color-3">
+               <!--<span class="box--title">PROPHETS</span>-->
             </ion-row>
-            <ion-row class="box box--2 box--color-4">
-               <span class="box--title">HIGH PRIESTS</span>
+            <ion-row class="box box--2 tl--color-4">
+               <!--<span class="box--title">HIGH PRIESTS</span>-->
             </ion-row>
          </ion-grid>
       </div>
@@ -74,52 +90,51 @@ export class KingsTimelineComponent implements OnInit {
 
    listKingsOfJudah(): any[] {
       return [
-         { name: 'Rehoboam',    start: 997, end: 980 },
-         { name: 'Abijah',      start: 980, end: 978 },
-         { name: 'Asa',         start: 978, end: 937 },
-         { name: 'Jehoshaphat', start: 937, end: 913 },
-         { name: 'Jehoram',     start: 913, end: 906 },
-         { name: 'Ahaziah',     start: 906, end: 905 },
-         { name: 'Athaliah',    start: 905, end: 898 },
-         { name: 'Jehoash',     start: 898, end: 858 },
-         { name: 'Amaziah',     start: 858, end: 829 },
-         { name: 'Uzziah',      start: 829, end: 777 },
-         { name: 'Jotham',      start: 777, end: 762 },
-         { name: 'Ahaz',        start: 762, end: 746 },
-         { name: 'Hezekiah',    start: 746, end: 716 },
-         { name: 'Manasseh',    start: 716, end: 661 },
-         { name: 'Amon',        start: 661, end: 659 },
-         { name: 'Josiah',      start: 659, end: 628 },
-         { name: 'Jehoahaz',    start: 628, end: 628 },
-         { name: 'Jehoiakim',   start: 628, end: 618 },
-         { name: 'Jehoiachin',  start: 618, end: 617 },
-         { name: 'Zedekiah',    start: 617, end: 607 },
+         { name: 'Rehoboam',    start: 997, end: 980, tier: 1 },
+         { name: 'Abijah',      start: 980, end: 978, tier: 2 },
+         { name: 'Asa',         start: 978, end: 937, tier: 1 },
+         { name: 'Jehoshaphat', start: 937, end: 913, tier: 2 },
+         { name: 'Jehoram',     start: 913, end: 906, tier: 1 },
+         { name: 'Ahaziah',     start: 906, end: 905, tier: 2 },
+         { name: 'Athaliah',    start: 905, end: 898, tier: 1 },
+         { name: 'Jehoash',     start: 898, end: 858, tier: 2 },
+         { name: 'Amaziah',     start: 858, end: 829, tier: 1 },
+         { name: 'Uzziah',      start: 829, end: 777, tier: 2 },
+         { name: 'Jotham',      start: 777, end: 762, tier: 1 },
+         { name: 'Ahaz',        start: 762, end: 746, tier: 2 },
+         { name: 'Hezekiah',    start: 746, end: 716, tier: 1 },
+         { name: 'Manasseh',    start: 716, end: 661, tier: 2 },
+         { name: 'Amon',        start: 661, end: 659, tier: 1 },
+         { name: 'Josiah',      start: 659, end: 628, tier: 2 },
+         { name: 'Jehoahaz',    start: 628, end: 628, tier: 1 },
+         { name: 'Jehoiakim',   start: 628, end: 618, tier: 2 },
+         { name: 'Jehoiachin',  start: 618, end: 617, tier: 1 },
+         { name: 'Zedekiah',    start: 617, end: 607, tier: 2 },
       ];
    }
 
    listKingsOfSamaria(): any[] {
       return [
-         { name: 'Jeroboam',             start: 997, end: 976 },
-         { name: 'Nadab',                start: 976, end: 975 },
-         { name: 'Baasha',               start: 975, end: 952 },
-         { name: 'Elah',                 start: 952, end: 951 },
-         { name: 'Zimri',                start: 951, end: 951 },
-         { name: 'Omri and Tibni',       start: 951, end: 947 },
-         { name: 'Omri',                 start: 947, end: 940 },
-         { name: 'Ahab',                 start: 940, end: 920 },
-         { name: 'Ahaziah',              start: 920, end: 917 },
-         { name: 'Jehoram',              start: 917, end: 905 },
-         { name: 'Jehu',                 start: 905, end: 876 },
-         { name: 'Jehoahaz',             start: 876, end: 862 },
-         { name: 'Jehoahaz and Jehoash', start: 862, end: 859 },
-         { name: 'Jehoash',              start: 859, end: 844 },
-         { name: 'Jeroboam II',          start: 844, end: 803 },
-         { name: 'Zechariah',            start: 803, end: 791 },
-         { name: 'Shallum',              start: 791, end: 791 },
-         { name: 'Menahem',              start: 791, end: 780 },
-         { name: 'Pekahiah',             start: 780, end: 778 },
-         { name: 'Pekah',                start: 778, end: 758 },
-         { name: 'Hoshea',               start: 758, end: 740 },
+         { name: 'Jeroboam',    start: 997, end: 976, tier: 1 },
+         { name: 'Nadab',       start: 976, end: 975, tier: 2 },
+         { name: 'Baasha',      start: 975, end: 952, tier: 1 },
+         { name: 'Elah',        start: 952, end: 951, tier: 1 },
+         { name: 'Zimri',       start: 951, end: 951, tier: 2 },
+         { name: 'Tibni',       start: 951, end: 947, tier: 3 },
+         { name: 'Omri',        start: 951, end: 940, tier: 4 },
+         { name: 'Ahab',        start: 940, end: 920, tier: 3 },
+         { name: 'Ahaziah',     start: 920, end: 917, tier: 2 },
+         { name: 'Jehoram',     start: 917, end: 905, tier: 1 },
+         { name: 'Jehu',        start: 905, end: 876, tier: 2 },
+         { name: 'Jehoahaz',    start: 876, end: 859, tier: 1 },
+         { name: 'Jehoash',     start: 862, end: 844, tier: 2 },
+         { name: 'Jeroboam II', start: 844, end: 803, tier: 1 },
+         { name: 'Zechariah',   start: 803, end: 791, tier: 2 },
+         { name: 'Shallum',     start: 791, end: 791, tier: 3 },
+         { name: 'Menahem',     start: 791, end: 780, tier: 4 },
+         { name: 'Pekahiah',    start: 780, end: 778, tier: 3 },
+         { name: 'Pekah',       start: 778, end: 758, tier: 2 },
+         { name: 'Hoshea',      start: 758, end: 740, tier: 1 },
       ];
    }
 
@@ -139,11 +154,29 @@ export class KingsTimelineComponent implements OnInit {
    }
 
    getWidth(start: number, end: number): string {
-      return this.pixelize(this.getYearPosition(end) - this.getYearPosition(start));
+      let width = this.getYearPosition(end) - this.getYearPosition(start);
+      if (width === 0) {
+         width = 100;
+      } else if (this.isItemShort(start, end)) {
+         width += 100;
+      }
+      return this.pixelize(width);
+   }
+
+   getBorderWidth(start: number, end: number): string {
+      let width = this.getYearPosition(end) - this.getYearPosition(start);
+      if (width === 0 || !this.isItemShort(start, end)) {
+         width = 1;
+      }
+      return this.pixelize(width);
    }
 
    getTimelineWidth(): string {
       return this.pixelize(this.getYearPosition(this.timelineEnd) + 100);
+   }
+
+   isItemShort(start: number, end: number): boolean {
+      return (start - end) < 5;
    }
 
 }

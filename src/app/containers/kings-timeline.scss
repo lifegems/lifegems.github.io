@@ -19,18 +19,6 @@
    &--2 {
       flex: 2;
    }
-   &--color-1 {
-      background-color: #0BC8E3;
-   }
-   &--color-2 {
-      background-color: #0890A3;
-   }
-   &--color-3 {
-      background-color: #1AB045;
-   }
-   &--color-4 {
-      background-color: #eae0c8;
-   }
 }
 
 scroll-content {
@@ -43,15 +31,73 @@ ion-grid {
    height: 100%;
 }
 
-
 .tl {
    &--item {
       position: absolute;
       display: inline-block;
       list-style-type: none;
-      border-left: 1px solid gray;
-      border-top: 1px solid gray;
-      height: 100%;
+      border-left-style: solid;
+      //border-left: 1px solid gray;
+   }
+
+   &--bg-1 {
+      border-color: #0BC8E3;
+      background-color: #0BC8E3;
+   }
+   &--side-1 {
+      border-color: #0BC8E3;
+   }
+   &--bg-2 {
+      border-color: #0890A3;
+      background-color: #0890A3;
+   }
+   &--side-2 {
+      border-color: #0890A3;
+   }
+   &--color-3 {
+      background-color: #1AB045;
+   }
+   &--color-4 {
+      background-color: #eae0c8;
+   }
+
+   &--row {
+      &-2-1 {
+         height: 50%;
+         top: 0;
+      }
+      &-2-2 {
+         height: 50%;
+         top: 50%;
+      }
+      &-3-1 {
+         height: 33.3333%;
+         top: 0;
+      }
+      &-3-2 {
+         height: 33.3333%;
+         top: 33.3333%;
+      }
+      &-3-3 {
+         height: 33.3333%;
+         top: 66.6666%;
+      }
+      &-4-1 {
+         height: 25%;
+         top: 0;
+      }
+      &-4-2 {
+         height: 25%;
+         top: 25%;
+      }
+      &-4-3 {
+         height: 25%;
+         top: 50%;
+      }
+      &-4-4 {
+         height: 25%;
+         top: 75%;
+      }
    }
 
    &--year-marker {

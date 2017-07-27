@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
 
+import { ProfileModal } from '../components/profile.modal';
+
 @Component({
   selector: 'page-timeline',
   template: `
@@ -26,6 +28,7 @@ import 'rxjs/add/operator/filter';
             <ion-row class="box box--2">
                <ol class="tl--items">
                   <li class="tl--item"
+                    (click)="clickTimelineItem(king)"
                      [ngClass]="[
                         'tl--row-2-' + king.tier,
                         isItemShort(king.start, king.end) ? 'tl--side-1':'tl--bg-1'
@@ -42,6 +45,7 @@ import 'rxjs/add/operator/filter';
             <ion-row class="box box--2">
                <ol class="tl--items">
                   <li class="tl--item" 
+                    (click)="clickTimelineItem(king)"
                      [ngClass]="[
                         'tl--row-4-' + king.tier, 
                         isItemShort(king.start, king.end) ? 'tl--side-2':'tl--bg-2'
@@ -58,6 +62,7 @@ import 'rxjs/add/operator/filter';
             <ion-row class="box box--2">
                <ol class="tl--items">
                   <li class="tl--item" 
+                    (click)="clickTimelineItem(prophet)"
                      [ngClass]="[
                         'tl--row-4-' + prophet.tier, 
                         isItemShort(prophet.start, prophet.end) ? 'tl--side-3':'tl--bg-3'
@@ -74,6 +79,7 @@ import 'rxjs/add/operator/filter';
             <ion-row class="box box--2">
                <ol class="tl--items">
                   <li class="tl--item" 
+                  (click)="clickTimelineItem(event)"
                      [ngClass]="[
                         'tl--row-2-' + event.tier, 
                         isItemShort(event.start, event.end) ? 'tl--side-4':'tl--bg-4'
@@ -105,6 +111,11 @@ export class KingsTimelineComponent implements OnInit {
    constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
 
    ngOnInit() {}
+
+   clickTimelineItem(item) {
+     let modal = this.modalCtrl.create(ProfileModal, {profile: item});
+     modal.present();
+   }
 
    listYears(): number[] {
       let years: number[] = [];
@@ -174,71 +185,71 @@ export class KingsTimelineComponent implements OnInit {
 }
 
 const kingsOfJudah: any[] = [
-   { name: 'Rehoboam',    start: 997, end: 980, tier: 1 },
-   { name: 'Abijah',      start: 980, end: 978, tier: 2 },
-   { name: 'Asa',         start: 978, end: 937, tier: 1 },
-   { name: 'Jehoshaphat', start: 937, end: 913, tier: 2 },
-   { name: 'Jehoram',     start: 913, end: 906, tier: 1 },
-   { name: 'Ahaziah',     start: 906, end: 905, tier: 2 },
-   { name: 'Athaliah',    start: 905, end: 898, tier: 1 },
-   { name: 'Jehoash',     start: 898, end: 858, tier: 2 },
-   { name: 'Amaziah',     start: 858, end: 829, tier: 1 },
-   { name: 'Uzziah',      start: 829, end: 777, tier: 2 },
-   { name: 'Jotham',      start: 777, end: 762, tier: 1 },
-   { name: 'Ahaz',        start: 762, end: 746, tier: 2 },
-   { name: 'Hezekiah',    start: 746, end: 716, tier: 1 },
-   { name: 'Manasseh',    start: 716, end: 661, tier: 2 },
-   { name: 'Amon',        start: 661, end: 659, tier: 1 },
-   { name: 'Josiah',      start: 659, end: 628, tier: 2 },
-   { name: 'Jehoahaz',    start: 628, end: 628, tier: 1 },
-   { name: 'Jehoiakim',   start: 628, end: 618, tier: 2 },
-   { name: 'Jehoiachin',  start: 618, end: 617, tier: 1 },
-   { name: 'Zedekiah',    start: 617, end: 607, tier: 2 },
+   { name: 'Rehoboam',    start: 997, end: 980, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Rehoboam" },
+   { name: 'Abijah',      start: 980, end: 978, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Abijah" },
+   { name: 'Asa',         start: 978, end: 937, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Asa" },
+   { name: 'Jehoshaphat', start: 937, end: 913, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoshaphat" },
+   { name: 'Jehoram',     start: 913, end: 906, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram" },
+   { name: 'Ahaziah',     start: 906, end: 905, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah" },
+   { name: 'Athaliah',    start: 905, end: 898, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Athaliah" },
+   { name: 'Jehoash',     start: 898, end: 858, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash" },
+   { name: 'Amaziah',     start: 858, end: 829, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amaziah" },
+   { name: 'Uzziah',      start: 829, end: 777, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Uzziah" },
+   { name: 'Jotham',      start: 777, end: 762, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jotham" },
+   { name: 'Ahaz',        start: 762, end: 746, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaz" },
+   { name: 'Hezekiah',    start: 746, end: 716, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hezekiah" },
+   { name: 'Manasseh',    start: 716, end: 661, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Manasseh" },
+   { name: 'Amon',        start: 661, end: 659, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amon" },
+   { name: 'Josiah',      start: 659, end: 628, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Josiah" },
+   { name: 'Jehoahaz',    start: 628, end: 628, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz" },
+   { name: 'Jehoiakim',   start: 628, end: 618, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiakim" },
+   { name: 'Jehoiachin',  start: 618, end: 617, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiachin" },
+   { name: 'Zedekiah',    start: 617, end: 607, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zedekiah" },
 ];
 
 const kingsOfSamaria: any[] = [
-   { name: 'Jeroboam',    start: 997, end: 976, tier: 1 },
-   { name: 'Nadab',       start: 976, end: 975, tier: 2 },
-   { name: 'Baasha',      start: 975, end: 952, tier: 1 },
-   { name: 'Elah',        start: 952, end: 951, tier: 1 },
-   { name: 'Zimri',       start: 951, end: 951, tier: 2 },
-   { name: 'Tibni',       start: 951, end: 947, tier: 3 },
-   { name: 'Omri',        start: 951, end: 940, tier: 4 },
-   { name: 'Ahab',        start: 940, end: 920, tier: 3 },
-   { name: 'Ahaziah',     start: 920, end: 917, tier: 2 },
-   { name: 'Jehoram',     start: 917, end: 905, tier: 1 },
-   { name: 'Jehu',        start: 905, end: 876, tier: 2 },
-   { name: 'Jehoahaz',    start: 876, end: 859, tier: 1 },
-   { name: 'Jehoash',     start: 862, end: 844, tier: 2 },
-   { name: 'Jeroboam II', start: 844, end: 803, tier: 1 },
-   { name: 'Zechariah',   start: 803, end: 791, tier: 2 },
-   { name: 'Shallum',     start: 791, end: 791, tier: 3 },
-   { name: 'Menahem',     start: 791, end: 780, tier: 4 },
-   { name: 'Pekahiah',    start: 780, end: 778, tier: 3 },
-   { name: 'Pekah',       start: 778, end: 758, tier: 2 },
-   { name: 'Hoshea',      start: 758, end: 740, tier: 1 },
+   { name: 'Jeroboam',    start: 997, end: 976, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeroboam" },
+   { name: 'Nadab',       start: 976, end: 975, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nadab" },
+   { name: 'Baasha',      start: 975, end: 952, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Baasha" },
+   { name: 'Elah',        start: 952, end: 951, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Elah" },
+   { name: 'Zimri',       start: 951, end: 951, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zimri" },
+   { name: 'Tibni',       start: 951, end: 947, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Tibni" },
+   { name: 'Omri',        start: 951, end: 940, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Omri" },
+   { name: 'Ahab',        start: 940, end: 920, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahab" },
+   { name: 'Ahaziah',     start: 920, end: 917, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah" },
+   { name: 'Jehoram',     start: 917, end: 905, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram" },
+   { name: 'Jehu',        start: 905, end: 876, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehu" },
+   { name: 'Jehoahaz',    start: 876, end: 859, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz" },
+   { name: 'Jehoash',     start: 862, end: 844, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash" },
+   { name: 'Jeroboam II', start: 844, end: 803, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeroboam" },
+   { name: 'Zechariah',   start: 803, end: 791, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zechariah" },
+   { name: 'Shallum',     start: 791, end: 791, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Shallum" },
+   { name: 'Menahem',     start: 791, end: 780, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Menahem" },
+   { name: 'Pekahiah',    start: 780, end: 778, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Pekahiah" },
+   { name: 'Pekah',       start: 778, end: 758, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Pekah" },
+   { name: 'Hoshea',      start: 758, end: 740, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hoshea" },
 ];
 
 const prophets: any[] = [
-   { name: 'Elijah',    start: 940, end: 905, tier: 1 },
-   { name: 'Elishah',   start: 917, end: 852, tier: 2 },
-   { name: 'Jonah',     start: 849, end: 818, tier: 3 },
-   { name: 'Amos',      start: 829, end: 803, tier: 4 },
-   { name: 'Joel',      start: 825, end: 820, tier: 1 },
-   { name: 'Hosea',     start: 808, end: 740, tier: 2 },
-   { name: 'Isaiah',    start: 780, end: 730, tier: 3 },
-   { name: 'Micah',     start: 775, end: 716, tier: 4 },
-   { name: 'Zephaniah', start: 659, end: 640, tier: 1 },
-   { name: 'Nahum',     start: 659, end: 635, tier: 2 },
-   { name: 'Jeremiah',  start: 645, end: 570, tier: 3 },
-   { name: 'Habakkuk',  start: 633, end: 623, tier: 4 },
-   { name: 'Obadiah',   start: 613, end: 600, tier: 1 },
-   { name: 'Ezekiel',   start: 610, end: 591, tier: 2 },
-   { name: 'Daniel',    start: 617, end: 535, tier: 3 },
+   { name: 'Elijah',    start: 940, end: 905, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Elijah" },
+   { name: 'Elishah',   start: 917, end: 852, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Elishah" },
+   { name: 'Jonah',     start: 849, end: 818, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jonah" },
+   { name: 'Amos',      start: 829, end: 803, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amos" },
+   { name: 'Joel',      start: 825, end: 820, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Joel" },
+   { name: 'Hosea',     start: 808, end: 740, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hosea" },
+   { name: 'Isaiah',    start: 780, end: 730, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Isaiah" },
+   { name: 'Micah',     start: 775, end: 716, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Micah" },
+   { name: 'Zephaniah', start: 659, end: 640, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zephaniah" },
+   { name: 'Nahum',     start: 659, end: 635, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nahum" },
+   { name: 'Jeremiah',  start: 645, end: 570, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeremiah" },
+   { name: 'Habakkuk',  start: 633, end: 623, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Habakkuk" },
+   { name: 'Obadiah',   start: 613, end: 600, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Obadiah" },
+   { name: 'Ezekiel',   start: 610, end: 591, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezekiel" },
+   { name: 'Daniel',    start: 617, end: 535, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Daniel" },
 ];
 
 const events: any[] = [
-   { name: 'Destruction of Samaria',           start: 740, end: 740, tier: 1 },
-   { name: 'Destruction of Jerusalem',         start: 607, end: 607, tier: 1 },
-   { name: 'Freed from Babylonian Captivity',  start: 535, end: 535, tier: 1 },
+   { name: 'Destruction of Samaria',           start: 740, end: 740, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Destruction%20of%20Samaria" },
+   { name: 'Destruction of Jerusalem',         start: 607, end: 607, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Destruction%20of%20Jerusalem" },
+   { name: 'Freed from Babylonian Captivity',  start: 535, end: 535, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Freed%20from%20Babylonian%20Captivity" },
 ];

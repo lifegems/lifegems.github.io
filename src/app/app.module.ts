@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { KingsComponent } from './containers/kings/kings.component';
 import { KingsTimelineComponent } from './containers/kings-timeline.component';
 import { KingsListModal } from './components/kings-list.modal';
+import { ProfileModal } from './components/profile.modal';
 import { PersonCardComponent } from './components/person-card.component';
 import { ExpanderComponent } from './components/expander.component';
 
@@ -26,7 +27,8 @@ import { kingsReducer } from './reducers/kings.reducer';
     KingsTimelineComponent,
     PersonCardComponent,
     ExpanderComponent,
-    KingsListModal
+    KingsListModal,
+    ProfileModal,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { kingsReducer } from './reducers/kings.reducer';
     MyApp,
     KingsComponent,
     KingsTimelineComponent,
-    KingsListModal
+    KingsListModal,
+    ProfileModal
   ],
   providers: [
     StatusBar,

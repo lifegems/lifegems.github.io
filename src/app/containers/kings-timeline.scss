@@ -34,10 +34,13 @@ ion-grid {
 .tl {
    &--item {
       position: absolute;
-      display: inline-block;
+      display: flex;
+      align-items: center;
       list-style-type: none;
       border-left-style: solid;
-      //border-left: 1px solid gray;
+      &-title {
+         
+      }
    }
 
    &--bg-1 {
@@ -54,8 +57,12 @@ ion-grid {
    &--side-2 {
       border-color: #0890A3;
    }
-   &--color-3 {
+   &--bg-3 {
+      border-color: #1AB045;
       background-color: #1AB045;
+   }
+   &--side-3 {
+      border-color: #1AB045;
    }
    &--color-4 {
       background-color: #eae0c8;

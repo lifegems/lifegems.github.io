@@ -31,10 +31,11 @@ import 'rxjs/add/operator/filter';
                         isItemShort(king.start, king.end) ? 'tl--side-1':'tl--bg-1'
                      ]"
                      [style.border-left-width]="getBorderWidth(king.start, king.end)"
+                     [style.padding-left]="isItemShort(king.start, king.end) ? '0px' : '5px'"
                      [style.left]="getYearAlignment(king.start)" 
                      [style.width]="getWidth(king.start, king.end)" 
                      *ngFor="let king of listKingsOfJudah()">
-                     <span>{{king.name}}</span>
+                     <span class="tl--item-title">{{(isItemShort(king.start, king.end)) ? '&#9664; ' + king.name : king.name}}</span>
                   </li>
                </ol>
             </ion-row>
@@ -46,16 +47,45 @@ import 'rxjs/add/operator/filter';
                         isItemShort(king.start, king.end) ? 'tl--side-2':'tl--bg-2'
                      ]"
                      [style.border-left-width]="getBorderWidth(king.start, king.end)"
+                     [style.padding-left]="isItemShort(king.start, king.end) ? '0px' : '5px'"
                      [style.left]="getYearAlignment(king.start)" 
                      [style.width]="getWidth(king.start, king.end)" 
                      *ngFor="let king of listKingsOfSamaria()">
-                     <span>{{king.name}}</span>
+                     <span class="tl--item-title">{{(isItemShort(king.start, king.end)) ? '&#9664; ' + king.name : king.name}}</span>
                   </li>
                </ol>
             </ion-row>
-            <ion-row class="box box--2 tl--color-3">
+            <ion-row class="box box--2">
+               <ol class="tl--items">
+                  <li class="tl--item" 
+                     [ngClass]="[
+                        'tl--row-4-' + prophet.tier, 
+                        isItemShort(prophet.start, prophet.end) ? 'tl--side-3':'tl--bg-3'
+                     ]"
+                     [style.border-left-width]="getBorderWidth(prophet.start, prophet.end)"
+                     [style.padding-left]="isItemShort(prophet.start, prophet.end) ? '0px' : '5px'"
+                     [style.left]="getYearAlignment(prophet.start)" 
+                     [style.width]="getWidth(prophet.start, prophet.end)" 
+                     *ngFor="let prophet of listProphets()">
+                     <span class="tl--item-title">{{(isItemShort(prophet.start, prophet.end)) ? '&#9664; ' + prophet.name : prophet.name}}</span>
+                  </li>
+               </ol>
             </ion-row>
-            <ion-row class="box box--2 tl--color-4">
+            <ion-row class="box box--2">
+               <ol class="tl--items">
+                  <li class="tl--item" 
+                     [ngClass]="[
+                        'tl--row-2-' + event.tier, 
+                        isItemShort(event.start, event.end) ? 'tl--side-4':'tl--bg-4'
+                     ]"
+                     [style.border-left-width]="getBorderWidth(event.start, event.end)"
+                     [style.padding-left]="isItemShort(event.start, event.end) ? '0px' : '5px'"
+                     [style.left]="getYearAlignment(event.start)" 
+                     [style.width]="getWidth(event.start, event.end)" 
+                     *ngFor="let event of listEvents()">
+                     <span class="tl--item-title">{{(isItemShort(event.start, event.end)) ? '&#9664; ' + event.name : event.name}}</span>
+                  </li>
+               </ol>
             </ion-row>
          </ion-grid>
       </div>
@@ -69,7 +99,7 @@ import 'rxjs/add/operator/filter';
 })
 export class KingsTimelineComponent implements OnInit {
    private timelineStart:     number = 1000;
-   private timelineEnd:       number = 600;
+   private timelineEnd:       number = 500;
    private timelineIncrement: number = 10;
 
    constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
@@ -84,12 +114,20 @@ export class KingsTimelineComponent implements OnInit {
       return years;
    }
 
+   listEvents(): any[] {
+      return events;
+   }
+
    listKingsOfJudah(): any[] {
       return kingsOfJudah;
    }
 
    listKingsOfSamaria(): any[] {
       return kingsOfSamaria;
+   }
+
+   listProphets(): any[] {
+      return prophets;
    }
 
    pixelize(digit: number): string {
@@ -110,7 +148,7 @@ export class KingsTimelineComponent implements OnInit {
    getWidth(start: number, end: number): string {
       let width = this.getYearPosition(end) - this.getYearPosition(start);
       if (width === 0) {
-         width = 100;
+         width = 300;
       } else if (this.isItemShort(start, end)) {
          width += 100;
       }
@@ -179,4 +217,27 @@ const kingsOfSamaria: any[] = [
    { name: 'Pekahiah',    start: 780, end: 778, tier: 3 },
    { name: 'Pekah',       start: 778, end: 758, tier: 2 },
    { name: 'Hoshea',      start: 758, end: 740, tier: 1 },
+];
+
+const prophets: any[] = [
+   { name: 'Elijah',    start: 940, end: 905, tier: 1 },
+   { name: 'Elishah',   start: 917, end: 852, tier: 2 },
+   { name: 'Jonah',     start: 849, end: 818, tier: 3 },
+   { name: 'Amos',      start: 829, end: 803, tier: 4 },
+   { name: 'Joel',      start: 825, end: 820, tier: 1 },
+   { name: 'Hosea',     start: 808, end: 740, tier: 2 },
+   { name: 'Isaiah',    start: 780, end: 730, tier: 3 },
+   { name: 'Micah',     start: 775, end: 716, tier: 4 },
+   { name: 'Zephaniah', start: 659, end: 640, tier: 1 },
+   { name: 'Nahum',     start: 659, end: 635, tier: 2 },
+   { name: 'Jeremiah',  start: 645, end: 570, tier: 3 },
+   { name: 'Habakkuk',  start: 633, end: 623, tier: 4 },
+   { name: 'Obadiah',   start: 613, end: 600, tier: 1 },
+   { name: 'Ezekiel',   start: 610, end: 565, tier: 2 },
+   { name: 'Daniel',    start: 617, end: 535, tier: 3 },
+];
+
+const events: any[] = [
+   { name: 'Destruction of Samaria',    start: 740, end: 740, tier: 1 },
+   { name: 'Destruction of Jerusalem',  start: 607, end: 607, tier: 1 },
 ];

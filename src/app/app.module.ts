@@ -3,8 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { KingsComponent } from './containers/kings/kings.component';
-import { KingsTimelineComponent } from './containers/kings-timeline.component';
+import { ConverterComponent, KingsComponent, KingsTimelineComponent } from './containers';
 import { KingsListModal } from './components/kings-list.modal';
 import { ProfileModal } from './components/profile.modal';
 import { PersonCardComponent } from './components/person-card.component';
@@ -23,6 +22,7 @@ import { kingsReducer } from './reducers/kings.reducer';
 @NgModule({
   declarations: [
     MyApp,
+    ConverterComponent,
     KingsComponent,
     KingsTimelineComponent,
     PersonCardComponent,
@@ -39,6 +39,7 @@ import { kingsReducer } from './reducers/kings.reducer';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ConverterComponent,
     KingsComponent,
     KingsTimelineComponent,
     KingsListModal,

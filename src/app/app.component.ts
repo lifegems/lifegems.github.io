@@ -3,8 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { KingsComponent } from './containers/kings/kings.component';
-import { KingsTimelineComponent } from './containers/kings-timeline.component';
+import { ConverterComponent, KingsComponent, KingsTimelineComponent } from './containers';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +11,7 @@ import { KingsTimelineComponent } from './containers/kings-timeline.component';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = KingsComponent;
+  rootPage: any = ConverterComponent;
 
   pages: Array<{title: string, component: any}>;
 
@@ -23,6 +22,7 @@ export class MyApp {
     this.pages = [
       { title: 'Kings', component: KingsComponent },
       { title: 'Timeline', component: KingsTimelineComponent },
+      { title: 'Converter', component: ConverterComponent },
     ];
 
   }

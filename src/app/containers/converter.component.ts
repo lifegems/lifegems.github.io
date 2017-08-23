@@ -16,35 +16,29 @@ import { Store } from '@ngrx/store';
 
 <ion-content>
    <ion-card>
-      <ion-card-content no-padding>
+      <ion-card-header no-padding>
          <ion-list>
             <ion-item>
-               <ion-label>Type</ion-label>
-               <ion-select>
+               <ion-label>Measurement Type</ion-label>
+               <ion-select style="font-size:12px">
                   <ion-option selected>Length</ion-option>
                </ion-select>
             </ion-item>
+          </ion-list>
+      </ion-card-header>
+      <ion-card-content no-padding>
+         <ion-list>
             <ion-item>
-               <ion-label>Modern Measurement</ion-label>
-               <ion-select>
-                  <ion-option selected>Inches</ion-option>
-                  <ion-option>Feet</ion-option>
-                  <ion-option>Yards</ion-option>
-                  <ion-option>Miles</ion-option>
+               <ion-input [(ngModel)]="valueA" (change)="updateValueB()"></ion-input>
+               <ion-select style="font-size:12px" [ngModel]="selectedMeasureA.name" (ngModelChange)="changeMeasureA($event)">
+                  <ion-option *ngFor="let measure of measurements" [selected]="isMeasureASelected(measure.id)">{{measure.name}}</ion-option>
                </ion-select>
             </ion-item>
             <ion-item>
-               <ion-input placeholder="Enter measurement" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-               <ion-label>Biblical Measurement</ion-label>
-               <ion-select>
-                  <ion-option selected>Cubits</ion-option>
-                  <ion-option>Span</ion-option>
+               <ion-input [(ngModel)]="valueB" (change)="updateValueA()"></ion-input>
+               <ion-select style="font-size:12px" [ngModel]="selectedMeasureB.name" (ngModelChange)="changeMeasureB($event)">
+                  <ion-option *ngFor="let measure of measurements" [selected]="isMeasureBSelected(measure.id)">{{measure.name}}</ion-option>
                </ion-select>
-            </ion-item>
-            <ion-item>
-               <ion-input placeholder="Enter measurement" type="text"></ion-input>
             </ion-item>
          </ion-list>
       </ion-card-content>
@@ -57,9 +51,83 @@ import { Store } from '@ngrx/store';
 `
 })
 export class ConverterComponent implements OnInit {
+  private readonly INIT_MEASURE_A = "Inch";
+  private readonly INIT_MEASURE_B = "Cubit";
+  public measurements: Measure[];
+  public selectedMeasureA: Measure;
+  public selectedMeasureB: Measure;
+  public valueA: number;
+  public valueB: number;
 
-   constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {}
 
-   ngOnInit() {}
+  ngOnInit() {
+    this.measurements = Measurements;
+    this.selectedMeasureA = this.getMeasure(this.INIT_MEASURE_A);
+    this.selectedMeasureB = this.getMeasure(this.INIT_MEASURE_B);
+    this.valueA = 1.00;
+    this.updateValueB();
+  }
 
+  public changeMeasureA(measureName: string): void {
+    this.selectedMeasureA = this.getMeasure(measureName);
+    this.updateValueB();
+  }
+
+  public changeMeasureB(measureName: string): void {
+    this.selectedMeasureB = this.getMeasure(measureName);
+    this.updateValueB();
+  }
+
+  public getMeasure(measureName: string): Measure {
+    return this.measurements.find(measure => measure.name == measureName);
+  }
+
+  public updateValueA(): void {
+    // 
+    this.valueA = +(this.valueB * this.selectedMeasureA.inches / this.selectedMeasureB.inches).toFixed(3);
+  }
+
+  public updateValueB(): void {
+    // 12 * input / 17.5 = 
+    this.valueB = +((this.valueA * this.selectedMeasureA.inches) / this.selectedMeasureB.inches).toFixed(3);
+  }
+
+  public isMeasureASelected(measureId: number) {
+    return measureId == this.selectedMeasureA.id;
+  }
+
+  public isMeasureBSelected(measureId: number) {
+    return measureId == this.selectedMeasureB.id;
+  }
 }
+// fingerbreadth -  0.72 inches
+// cubit         - 17.5  inches
+interface Measure {
+  id: number;
+  name: string;
+  inches: number;
+}
+
+let Measurements: Measure[] = [
+  {
+    id: 1,
+    name: "Fingerbreadth",
+    inches: 0.72
+  },
+  {
+    id: 2,
+    name: "Cubit",
+    inches: 17.5
+  },
+  {
+    id: 3,
+    name: "Inch",
+    inches: 1
+  },
+  {
+    id: 4,
+    name: "Feet",
+    inches: 12
+  }
+];

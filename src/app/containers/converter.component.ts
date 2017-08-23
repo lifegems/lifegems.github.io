@@ -41,10 +41,18 @@ import * as measurementsState from '../reducers/measurements.reducer';
               </ion-select>
             </ion-item>
             <ion-item>
-              <ion-input readonly [ngModel]="(auxMeasures$ | async)[0].value"></ion-input>
+              <ion-input [ngModel]="(auxMeasures$ | async)[0].value" (ngModelChange)="changeAuxValue(0, $event)"></ion-input>
               <ion-select style="font-size:12px" [ngModel]="auxMeasure1" (ngModelChange)="changeAuxMeasure(0, $event)">
                 <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
                   <ion-option [selected]="measure.id == (auxMeasures$ | async)[0].measure.id">{{measure.name}}</ion-option>
+                </ng-template>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input [ngModel]="(auxMeasures$ | async)[1].value" (ngModelChange)="changeAuxValue(1, $event)"></ion-input>
+              <ion-select style="font-size:12px" [ngModel]="auxMeasure2" (ngModelChange)="changeAuxMeasure(1, $event)">
+                <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
+                  <ion-option [selected]="measure.id == (auxMeasures$ | async)[1].measure.id">{{measure.name}}</ion-option>
                 </ng-template>
               </ion-select>
             </ion-item>

@@ -21,15 +21,26 @@ const baseMeasure: MeasureValue = {
 		type: "Length"
 	}
 };
-const auxMeasures: MeasureValue[] = [{
-	value: 0.05714285714,
-	measure: {
-		amount: 17.5,
-		id: 2,
-		name: "Cubit",
-		type: "Length"
+const auxMeasures: MeasureValue[] = [
+	{
+		value: 0.05714285714,
+		measure: {
+			amount: 17.5,
+			id: 2,
+			name: "Cubit",
+			type: "Length"
+		}
+	},
+	{
+		value: 0.8333333333,
+		measure: {
+			amount: 12,
+			id: 4,
+			name: "Feet",
+			type: "Length"
+		}
 	}
-}];
+];
 
 const initState: MeasuresState = {
 	measurements: [],
@@ -40,7 +51,6 @@ const initState: MeasuresState = {
 }
 
 function setAuxMeasures(baseValue: number, baseAmount: number, state: MeasuresState): MeasureValue[] {
-	console.log(state);
 	return state.auxMeasures.map(aux => {
 		return {
 			value: calculateMeasure(baseValue, baseAmount, aux.measure.amount),
@@ -75,7 +85,17 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 				measure: state.auxMeasures[auxValueAction.payload.index].measure
 			};
 			return Object.assign({}, state, {
-				auxMeasures: auxValues
+				baseMeasure: {
+					value: calculateMeasure(
+								auxValues[auxValueAction.payload.index].value,
+								auxValues[auxValueAction.payload.index].measure.amount,
+								state.baseMeasure.measure.amount),
+					measure: state.baseMeasure.measure
+				},
+				auxMeasures: setAuxMeasures(
+									auxValues[auxValueAction.payload.index].value,
+									auxValues[auxValueAction.payload.index].measure.amount,
+									state)
 			});
 		case measureActions.CHANGEBASEMEASURE:
 			let newMeasure = state.measurements.find(m => m.name === action.payload);

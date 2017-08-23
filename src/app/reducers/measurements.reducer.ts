@@ -15,9 +15,9 @@ export interface MeasuresState {
 const baseMeasure: MeasureValue = {
 	value: 1,
 	measure: {
-		amount: 1,
-		id: 3,
+		id: 6,
 		name: "Inches",
+		amount: 1,
 		type: "Length"
 	}
 };
@@ -25,9 +25,9 @@ const auxMeasures: MeasureValue[] = [
 	{
 		value: 0.05714285714,
 		measure: {
+			id: 1,
+			name: "Cubits",
 			amount: 17.5,
-			id: 2,
-			name: "Cubit",
 			type: "Length"
 		}
 	}

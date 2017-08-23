@@ -15,38 +15,86 @@ export class MeasurementsService {
 let Measurements: Measure[] = [
   {
     id: 1,
-    name: "Fingerbreadth",
-    amount: 0.72,
-    type: "Length"
-  },
-  {
-    id: 2,
-    name: "Cubit",
+    name: "Cubits",
     amount: 17.5,
     type: "Length"
   },
   {
-    id: 3,
-    name: "Inch",
-    amount: 1,
+    id: 2,
+    name: "Fathoms",
+    amount: 72,
     type: "Length"
   },
   {
-    id: 4,
+    id: 3,
     name: "Feet",
     amount: 12,
     type: "Length"
   },
   {
+    id: 4,
+    name: "Fingerbreadths",
+    amount: 0.73,
+    type: "Length"
+  },
+  {
     id: 5,
-    name: "Yard",
-    amount: 36,
+    name: "Handbreadths",
+    amount: 2.9,
     type: "Length"
   },
   {
     id: 6,
-    name: "Mile",
+    name: "Inches",
+    amount: 1,
+    type: "Length"
+  },
+  {
+    id: 7,
+    name: "Long Cubits",
+    amount: 20.4,
+    type: "Length"
+  },
+  {
+    id: 8,
+    name: "Long Reeds",
+    amount: 122.4,
+    type: "Length"
+  },
+  {
+    id: 9,
+    name: "Miles",
     amount: 63360,
     type: "Length"
-  }
+  },
+  {
+    id: 10,
+    name: "Reeds",
+    amount: 105,
+    type: "Length"
+  },
+  {
+    id: 11,
+    name: "Roman stadii",
+    amount: 7283.4,
+    type: "Length"
+  },
+  {
+    id: 12,
+    name: "Short Cubits",
+    amount: 15,
+    type: "Length"
+  },
+  {
+    id: 13,
+    name: "Spans",
+    amount: 8.75,
+    type: "Length"
+  },
+  {
+    id: 14,
+    name: "Yards",
+    amount: 36,
+    type: "Length"
+  },
 ];

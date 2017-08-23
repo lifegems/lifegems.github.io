@@ -76,7 +76,7 @@ export class ConverterComponent implements OnInit {
 
   public changeMeasureB(measureName: string): void {
     this.selectedMeasureB = this.getMeasure(measureName);
-    this.updateValueB();
+    this.updateValueA();
   }
 
   public getMeasure(measureName: string): Measure {
@@ -84,12 +84,12 @@ export class ConverterComponent implements OnInit {
   }
 
   public updateValueA(): void {
-    // 
-    this.valueA = +(this.valueB * this.selectedMeasureA.inches / this.selectedMeasureB.inches).toFixed(3);
+    // 36 * input / 12 = 3 -- yards to feet
+    this.valueA = +((this.valueB * this.selectedMeasureA.inches) / this.selectedMeasureB.inches).toFixed(3);
   }
 
   public updateValueB(): void {
-    // 12 * input / 17.5 = 
+    // 12 * input / 36 = .33 -- feet to yards
     this.valueB = +((this.valueA * this.selectedMeasureA.inches) / this.selectedMeasureB.inches).toFixed(3);
   }
 
@@ -101,8 +101,7 @@ export class ConverterComponent implements OnInit {
     return measureId == this.selectedMeasureB.id;
   }
 }
-// fingerbreadth -  0.72 inches
-// cubit         - 17.5  inches
+
 interface Measure {
   id: number;
   name: string;
@@ -129,5 +128,15 @@ let Measurements: Measure[] = [
     id: 4,
     name: "Feet",
     inches: 12
+  },
+  {
+    id: 5,
+    name: "Yard",
+    inches: 36
+  },
+  {
+    id: 6,
+    name: "Mile",
+    inches: 63360
   }
 ];

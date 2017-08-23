@@ -11,6 +11,8 @@ import { ExpanderComponent } from './components/expander.component';
 
 import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
+import { MeasurementsService } from './services/measurements.service';
+import { MeasurementsEffects } from './effects/measurements.effects';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { kingsReducer } from './reducers/kings.reducer';
+import { measurementsReducer } from './reducers/measurements.reducer';
 
 @NgModule({
   declarations: [
@@ -33,8 +36,8 @@ import { kingsReducer } from './reducers/kings.reducer';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.forRoot({kings: kingsReducer}),
-    EffectsModule.forRoot([KingsEffects]),
+    StoreModule.forRoot({kings: kingsReducer, measurements: measurementsReducer}),
+    EffectsModule.forRoot([KingsEffects, MeasurementsEffects]),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +52,8 @@ import { kingsReducer } from './reducers/kings.reducer';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    KingsService
+    KingsService,
+    MeasurementsService,
   ]
 })
 export class AppModule {}

@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
+import { Measure, MeasureValue } from '../models/measure.model';
+import { MeasurementsService } from '../services/measurements.service';
+import * as MeasurementActions from '../actions/measurements.actions';
+import * as measurementsState from '../reducers/measurements.reducer';
 
 @Component({
   selector: 'page-converter',
@@ -20,8 +24,8 @@ import { Store } from '@ngrx/store';
          <ion-list>
             <ion-item>
                <ion-label>Measurement Type</ion-label>
-               <ion-select style="font-size:12px">
-                  <ion-option selected>Length</ion-option>
+               <ion-select style="font-size:12px" [ngModel]="(selectedType$ | async)">
+                  <ion-option [selected]="type == (selectedType$ | async)" *ngFor="let type of types$ | async">{{type}}</ion-option>
                </ion-select>
             </ion-item>
           </ion-list>
@@ -29,16 +33,20 @@ import { Store } from '@ngrx/store';
       <ion-card-content no-padding>
          <ion-list>
             <ion-item>
-               <ion-input [(ngModel)]="valueA" (change)="updateValueB()"></ion-input>
-               <ion-select style="font-size:12px" [ngModel]="selectedMeasureA.name" (ngModelChange)="changeMeasureA($event)">
-                  <ion-option *ngFor="let measure of measurements" [selected]="isMeasureASelected(measure.id)">{{measure.name}}</ion-option>
-               </ion-select>
+              <ion-input [ngModel]="(baseMeasure$ | async).value" (ngModelChange)="changeBaseValue($event)"></ion-input>
+              <ion-select style="font-size:12px" [ngModel]="baseMeasure" (ngModelChange)="changeBaseMeasure($event)">
+                <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
+                  <ion-option [selected]="measure.id == (baseMeasure$ | async).measure.id">{{measure.name}}</ion-option>
+                </ng-template>
+              </ion-select>
             </ion-item>
             <ion-item>
-               <ion-input [(ngModel)]="valueB" (change)="updateValueA()"></ion-input>
-               <ion-select style="font-size:12px" [ngModel]="selectedMeasureB.name" (ngModelChange)="changeMeasureB($event)">
-                  <ion-option *ngFor="let measure of measurements" [selected]="isMeasureBSelected(measure.id)">{{measure.name}}</ion-option>
-               </ion-select>
+              <ion-input readonly [ngModel]="(auxMeasures$ | async)[0].value"></ion-input>
+              <ion-select style="font-size:12px" [ngModel]="auxMeasure1" (ngModelChange)="changeAuxMeasure(0, $event)">
+                <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
+                  <ion-option [selected]="measure.id == (auxMeasures$ | async)[0].measure.id">{{measure.name}}</ion-option>
+                </ng-template>
+              </ion-select>
             </ion-item>
          </ion-list>
       </ion-card-content>
@@ -51,92 +59,47 @@ import { Store } from '@ngrx/store';
 `
 })
 export class ConverterComponent implements OnInit {
-  private readonly INIT_MEASURE_A = "Inch";
-  private readonly INIT_MEASURE_B = "Cubit";
-  public measurements: Measure[];
-  public selectedMeasureA: Measure;
-  public selectedMeasureB: Measure;
-  public valueA: number;
-  public valueB: number;
+  public measurements$: Store<Measure[]>;
+  public baseMeasure$: Store<MeasureValue>;
+  public auxMeasures$: Store<MeasureValue[]>;
+  public types$: Store<string[]>;
+  public selectedType$: Store<string>;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(
+    public navCtrl: NavController,
+    private measurementsService: MeasurementsService,
+    private store: Store<measurementsState.MeasuresState>
+  ) {
+    this.measurements$ = this.store.select(measurementsState.getMeasurements);
+    this.selectedType$ = this.store.select(measurementsState.getSelectedType);
+    this.types$        = this.store.select(measurementsState.getTypes);
+    this.baseMeasure$  = this.store.select(measurementsState.getBaseMeasure);
+    this.auxMeasures$  = this.store.select(measurementsState.getAuxMeasures);
+  }
 
   ngOnInit() {
-    this.measurements = Measurements;
-    this.selectedMeasureA = this.getMeasure(this.INIT_MEASURE_A);
-    this.selectedMeasureB = this.getMeasure(this.INIT_MEASURE_B);
-    this.valueA = 1.00;
-    this.updateValueB();
+    this.store.dispatch(new MeasurementActions.InitMeasuresAction());
   }
 
-  public changeMeasureA(measureName: string): void {
-    this.selectedMeasureA = this.getMeasure(measureName);
-    this.updateValueB();
+  public changeAuxMeasure(index: number, measureName: string): void {
+    this.store.dispatch(new MeasurementActions.ChangeAuxMeasureAction({
+      index: index,
+      name: measureName
+    }));
   }
 
-  public changeMeasureB(measureName: string): void {
-    this.selectedMeasureB = this.getMeasure(measureName);
-    this.updateValueA();
+  public changeAuxValue(index: number, auxValue: number) {
+    this.store.dispatch(new MeasurementActions.ChangeAuxValueAction({
+      index: index,
+      value: auxValue
+    }));
   }
 
-  public getMeasure(measureName: string): Measure {
-    return this.measurements.find(measure => measure.name == measureName);
+  public changeBaseMeasure(measureName): void {
+    this.store.dispatch(new MeasurementActions.ChangeBaseMeasureAction(measureName));
   }
 
-  public updateValueA(): void {
-    // 36 * input / 12 = 3 -- yards to feet
-    this.valueA = +((this.valueB * this.selectedMeasureA.inches) / this.selectedMeasureB.inches).toFixed(3);
-  }
-
-  public updateValueB(): void {
-    // 12 * input / 36 = .33 -- feet to yards
-    this.valueB = +((this.valueA * this.selectedMeasureA.inches) / this.selectedMeasureB.inches).toFixed(3);
-  }
-
-  public isMeasureASelected(measureId: number) {
-    return measureId == this.selectedMeasureA.id;
-  }
-
-  public isMeasureBSelected(measureId: number) {
-    return measureId == this.selectedMeasureB.id;
+  public changeBaseValue(baseValue: number): void {
+    this.store.dispatch(new MeasurementActions.ChangeBaseValueAction(baseValue));
   }
 }
-
-interface Measure {
-  id: number;
-  name: string;
-  inches: number;
-}
-
-let Measurements: Measure[] = [
-  {
-    id: 1,
-    name: "Fingerbreadth",
-    inches: 0.72
-  },
-  {
-    id: 2,
-    name: "Cubit",
-    inches: 17.5
-  },
-  {
-    id: 3,
-    name: "Inch",
-    inches: 1
-  },
-  {
-    id: 4,
-    name: "Feet",
-    inches: 12
-  },
-  {
-    id: 5,
-    name: "Yard",
-    inches: 36
-  },
-  {
-    id: 6,
-    name: "Mile",
-    inches: 63360
-  }
-];

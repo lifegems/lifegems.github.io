@@ -14,7 +14,12 @@ import * as measurementsState from '../reducers/measurements.reducer';
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Converter</ion-title>
+    <ion-title>Unit Converter</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addMeasurement()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -32,30 +37,15 @@ import * as measurementsState from '../reducers/measurements.reducer';
       </ion-card-header>
       <ion-card-content no-padding>
          <ion-list>
-            <ion-item>
-              <ion-input [ngModel]="(baseMeasure$ | async).value" (ngModelChange)="changeBaseValue($event)"></ion-input>
-              <ion-select style="font-size:12px" [ngModel]="baseMeasure" (ngModelChange)="changeBaseMeasure($event)">
-                <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
-                  <ion-option [selected]="measure.id == (baseMeasure$ | async).measure.id">{{measure.name}}</ion-option>
-                </ng-template>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-input [ngModel]="(auxMeasures$ | async)[0].value" (ngModelChange)="changeAuxValue(0, $event)"></ion-input>
-              <ion-select style="font-size:12px" [ngModel]="auxMeasure1" (ngModelChange)="changeAuxMeasure(0, $event)">
-                <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
-                  <ion-option [selected]="measure.id == (auxMeasures$ | async)[0].measure.id">{{measure.name}}</ion-option>
-                </ng-template>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-input [ngModel]="(auxMeasures$ | async)[1].value" (ngModelChange)="changeAuxValue(1, $event)"></ion-input>
-              <ion-select style="font-size:12px" [ngModel]="auxMeasure2" (ngModelChange)="changeAuxMeasure(1, $event)">
-                <ng-template ngFor let-measure [ngForOf]="measurements$ | async">
-                  <ion-option [selected]="measure.id == (auxMeasures$ | async)[1].measure.id">{{measure.name}}</ion-option>
-                </ng-template>
-              </ion-select>
-            </ion-item>
+            <ion-item-divider text-center>Units</ion-item-divider>
+            <app-conversion-item
+               [index]="0" [measureValue]="(baseMeasure$ | async)" [measurements]="measurements$ | async"
+               (changeValue)="changeBaseValue($event)" (changeMeasure)="changeBaseMeasure($event)">
+            </app-conversion-item>
+            <app-conversion-item *ngFor="let aux of (auxMeasures$ | async); let i = index; trackBy:trackAux"
+               [index]="i" [measureValue]="aux" [measurements]="measurements$ | async"
+               (changeValue)="changeAuxValue($event)" (changeMeasure)="changeAuxMeasure($event)">
+            </app-conversion-item>
          </ion-list>
       </ion-card-content>
    </ion-card>
@@ -67,47 +57,49 @@ import * as measurementsState from '../reducers/measurements.reducer';
 `
 })
 export class ConverterComponent implements OnInit {
-  public measurements$: Store<Measure[]>;
-  public baseMeasure$: Store<MeasureValue>;
-  public auxMeasures$: Store<MeasureValue[]>;
-  public types$: Store<string[]>;
-  public selectedType$: Store<string>;
+   public measurements$: Store<Measure[]>;
+   public baseMeasure$: Store<MeasureValue>;
+   public auxMeasures$: Store<MeasureValue[]>;
+   public types$: Store<string[]>;
+   public selectedType$: Store<string>;
 
-  constructor(
-    public navCtrl: NavController,
-    private measurementsService: MeasurementsService,
-    private store: Store<measurementsState.MeasuresState>
-  ) {
-    this.measurements$ = this.store.select(measurementsState.getMeasurements);
-    this.selectedType$ = this.store.select(measurementsState.getSelectedType);
-    this.types$        = this.store.select(measurementsState.getTypes);
-    this.baseMeasure$  = this.store.select(measurementsState.getBaseMeasure);
-    this.auxMeasures$  = this.store.select(measurementsState.getAuxMeasures);
-  }
+   constructor(
+      public navCtrl: NavController,
+      private measurementsService: MeasurementsService,
+      private store: Store<measurementsState.MeasuresState>
+   ) {
+      this.measurements$ = this.store.select(measurementsState.getMeasurements);
+      this.selectedType$ = this.store.select(measurementsState.getSelectedType);
+      this.types$        = this.store.select(measurementsState.getTypes);
+      this.baseMeasure$  = this.store.select(measurementsState.getBaseMeasure);
+      this.auxMeasures$  = this.store.select(measurementsState.getAuxMeasures);
+   }
 
-  ngOnInit() {
-    this.store.dispatch(new MeasurementActions.InitMeasuresAction());
-  }
+   ngOnInit() {
+      this.store.dispatch(new MeasurementActions.InitMeasuresAction());
+   }
 
-  public changeAuxMeasure(index: number, measureName: string): void {
-    this.store.dispatch(new MeasurementActions.ChangeAuxMeasureAction({
-      index: index,
-      name: measureName
-    }));
-  }
+   public addMeasurement() {
+      this.store.dispatch(new MeasurementActions.AddAuxMeasurementAction());
+   }
 
-  public changeAuxValue(index: number, auxValue: number) {
-    this.store.dispatch(new MeasurementActions.ChangeAuxValueAction({
-      index: index,
-      value: auxValue
-    }));
-  }
+   public changeAuxMeasure(aux: {index: number, name: string}): void {
+      this.store.dispatch(new MeasurementActions.ChangeAuxMeasureAction(aux));
+   }
 
-  public changeBaseMeasure(measureName): void {
-    this.store.dispatch(new MeasurementActions.ChangeBaseMeasureAction(measureName));
-  }
+   public changeAuxValue(aux: {index: number, value: number}) {
+      this.store.dispatch(new MeasurementActions.ChangeAuxValueAction(aux));
+   }
 
-  public changeBaseValue(baseValue: number): void {
-    this.store.dispatch(new MeasurementActions.ChangeBaseValueAction(baseValue));
-  }
+   public changeBaseMeasure(base: {index: number, name: string}): void {
+      this.store.dispatch(new MeasurementActions.ChangeBaseMeasureAction(base.name));
+   }
+
+   public changeBaseValue(base: {index: number, value: number}): void {
+      this.store.dispatch(new MeasurementActions.ChangeBaseValueAction(base.value));
+   }
+
+   public trackAux(index: any, item, any) {
+      return index;
+   }
 }

@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Measure } from '../models/measure.model';
 
+export const ADDAUXMEASUREMENT    = '[Measures] Add Auxilary Measurement';
 export const CHANGEAUXMEASURE  = '[Measures] Change Auxilary Measure';
 export const CHANGEAUXVALUE    = '[Measures] Change Auxilary Value';
 export const CHANGEBASEMEASURE = '[Measures] Change Base Measure';
@@ -9,6 +10,10 @@ export const INIT              = '[Measures] Init Measures';
 export const MEASURESLOADED    = '[Measures] Loaded Measures';
 export const MEASURESFAILED    = '[Measures] Failed to load Measures';
 export const SETTYPES          = '[Measures] Measurement Types Set';
+
+export class AddAuxMeasurementAction implements Action {
+  readonly type = ADDAUXMEASUREMENT;
+}
 
 export class ChangeAuxMeasureAction implements Action {
   readonly type = CHANGEAUXMEASURE;
@@ -55,7 +60,8 @@ export class TypesSetAction implements Action {
 }
 
 export type ALL
- = ChangeAuxMeasureAction
+ = AddAuxMeasurementAction
+ | ChangeAuxMeasureAction
  | ChangeAuxValueAction
  | ChangeBaseMeasureAction
  | ChangeBaseValueAction

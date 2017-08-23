@@ -30,15 +30,6 @@ const auxMeasures: MeasureValue[] = [
 			name: "Cubit",
 			type: "Length"
 		}
-	},
-	{
-		value: 0.8333333333,
-		measure: {
-			amount: 12,
-			id: 4,
-			name: "Feet",
-			type: "Length"
-		}
 	}
 ];
 
@@ -65,6 +56,16 @@ function calculateMeasure(baseValue, baseMeasureAmount, auxMeasureAmount) {
 
 export function measurementsReducer(state: MeasuresState = initState, action: Action) {
 	switch(action.type) {
+		case measureActions.ADDAUXMEASUREMENT:
+			let newAuxMeasures = state.auxMeasures.map(aux => Object.assign({}, aux));
+			newAuxMeasures.push({
+				measure: state.measurements[0],
+				value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, state.measurements[0].amount)
+			});
+			console.log(newAuxMeasures);
+			return Object.assign({}, state, {
+				auxMeasures: newAuxMeasures
+			});
 		case measureActions.CHANGEAUXMEASURE:
 			let auxMeasureAction = (action as measureActions.ChangeAuxMeasureAction);
 			let auxMeasures = state.auxMeasures.map(aux => Object.assign({}, aux));

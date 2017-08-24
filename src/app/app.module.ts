@@ -9,12 +9,15 @@ import {
   ExpanderComponent,
   KingsListModal,
   ProfileModal,
-  PersonCardComponent } from './components';
+  PersonCardComponent,
+  TimelineRowComponent } from './components';
 
 import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
 import { MeasurementsService } from './services/measurements.service';
 import { MeasurementsEffects } from './effects/measurements.effects';
+import { TimelineService } from './services/timeline.service';
+import { TimelineEffects } from './effects/timeline.effects';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,6 +26,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { kingsReducer } from './reducers/kings.reducer';
 import { measurementsReducer } from './reducers/measurements.reducer';
+import { timelineReducer } from './reducers/timeline.reducer';
 
 @NgModule({
   declarations: [
@@ -33,14 +37,15 @@ import { measurementsReducer } from './reducers/measurements.reducer';
     KingsComponent,
     KingsTimelineComponent,
     PersonCardComponent,
+    TimelineRowComponent,
     KingsListModal,
     ProfileModal,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.forRoot({kings: kingsReducer, measurements: measurementsReducer}),
-    EffectsModule.forRoot([KingsEffects, MeasurementsEffects]),
+    StoreModule.forRoot({kings: kingsReducer, measurements: measurementsReducer, timeline: timelineReducer}),
+    EffectsModule.forRoot([KingsEffects, MeasurementsEffects, TimelineEffects]),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,6 +62,7 @@ import { measurementsReducer } from './reducers/measurements.reducer';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KingsService,
     MeasurementsService,
+    TimelineService,
   ]
 })
 export class AppModule {}

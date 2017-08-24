@@ -11,7 +11,7 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent } from './co
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = KingsComponent;
+  rootPage: any = KingsTimelineComponent;
 
   pages: Array<{title: string, component: any}>;
 

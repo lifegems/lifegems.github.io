@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 import { Measure, MeasureValue } from '../models/measure.model';
-import { MeasurementsService } from '../services/measurements.service';
 import * as MeasurementActions from '../actions/measurements.actions';
 import * as measurementsState from '../reducers/measurements.reducer';
 
@@ -65,7 +64,6 @@ export class ConverterComponent implements OnInit {
 
    constructor(
       public navCtrl: NavController,
-      private measurementsService: MeasurementsService,
       private store: Store<measurementsState.MeasuresState>
    ) {
       this.measurements$ = this.store.select(measurementsState.getMeasurements);

@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
 import { ConverterComponent, KingsComponent, KingsTimelineComponent } from './containers';
@@ -19,11 +24,7 @@ import { MeasurementsEffects } from './effects/measurements.effects';
 import { TimelineService } from './services/timeline.service';
 import { TimelineEffects } from './effects/timeline.effects';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 import { kingsReducer } from './reducers/kings.reducer';
 import { measurementsReducer } from './reducers/measurements.reducer';
 import { timelineReducer } from './reducers/timeline.reducer';
@@ -46,6 +47,7 @@ import { timelineReducer } from './reducers/timeline.reducer';
     IonicModule.forRoot(MyApp),
     StoreModule.forRoot({kings: kingsReducer, measurements: measurementsReducer, timeline: timelineReducer}),
     EffectsModule.forRoot([KingsEffects, MeasurementsEffects, TimelineEffects]),
+    StoreDevtoolsModule.instrument(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

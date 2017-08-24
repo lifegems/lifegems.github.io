@@ -4,9 +4,10 @@ import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
 
-import { ProfileModal } from '../components/profile.modal';
+import { TimelineListModal } from '../components/timeline-list.modal';
 import * as TimelineActions from '../actions/timeline.actions';
 import * as timelineState from '../reducers/timeline.reducer';
+import { TimelineItem } from '../models/timeline-item.model';
 
 @Component({
 selector: 'page-timeline',
@@ -17,6 +18,11 @@ template: `
       <ion-icon name="menu"></ion-icon>
    </button>
    <ion-title>Timeline</ion-title>
+   <ion-buttons end>
+      <button ion-button icon-only (click)="showGroupSelection(items$, groups$)">
+         <ion-icon name="md-options"></ion-icon>
+      </button>
+   </ion-buttons>
 </ion-navbar>
 </ion-header>
 
@@ -27,17 +33,8 @@ template: `
             <ion-row class="box box--1">
                <div [style.left]="getYearAlignment((timelineData$ | async), year)" *ngFor="let year of (years$ | async)" class="tl--year-marker">{{year}} B.C.E.</div>
             </ion-row>
-            <ion-row class="box box--2">
-               <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="4" [rowNumber]="1" [items]="(items$ | async).kingsOfJudah"></app-timeline-row>
-            </ion-row>
-            <ion-row class="box box--2">
-               <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="4" [rowNumber]="2" [items]="(items$ | async).kingsOfSamaria"></app-timeline-row>
-            </ion-row>
-            <ion-row class="box box--2">
-               <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="4" [rowNumber]="3" [items]="(items$ | async).prophets"></app-timeline-row>
-            </ion-row>
-            <ion-row class="box box--2">
-               <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="4" [rowNumber]="4" [items]="(items$ | async).events"></app-timeline-row>
+            <ion-row class="box box--2" *ngFor="let group of (groups$ | async); let i = index">
+               <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="getGroupRowCount((items$ | async), group)" [rowNumber]="i + 1" [items]="listGroupItems((items$ | async), group)"></app-timeline-row>
             </ion-row>
          </ion-grid>
       </div>
@@ -50,14 +47,17 @@ template: `
 `
 })
 export class KingsTimelineComponent implements OnInit {
-   public items$: Store<any>;
+   public groups$: Store<string[]>;
+   public items$: Store<TimelineItem[]>;
    public years$: Store<string[]>;
    public timelineData$: Store<{start: number, end: number, increment: number}>;
 
    constructor(
       public navCtrl: NavController,
+      public modalCtrl: ModalController,
       private store: Store<timelineState.TimelineState>
    ) {
+      this.groups$ = this.store.select(timelineState.getGroups);
       this.items$ = this.store.select(timelineState.getItems);
       this.years$ = this.store.select(timelineState.getYears);
       this.timelineData$ = this.store.select(timelineState.getTimelineData);
@@ -65,6 +65,30 @@ export class KingsTimelineComponent implements OnInit {
 
    ngOnInit() {
       this.store.dispatch(new TimelineActions.InitTimelineAction());
+   }
+
+   showGroupSelection(items$, groups$) {
+      items$.subscribe(items => {
+         groups$.subscribe(groups => {
+            let modal = this.modalCtrl.create(TimelineListModal, {
+               items: items,
+               groups: groups
+            });
+            modal.present();
+            modal.onDidDismiss((data) => {
+               this.store.dispatch(new TimelineActions.SetGroupsAction(data.groups));
+            });
+         });
+      });
+
+   }
+
+   getGroupRowCount(items: TimelineItem[], group: string): number {
+      return this.listGroupItems(items, group).map(item => item.tier).reduce((a, b) => a > b ? a : b);
+   }
+
+   listGroupItems(items: TimelineItem[], group: string): TimelineItem[] {
+      return items.filter(item => item.group == group);
    }
 
    pixelize(digit: number): string {

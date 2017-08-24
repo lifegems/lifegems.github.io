@@ -15,6 +15,7 @@ import {
   KingsListModal,
   ProfileModal,
   PersonCardComponent,
+  TimelineListModal,
   TimelineRowComponent } from './components';
 
 import { KingsService } from './services/kings.service';
@@ -38,6 +39,7 @@ import { timelineReducer } from './reducers/timeline.reducer';
     KingsComponent,
     KingsTimelineComponent,
     PersonCardComponent,
+    TimelineListModal,
     TimelineRowComponent,
     KingsListModal,
     ProfileModal,
@@ -56,7 +58,8 @@ import { timelineReducer } from './reducers/timeline.reducer';
     KingsComponent,
     KingsTimelineComponent,
     KingsListModal,
-    ProfileModal
+    ProfileModal,
+    TimelineListModal,
   ],
   providers: [
     StatusBar,

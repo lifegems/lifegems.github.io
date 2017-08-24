@@ -1,7 +1,29 @@
+@function row-height($totalRows) {
+   @return (100 / $totalRows);
+}
+
+@function row-top($totalRows, $row) {
+   @return row-height($totalRows) * ($row - 1);
+}
+
+@mixin row-location($totalRows, $row) {
+   height: row-height($totalRows) + %;
+   top: row-top($totalRows, $row) + %;
+}
+
 @mixin marker--year() {
    background: darkblue;
    float: left;
    margin-left: 20px;
+}
+
+@mixin tl-item-full($color) {
+   border-color: $color;
+   background-color: $color;
+}
+
+@mixin tl-item-side($color) {
+   border-color: $color;
 }
 
 .box {
@@ -38,72 +60,26 @@ ion-grid {
       align-items: center;
       list-style-type: none;
       border-left-style: solid;
-      &-title {
-         
-      }
    }
 
-   &--bg-1 {
-      border-color: #0BC8E3;
-      background-color: #0BC8E3;
-   }
-   &--side-1 {
-      border-color: #0BC8E3;
-   }
-   &--bg-2 {
-      border-color: #0890A3;
-      background-color: #0890A3;
-   }
-   &--side-2 {
-      border-color: #0890A3;
-   }
-   &--bg-3 {
-      border-color: #1AB045;
-      background-color: #1AB045;
-   }
-   &--side-3 {
-      border-color: #1AB045;
-   }
-   &--color-4 {
-      background-color: #eae0c8;
+   @each $i, $color in 
+      (1, #0BC8E3),(2, #0890A3),(3, #1AB045),
+      (4, #eae0c8),(5, #0B99E3),(6, #009033) {
+      &--bg-#{$i} {
+         @include tl-item-full($color);
+      }
+      &--side-#{$i} {
+         @include tl-item-side($color);
+      }
    }
 
    &--row {
-      &-2-1 {
-         height: 50%;
-         top: 0;
-      }
-      &-2-2 {
-         height: 50%;
-         top: 50%;
-      }
-      &-3-1 {
-         height: 33.3333%;
-         top: 0;
-      }
-      &-3-2 {
-         height: 33.3333%;
-         top: 33.3333%;
-      }
-      &-3-3 {
-         height: 33.3333%;
-         top: 66.6666%;
-      }
-      &-4-1 {
-         height: 25%;
-         top: 0;
-      }
-      &-4-2 {
-         height: 25%;
-         top: 25%;
-      }
-      &-4-3 {
-         height: 25%;
-         top: 50%;
-      }
-      &-4-4 {
-         height: 25%;
-         top: 75%;
+      @for $i from 1 through 6 {
+         @for $j from 1 through $i {
+            &-#{$i}-#{$j} {
+               @include row-location($i, $j);
+            }
+         }
       }
    }
 
@@ -118,28 +94,10 @@ ion-grid {
 .timeline {
    &--year {
       color: darkslategray;
-      // display: flex;
-      // align-items: flex-end;
-      // margin-right: 20px;
       position: relative;
       left: 0px;
       border-left: 2px solid black;
       padding-left: 5px;
-      // margin-bottom: 3vh;
-      // &::after {
-      //    color: darkslategray;
-      //    position: relative;
-      //    content: "";
-      //    top: 3vh;
-      //    left: -50%;
-      //    right: 0;
-      //    height: 0px;
-      //    width: 0px;
-      //    margin: 0 auto;
-      //    border-left:10px solid transparent;
-      //    border-right:10px solid transparent;
-      //    border-top:10px solid darkslategray;
-      // }
    }
    &--line {
       &-sm {
@@ -153,14 +111,12 @@ ion-grid {
          width: 2px;
       }
    }
-}
+   &--outer {
+      overflow: scroll;
+      height: 100%;
+   }
 
-.timeline--outer {
-   overflow: scroll;
-   height: 100%;
-}
-
-.timeline--inner {
-   // width: 5600px;
-   height: 100%;
+   &--inner {
+      height: 100%;
+   }
 }

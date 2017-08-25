@@ -10,7 +10,7 @@ export class TimelineService {
          ...kingsOfSamaria,
          ...prophets,
          ...events,
-         // ...bibleBooksCoverage,
+         ...bibleBooksCoverage,
       ];
       return Observable.create(observer => {
          observer.next(items);
@@ -19,12 +19,23 @@ export class TimelineService {
 }
 
 const bibleBooksCoverage: TimelineItem[] = [
-   { name: '1 Kings',      start: 1000, end: 911, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '2 Kings',      start: 920,  end: 580, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '2 Chronicles', start: 1000, end: 537, tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Ezra',         start: 537,  end: 500, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Isaiah',       start: 778,  end: 732, tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Jeremiah',     start: 647,  end: 580, tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Genesis',      start: 4026, end: 1657, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Exodus',       start: 1657, end: 1512, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Leviticus',    start: 1512, end: 1512, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Numbers',      start: 1512, end: 1473, tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Deuteronomy',  start: 1473, end: 1473, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Joshua',       start: 1473, end: 1450, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Judges',       start: 1450, end: 1120, tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Ruth',         start: 1131, end: 1120, tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '1 Samuel',     start: 1180, end: 1078, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '2 Samuel',     start: 1077, end: 1040, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '1 Kings',      start: 1040, end: 911,  tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '2 Kings',      start: 920,  end: 580,  tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '1 Chronicles', start: 1077, end: 1037, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '2 Chronicles', start: 1037, end: 537,  tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Ezra',         start: 537,  end: 467,  tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Nehemiah',     start: 456,  end: 443,  tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Esther',       start: 493,  end: 475,  tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
 ];
 
 const kingsOfJudah: TimelineItem[] = [

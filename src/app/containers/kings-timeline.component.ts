@@ -39,6 +39,13 @@ template: `
          </ion-grid>
       </div>
    </div>
+   <!--<ion-fab right bottom>
+      <button ion-fab><ion-icon name="md-settings"></ion-icon></button>
+      <ion-fab-list side="left">
+         <button ion-fab mini (click)="zoomIn()"><ion-icon name="md-add"></ion-icon></button>
+         <button ion-fab mini (click)="zoomOut()"><ion-icon name="md-remove"></ion-icon></button>
+      </ion-fab-list>
+   </ion-fab>-->
 </ion-content>
 
 <ion-footer>
@@ -96,17 +103,25 @@ export class KingsTimelineComponent implements OnInit {
    }
 
    getTimelineWidth(timelineData: {start: number, end: number, increment: number}): string {
-      return this.pixelize(this.getYearPosition(timelineData.start, timelineData.end) + 100);
+      return this.pixelize(this.getYearPosition(timelineData.start, timelineData.end, timelineData.increment) + 100);
    }
 
-   getYearPosition(start: number, year: number): number {
+   getYearPosition(start: number, year: number, increment: number): number {
       //   1 year  =   10px
       //  10 years =  100px
       // 100 years = 1000px
-      return (start - year) * 10;
+      return (start - year) * increment;
    }
 
    getYearAlignment(timelineData: {start: number, end: number, increment: number}, year: number): string {
-      return this.pixelize(this.getYearPosition(timelineData.start, year));
+      return this.pixelize(this.getYearPosition(timelineData.start, year, timelineData.increment));
+   }
+
+   zoomIn() {
+      this.store.dispatch(new TimelineActions.ZoomInAction());
+   }
+
+   zoomOut() {
+      this.store.dispatch(new TimelineActions.ZoomOutAction());
    }
 }

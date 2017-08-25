@@ -44,19 +44,19 @@ export class TimelineRowComponent {
       return digit + 'px';
    }
 
-   getYearPosition(start: number, year: number): number {
+   getYearPosition(start: number, year: number, increment: number): number {
       //   1 year  =   10px
       //  10 years =  100px
       // 100 years = 1000px
-      return (start - year) * 10;
+      return (start - year) * increment;
    }
 
    getYearAlignment(timelineData: {start: number, end: number, increment: number}, year: number): string {
-      return this.pixelize(this.getYearPosition(timelineData.start, year));
+      return this.pixelize(this.getYearPosition(timelineData.start, year, timelineData.increment));
    }
 
    getWidth(timelineData: {start: number, end: number, increment: number}, start: number, end: number): string {
-      let width = this.getYearPosition(timelineData.start, end) - this.getYearPosition(timelineData.start, start);
+      let width = this.getYearPosition(timelineData.start, end, timelineData.increment) - this.getYearPosition(timelineData.start, start, timelineData.increment);
       if (width === 0) {
          width = 300;
       } else if (this.isItemShort(start, end)) {
@@ -66,7 +66,7 @@ export class TimelineRowComponent {
    }
 
    getBorderWidth(timelineData: {start: number, end: number, increment: number}, start: number, end: number): string {
-      let width = this.getYearPosition(timelineData.start, end) - this.getYearPosition(timelineData.start, start);
+      let width = this.getYearPosition(timelineData.start, end, timelineData.increment) - this.getYearPosition(timelineData.start, start, timelineData.increment);
       if (width === 0 || !this.isItemShort(start, end)) {
          width = 1;
       }

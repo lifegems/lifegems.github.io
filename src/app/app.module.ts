@@ -8,7 +8,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
-import { ConverterComponent, KingsComponent, KingsTimelineComponent } from './containers';
+import { ConverterComponent, DashboardComponent, KingsComponent, KingsTimelineComponent } from './containers';
 import {
   ConversionItemComponent,
   ExpanderComponent,
@@ -35,6 +35,7 @@ import { timelineReducer } from './reducers/timeline.reducer';
     MyApp,
     ConversionItemComponent,
     ConverterComponent,
+    DashboardComponent,
     ExpanderComponent,
     KingsComponent,
     KingsTimelineComponent,
@@ -55,6 +56,7 @@ import { timelineReducer } from './reducers/timeline.reducer';
   entryComponents: [
     MyApp,
     ConverterComponent,
+    DashboardComponent,
     KingsComponent,
     KingsTimelineComponent,
     KingsListModal,

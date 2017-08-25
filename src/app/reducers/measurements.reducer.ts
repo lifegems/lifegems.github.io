@@ -75,7 +75,7 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 		case measureActions.CHANGEAUXMEASURE:
 			let auxMeasureAction = (action as measureActions.ChangeAuxMeasureAction);
 			let auxMeasures = state.auxMeasures.map(aux => Object.assign({}, aux));
-			let auxMeasure = state.measurements.find(m => m.name === auxMeasureAction.payload.name);
+			let auxMeasure = state.measurements.find(m => (m.name === auxMeasureAction.payload.name && m.type == state.selectedType));
 			auxMeasures[auxMeasureAction.payload.index] = {
 				value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, auxMeasure.amount),
 				measure: auxMeasure
@@ -105,7 +105,7 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 									state)
 			});
 		case measureActions.CHANGEBASEMEASURE:
-			let newMeasure = state.measurements.find(m => m.name === action.payload);
+			let newMeasure = state.measurements.find(m => (m.name === action.payload && m.type == state.selectedType));
 			return Object.assign({}, state, {
 				auxMeasures: setAuxMeasures(state.baseMeasure.value, newMeasure.amount, state),
 				baseMeasure: {

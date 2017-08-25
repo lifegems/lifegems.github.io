@@ -12,15 +12,15 @@ import { ProfileModal } from '../components/profile.modal';
       (click)="clickTimelineItem(item)"
          [ngClass]="[
             'tl--row-' + rows + '-' + item.tier, 
-            isItemShort(item.start, item.end) ? 'tl--side-' + rowNumber :'tl--bg-' + rowNumber
+            isItemShort(item.start, item.end, timelineData.increment) ? 'tl--side-' + rowNumber :'tl--bg-' + rowNumber
          ]"
          [style.border-left-width]="getBorderWidth(timelineData, item.start, item.end)"
-         [style.padding-left]="isItemShort(item.start, item.end) ? '0px' : '5px'"
+         [style.padding-left]="isItemShort(item.start, item.end, timelineData.increment) ? '0px' : '5px'"
          [style.left]="getYearAlignment(timelineData, item.start)"
-         [style.width]="getWidth(timelineData, item.start, item.end)" 
+         [style.width]="getWidth(timelineData, item.start, item.end)"
          *ngFor="let item of items">
          <span [style.color]="(item.group == 'TIMELINE_DATES') ? '#003740':'black'" 
-         class="tl--item-title">{{(isItemShort(item.start, item.end)) ? '&#9664; ' + item.name : item.name}}</span>
+         class="tl--item-title">{{(isItemShort(item.start, item.end, timelineData.increment)) ? '&#9664; ' + item.name : item.name}}</span>
       </li>
    </ol>
    `,
@@ -63,7 +63,7 @@ export class TimelineRowComponent {
       let width = this.getYearPosition(timelineData.start, end, timelineData.increment) - this.getYearPosition(timelineData.start, start, timelineData.increment);
       if (width === 0) {
          width = 300;
-      } else if (this.isItemShort(start, end)) {
+      } else if (this.isItemShort(start, end, timelineData.increment)) {
          width += 100;
       }
       return this.pixelize(width);
@@ -71,13 +71,13 @@ export class TimelineRowComponent {
 
    getBorderWidth(timelineData: {start: number, end: number, increment: number}, start: number, end: number): string {
       let width = this.getYearPosition(timelineData.start, end, timelineData.increment) - this.getYearPosition(timelineData.start, start, timelineData.increment);
-      if (width === 0 || !this.isItemShort(start, end)) {
+      if (width === 0 || !this.isItemShort(start, end, timelineData.increment)) {
          width = 1;
       }
       return this.pixelize(width);
    }
 
-   isItemShort(start: number, end: number): boolean {
-      return (start - end) < 5;
+   isItemShort(start: number, end: number, increment: number): boolean {
+      return (start - end) < (increment / 2);
    }
 }

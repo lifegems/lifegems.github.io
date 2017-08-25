@@ -63,10 +63,12 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 		case measureActions.ADDAUXMEASUREMENT:
 			let newAuxMeasures = state.auxMeasures.map(aux => Object.assign({}, aux));
 			let thisNewAux     = state.measurements.filter(m => m.type == state.selectedType)[0];
-			newAuxMeasures.push({
-				measure: thisNewAux,
-				value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, thisNewAux.amount)
-			});
+			if (newAuxMeasures.length <= 5) {
+				newAuxMeasures.push({
+					measure: thisNewAux,
+					value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, thisNewAux.amount)
+				});
+			}
 			return Object.assign({}, state, {
 				auxMeasures: newAuxMeasures
 			});

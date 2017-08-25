@@ -6,11 +6,13 @@ import { TimelineItem } from '../models/timeline-item.model';
 export class TimelineService {
    getAllItems() {
       let items: any = [
+         ...bibleBooksCoverage,
+         ...events,
          ...kingsOfJudah,
          ...kingsOfSamaria,
+         ...lifespans,
          ...prophets,
-         ...events,
-         ...bibleBooksCoverage,
+         ...outstandingHistoricalDates,
       ];
       return Observable.create(observer => {
          observer.next(items);
@@ -18,24 +20,49 @@ export class TimelineService {
    }
 }
 
+const lifespans: TimelineItem[] = [
+   { name: "Jehovah",    start: 4100, end: 1,    tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehovah",    group: "Lifespans"},
+   { name: "Adam",       start: 4026, end: 3096, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam",       group: "Lifespans"},
+   { name: "Enoch",      start: 3404, end: 3039, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch",      group: "Lifespans"},
+   { name: "Methuselah", start: 3339, end: 2370, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah", group: "Lifespans"},
+];
+
+const outstandingHistoricalDates: TimelineItem[] = [
+   { name: "Adam's creation",                      start: 4026, end: 4026, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam",       group: "Outstanding Historical Dates"},
+   { name: "Edenic covenant made, first prophecy", start: 4026, end: 4026, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Covenant",   group: "Outstanding Historical Dates"},
+   { name: "Cain slays Abel",                      start: 3896, end: 3896, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Cain",       group: "Outstanding Historical Dates"},
+   { name: "Birth of Seth",                        start: 3896, end: 3896, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Seth",       group: "Outstanding Historical Dates"},
+   { name: "Birth of righteous Enoch",             start: 3404, end: 3404, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch",      group: "Outstanding Historical Dates"},
+   { name: "Birth of Methuselah",                  start: 3339, end: 3339, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah", group: "Outstanding Historical Dates"},
+   { name: "Birth of Lamech",                      start: 3152, end: 3152, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Lamech",     group: "Outstanding Historical Dates"},
+   { name: "Death of Adam",                        start: 3096, end: 3096, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam",       group: "Outstanding Historical Dates"},
+   { name: "Transference of Enoch",                start: 3039, end: 3039, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch",      group: "Outstanding Historical Dates"},
+   { name: "Birth of Noah",                        start: 2970, end: 2970, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Noah",       group: "Outstanding Historical Dates"},
+   { name: "God's pronouncement as to mankind",    start: 2490, end: 2490, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Flood",      group: "Outstanding Historical Dates"},
+   { name: "Birth of Japeth",                      start: 2470, end: 2470, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Japeth",     group: "Outstanding Historical Dates"},
+   { name: "Birth of Shem",                        start: 2468, end: 2468, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Shem",       group: "Outstanding Historical Dates"},
+   { name: "Death of Methuselah",                  start: 2370, end: 2370, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah", group: "Outstanding Historical Dates"},
+   { name: "The Great Flood",                      start: 2370, end: 2370, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Flood",      group: "Outstanding Historical Dates"},
+];
+
 const bibleBooksCoverage: TimelineItem[] = [
-   { name: 'Genesis',      start: 4026, end: 1657, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Exodus',       start: 1657, end: 1512, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Leviticus',    start: 1512, end: 1512, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Numbers',      start: 1512, end: 1473, tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Deuteronomy',  start: 1473, end: 1473, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Joshua',       start: 1473, end: 1450, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Judges',       start: 1450, end: 1120, tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Ruth',         start: 1131, end: 1120, tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '1 Samuel',     start: 1180, end: 1078, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '2 Samuel',     start: 1077, end: 1040, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '1 Kings',      start: 1040, end: 911,  tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '2 Kings',      start: 920,  end: 580,  tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '1 Chronicles', start: 1077, end: 1037, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: '2 Chronicles', start: 1037, end: 537,  tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Ezra',         start: 537,  end: 467,  tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Nehemiah',     start: 456,  end: 443,  tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
-   { name: 'Esther',       start: 493,  end: 475,  tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Genesis',      start: 4100, end: 1657, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Genesis",        group: "Bible Books Time Period"},
+   { name: 'Exodus',       start: 1657, end: 1512, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Exodus",         group: "Bible Books Time Period"},
+   { name: 'Leviticus',    start: 1512, end: 1512, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Leviticus",      group: "Bible Books Time Period"},
+   { name: 'Numbers',      start: 1512, end: 1473, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Numbers",        group: "Bible Books Time Period"},
+   { name: 'Deuteronomy',  start: 1473, end: 1473, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Deuteronomy",    group: "Bible Books Time Period"},
+   { name: 'Joshua',       start: 1473, end: 1450, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Joshua",         group: "Bible Books Time Period"},
+   { name: 'Judges',       start: 1450, end: 1120, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Judges",         group: "Bible Books Time Period"},
+   { name: 'Ruth',         start: 1131, end: 1120, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ruth",           group: "Bible Books Time Period"},
+   { name: '1 Samuel',     start: 1180, end: 1078, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Samuel",     group: "Bible Books Time Period"},
+   { name: '2 Samuel',     start: 1077, end: 1040, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Samuel",     group: "Bible Books Time Period"},
+   { name: '1 Kings',      start: 1040, end: 911,  tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Kings",      group: "Bible Books Time Period"},
+   { name: '2 Kings',      start: 920,  end: 580,  tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Kings",      group: "Bible Books Time Period"},
+   { name: '1 Chronicles', start: 1077, end: 1037, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Chronicles", group: "Bible Books Time Period"},
+   { name: '2 Chronicles', start: 1037, end: 537,  tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Chronicles", group: "Bible Books Time Period"},
+   { name: 'Ezra',         start: 537,  end: 467,  tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezra",           group: "Bible Books Time Period"},
+   { name: 'Nehemiah',     start: 456,  end: 443,  tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nehemiah",       group: "Bible Books Time Period"},
+   { name: 'Esther',       start: 493,  end: 475,  tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Esther",         group: "Bible Books Time Period"},
 ];
 
 const kingsOfJudah: TimelineItem[] = [

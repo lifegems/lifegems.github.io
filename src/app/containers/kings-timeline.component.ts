@@ -31,7 +31,7 @@ template: `
       <div [style.width]="getTimelineWidth(timelineData$ | async)" class="timeline--inner">
          <ion-grid class="timeline--grid" no-padding>
             <ion-row class="box box--1">
-               <div [style.left]="getYearAlignment((timelineData$ | async), year)" *ngFor="let year of (years$ | async)" class="tl--year-marker">{{year}} B.C.E.</div>
+               <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="1" [rowNumber]="1" [items]="listYearItems(years$ | async)"></app-timeline-row>
             </ion-row>
             <ion-row class="box box--2" *ngFor="let group of (groups$ | async); let i = index">
                <app-timeline-row [timelineData]="(timelineData$ | async)" [rows]="getGroupRowCount((items$ | async), group)" [rowNumber]="i + 1" [items]="listGroupItems((items$ | async), group)"></app-timeline-row>
@@ -39,13 +39,19 @@ template: `
          </ion-grid>
       </div>
    </div>
-   <!--<ion-fab right bottom>
+   <ion-fab right bottom>
       <button ion-fab><ion-icon name="md-settings"></ion-icon></button>
       <ion-fab-list side="left">
-         <button ion-fab mini (click)="zoomIn()"><ion-icon name="md-add"></ion-icon></button>
-         <button ion-fab mini (click)="zoomOut()"><ion-icon name="md-remove"></ion-icon></button>
+         <button ion-fab mini
+            [ngClass]="{'disabled':(timelineData$ | async).increment <= 1}"
+            [disabled]="(timelineData$ | async).increment <= 1"
+            (click)="zoomIn()"><ion-icon name="md-add"></ion-icon></button>
+         <button ion-fab mini
+            [ngClass]="{'disabled':(timelineData$ | async).increment >= 50}"
+            [disabled]="(timelineData$ | async).increment >= 50"
+            (click)="zoomOut()"><ion-icon name="md-remove"></ion-icon></button>
       </ion-fab-list>
-   </ion-fab>-->
+   </ion-fab>
 </ion-content>
 
 <ion-footer>
@@ -75,46 +81,41 @@ export class KingsTimelineComponent implements OnInit {
    }
 
    showGroupSelection(items$, groups$) {
-      items$.subscribe(items => {
-         groups$.subscribe(groups => {
-            let modal = this.modalCtrl.create(TimelineListModal, {
-               items: items,
-               groups: groups
-            });
-            modal.present();
-            modal.onDidDismiss((data) => {
-               this.store.dispatch(new TimelineActions.SetGroupsAction(data.groups));
-            });
-         });
+      let modal = this.modalCtrl.create(TimelineListModal, {
+         items: items$,
+         groups: groups$
       });
-
+      modal.present();
+      modal.onDidDismiss((data) => {
+         if (data && data.groups && data.groups.length <= 6) {
+            this.store.dispatch(new TimelineActions.SetGroupsAction(data.groups));
+         }
+      });
    }
 
    getGroupRowCount(items: TimelineItem[], group: string): number {
       return this.listGroupItems(items, group).map(item => item.tier).reduce((a, b) => a > b ? a : b);
    }
 
+   getTimelineWidth(timelineData: {start: number, end: number, increment: number}): string {
+      return ((timelineData.start - timelineData.end) * timelineData.increment) + 'px';
+   }
+
    listGroupItems(items: TimelineItem[], group: string): TimelineItem[] {
       return items.filter(item => item.group == group);
    }
 
-   pixelize(digit: number): string {
-      return digit + 'px';
-   }
-
-   getTimelineWidth(timelineData: {start: number, end: number, increment: number}): string {
-      return this.pixelize(this.getYearPosition(timelineData.start, timelineData.end, timelineData.increment) + 100);
-   }
-
-   getYearPosition(start: number, year: number, increment: number): number {
-      //   1 year  =   10px
-      //  10 years =  100px
-      // 100 years = 1000px
-      return (start - year) * increment;
-   }
-
-   getYearAlignment(timelineData: {start: number, end: number, increment: number}, year: number): string {
-      return this.pixelize(this.getYearPosition(timelineData.start, year, timelineData.increment));
+   listYearItems(years: number[]): TimelineItem[] {
+      return years.filter(y => y <= 4100).map(year => {
+         return {
+            name: (year == 4100) ? "Creation" : `${year} B.C.E.`,
+            start: year,
+            end:   year,
+            tier:  1,
+            url:   "",
+            group: "TIMELINE_DATES"
+         }
+      });
    }
 
    zoomIn() {

@@ -30,8 +30,8 @@ function listYears(timelineData: {start: number, end: number, increment: number}
 	return years;
 }
 
-function getGroupsTimelineData(items: TimelineItem[], groups: string[]) {
-	let listedItems = items.filter(item => groups.indexOf(item.group) > -1);
+function getGroupsTimelineData(state: TimelineState, groups: string[]) {
+	let listedItems = state.items.filter(item => groups.indexOf(item.group) > -1);
 	let oldestDate  = listedItems.map(item => item.start).reduce((dt1, dt2) => dt1 > dt2 ? dt1 : dt2);
 	let newestDate  = listedItems.map(item => item.start).reduce((dt1, dt2) => dt1 < dt2 ? dt1 : dt2);
 	let start = Math.ceil(oldestDate / 100) * 100;
@@ -39,8 +39,34 @@ function getGroupsTimelineData(items: TimelineItem[], groups: string[]) {
 	return {
 		start: start,
 		end: end,
-		increment: 10,
+		increment: state.timelineData.increment,
 	};
+}
+
+function getNextZoomIn(increment: number) {
+	switch(increment) {
+		case 50:
+			return 20;
+		case 20:
+			return 10;
+		case 10:
+			return 5;
+		default:
+			return 1;
+	}
+}
+
+function getNextZoomOut(increment: number) {
+	switch(increment) {
+		case 1:
+			return 5;
+		case 5:
+			return 10;
+		case 10:
+			return 20;
+		default:
+			return 50;
+	}
 }
 
 export function timelineReducer(state: TimelineState = initState, action: Action) {
@@ -51,28 +77,30 @@ export function timelineReducer(state: TimelineState = initState, action: Action
 				years: listYears(state.timelineData),
 			});
 		case timelineActions.SETGROUPS:
-			let tlData = getGroupsTimelineData(state.items, action.payload);
+			if (action.payload.length > 6) {
+				return Object.assign({}, state);
+			}
+			let tlData = getGroupsTimelineData(state, action.payload);
 			return Object.assign({}, state, {
 				groups: action.payload,
 				timelineData: tlData,
 				years: listYears(tlData),
 			});
 		case timelineActions.ZOOMIN:
-			let newIncrement = state.timelineData.increment - 10
-			let zoomInTlData = Object.assign({}, state.timelineData, {
-				increment: (newIncrement <= 0) ? 1 : newIncrement,
+			let zoomInData = Object.assign({}, state.timelineData, {
+				increment: getNextZoomIn(state.timelineData.increment),
 			});
 			return Object.assign({}, state, {
-				timelineData: zoomInTlData,
-				years: listYears(zoomInTlData),
+				timelineData: zoomInData,
+				years: listYears(zoomInData),
 			});
 		case timelineActions.ZOOMOUT:
-			let zoomOutTlData = Object.assign({}, state.timelineData, {
-				increment: state.timelineData.increment + 10
+			let zoomOutData = Object.assign({}, state.timelineData, {
+				increment: getNextZoomOut(state.timelineData.increment),
 			});
 			return Object.assign({}, state, {
-				timelineData: zoomOutTlData,
-				years: listYears(zoomOutTlData),
+				timelineData: zoomOutData,
+				years: listYears(zoomOutData),
 			});
 		default:
 			return Object.assign({}, state);

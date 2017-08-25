@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { ModalController, NavController, Slides } from 'ionic-angular';
 
+import { TimelineItem } from '../models/timeline-item.model';
 import { ProfileModal } from '../components/profile.modal';
 
 @Component({
@@ -18,7 +19,8 @@ import { ProfileModal } from '../components/profile.modal';
          [style.left]="getYearAlignment(timelineData, item.start)"
          [style.width]="getWidth(timelineData, item.start, item.end)" 
          *ngFor="let item of items">
-         <span class="tl--item-title">{{(isItemShort(item.start, item.end)) ? '&#9664; ' + item.name : item.name}}</span>
+         <span [style.color]="(item.group == 'TIMELINE_DATES') ? '#003740':'black'" 
+         class="tl--item-title">{{(isItemShort(item.start, item.end)) ? '&#9664; ' + item.name : item.name}}</span>
       </li>
    </ol>
    `,
@@ -35,9 +37,11 @@ export class TimelineRowComponent {
       public modalCtrl: ModalController
    ) {}
 
-   clickTimelineItem(item) {
-      let modal = this.modalCtrl.create(ProfileModal, {profile: item});
-      modal.present();
+   clickTimelineItem(item: TimelineItem) {
+      if (item.url) {
+         let modal = this.modalCtrl.create(ProfileModal, {profile: item});
+         modal.present();
+      }
    }
 
    pixelize(digit: number): string {
@@ -48,7 +52,7 @@ export class TimelineRowComponent {
       //   1 year  =   10px
       //  10 years =  100px
       // 100 years = 1000px
-      return (start - year) * increment;
+      return (start - year) * (100 / increment);
    }
 
    getYearAlignment(timelineData: {start: number, end: number, increment: number}, year: number): string {

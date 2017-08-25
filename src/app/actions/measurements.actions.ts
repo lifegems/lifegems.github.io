@@ -6,6 +6,7 @@ export const CHANGEAUXMEASURE  = '[Measures] Change Auxilary Measure';
 export const CHANGEAUXVALUE    = '[Measures] Change Auxilary Value';
 export const CHANGEBASEMEASURE = '[Measures] Change Base Measure';
 export const CHANGEBASEVALUE   = '[Measures] Change Base Value';
+export const CHANGETYPE        = '[Measures] Change Type';
 export const INIT              = '[Measures] Init Measures';
 export const MEASURESLOADED    = '[Measures] Loaded Measures';
 export const MEASURESFAILED    = '[Measures] Failed to load Measures';
@@ -39,6 +40,12 @@ export class ChangeBaseValueAction implements Action {
   constructor(public payload: number) {}
 }
 
+export class ChangeTypeAction implements Action {
+  readonly type = CHANGETYPE;
+
+  constructor(public payload: string) {}
+}
+
 export class InitMeasuresAction implements Action {
   readonly type = INIT;
 }
@@ -65,6 +72,7 @@ export type ALL
  | ChangeAuxValueAction
  | ChangeBaseMeasureAction
  | ChangeBaseValueAction
+ | ChangeTypeAction
  | InitMeasuresAction
  | MeasuresLoadedAction
  | MeasuresFailedAction

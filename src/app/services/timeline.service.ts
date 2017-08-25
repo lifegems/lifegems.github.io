@@ -9,13 +9,23 @@ export class TimelineService {
          ...kingsOfJudah,
          ...kingsOfSamaria,
          ...prophets,
-         ...events
+         ...events,
+         // ...bibleBooksCoverage,
       ];
       return Observable.create(observer => {
          observer.next(items);
       });
    }
 }
+
+const bibleBooksCoverage: TimelineItem[] = [
+   { name: '1 Kings',      start: 1000, end: 911, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '2 Kings',      start: 920,  end: 580, tier: 2, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: '2 Chronicles', start: 1000, end: 537, tier: 3, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Ezra',         start: 537,  end: 500, tier: 1, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Isaiah',       start: 778,  end: 732, tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+   { name: 'Jeremiah',     start: 647,  end: 580, tier: 4, url: "https://wol.jw.org", group: "Bible Books Time Period"},
+];
 
 const kingsOfJudah: TimelineItem[] = [
    { name: 'Rehoboam',    start: 997, end: 980, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Rehoboam", group: "Kings of Judah" },

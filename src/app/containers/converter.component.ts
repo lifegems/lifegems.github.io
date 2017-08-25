@@ -28,8 +28,8 @@ import * as measurementsState from '../reducers/measurements.reducer';
          <ion-list>
             <ion-item>
                <ion-label>Measurement Type</ion-label>
-               <ion-select style="font-size:12px" [ngModel]="(selectedType$ | async)">
-                  <ion-option [selected]="type == (selectedType$ | async)" *ngFor="let type of types$ | async">{{type}}</ion-option>
+               <ion-select style="font-size:12px" [ngModel]="(selectedType$ | async)" (ngModelChange)="changeType($event)">
+                  <ion-option [selected]="type == (selectedType$ | async)" *ngFor="let type of (types$ | async)">{{type}}</ion-option>
                </ion-select>
             </ion-item>
           </ion-list>
@@ -38,11 +38,11 @@ import * as measurementsState from '../reducers/measurements.reducer';
          <ion-list>
             <ion-item-divider text-center>Units</ion-item-divider>
             <app-conversion-item
-               [index]="0" [measureValue]="(baseMeasure$ | async)" [measurements]="measurements$ | async"
+               [index]="0" [measureValue]="(baseMeasure$ | async)" [measurements]="listTypeMeasurements(selectedType$ | async, measurements$ | async)"
                (changeValue)="changeBaseValue($event)" (changeMeasure)="changeBaseMeasure($event)">
             </app-conversion-item>
             <app-conversion-item *ngFor="let aux of (auxMeasures$ | async); let i = index; trackBy:trackAux"
-               [index]="i" [measureValue]="aux" [measurements]="measurements$ | async"
+               [index]="i" [measureValue]="aux" [measurements]="listTypeMeasurements(selectedType$ | async, measurements$ | async)"
                (changeValue)="changeAuxValue($event)" (changeMeasure)="changeAuxMeasure($event)">
             </app-conversion-item>
          </ion-list>
@@ -95,6 +95,14 @@ export class ConverterComponent implements OnInit {
 
    public changeBaseValue(base: {index: number, value: number}): void {
       this.store.dispatch(new MeasurementActions.ChangeBaseValueAction(base.value));
+   }
+
+   public changeType(type: string) {
+     this.store.dispatch(new MeasurementActions.ChangeTypeAction(type));
+   }
+
+   public listTypeMeasurements(type: string, measurements: Measure[]) {
+     return measurements.filter(m => m.type == type);
    }
 
    public trackAux(index: any, item, any) {

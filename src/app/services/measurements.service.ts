@@ -97,4 +97,28 @@ let Measurements: Measure[] = [
     amount: 36,
     type: "Length"
   },
+  {
+    id: 16,
+    name: "Bekah",
+    amount: 5.7,
+    type: "Weight"
+  },
+  {
+    id: 18,
+    name: "Gerah",
+    amount: 0.57,
+    type: "Weight"
+  },
+  {
+    id: 15,
+    name: "Gram",
+    amount: 1,
+    type: "Weight"
+  },
+  {
+    id: 17,
+    name: "Shekel",
+    amount: 11.4,
+    type: "Weight"
+  },
 ];

@@ -41,6 +41,10 @@ const initState: MeasuresState = {
 	types: []
 }
 
+function getTypeMeasures(measurements: Measure[], type: string) {
+	return measurements.filter(m => m.type == type);
+}
+
 function setAuxMeasures(baseValue: number, baseAmount: number, state: MeasuresState): MeasureValue[] {
 	return state.auxMeasures.map(aux => {
 		return {
@@ -58,11 +62,11 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 	switch(action.type) {
 		case measureActions.ADDAUXMEASUREMENT:
 			let newAuxMeasures = state.auxMeasures.map(aux => Object.assign({}, aux));
+			let thisNewAux     = state.measurements.filter(m => m.type == state.selectedType)[0];
 			newAuxMeasures.push({
-				measure: state.measurements[0],
-				value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, state.measurements[0].amount)
+				measure: thisNewAux,
+				value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, thisNewAux.amount)
 			});
-			console.log(newAuxMeasures);
 			return Object.assign({}, state, {
 				auxMeasures: newAuxMeasures
 			});
@@ -114,6 +118,20 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 					value: action.payload,
 					measure: state.baseMeasure.measure
 				}
+			});
+		case measureActions.CHANGETYPE:
+			let baseMeasure = getTypeMeasures(state.measurements, action.payload)[0];
+			let newAuxMeasure  = getTypeMeasures(state.measurements, action.payload)[1];
+			return Object.assign({}, state, {
+				selectedType: action.payload,
+				baseMeasure: {
+					value: 1,
+					measure: baseMeasure
+				},
+				auxMeasures: [{
+					value: calculateMeasure(1, baseMeasure.amount, newAuxMeasure.amount),
+					measure: newAuxMeasure
+				}]
 			});
 		case measureActions.MEASURESLOADED:
 			return Object.assign({}, state, {

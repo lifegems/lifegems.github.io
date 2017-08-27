@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StoreModule } from '@ngrx/store';
@@ -8,13 +9,20 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
-import { ConverterComponent, DashboardComponent, KingsComponent, KingsTimelineComponent } from './containers';
+import {
+  ConverterComponent,
+  DashboardComponent,
+  KingsComponent,
+  KingsTimelineComponent,
+  ReadingSchedulesComponent, 
+  ScheduleSectionComponent } from './containers';
 import {
   ConversionItemComponent,
   ExpanderComponent,
   KingsListModal,
   ProfileModal,
   PersonCardComponent,
+  ScheduleSettingsPopover,
   TimelineListModal,
   TimelineRowComponent } from './components';
 
@@ -22,12 +30,15 @@ import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
 import { MeasurementsService } from './services/measurements.service';
 import { MeasurementsEffects } from './effects/measurements.effects';
+import { SchedulesService } from './services/schedules.service';
+import { SchedulesEffects } from './effects/schedules.effects';
 import { TimelineService } from './services/timeline.service';
 import { TimelineEffects } from './effects/timeline.effects';
 
 
 import { kingsReducer } from './reducers/kings.reducer';
 import { measurementsReducer } from './reducers/measurements.reducer';
+import { schedulesReducer } from './reducers/schedules.reducer';
 import { timelineReducer } from './reducers/timeline.reducer';
 
 @NgModule({
@@ -40,16 +51,25 @@ import { timelineReducer } from './reducers/timeline.reducer';
     KingsComponent,
     KingsTimelineComponent,
     PersonCardComponent,
+    ScheduleSettingsPopover,
     TimelineListModal,
     TimelineRowComponent,
     KingsListModal,
     ProfileModal,
+    ReadingSchedulesComponent,
+    ScheduleSectionComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.forRoot({kings: kingsReducer, measurements: measurementsReducer, timeline: timelineReducer}),
-    EffectsModule.forRoot([KingsEffects, MeasurementsEffects, TimelineEffects]),
+    IonicStorageModule.forRoot(),
+    StoreModule.forRoot({
+      kings: kingsReducer,
+      measurements: measurementsReducer,
+      schedules: schedulesReducer,
+      timeline: timelineReducer,
+    }),
+    EffectsModule.forRoot([KingsEffects, MeasurementsEffects, SchedulesEffects, TimelineEffects]),
     StoreDevtoolsModule.instrument(),
   ],
   bootstrap: [IonicApp],
@@ -62,6 +82,9 @@ import { timelineReducer } from './reducers/timeline.reducer';
     KingsListModal,
     ProfileModal,
     TimelineListModal,
+    ReadingSchedulesComponent,
+    ScheduleSectionComponent,
+    ScheduleSettingsPopover,
   ],
   providers: [
     StatusBar,
@@ -69,6 +92,7 @@ import { timelineReducer } from './reducers/timeline.reducer';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KingsService,
     MeasurementsService,
+    SchedulesService,
     TimelineService,
   ]
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
-import { ConverterComponent, KingsComponent, KingsTimelineComponent } from '../containers';
+import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSchedulesComponent } from '../containers';
 
 @Component({
   selector: 'page-dashboard',
@@ -57,8 +57,16 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent } from '../c
             </ion-card>
          </ion-col>
          <ion-col col-6>
-            <div></div>
-            <!-- Add a new app! -->
+            <ion-card>
+               <ion-card-header>Schedules</ion-card-header>
+               <ion-card-content>
+                  Keep track of your reading progress through publication schedules
+               </ion-card-content>
+               <button ion-button icon-left clear small (click)="navigateToApp('schedules')">
+                  <ion-icon name="md-navigate"></ion-icon>
+                  <div>View App</div>
+               </button>
+            </ion-card>
          </ion-col>
       </ion-row>
    </ion-grid>
@@ -89,6 +97,9 @@ export class DashboardComponent implements OnInit {
             break;
          case 'converter':
             this.navCtrl.setRoot(ConverterComponent);
+            break;
+         case 'schedules':
+            this.navCtrl.setRoot(ReadingSchedulesComponent);
             break;
       }
    }

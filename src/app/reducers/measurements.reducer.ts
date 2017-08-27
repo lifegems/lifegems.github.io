@@ -141,7 +141,7 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 			});
 		case measureActions.SETTYPES:
 			return Object.assign({}, state, {
-				types: action.payload.map(m => m.type).filter((v, i, self) => self.indexOf(v) === i),
+				types: action.payload.map(m => m.type).filter((v, i, self) => self.indexOf(v) === i).sort(),
 			})
 		default:
 			return Object.assign({}, state);

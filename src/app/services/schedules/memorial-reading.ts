@@ -1,7 +1,7 @@
 import { Schedule, Section } from '../../models/schedule.model';
 
 export const memorialReading: Schedule = {
-   name: "Memorial Bible Reading",
+   name: "Bible - Memorial Reading",
    complete: false,
    sections: [
       {

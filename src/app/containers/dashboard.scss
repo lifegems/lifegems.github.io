@@ -1,0 +1,51 @@
+.apps {
+   &--grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+
+      &:after {
+         content: "";
+         flex: auto;
+      }
+   }
+}
+
+.app {
+   width: 5rem;
+   height: 8rem;
+   margin-left: 2rem;
+   margin-right: 2rem;
+   margin-top: 2rem;
+   align-self: flex-start;
+   
+   &--title {
+      color: gray;
+      text-align: center;
+      padding-top: 0.5rem;
+      font-size: 10px;
+   }
+   
+   &--icon {
+      text-align: center;
+      border: solid 1px gray;
+      border-radius: 4px;
+      box-shadow: 2px 2px 5px 0px gray;
+      height: 5rem;
+      line-height: 5rem;
+
+      &--purple {
+         color: purple;
+      }
+      &--green {
+         color: green;
+      }
+      &--gray {
+         color: gray;
+      }
+      &--skyblue {
+         color: skyblue;
+      }
+   }
+}

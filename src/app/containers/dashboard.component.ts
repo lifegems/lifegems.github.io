@@ -16,12 +16,38 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
 </ion-header>
 
 <ion-content>
-   <ion-grid>
+   <div class="apps--grid">
+      <div class="app" (click)="navigateToApp('kings')">
+         <div class="app--icon app--icon--purple">
+            <i class="fa fa-user fa-2x"></i>
+         </div>
+         <div class="app--title">Kings</div>
+      </div>
+      <div class="app" (click)="navigateToApp('timeline')">
+         <div class="app--icon app--icon--green">
+            <i class="fa fa-sliders-h fa-2x"></i>
+         </div>
+         <div class="app--title">Timeline</div>
+      </div>
+      <div class="app" (click)="navigateToApp('converter')">
+         <div class="app--icon app--icon--skyblue">
+            <i class="fa fa-sliders-h fa-2x"></i>
+         </div>
+         <div class="app--title">Converter</div>
+      </div>
+      <div class="app" (click)="navigateToApp('schedules')">
+         <div class="app--icon app--icon--gray">
+            <i class="fa fa-book fa-2x"></i>
+         </div>
+         <div class="app--title">Schedules</div>
+      </div>
+   </div>
+   <!--<ion-grid>
       <ion-row>
          <ion-col col-4>
             <ion-card>
                <ion-card-header text-center (click)="navigateToApp('kings')">
-                  <ion-icon name="md-person"></ion-icon>
+                  <div style="color:purple"><i class="fa fa-user"></i></div>
                </ion-card-header>
             </ion-card>
             <div text-center>Kings</div>
@@ -29,7 +55,7 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
          <ion-col col-4>
             <ion-card>
                <ion-card-header text-center (click)="navigateToApp('timeline')">
-                  <ion-icon name="md-options"></ion-icon>
+                  <div style="color:green"><i class="fa fa-sliders-h"></i></div>
                </ion-card-header>
             </ion-card>
             <div text-center>Timeline</div>
@@ -37,7 +63,7 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
          <ion-col col-4>
             <ion-card>
                <ion-card-header text-center (click)="navigateToApp('converter')">
-                  <ion-icon name="md-swap"></ion-icon>
+                  <div style="color:skyblue"><i class="fa fa-balance-scale"></i></div>
                </ion-card-header>
             </ion-card>
             <div text-center>Converter</div>
@@ -47,13 +73,13 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
          <ion-col col-4>
             <ion-card>
                <ion-card-header text-center (click)="navigateToApp('schedules')">
-                  <ion-icon name="md-book"></ion-icon>
+                  <div style="color:gray"><i class="fa fa-book"></i></div>
                </ion-card-header>
             </ion-card>
             <div text-center>Schedules</div>
          </ion-col>
       </ion-row>
-   </ion-grid>
+   </ion-grid>-->
 </ion-content>
 
 <ion-footer>

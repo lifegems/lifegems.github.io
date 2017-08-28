@@ -5,7 +5,7 @@ import 'rxjs/add/observable/merge';
 import { Storage } from '@ionic/storage';
 
 import { Schedule } from '../models/schedule.model';
-import { bibleReadingChrono, watchtowerComplete } from './schedules';
+import * as Schedules from './schedules';
 
 @Injectable()
 export class SchedulesService {
@@ -13,8 +13,9 @@ export class SchedulesService {
 
    constructor(private storage: Storage) {
       this.schedules = Object.assign([], [
-         watchtowerComplete,
-         bibleReadingChrono,
+         Schedules.watchtowerComplete,
+         Schedules.bibleReadingChrono,
+         Schedules.memorialReading,
       ]);
    }
 

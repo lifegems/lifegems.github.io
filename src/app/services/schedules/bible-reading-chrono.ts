@@ -654,12 +654,324 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 62",
+         name: "Day 71",
          complete: false,
          sections: [
             { name: "Numbers 34", complete: false, sections: [] },
             { name: "Numbers 35", complete: false, sections: [] },
             { name: "Numbers 36", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 72",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 1",      complete: false, sections: [] },
+            { name: "Deuteronomy 2",      complete: false, sections: [] },
+            { name: "Deuteronomy 3:1-11", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 73",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 3:12-29", complete: false, sections: [] },
+            { name: "Deuteronomy 4",       complete: false, sections: [] },
+            { name: "Deuteronomy 5",       complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 74",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 6", complete: false, sections: [] },
+            { name: "Deuteronomy 7", complete: false, sections: [] },
+            { name: "Deuteronomy 8", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 75",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 9",  complete: false, sections: [] },
+            { name: "Deuteronomy 10", complete: false, sections: [] },
+            { name: "Deuteronomy 11", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 76",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 12", complete: false, sections: [] },
+            { name: "Deuteronomy 13", complete: false, sections: [] },
+            { name: "Deuteronomy 14", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 77",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 15", complete: false, sections: [] },
+            { name: "Deuteronomy 16", complete: false, sections: [] },
+            { name: "Deuteronomy 17", complete: false, sections: [] },
+            { name: "Deuteronomy 18", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 78",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 19", complete: false, sections: [] },
+            { name: "Deuteronomy 20", complete: false, sections: [] },
+            { name: "Deuteronomy 21", complete: false, sections: [] },
+            { name: "Deuteronomy 22", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 79",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 23", complete: false, sections: [] },
+            { name: "Deuteronomy 24", complete: false, sections: [] },
+            { name: "Deuteronomy 25", complete: false, sections: [] },
+            { name: "Deuteronomy 26", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 80",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 27", complete: false, sections: [] },
+            { name: "Deuteronomy 28", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 81",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 29",      complete: false, sections: [] },
+            { name: "Deuteronomy 30",      complete: false, sections: [] },
+            { name: "Deuteronomy 31:1-29", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 82",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 31:30", complete: false, sections: [] },
+            { name: "Deuteronomy 32",    complete: false, sections: [] },
+            { name: "Psalm 90",          complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 83",
+         complete: false,
+         sections: [
+            { name: "Deuteronomy 33", complete: false, sections: [] },
+            { name: "Deuteronomy 34", complete: false, sections: [] },
+            { name: "Joshua 1",       complete: false, sections: [] },
+            { name: "Joshua 2",       complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 84",
+         complete: false,
+         sections: [
+            { name: "Joshua 3", complete: false, sections: [] },
+            { name: "Joshua 4", complete: false, sections: [] },
+            { name: "Joshua 5", complete: false, sections: [] },
+            { name: "Joshua 6", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 85",
+         complete: false,
+         sections: [
+            { name: "Joshua 7", complete: false, sections: [] },
+            { name: "Joshua 8", complete: false, sections: [] },
+            { name: "Joshua 9", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 86",
+         complete: false,
+         sections: [
+            { name: "Joshua 10", complete: false, sections: [] },
+            { name: "Joshua 11", complete: false, sections: [] },
+            { name: "Joshua 12", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 87",
+         complete: false,
+         sections: [
+            { name: "Joshua 13", complete: false, sections: [] },
+            { name: "Joshua 14", complete: false, sections: [] },
+            { name: "Joshua 15", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 88",
+         complete: false,
+         sections: [
+            { name: "Joshua 16",     complete: false, sections: [] },
+            { name: "Joshua 17",     complete: false, sections: [] },
+            { name: "Joshua 18",     complete: false, sections: [] },
+            { name: "Joshua 19:1-9", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 89",
+         complete: false,
+         sections: [
+            { name: "1 Chronicles 4:24-33", complete: false, sections: [] },
+            { name: "Joshua 19:10-31",      complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 90",
+         complete: false,
+         sections: [
+            { name: "Joshua 19:32-51",      complete: false, sections: [] },
+            { name: "Joshua 20",            complete: false, sections: [] },
+            { name: "Joshua 21",            complete: false, sections: [] },
+            { name: "1 Chronicles 6:54-81", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 91",
+         complete: false,
+         sections: [
+            { name: "Joshua 22", complete: false, sections: [] },
+            { name: "Joshua 23", complete: false, sections: [] },
+            { name: "Joshua 24", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 92",
+         complete: false,
+         sections: [
+            { name: "Judges 1",     complete: false, sections: [] },
+            { name: "Judges 2",     complete: false, sections: [] },
+            { name: "Judges 3:1-6", complete: false, sections: [] },
+            { name: "Judges 17",    complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 93",
+         complete: false,
+         sections: [
+            { name: "Judges 18",     complete: false, sections: [] },
+            { name: "Judges 3:7-31", complete: false, sections: [] },
+            { name: "Judges 4",      complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 94",
+         complete: false,
+         sections: [
+            { name: "Judges 5", complete: false, sections: [] },
+            { name: "Judges 6", complete: false, sections: [] },
+            { name: "Judges 7", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 95",
+         complete: false,
+         sections: [
+            { name: "Judges 8", complete: false, sections: [] },
+            { name: "Judges 9", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 96",
+         complete: false,
+         sections: [
+            { name: "Judges 10", complete: false, sections: [] },
+            { name: "Judges 11", complete: false, sections: [] },
+            { name: "Judges 12", complete: false, sections: [] },
+            { name: "Judges 13", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 97",
+         complete: false,
+         sections: [
+            { name: "Judges 19", complete: false, sections: [] },
+            { name: "Judges 20", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 98",
+         complete: false,
+         sections: [
+            { name: "Judges 21",            complete: false, sections: [] },
+            { name: "1 Chronicles 6:4b-15", complete: false, sections: [] },
+            { name: "Ruth 1",               complete: false, sections: [] },
+            { name: "Ruth 2",               complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 99",
+         complete: false,
+         sections: [
+            { name: "Ruth 3",              complete: false, sections: [] },
+            { name: "Ruth 4",              complete: false, sections: [] },
+            { name: "1 Chronicles 2:3-16", complete: false, sections: [] },
+            { name: "1 Samuel 1",          complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 100",
+         complete: false,
+         sections: [
+            { name: "1 Samuel 2:1-10",  complete: false, sections: [] },
+            { name: "Psalm 113",        complete: false, sections: [] },
+            { name: "1 Samuel 2:11-21", complete: false, sections: [] },
+            { name: "Judges 14",        complete: false, sections: [] },
+            { name: "Judges 15",        complete: false, sections: [] },
+            { name: "Judges 16:1-22",   complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 101",
+         complete: false,
+         sections: [
+            { name: "Judges 16:23-31",   complete: false, sections: [] },
+            { name: "1 Samuel 2:22-36",  complete: false, sections: [] },
+            { name: "1 Samuel 3",        complete: false, sections: [] },
+            { name: "1 Samuel 4",        complete: false, sections: [] },
+            { name: "1 Samuel 5",        complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 102",
+         complete: false,
+         sections: [
+            { name: "1 Samuel 6", complete: false, sections: [] },
+            { name: "1 Samuel 7", complete: false, sections: [] },
+            { name: "1 Samuel 8", complete: false, sections: [] },
+            { name: "1 Samuel 9", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 103",
+         complete: false,
+         sections: [
+            { name: "1 Samuel 10",      complete: false, sections: [] },
+            { name: "1 Samuel 11",      complete: false, sections: [] },
+            { name: "1 Samuel 12",      complete: false, sections: [] },
+            { name: "1 Samuel 13:1-22", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 104",
+         complete: false,
+         sections: [
+            { name: "1 Samuel 13:23",    complete: false, sections: [] },
+            { name: "1 Samuel 14",       complete: false, sections: [] },
+            { name: "1 Chronicles 8",    complete: false, sections: [] },
+            { name: "1 Chronicles 9:1a", complete: false, sections: [] },
          ]
       },
    ],

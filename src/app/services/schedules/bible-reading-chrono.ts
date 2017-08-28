@@ -314,5 +314,134 @@ export const bibleReadingChrono: Schedule = {
             { name: "Job 42", complete: false, sections: [] },
          ]
       },
+      {
+         name: "Day 33",
+         complete: false,
+         sections: [
+            { name: "Exodus 1",      complete: false, sections: [] },
+            { name: "Exodus 2",      complete: false, sections: [] },
+            { name: "Exodus 3",      complete: false, sections: [] },
+            { name: "Exodus 4:1-17", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 34",
+         complete: false,
+         sections: [
+            { name: "Exodus 4:18-31",      complete: false, sections: [] },
+            { name: "Exodus 5",            complete: false, sections: [] },
+            { name: "Exodus 6:1-27",       complete: false, sections: [] },
+            { name: "1 Chronicles 6:1-4a", complete: false, sections: [] },
+            { name: "Exodus 6:28-30",      complete: false, sections: [] },
+            { name: "Exodus 7:1-13",       complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 35",
+         complete: false,
+         sections: [
+            { name: "Exodus 7:14-25", complete: false, sections: [] },
+            { name: "Exodus 8",       complete: false, sections: [] },
+            { name: "Exodus 9",       complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 36",
+         complete: false,
+         sections: [
+            { name: "Exodus 10", complete: false, sections: [] },
+            { name: "Exodus 11", complete: false, sections: [] },
+            { name: "Exodus 12", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 37",
+         complete: false,
+         sections: [
+            { name: "Exodus 13", complete: false, sections: [] },
+            { name: "Exodus 14", complete: false, sections: [] },
+            { name: "Exodus 15", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 38",
+         complete: false,
+         sections: [
+            { name: "Exodus 16", complete: false, sections: [] },
+            { name: "Exodus 17", complete: false, sections: [] },
+            { name: "Exodus 18", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 39",
+         complete: false,
+         sections: [
+            { name: "Exodus 19", complete: false, sections: [] },
+            { name: "Exodus 20", complete: false, sections: [] },
+            { name: "Exodus 21", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 40",
+         complete: false,
+         sections: [
+            { name: "Exodus 22", complete: false, sections: [] },
+            { name: "Exodus 23", complete: false, sections: [] },
+            { name: "Exodus 24", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 41",
+         complete: false,
+         sections: [
+            { name: "Exodus 25", complete: false, sections: [] },
+            { name: "Exodus 26", complete: false, sections: [] },
+            { name: "Exodus 27", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 42",
+         complete: false,
+         sections: [
+            { name: "Exodus 28", complete: false, sections: [] },
+            { name: "Exodus 29", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 43",
+         complete: false,
+         sections: [
+            { name: "Exodus 31",     complete: false, sections: [] },
+            { name: "Exodus 32",     complete: false, sections: [] },
+            { name: "Exodus 33:1-6", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 44",
+         complete: false,
+         sections: [
+            { name: "Exodus 33:7-23", complete: false, sections: [] },
+            { name: "Exodus 34",      complete: false, sections: [] },
+            { name: "Exodus 35",      complete: false, sections: [] },
+            { name: "Exodus 36:1-7",  complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 45",
+         complete: false,
+         sections: [
+            { name: "Exodus 36:8-38", complete: false, sections: [] },
+            { name: "Exodus 37",      complete: false, sections: [] },
+            { name: "Exodus 38",      complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 46",
+         complete: false,
+         sections: [
+            { name: "Exodus 39", complete: false, sections: [] },
+            { name: "Exodus 40", complete: false, sections: [] },
+         ]
+      },
    ],
 };

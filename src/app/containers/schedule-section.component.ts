@@ -109,10 +109,10 @@ export class ScheduleSectionComponent implements OnInit {
      });
      settings.present({ev: event});
      settings.onDidDismiss(data => {
-       if (data && data.hideCompleted) {
+       if (data && data.hasOwnProperty('hideCompleted')) {
           this.hideCompleted = data.hideCompleted;
        }
-       if (data && data.markAll && data.markAll !== this.isSectionComplete(this.section)) {
+       if (data && data.hasOwnProperty('markAll') && data.markAll !== this.isSectionComplete(this.section)) {
           this.markSchedule(this.section.sections, data.markAll);
        }
        if (data && data.clearData) {

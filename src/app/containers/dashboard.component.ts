@@ -18,55 +18,39 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
 <ion-content>
    <ion-grid>
       <ion-row>
-         <ion-col col-6>
+         <ion-col col-4>
             <ion-card>
-               <ion-card-header>Kings</ion-card-header>
-               <ion-card-content>
-                  Cards listing some of the key information regarding the Judean Kings of Israel
-               </ion-card-content>
-               <button ion-button icon-left clear small (click)="navigateToApp('kings')">
-                  <ion-icon name="md-navigate"></ion-icon>
-                  <div>View App</div>
-               </button>
+               <ion-card-header text-center (click)="navigateToApp('kings')">
+                  <ion-icon name="md-person"></ion-icon>
+               </ion-card-header>
             </ion-card>
+            <div text-center>Kings</div>
          </ion-col>
-         <ion-col col-6>
+         <ion-col col-4>
             <ion-card>
-               <ion-card-header>Timeline</ion-card-header>
-               <ion-card-content>
-                  A customizable timeline for viewing significant events based on the Bible
-               </ion-card-content>
-               <button ion-button icon-left clear small (click)="navigateToApp('timeline')">
-                  <ion-icon name="md-navigate"></ion-icon>
-                  <div>View App</div>
-               </button>
+               <ion-card-header text-center (click)="navigateToApp('timeline')">
+                  <ion-icon name="md-options"></ion-icon>
+               </ion-card-header>
             </ion-card>
+            <div text-center>Timeline</div>
+         </ion-col>
+         <ion-col col-4>
+            <ion-card>
+               <ion-card-header text-center (click)="navigateToApp('converter')">
+                  <ion-icon name="md-swap"></ion-icon>
+               </ion-card-header>
+            </ion-card>
+            <div text-center>Converter</div>
          </ion-col>
       </ion-row>
       <ion-row>
-         <ion-col col-6>
+         <ion-col col-4>
             <ion-card>
-               <ion-card-header>Units</ion-card-header>
-               <ion-card-content>
-                  A helpful tool in converting between various units of measurement
-               </ion-card-content>
-               <button ion-button icon-left clear small (click)="navigateToApp('converter')">
-                  <ion-icon name="md-navigate"></ion-icon>
-                  <div>View App</div>
-               </button>
+               <ion-card-header text-center (click)="navigateToApp('schedules')">
+                  <ion-icon name="md-book"></ion-icon>
+               </ion-card-header>
             </ion-card>
-         </ion-col>
-         <ion-col col-6>
-            <ion-card>
-               <ion-card-header>Schedules</ion-card-header>
-               <ion-card-content>
-                  Keep track of your reading progress through publication schedules
-               </ion-card-content>
-               <button ion-button icon-left clear small (click)="navigateToApp('schedules')">
-                  <ion-icon name="md-navigate"></ion-icon>
-                  <div>View App</div>
-               </button>
-            </ion-card>
+            <div text-center>Schedules</div>
          </ion-col>
       </ion-row>
    </ion-grid>

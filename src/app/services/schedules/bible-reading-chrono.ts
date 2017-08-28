@@ -443,5 +443,224 @@ export const bibleReadingChrono: Schedule = {
             { name: "Exodus 40", complete: false, sections: [] },
          ]
       },
+      {
+         name: "Day 47",
+         complete: false,
+         sections: [
+            { name: "Leviticus 1", complete: false, sections: [] },
+            { name: "Leviticus 2", complete: false, sections: [] },
+            { name: "Leviticus 3", complete: false, sections: [] },
+            { name: "Leviticus 4", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 48",
+         complete: false,
+         sections: [
+            { name: "Leviticus 5", complete: false, sections: [] },
+            { name: "Leviticus 6", complete: false, sections: [] },
+            { name: "Leviticus 7", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 49",
+         complete: false,
+         sections: [
+            { name: "Leviticus 8",  complete: false, sections: [] },
+            { name: "Leviticus 9",  complete: false, sections: [] },
+            { name: "Leviticus 10", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 50",
+         complete: false,
+         sections: [
+            { name: "Leviticus 11",      complete: false, sections: [] },
+            { name: "Leviticus 12",      complete: false, sections: [] },
+            { name: "Leviticus 13:1-46", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 51",
+         complete: false,
+         sections: [
+            { name: "Leviticus 13:47-59", complete: false, sections: [] },
+            { name: "Leviticus 14",       complete: false, sections: [] },
+            { name: "Leviticus 15",       complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 52",
+         complete: false,
+         sections: [
+            { name: "Leviticus 16", complete: false, sections: [] },
+            { name: "Leviticus 17", complete: false, sections: [] },
+            { name: "Leviticus 18", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 53",
+         complete: false,
+         sections: [
+            { name: "Leviticus 19", complete: false, sections: [] },
+            { name: "Leviticus 20", complete: false, sections: [] },
+            { name: "Leviticus 21", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 54",
+         complete: false,
+         sections: [
+            { name: "Leviticus 22", complete: false, sections: [] },
+            { name: "Leviticus 23", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 55",
+         complete: false,
+         sections: [
+            { name: "Leviticus 24", complete: false, sections: [] },
+            { name: "Leviticus 25", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 56",
+         complete: false,
+         sections: [
+            { name: "Leviticus 26", complete: false, sections: [] },
+            { name: "Leviticus 27", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 57",
+         complete: false,
+         sections: [
+            { name: "Numbers 1", complete: false, sections: [] },
+            { name: "Numbers 2", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 58",
+         complete: false,
+         sections: [
+            { name: "Numbers 3",      complete: false, sections: [] },
+            { name: "Numbers 4:1-33", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 59",
+         complete: false,
+         sections: [
+            { name: "Numbers 4:34-49", complete: false, sections: [] },
+            { name: "Numbers 5",       complete: false, sections: [] },
+            { name: "Numbers 6:1-27",  complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 60",
+         complete: false,
+         sections: [
+            { name: "Numbers 7", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 61",
+         complete: false,
+         sections: [
+            { name: "Numbers 8",  complete: false, sections: [] },
+            { name: "Numbers 9",  complete: false, sections: [] },
+            { name: "Numbers 10", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 62",
+         complete: false,
+         sections: [
+            { name: "Numbers 11", complete: false, sections: [] },
+            { name: "Numbers 12", complete: false, sections: [] },
+            { name: "Numbers 13", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 63",
+         complete: false,
+         sections: [
+            { name: "Numbers 14", complete: false, sections: [] },
+            { name: "Numbers 15", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 64",
+         complete: false,
+         sections: [
+            { name: "Numbers 16", complete: false, sections: [] },
+            { name: "Numbers 17", complete: false, sections: [] },
+            { name: "Numbers 18", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 65",
+         complete: false,
+         sections: [
+            { name: "Numbers 19", complete: false, sections: [] },
+            { name: "Numbers 20", complete: false, sections: [] },
+            { name: "Numbers 21", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 66",
+         complete: false,
+         sections: [
+            { name: "Numbers 22", complete: false, sections: [] },
+            { name: "Numbers 23", complete: false, sections: [] },
+            { name: "Numbers 24", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 67",
+         complete: false,
+         sections: [
+            { name: "Numbers 25",           complete: false, sections: [] },
+            { name: "Numbers 26:1-34",      complete: false, sections: [] },
+            { name: "1 Chronicles 7:13-19", complete: false, sections: [] },
+            { name: "Numbers 26:35-37",     complete: false, sections: [] },
+            { name: "1 Chronicles 7:20-29", complete: false, sections: [] },
+            { name: "Numbers 26:38-65",     complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 68",
+         complete: false,
+         sections: [
+            { name: "Numbers 27", complete: false, sections: [] },
+            { name: "Numbers 28", complete: false, sections: [] },
+            { name: "Numbers 29", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 69",
+         complete: false,
+         sections: [
+            { name: "Numbers 30", complete: false, sections: [] },
+            { name: "Numbers 31", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 70",
+         complete: false,
+         sections: [
+            { name: "Numbers 32", complete: false, sections: [] },
+            { name: "Numbers 33", complete: false, sections: [] },
+         ]
+      },
+      {
+         name: "Day 62",
+         complete: false,
+         sections: [
+            { name: "Numbers 34", complete: false, sections: [] },
+            { name: "Numbers 35", complete: false, sections: [] },
+            { name: "Numbers 36", complete: false, sections: [] },
+         ]
+      },
    ],
 };

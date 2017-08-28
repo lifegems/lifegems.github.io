@@ -1,1 +1,3681 @@
-webpackJsonp([0],{135:function(n,e){function l(n){return new Promise(function(e,l){l(new Error("Cannot find module '"+n+"'."))})}l.keys=function(){return[]},l.resolve=l,n.exports=l,l.id=135},147:function(n,e){function l(n){return new Promise(function(e,l){l(new Error("Cannot find module '"+n+"'."))})}l.keys=function(){return[]},l.resolve=l,n.exports=l,l.id=147},167:function(n,e,l){"use strict";function t(n,e){return n.filter(function(n){return n.type==e})}function o(n,e,l){return l.auxMeasures.map(function(l){return{value:i(n,e,l.measure.amount),measure:l.measure}})}function i(n,e,l){return parseFloat((n*e/l).toPrecision(10))}function u(n,e){switch(void 0===n&&(n=On),e.type){case on:var l=n.auxMeasures.map(function(n){return Object.assign({},n)}),u=n.measurements.filter(function(e){return e.type==n.selectedType})[0];return l.length<=5&&l.push({measure:u,value:i(n.baseMeasure.value,n.baseMeasure.measure.amount,u.amount)}),Object.assign({},n,{auxMeasures:l});case un:var a=e,s=n.auxMeasures.map(function(n){return Object.assign({},n)}),r=n.measurements.find(function(e){return e.name===a.payload.name&&e.type==n.selectedType});return s[a.payload.index]={value:i(n.baseMeasure.value,n.baseMeasure.measure.amount,r.amount),measure:r},Object.assign({},n,{auxMeasures:s});case an:var c=e,_=Object.assign({},n.auxMeasures);return _[c.payload.index]={value:c.payload.value,measure:n.auxMeasures[c.payload.index].measure},Object.assign({},n,{baseMeasure:{value:i(_[c.payload.index].value,_[c.payload.index].measure.amount,n.baseMeasure.measure.amount),measure:n.baseMeasure.measure},auxMeasures:o(_[c.payload.index].value,_[c.payload.index].measure.amount,n)});case sn:var m=n.measurements.find(function(l){return l.name===e.payload&&l.type==n.selectedType});return Object.assign({},n,{auxMeasures:o(n.baseMeasure.value,m.amount,n),baseMeasure:{value:n.baseMeasure.value,measure:m}});case rn:return Object.assign({},n,{auxMeasures:o(e.payload,n.baseMeasure.measure.amount,n),baseMeasure:{value:e.payload,measure:n.baseMeasure.measure}});case cn:var p=t(n.measurements,e.payload)[0],h=t(n.measurements,e.payload)[1];return Object.assign({},n,{selectedType:e.payload,baseMeasure:{value:1,measure:p},auxMeasures:[{value:i(1,p.amount,h.amount),measure:h}]});case mn:return Object.assign({},n,{measurements:e.payload});case hn:return Object.assign({},n,{types:e.payload.map(function(n){return n.type}).filter(function(n,e,l){return l.indexOf(n)===e}).sort()});default:return Object.assign({},n)}}function a(n,e){switch(void 0===n&&(n=ee),e.type){case Nn:return Object.assign({},n,{selectedKing:n.selectedKing<20?n.selectedKing+1:1});case Rn:return Object.assign({},n,{selectedKing:n.selectedKing>1?n.selectedKing-1:1});case $n:return Object.assign({},n,{kings:e.payload});case Bn:return Object.assign({},n,{selectedKing:e.payload>=1&&e.payload<=20?e.payload:n.selectedKing});case Kn:return Object.assign({},n,{showPriests:!n.showPriests});case zn:return Object.assign({},n,{showProphets:!n.showProphets});case qn:return Object.assign({},n,{showSons:!n.showSons});default:return Object.assign({},n)}}function s(n){for(var e=[],l=n.start;l>=n.end;l-=n.increment)e.push(l);return e}function r(n,e){var l=n.items.filter(function(n){return e.indexOf(n.group)>-1}),t=l.map(function(n){return n.start}).reduce(function(n,e){return n>e?n:e}),o=l.map(function(n){return n.start}).reduce(function(n,e){return n<e?n:e});return{start:100*Math.ceil(t/100),end:100*Math.floor(o/100),increment:n.timelineData.increment}}function c(n){switch(n){case 50:return 20;case 20:return 10;case 10:return 5;default:return 1}}function _(n){switch(n){case 1:return 5;case 5:return 10;case 10:return 20;default:return 50}}function m(n,e){switch(void 0===n&&(n=Pe),e.type){case pe:return Object.assign({},n,{items:e.payload,years:s(n.timelineData)});case ge:if(e.payload.length>6)return Object.assign({},n);var l=r(n,e.payload);return Object.assign({},n,{groups:e.payload,timelineData:l,years:s(l)});case de:var t=Object.assign({},n.timelineData,{increment:c(n.timelineData.increment)});return Object.assign({},n,{timelineData:t,years:s(t)});case fe:var o=Object.assign({},n.timelineData,{increment:_(n.timelineData.increment)});return Object.assign({},n,{timelineData:o,years:s(o)});default:return Object.assign({},n)}}function p(n,e){switch(void 0===n&&(n=hl),e.type){case He:return Object.assign({},n,{schedules:e.payload.sort(function(n,e){return n.name.localeCompare(e.name)})});case Ye:var l=Object.assign([],n.schedules).filter(function(n){return n.name!==e.payload.name});return l.push(e.payload),Object.assign({},n,{schedules:l.sort(function(n,e){return n.name.localeCompare(e.name)})});case Ve:return Object.assign({},n,{schedules:e.payload.schedules.sort(function(n,e){return n.name.localeCompare(e.name)})});default:return Object.assign({},n)}}function h(n){return zt._29(0,[(n()(),zt._6(0,null,null,7,"button",[["class","item item-block"],["ion-item",""],["menuClose",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==zt._19(n,6).close()&&t),"click"===e&&(t=!1!==o.openPage(n.context.$implicit)&&t),t},Ft.b,Ft.a)),zt._5(1097728,null,3,Ht.a,[Yt.a,Vt.a,zt.l,zt.G,[2,Ut.a]],null,null),zt._25(335544320,4,{contentLabel:0}),zt._25(603979776,5,{_buttons:1}),zt._25(603979776,6,{_icons:1}),zt._5(16384,null,0,Qt.a,[],null,null),zt._5(16384,null,0,Zt.a,[Wt.a],{menuClose:[0,"menuClose"]},null),(n()(),zt._27(2,["\n        ","\n      "]))],function(n,e){n(e,6,0,"")},function(n,e){n(e,7,0,e.context.$implicit.title)})}function g(n){return zt._29(0,[zt._25(402653184,1,{nav:0}),(n()(),zt._6(0,null,null,28,"ion-menu",[["role","navigation"]],null,null,null,Xt.b,Xt.a)),zt._5(245760,null,2,no.a,[Wt.a,zt.l,Vt.a,eo.a,zt.G,lo.a,to.h,oo.a,io.a],{content:[0,"content"]},null),zt._25(335544320,2,{menuContent:0}),zt._25(335544320,3,{menuNav:0}),zt._24(6144,null,uo.a,null,[no.a]),(n()(),zt._27(0,["\n  "])),(n()(),zt._6(0,null,0,10,"ion-header",[],null,null,null,null,null)),zt._5(16384,null,0,ao.a,[Vt.a,zt.l,zt.G,[2,so.a]],null,null),(n()(),zt._27(null,["\n    "])),(n()(),zt._6(0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,ro.b,ro.a)),zt._5(49152,null,0,co.a,[Vt.a,zt.l,zt.G],null,null),(n()(),zt._27(3,["\n      "])),(n()(),zt._6(0,null,3,2,"ion-title",[],null,null,null,_o.b,_o.a)),zt._5(49152,null,0,mo.a,[Vt.a,zt.l,zt.G,[2,co.a],[2,po.a]],null,null),(n()(),zt._27(0,["Menu"])),(n()(),zt._27(3,["\n    "])),(n()(),zt._27(null,["\n  "])),(n()(),zt._27(0,["\n\n  "])),(n()(),zt._6(0,null,0,9,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ho.b,ho.a)),zt._5(4374528,[[2,4]],0,go.a,[Vt.a,eo.a,oo.a,zt.l,zt.G,io.a,lo.a,zt.A,[2,so.a],[2,fo.a]],null,null),(n()(),zt._27(1,["\n    "])),(n()(),zt._6(0,null,1,5,"ion-list",[],null,null,null,null,null)),zt._5(16384,null,0,bo.a,[Vt.a,zt.l,zt.G,eo.a,to.h,oo.a],null,null),(n()(),zt._27(null,["\n      "])),(n()(),zt._2(16777216,null,null,1,null,h)),zt._5(802816,null,0,yo.h,[zt.Q,zt.N,zt.t],{ngForOf:[0,"ngForOf"]},null),(n()(),zt._27(null,["\n    "])),(n()(),zt._27(1,["\n  "])),(n()(),zt._27(0,["\n\n"])),(n()(),zt._27(null,["\n\n"])),(n()(),zt._27(null,["\n"])),(n()(),zt._6(0,null,null,2,"ion-nav",[["swipeBackEnabled","false"]],null,null,null,wo.b,wo.a)),zt._5(4374528,[[1,4],["content",4]],0,ko.a,[[2,so.a],[2,fo.a],io.a,Vt.a,eo.a,zt.l,zt.A,zt.G,zt.k,to.h,vo.a,[2,Co.a],oo.a,zt.m],{swipeBackEnabled:[0,"swipeBackEnabled"],root:[1,"root"]},null),zt._24(6144,null,uo.a,null,[ko.a])],function(n,e){var l=e.component;n(e,2,0,zt._19(e,33)),n(e,26,0,l.pages);n(e,33,0,"false",l.rootPage)},function(n,e){n(e,10,0,zt._19(e,11)._sbPadding),n(e,19,0,zt._19(e,20).statusbarPadding,zt._19(e,20)._hasRefresher)})}function d(n){return Eo._29(0,[(n()(),Eo._27(null,["\n            "])),(n()(),Eo._6(0,null,null,2,"ion-option",[],null,null,null,null,null)),Eo._5(16384,[[4,4]],0,Ao.a,[Eo.l],{selected:[0,"selected"]},null),(n()(),Eo._27(null,["",""])),(n()(),Eo._27(null,["\n         "]))],function(n,e){n(e,2,0,e.component.isMeasureSelected(e.context.$implicit.id))},function(n,e){n(e,3,0,e.context.$implicit.name)})}function f(n){return Eo._29(2,[(n()(),Eo._27(null,["\n   "])),(n()(),Eo._6(0,null,null,24,"ion-item",[["class","item item-block"]],null,null,null,Mo.b,Mo.a)),Eo._5(1097728,null,3,xo.a,[Do.a,To.a,Eo.l,Eo.G,[2,Jo.a]],null,null),Eo._25(335544320,1,{contentLabel:0}),Eo._25(603979776,2,{_buttons:1}),Eo._25(603979776,3,{_icons:1}),Eo._5(16384,null,0,Io.a,[],null,null),(n()(),Eo._27(2,["\n      "])),(n()(),Eo._6(0,null,3,4,"ion-input",[],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(n,e,l){var t=!0,o=n.component;return"ngModelChange"===e&&(t=!1!==o.handleChangeValue(o.index,l)&&t),t},No.b,No.a)),Eo._5(671744,null,0,Ro.h,[[8,null],[8,null],[8,null],[8,null]],{model:[0,"model"]},{update:"ngModelChange"}),Eo._24(2048,null,Ro.f,null,[Ro.h]),Eo._5(16384,null,0,Ro.g,[Ro.f],null,null),Eo._5(5423104,null,0,Bo.a,[To.a,$o.a,Do.a,Lo.a,Eo.l,Eo.G,[2,qo.a],[2,xo.a],[2,Ro.f],Ko.a],null,null),(n()(),Eo._27(2,["\n      "])),(n()(),Eo._6(0,null,3,10,"ion-select",[["style","font-size:12px"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==Eo._19(n,15)._click(l)&&t),"keyup.space"===e&&(t=!1!==Eo._19(n,15)._keyup()&&t),"ngModelChange"===e&&(t=!1!==o.handleChangeMeasure(o.index,l)&&t),t},zo.b,zo.a)),Eo._5(1228800,null,1,Fo.a,[Lo.a,Do.a,To.a,Eo.l,Eo.G,[2,xo.a],Ho.a],null,null),Eo._25(603979776,4,{options:1}),Eo._24(1024,null,Ro.e,function(n){return[n]},[Fo.a]),Eo._5(671744,null,0,Ro.h,[[8,null],[8,null],[8,null],[2,Ro.e]],{model:[0,"model"]},{update:"ngModelChange"}),Eo._24(2048,null,Ro.f,null,[Ro.h]),Eo._5(16384,null,0,Ro.g,[Ro.f],null,null),(n()(),Eo._27(null,["\n         "])),(n()(),Eo._2(16777216,null,null,1,null,d)),Eo._5(802816,null,0,Yo.h,[Eo.Q,Eo.N,Eo.t],{ngForOf:[0,"ngForOf"]},null),(n()(),Eo._27(null,["\n      "])),(n()(),Eo._27(2,["\n   "])),(n()(),Eo._27(null,["\n   "]))],function(n,e){var l=e.component;n(e,9,0,l.measureValue.value),n(e,18,0,l.measureValue.measure.name),n(e,23,0,l.measurements)},function(n,e){n(e,8,0,Eo._19(e,11).ngClassUntouched,Eo._19(e,11).ngClassTouched,Eo._19(e,11).ngClassPristine,Eo._19(e,11).ngClassDirty,Eo._19(e,11).ngClassValid,Eo._19(e,11).ngClassInvalid,Eo._19(e,11).ngClassPending),n(e,14,0,Eo._19(e,15)._disabled,Eo._19(e,20).ngClassUntouched,Eo._19(e,20).ngClassTouched,Eo._19(e,20).ngClassPristine,Eo._19(e,20).ngClassDirty,Eo._19(e,20).ngClassValid,Eo._19(e,20).ngClassInvalid,Eo._19(e,20).ngClassPending)})}function b(n){return Qo._29(0,[(n()(),Qo._6(0,null,null,3,"ion-option",[],null,null,null,null,null)),Qo._5(16384,[[6,4]],0,Zo.a,[Qo.l],{selected:[0,"selected"]},null),Qo._22(131072,Wo.b,[Qo.h]),(n()(),Qo._27(null,["",""]))],function(n,e){var l=e.component;n(e,1,0,e.context.$implicit==Qo._28(e,1,0,Qo._19(e,2).transform(l.selectedType$)))},function(n,e){n(e,3,0,e.context.$implicit)})}function y(n){return Qo._29(0,[(n()(),Qo._6(0,null,null,4,"app-conversion-item",[],null,[[null,"changeValue"],[null,"changeMeasure"]],function(n,e,l){var t=!0,o=n.component;return"changeValue"===e&&(t=!1!==o.changeAuxValue(l)&&t),"changeMeasure"===e&&(t=!1!==o.changeAuxMeasure(l)&&t),t},f,Uo)),Qo._5(49152,null,0,Ie,[],{index:[0,"index"],measureValue:[1,"measureValue"],measurements:[2,"measurements"]},{changeValue:"changeValue",changeMeasure:"changeMeasure"}),Qo._22(131072,Wo.b,[Qo.h]),Qo._22(131072,Wo.b,[Qo.h]),(n()(),Qo._27(null,["\n            "]))],function(n,e){var l=e.component;n(e,1,0,e.context.index,e.context.$implicit,l.listTypeMeasurements(Qo._28(e,1,2,Qo._19(e,2).transform(l.selectedType$)),Qo._28(e,1,2,Qo._19(e,3).transform(l.measurements$))))},null)}function w(n){return Qo._29(0,[(n()(),Qo._27(null,["\n"])),(n()(),Qo._6(0,null,null,32,"ion-header",[],null,null,null,null,null)),Qo._5(16384,null,0,Xo.a,[ni.a,Qo.l,Qo.G,[2,ei.a]],null,null),(n()(),Qo._27(null,["\n  "])),(n()(),Qo._6(0,null,null,28,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,li.b,li.a)),Qo._5(49152,null,0,ti.a,[oi.a,[2,ei.a],[2,ii.a],ni.a,Qo.l,Qo.G],null,null),(n()(),Qo._27(3,["\n    "])),(n()(),Qo._6(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,e,l){var t=!0;return"click"===e&&(t=!1!==Qo._19(n,9).toggle()&&t),t},ui.b,ui.a)),Qo._5(1097728,[[1,4]],0,ai.a,[[8,""],ni.a,Qo.l,Qo.G],null,null),Qo._5(1064960,null,0,si.a,[ri.a,[2,ei.a],[2,ai.a],[2,ti.a]],{menuToggle:[0,"menuToggle"]},null),Qo._5(16384,null,1,ci.a,[ni.a,Qo.l,Qo.G,[2,_i.a],[2,ti.a]],null,null),Qo._25(603979776,1,{_buttons:1}),(n()(),Qo._27(0,["\n      "])),(n()(),Qo._6(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Qo._5(147456,null,0,mi.a,[ni.a,Qo.l,Qo.G],{name:[0,"name"]},null),(n()(),Qo._27(0,["\n    "])),(n()(),Qo._27(3,["\n    "])),(n()(),Qo._6(0,null,3,2,"ion-title",[],null,null,null,pi.b,pi.a)),Qo._5(49152,null,0,hi.a,[ni.a,Qo.l,Qo.G,[2,_i.a],[2,ti.a]],null,null),(n()(),Qo._27(0,["Unit Converter"])),(n()(),Qo._27(3,["\n    "])),(n()(),Qo._6(0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),Qo._5(16384,null,1,ci.a,[ni.a,Qo.l,Qo.G,[2,_i.a],[2,ti.a]],null,null),Qo._25(603979776,2,{_buttons:1}),(n()(),Qo._27(null,["\n      "])),(n()(),Qo._6(0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.addMeasurement()&&t),t},ui.b,ui.a)),Qo._5(1097728,[[2,4]],0,ai.a,[[8,""],ni.a,Qo.l,Qo.G],null,null),(n()(),Qo._27(0,["\n        "])),(n()(),Qo._6(0,null,0,1,"ion-icon",[["name","md-add"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Qo._5(147456,null,0,mi.a,[ni.a,Qo.l,Qo.G],{name:[0,"name"]},null),(n()(),Qo._27(0,["\n      "])),(n()(),Qo._27(null,["\n    "])),(n()(),Qo._27(3,["\n  "])),(n()(),Qo._27(null,["\n"])),(n()(),Qo._27(null,["\n\n"])),(n()(),Qo._6(0,null,null,67,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,gi.b,gi.a)),Qo._5(4374528,null,0,di.a,[ni.a,fi.a,bi.a,Qo.l,Qo.G,oi.a,yi.a,Qo.A,[2,ei.a],[2,ii.a]],null,null),(n()(),Qo._27(1,["\n   "])),(n()(),Qo._6(0,null,1,63,"ion-card",[],null,null,null,null,null)),Qo._5(16384,null,0,wi.a,[ni.a,Qo.l,Qo.G],null,null),(n()(),Qo._27(null,["\n      "])),(n()(),Qo._6(0,null,null,32,"ion-card-header",[["no-padding",""]],null,null,null,null,null)),Qo._5(16384,null,0,ki.a,[ni.a,Qo.l,Qo.G],null,null),(n()(),Qo._27(null,["\n         "])),(n()(),Qo._6(0,null,null,28,"ion-list",[],null,null,null,null,null)),Qo._5(16384,null,0,vi.a,[ni.a,Qo.l,Qo.G,fi.a,Ci.h,bi.a],null,null),(n()(),Qo._27(null,["\n            "])),(n()(),Qo._6(0,null,null,24,"ion-item",[["class","item item-block"]],null,null,null,Si.b,Si.a)),Qo._5(1097728,null,3,Pi.a,[Oi.a,ni.a,Qo.l,Qo.G,[2,ji.a]],null,null),Qo._25(335544320,3,{contentLabel:0}),Qo._25(603979776,4,{_buttons:1}),Qo._25(603979776,5,{_icons:1}),Qo._5(16384,null,0,Gi.a,[],null,null),(n()(),Qo._27(2,["\n               "])),(n()(),Qo._6(0,null,1,2,"ion-label",[],null,null,null,null,null)),Qo._5(16384,[[3,4]],0,Ei.a,[ni.a,Qo.l,Qo.G,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),Qo._27(null,["Measurement Type"])),(n()(),Qo._27(2,["\n               "])),(n()(),Qo._6(0,null,3,12,"ion-select",[["style","font-size:12px"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==Qo._19(n,59)._click(l)&&t),"keyup.space"===e&&(t=!1!==Qo._19(n,59)._keyup()&&t),"ngModelChange"===e&&(t=!1!==o.changeType(l)&&t),t},Ai.b,Ai.a)),Qo._5(1228800,null,1,Mi.a,[oi.a,Oi.a,ni.a,Qo.l,Qo.G,[2,Pi.a],xi.a],null,null),Qo._25(603979776,6,{options:1}),Qo._24(1024,null,Di.e,function(n){return[n]},[Mi.a]),Qo._5(671744,null,0,Di.h,[[8,null],[8,null],[8,null],[2,Di.e]],{model:[0,"model"]},{update:"ngModelChange"}),Qo._22(131072,Wo.b,[Qo.h]),Qo._24(2048,null,Di.f,null,[Di.h]),Qo._5(16384,null,0,Di.g,[Di.f],null,null),(n()(),Qo._27(null,["\n                  "])),(n()(),Qo._2(16777216,null,null,2,null,b)),Qo._5(802816,null,0,Wo.h,[Qo.Q,Qo.N,Qo.t],{ngForOf:[0,"ngForOf"]},null),Qo._22(131072,Wo.b,[Qo.h]),(n()(),Qo._27(null,["\n               "])),(n()(),Qo._27(2,["\n            "])),(n()(),Qo._27(null,["\n          "])),(n()(),Qo._27(null,["\n      "])),(n()(),Qo._27(null,["\n      "])),(n()(),Qo._6(0,null,null,25,"ion-card-content",[["no-padding",""]],null,null,null,null,null)),Qo._5(16384,null,0,Ti.a,[ni.a,Qo.l,Qo.G],null,null),(n()(),Qo._27(null,["\n         "])),(n()(),Qo._6(0,null,null,21,"ion-list",[],null,null,null,null,null)),Qo._5(16384,null,0,vi.a,[ni.a,Qo.l,Qo.G,fi.a,Ci.h,bi.a],null,null),(n()(),Qo._27(null,["\n            "])),(n()(),Qo._6(0,null,null,6,"ion-item-divider",[["class","item item-divider"],["text-center",""]],null,null,null,Si.b,Si.a)),Qo._5(1097728,null,3,Pi.a,[Oi.a,ni.a,Qo.l,Qo.G,[2,ji.a]],null,null),Qo._25(335544320,7,{contentLabel:0}),Qo._25(603979776,8,{_buttons:1}),Qo._25(603979776,9,{_icons:1}),Qo._5(16384,null,0,Ji.a,[ni.a,Qo.l,Qo.G],null,null),(n()(),Qo._27(2,["Units"])),(n()(),Qo._27(null,["\n            "])),(n()(),Qo._6(0,null,null,5,"app-conversion-item",[],null,[[null,"changeValue"],[null,"changeMeasure"]],function(n,e,l){var t=!0,o=n.component;return"changeValue"===e&&(t=!1!==o.changeBaseValue(l)&&t),"changeMeasure"===e&&(t=!1!==o.changeBaseMeasure(l)&&t),t},f,Uo)),Qo._5(49152,null,0,Ie,[],{index:[0,"index"],measureValue:[1,"measureValue"],measurements:[2,"measurements"]},{changeValue:"changeValue",changeMeasure:"changeMeasure"}),Qo._22(131072,Wo.b,[Qo.h]),Qo._22(131072,Wo.b,[Qo.h]),Qo._22(131072,Wo.b,[Qo.h]),(n()(),Qo._27(null,["\n            "])),(n()(),Qo._27(null,["\n            "])),(n()(),Qo._2(16777216,null,null,2,null,y)),Qo._5(802816,null,0,Wo.h,[Qo.Q,Qo.N,Qo.t],{ngForOf:[0,"ngForOf"],ngForTrackBy:[1,"ngForTrackBy"]},null),Qo._22(131072,Wo.b,[Qo.h]),(n()(),Qo._27(null,["\n         "])),(n()(),Qo._27(null,["\n      "])),(n()(),Qo._27(null,["\n   "])),(n()(),Qo._27(1,["\n"])),(n()(),Qo._27(null,["\n\n"])),(n()(),Qo._6(0,null,null,2,"ion-footer",[],null,null,null,null,null)),Qo._5(16384,null,0,Ii.a,[ni.a,Qo.l,Qo.G,[2,ei.a]],null,null),(n()(),Qo._27(null,["\n  \n"])),(n()(),Qo._27(null,["\n"]))],function(n,e){var l=e.component;n(e,9,0,"");n(e,14,0,"menu");n(e,29,0,"md-add"),n(e,62,0,Qo._28(e,62,0,Qo._19(e,63).transform(l.selectedType$))),n(e,68,0,Qo._28(e,68,0,Qo._19(e,69).transform(l.types$)));n(e,90,0,0,Qo._28(e,90,1,Qo._19(e,91).transform(l.baseMeasure$)),l.listTypeMeasurements(Qo._28(e,90,2,Qo._19(e,92).transform(l.selectedType$)),Qo._28(e,90,2,Qo._19(e,93).transform(l.measurements$)))),n(e,97,0,Qo._28(e,97,0,Qo._19(e,98).transform(l.auxMeasures$)),l.trackAux)},function(n,e){n(e,4,0,Qo._19(e,5)._hidden,Qo._19(e,5)._sbPadding),n(e,7,0,Qo._19(e,9).isHidden),n(e,13,0,Qo._19(e,14)._hidden),n(e,28,0,Qo._19(e,29)._hidden),n(e,35,0,Qo._19(e,36).statusbarPadding,Qo._19(e,36)._hasRefresher),n(e,58,0,Qo._19(e,59)._disabled,Qo._19(e,65).ngClassUntouched,Qo._19(e,65).ngClassTouched,Qo._19(e,65).ngClassPristine,Qo._19(e,65).ngClassDirty,Qo._19(e,65).ngClassValid,Qo._19(e,65).ngClassInvalid,Qo._19(e,65).ngClassPending)})}function k(n){return Li._29(0,[(n()(),Li._27(null,["\n"])),(n()(),Li._6(0,null,null,20,"ion-header",[],null,null,null,null,null)),Li._5(16384,null,0,qi.a,[Ki.a,Li.l,Li.G,[2,zi.a]],null,null),(n()(),Li._27(null,["\n  "])),(n()(),Li._6(0,null,null,16,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,Fi.b,Fi.a)),Li._5(49152,null,0,Hi.a,[Yi.a,[2,zi.a],[2,Vi.a],Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(3,["\n    "])),(n()(),Li._6(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,e,l){var t=!0;return"click"===e&&(t=!1!==Li._19(n,9).toggle()&&t),t},Ui.b,Ui.a)),Li._5(1097728,[[1,4]],0,Qi.a,[[8,""],Ki.a,Li.l,Li.G],null,null),Li._5(1064960,null,0,Zi.a,[Wi.a,[2,zi.a],[2,Qi.a],[2,Hi.a]],{menuToggle:[0,"menuToggle"]},null),Li._5(16384,null,1,Xi.a,[Ki.a,Li.l,Li.G,[2,nu.a],[2,Hi.a]],null,null),Li._25(603979776,1,{_buttons:1}),(n()(),Li._27(0,["\n      "])),(n()(),Li._6(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Li._5(147456,null,0,eu.a,[Ki.a,Li.l,Li.G],{name:[0,"name"]},null),(n()(),Li._27(0,["\n    "])),(n()(),Li._27(3,["\n    "])),(n()(),Li._6(0,null,3,2,"ion-title",[],null,null,null,lu.b,lu.a)),Li._5(49152,null,0,tu.a,[Ki.a,Li.l,Li.G,[2,nu.a],[2,Hi.a]],null,null),(n()(),Li._27(0,["Dashboard"])),(n()(),Li._27(3,["\n  "])),(n()(),Li._27(null,["\n"])),(n()(),Li._27(null,["\n\n"])),(n()(),Li._6(0,null,null,86,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ou.b,ou.a)),Li._5(4374528,null,0,iu.a,[Ki.a,uu.a,au.a,Li.l,Li.G,Yi.a,su.a,Li.A,[2,zi.a],[2,Vi.a]],null,null),(n()(),Li._27(1,["\n   "])),(n()(),Li._6(0,null,1,82,"ion-grid",[["class","grid"]],null,null,null,null,null)),Li._5(16384,null,0,ru.a,[],null,null),(n()(),Li._27(null,["\n      "])),(n()(),Li._6(0,null,null,56,"ion-row",[["class","row"]],null,null,null,null,null)),Li._5(16384,null,0,cu.a,[],null,null),(n()(),Li._27(null,["\n         "])),(n()(),Li._6(0,null,null,16,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),Li._5(16384,null,0,_u.a,[],null,null),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,9,"ion-card",[],null,null,null,null,null)),Li._5(16384,null,0,mu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n               "])),(n()(),Li._6(0,null,null,5,"ion-card-header",[["text-center",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.navigateToApp("kings")&&t),t},null,null)),Li._5(16384,null,0,pu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n                  "])),(n()(),Li._6(0,null,null,1,"ion-icon",[["name","md-person"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Li._5(147456,null,0,eu.a,[Ki.a,Li.l,Li.G],{name:[0,"name"]},null),(n()(),Li._27(null,["\n               "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,1,"div",[["text-center",""]],null,null,null,null,null)),(n()(),Li._27(null,["Kings"])),(n()(),Li._27(null,["\n         "])),(n()(),Li._27(null,["\n         "])),(n()(),Li._6(0,null,null,16,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),Li._5(16384,null,0,_u.a,[],null,null),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,9,"ion-card",[],null,null,null,null,null)),Li._5(16384,null,0,mu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n               "])),(n()(),Li._6(0,null,null,5,"ion-card-header",[["text-center",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.navigateToApp("timeline")&&t),t},null,null)),Li._5(16384,null,0,pu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n                  "])),(n()(),Li._6(0,null,null,1,"ion-icon",[["name","md-options"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Li._5(147456,null,0,eu.a,[Ki.a,Li.l,Li.G],{name:[0,"name"]},null),(n()(),Li._27(null,["\n               "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,1,"div",[["text-center",""]],null,null,null,null,null)),(n()(),Li._27(null,["Timeline"])),(n()(),Li._27(null,["\n         "])),(n()(),Li._27(null,["\n         "])),(n()(),Li._6(0,null,null,16,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),Li._5(16384,null,0,_u.a,[],null,null),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,9,"ion-card",[],null,null,null,null,null)),Li._5(16384,null,0,mu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n               "])),(n()(),Li._6(0,null,null,5,"ion-card-header",[["text-center",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.navigateToApp("converter")&&t),t},null,null)),Li._5(16384,null,0,pu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n                  "])),(n()(),Li._6(0,null,null,1,"ion-icon",[["name","md-swap"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Li._5(147456,null,0,eu.a,[Ki.a,Li.l,Li.G],{name:[0,"name"]},null),(n()(),Li._27(null,["\n               "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,1,"div",[["text-center",""]],null,null,null,null,null)),(n()(),Li._27(null,["Converter"])),(n()(),Li._27(null,["\n         "])),(n()(),Li._27(null,["\n      "])),(n()(),Li._27(null,["\n      "])),(n()(),Li._6(0,null,null,20,"ion-row",[["class","row"]],null,null,null,null,null)),Li._5(16384,null,0,cu.a,[],null,null),(n()(),Li._27(null,["\n         "])),(n()(),Li._6(0,null,null,16,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),Li._5(16384,null,0,_u.a,[],null,null),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,9,"ion-card",[],null,null,null,null,null)),Li._5(16384,null,0,mu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n               "])),(n()(),Li._6(0,null,null,5,"ion-card-header",[["text-center",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.navigateToApp("schedules")&&t),t},null,null)),Li._5(16384,null,0,pu.a,[Ki.a,Li.l,Li.G],null,null),(n()(),Li._27(null,["\n                  "])),(n()(),Li._6(0,null,null,1,"ion-icon",[["name","md-book"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Li._5(147456,null,0,eu.a,[Ki.a,Li.l,Li.G],{name:[0,"name"]},null),(n()(),Li._27(null,["\n               "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._27(null,["\n            "])),(n()(),Li._6(0,null,null,1,"div",[["text-center",""]],null,null,null,null,null)),(n()(),Li._27(null,["Schedules"])),(n()(),Li._27(null,["\n         "])),(n()(),Li._27(null,["\n      "])),(n()(),Li._27(null,["\n   "])),(n()(),Li._27(1,["\n"])),(n()(),Li._27(null,["\n\n"])),(n()(),Li._6(0,null,null,2,"ion-footer",[],null,null,null,null,null)),Li._5(16384,null,0,hu.a,[Ki.a,Li.l,Li.G,[2,zi.a]],null,null),(n()(),Li._27(null,["\n  \n"])),(n()(),Li._27(null,["\n"]))],function(n,e){n(e,9,0,"");n(e,14,0,"menu");n(e,42,0,"md-person");n(e,60,0,"md-options");n(e,78,0,"md-swap");n(e,100,0,"md-book")},function(n,e){n(e,4,0,Li._19(e,5)._hidden,Li._19(e,5)._sbPadding),n(e,7,0,Li._19(e,9).isHidden),n(e,13,0,Li._19(e,14)._hidden),n(e,23,0,Li._19(e,24).statusbarPadding,Li._19(e,24)._hasRefresher),n(e,41,0,Li._19(e,42)._hidden),n(e,59,0,Li._19(e,60)._hidden),n(e,77,0,Li._19(e,78)._hidden),n(e,99,0,Li._19(e,100)._hidden)})}function v(n){return bu._29(0,[(n()(),bu._6(0,null,null,6,"button",[["class","item item-block"],["color","secondary"],["ion-item",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.handleToggleExpander()&&t),t},yu.b,yu.a)),bu._5(1097728,null,3,wu.a,[ku.a,vu.a,bu.l,bu.G,[2,Cu.a]],{color:[0,"color"]},null),bu._25(335544320,1,{contentLabel:0}),bu._25(603979776,2,{_buttons:1}),bu._25(603979776,3,{_icons:1}),bu._5(16384,null,0,Su.a,[],null,null),(n()(),bu._27(2,[""," (",")"]))],function(n,e){n(e,1,0,"secondary")},function(n,e){var l=e.component;n(e,6,0,l.title,l.list.length)})}function C(n){return bu._29(0,[(n()(),bu._6(0,null,null,8,"ion-item",[["class","item item-block"]],null,null,null,yu.b,yu.a)),bu._5(278528,null,0,Pu.g,[bu.t,bu.u,bu.l,bu.G],{ngClass:[0,"ngClass"]},null),bu._23(["bold"]),bu._5(1097728,null,3,wu.a,[ku.a,vu.a,bu.l,bu.G,[2,Cu.a]],null,null),bu._25(335544320,4,{contentLabel:0}),bu._25(603979776,5,{_buttons:1}),bu._25(603979776,6,{_icons:1}),bu._5(16384,null,0,Su.a,[],null,null),(n()(),bu._27(2,["",""]))],function(n,e){var l=e.component;n(e,1,0,n(e,2,0,e.context.$implicit==l.boldItem))},function(n,e){n(e,8,0,e.context.$implicit)})}function S(n){return bu._29(0,[(n()(),bu._6(0,null,null,4,"span",[],null,null,null,null,null)),(n()(),bu._27(null,["\n         "])),(n()(),bu._2(16777216,null,null,1,null,C)),bu._5(802816,null,0,Pu.h,[bu.Q,bu.N,bu.t],{ngForOf:[0,"ngForOf"]},null),(n()(),bu._27(null,["\n      "]))],function(n,e){n(e,3,0,e.component.list)},null)}function P(n){return bu._29(0,[(n()(),bu._27(null,["\n   "])),(n()(),bu._6(0,null,null,8,"ion-item-group",[["style","border-bottom:0.5px solid white"]],null,null,null,null,null)),bu._5(16384,null,0,Ou.a,[],null,null),(n()(),bu._27(null,["\n      "])),(n()(),bu._2(16777216,null,null,1,null,v)),bu._5(16384,null,0,Pu.i,[bu.Q,bu.N],{ngIf:[0,"ngIf"]},null),(n()(),bu._27(null,["\n      "])),(n()(),bu._2(16777216,null,null,1,null,S)),bu._5(16384,null,0,Pu.i,[bu.Q,bu.N],{ngIf:[0,"ngIf"]},null),(n()(),bu._27(null,["\n   "])),(n()(),bu._27(null,["\n   "]))],function(n,e){var l=e.component;n(e,5,0,l.list&&l.list.length>0),n(e,8,0,l.toggleExpander)},null)}function O(n){return Eu._29(0,[(n()(),Eu._6(0,null,null,2,"ion-label",[["color","primary"],["stacked",""]],null,null,null,null,null)),Eu._5(16384,null,0,Au.a,[Mu.a,Eu.l,Eu.G,[8,null],[8,""],[8,null],[8,null]],{color:[0,"color"]},null),(n()(),Eu._27(null,["King"]))],function(n,e){n(e,1,0,"primary")},null)}function j(n){return Eu._29(0,[(n()(),Eu._6(0,null,null,2,"ion-label",[["color","primary"],["stacked",""]],null,null,null,null,null)),Eu._5(16384,null,0,Au.a,[Mu.a,Eu.l,Eu.G,[8,null],[8,""],[8,null],[8,null]],{color:[0,"color"]},null),(n()(),Eu._27(null,["Queen"]))],function(n,e){n(e,1,0,"primary")},null)}function G(n){return Eu._29(0,[(n()(),Eu._6(0,null,null,2,"app-expander",[],null,[[null,"toggleExpanderChange"]],function(n,e,l){var t=!0,o=n.component;return"toggleExpanderChange"===e&&(t=!1!==o.handleToggleSons()&&t),t},P,Gu)),Eu._5(49152,null,0,Re,[],{title:[0,"title"],boldItem:[1,"boldItem"],list:[2,"list"],toggleExpander:[3,"toggleExpander"]},{toggleExpanderChange:"toggleExpanderChange"}),(n()(),Eu._27(null,["\n          "]))],function(n,e){var l=e.component;n(e,1,0,"Sons",null==l.king?null:l.king.chosenOffspring,null==l.king?null:l.king.sons,l.toggleSons)},null)}function E(n){return Eu._29(0,[(n()(),Eu._6(0,null,null,2,"app-expander",[],null,[[null,"toggleExpanderChange"]],function(n,e,l){var t=!0,o=n.component;return"toggleExpanderChange"===e&&(t=!1!==o.handleTogglePriests()&&t),t},P,Gu)),Eu._5(49152,null,0,Re,[],{title:[0,"title"],list:[1,"list"],toggleExpander:[2,"toggleExpander"]},{toggleExpanderChange:"toggleExpanderChange"}),(n()(),Eu._27(null,["\n          "]))],function(n,e){var l=e.component;n(e,1,0,"High Priests",null==l.king?null:l.king.highPriests,l.togglePriests)},null)}function A(n){return Eu._29(0,[(n()(),Eu._6(0,null,null,2,"app-expander",[],null,[[null,"toggleExpanderChange"]],function(n,e,l){var t=!0,o=n.component;return"toggleExpanderChange"===e&&(t=!1!==o.handleToggleProphets()&&t),t},P,Gu)),Eu._5(49152,null,0,Re,[],{title:[0,"title"],list:[1,"list"],toggleExpander:[2,"toggleExpander"]},{toggleExpanderChange:"toggleExpanderChange"}),(n()(),Eu._27(null,["\n          "]))],function(n,e){var l=e.component;n(e,1,0,"Prophets",null==l.king?null:l.king.prophets,l.toggleProphets)},null)}function M(n){return Eu._29(0,[(n()(),Eu._27(null,["\n   "])),(n()(),Eu._6(0,null,null,39,"ion-card",[],null,null,null,null,null)),Eu._5(16384,null,0,xu.a,[Mu.a,Eu.l,Eu.G],null,null),(n()(),Eu._27(null,["\n        "])),(n()(),Eu._6(0,null,null,2,"ion-card-header",[["text-center",""]],null,null,null,null,null)),Eu._5(16384,null,0,Du.a,[Mu.a,Eu.l,Eu.G],null,null),(n()(),Eu._27(null,[""," - ",""])),(n()(),Eu._27(null,["\n        "])),(n()(),Eu._6(0,null,null,18,"ion-card-content",[],null,null,null,null,null)),Eu._5(16384,null,0,Tu.a,[Mu.a,Eu.l,Eu.G],null,null),(n()(),Eu._27(null,["\n          "])),(n()(),Eu._6(0,null,null,14,"ion-card-title",[],null,null,null,null,null)),Eu._5(16384,null,0,Ju.a,[Mu.a,Eu.l,Eu.G],null,null),(n()(),Eu._27(null,["\n            "])),(n()(),Eu._2(16777216,null,null,1,null,O)),Eu._5(16384,null,0,Iu.i,[Eu.Q,Eu.N],{ngIf:[0,"ngIf"]},null),(n()(),Eu._27(null,["\n            "])),(n()(),Eu._2(16777216,null,null,1,null,j)),Eu._5(16384,null,0,Iu.i,[Eu.Q,Eu.N],{ngIf:[0,"ngIf"]},null),(n()(),Eu._27(null,["\n            "])),(n()(),Eu._6(0,null,null,4,"span",[],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.showKingsListModal()&&t),t},null,null)),(n()(),Eu._27(null,["\n              ","\n              "])),(n()(),Eu._6(0,null,null,1,"span",[["style","color:cornflowerblue;font-size:14px"]],null,null,null,null,null)),(n()(),Eu._27(null,["Age: ",""])),(n()(),Eu._27(null,["\n            "])),(n()(),Eu._27(null,["\n          "])),(n()(),Eu._27(null,["\n        "])),(n()(),Eu._27(null,["\n\n        "])),(n()(),Eu._6(0,null,null,11,"ion-list",[],null,null,null,null,null)),Eu._5(16384,null,0,Nu.a,[Mu.a,Eu.l,Eu.G,Ru.a,Bu.h,$u.a],null,null),(n()(),Eu._27(null,["\n          "])),(n()(),Eu._2(16777216,null,null,1,null,G)),Eu._5(16384,null,0,Iu.i,[Eu.Q,Eu.N],{ngIf:[0,"ngIf"]},null),(n()(),Eu._27(null,["\n          "])),(n()(),Eu._2(16777216,null,null,1,null,E)),Eu._5(16384,null,0,Iu.i,[Eu.Q,Eu.N],{ngIf:[0,"ngIf"]},null),(n()(),Eu._27(null,["\n          "])),(n()(),Eu._2(16777216,null,null,1,null,A)),Eu._5(16384,null,0,Iu.i,[Eu.Q,Eu.N],{ngIf:[0,"ngIf"]},null),(n()(),Eu._27(null,["\n        "])),(n()(),Eu._27(null,["\n      "])),(n()(),Eu._27(null,["\n   "]))],function(n,e){var l=e.component;n(e,15,0,7!=l.king.kingNumber),n(e,18,0,7===l.king.kingNumber),n(e,32,0,(null==l.king?null:l.king.sons)&&l.king.sons.length>0),n(e,35,0,(null==l.king?null:l.king.highPriests)&&l.king.highPriests.length>0),n(e,38,0,(null==l.king?null:l.king.prophets)&&l.king.prophets.length>0)},function(n,e){var l=e.component;n(e,6,0,l.king.startReignYear,l.king.endReignYear),n(e,21,0,l.king.kingName),n(e,23,0,l.king.age||"?")})}function x(n){return Ku._29(0,[(n()(),Ku._6(0,null,null,9,"ion-slide",[],null,null,null,zu.b,zu.a)),Ku._5(180224,null,0,Fu.a,[Ku.l,Ku.G,Hu.a],null,null),(n()(),Ku._27(0,["\n      "])),(n()(),Ku._6(0,null,0,5,"app-person-card",[],null,[[null,"toggleSonsChange"],[null,"togglePriestsChange"],[null,"toggleProphetsChange"]],function(n,e,l){var t=!0,o=n.component;return"toggleSonsChange"===e&&(t=!1!==o.toggleSons()&&t),"togglePriestsChange"===e&&(t=!1!==o.togglePriests()&&t),"toggleProphetsChange"===e&&(t=!1!==o.toggleProphets()&&t),t},M,qu)),Ku._5(49152,null,0,$e,[],{king:[0,"king"],toggleSons:[1,"toggleSons"],togglePriests:[2,"togglePriests"],toggleProphets:[3,"toggleProphets"]},{toggleSonsChange:"toggleSonsChange",togglePriestsChange:"togglePriestsChange",toggleProphetsChange:"toggleProphetsChange"}),Ku._22(131072,Yu.b,[Ku.h]),Ku._22(131072,Yu.b,[Ku.h]),Ku._22(131072,Yu.b,[Ku.h]),(n()(),Ku._27(null,["\n      "])),(n()(),Ku._27(0,["\n    "]))],function(n,e){var l=e.component;n(e,4,0,e.context.$implicit,Ku._28(e,4,1,Ku._19(e,5).transform(l.showSons$)),Ku._28(e,4,2,Ku._19(e,6).transform(l.showPriests$)),Ku._28(e,4,3,Ku._19(e,7).transform(l.showProphets$)))},null)}function D(n){return Ku._29(0,[Ku._25(402653184,1,{slides:0}),(n()(),Ku._27(null,["\n"])),(n()(),Ku._6(0,null,null,20,"ion-header",[],null,null,null,null,null)),Ku._5(16384,null,0,Vu.a,[Uu.a,Ku.l,Ku.G,[2,Qu.a]],null,null),(n()(),Ku._27(null,["\n  "])),(n()(),Ku._6(0,null,null,16,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,Zu.b,Zu.a)),Ku._5(49152,null,0,Wu.a,[Xu.a,[2,Qu.a],[2,na.a],Uu.a,Ku.l,Ku.G],null,null),(n()(),Ku._27(3,["\n    "])),(n()(),Ku._6(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,e,l){var t=!0;return"click"===e&&(t=!1!==Ku._19(n,10).toggle()&&t),t},ea.b,ea.a)),Ku._5(1097728,[[2,4]],0,la.a,[[8,""],Uu.a,Ku.l,Ku.G],null,null),Ku._5(1064960,null,0,ta.a,[oa.a,[2,Qu.a],[2,la.a],[2,Wu.a]],{menuToggle:[0,"menuToggle"]},null),Ku._5(16384,null,1,ia.a,[Uu.a,Ku.l,Ku.G,[2,ua.a],[2,Wu.a]],null,null),Ku._25(603979776,2,{_buttons:1}),(n()(),Ku._27(0,["\n      "])),(n()(),Ku._6(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ku._5(147456,null,0,aa.a,[Uu.a,Ku.l,Ku.G],{name:[0,"name"]},null),(n()(),Ku._27(0,["\n    "])),(n()(),Ku._27(3,["\n    "])),(n()(),Ku._6(0,null,3,2,"ion-title",[],null,null,null,sa.b,sa.a)),Ku._5(49152,null,0,ra.a,[Uu.a,Ku.l,Ku.G,[2,ua.a],[2,Wu.a]],null,null),(n()(),Ku._27(0,["Kings of Judah"])),(n()(),Ku._27(3,["\n  "])),(n()(),Ku._27(null,["\n"])),(n()(),Ku._27(null,["\n\n"])),(n()(),Ku._6(0,null,null,23,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ca.b,ca.a)),Ku._5(4374528,null,0,_a.a,[Uu.a,ma.a,pa.a,Ku.l,Ku.G,Xu.a,ha.a,Ku.A,[2,Qu.a],[2,na.a]],null,null),(n()(),Ku._27(1,["\n  "])),(n()(),Ku._6(0,null,1,6,"ion-slides",[["centeredSlides","true"],["pager",""],["paginationType","progress"]],null,[[null,"ionSlideDidChange"]],function(n,e,l){var t=!0,o=n.component;return"ionSlideDidChange"===e&&(t=!1!==o.updateKingNumber(l)&&t),t},ga.b,ga.a)),Ku._5(1228800,[[1,4]],0,Hu.a,[Uu.a,ma.a,Ku.A,[2,Qu.a],Ku.l,Ku.G],{pager:[0,"pager"],paginationType:[1,"paginationType"],centeredSlides:[2,"centeredSlides"]},{ionSlideDidChange:"ionSlideDidChange"}),(n()(),Ku._27(0,["\n    "])),(n()(),Ku._2(16777216,null,0,2,null,x)),Ku._5(802816,null,0,Yu.h,[Ku.Q,Ku.N,Ku.t],{ngForOf:[0,"ngForOf"]},null),Ku._22(131072,Yu.b,[Ku.h]),(n()(),Ku._27(0,["\n  "])),(n()(),Ku._27(1,["\n  "])),(n()(),Ku._6(0,null,0,11,"ion-fab",[["bottom",""],["right",""]],null,null,null,da.b,da.a)),Ku._5(1228800,null,2,fa.a,[ma.a],null,null),Ku._25(335544320,3,{_mainButton:0}),Ku._25(603979776,4,{_fabLists:1}),(n()(),Ku._27(0,["\n    "])),(n()(),Ku._6(0,null,0,5,"button",[["color","primary"],["ion-fab",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.showKingsListModal()&&t),t},ba.b,ba.a)),Ku._5(49152,[[3,4]],0,ya.a,[Uu.a,Ku.l,Ku.G],{color:[0,"color"]},null),(n()(),Ku._27(0,["\n      "])),(n()(),Ku._6(0,null,0,1,"ion-icon",[["name","md-albums"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ku._5(147456,null,0,aa.a,[Uu.a,Ku.l,Ku.G],{name:[0,"name"]},null),(n()(),Ku._27(0,["\n    "])),(n()(),Ku._27(0,["\n  "])),(n()(),Ku._27(1,["\n"])),(n()(),Ku._27(null,["\n\n"])),(n()(),Ku._6(0,null,null,38,"ion-footer",[],null,null,null,null,null)),Ku._5(16384,null,0,wa.a,[Uu.a,Ku.l,Ku.G,[2,Qu.a]],null,null),(n()(),Ku._27(null,["\n  "])),(n()(),Ku._6(0,null,null,34,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,ka.b,ka.a)),Ku._5(49152,null,0,ua.a,[Uu.a,Ku.l,Ku.G],null,null),(n()(),Ku._27(3,["\n    "])),(n()(),Ku._6(0,null,3,30,"ion-grid",[["class","grid"]],null,null,null,null,null)),Ku._5(16384,null,0,va.a,[],null,null),(n()(),Ku._27(null,["\n      "])),(n()(),Ku._6(0,null,null,26,"ion-row",[["class","row"]],null,null,null,null,null)),Ku._5(16384,null,0,Ca.a,[],null,null),(n()(),Ku._27(null,["\n        "])),(n()(),Ku._6(0,null,null,10,"ion-col",[["class","col"]],null,null,null,null,null)),Ku._5(16384,null,0,Sa.a,[],null,null),(n()(),Ku._27(null,["\n          "])),(n()(),Ku._6(0,null,null,6,"button",[["block",""],["clear",""],["icon-only",""],["ion-button",""],["small",""]],[[8,"disabled",0]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.prevKing()&&t),t},ea.b,ea.a)),Ku._5(1097728,null,0,la.a,[[8,""],Uu.a,Ku.l,Ku.G],{small:[0,"small"],clear:[1,"clear"],block:[2,"block"]},null),Ku._22(131072,Yu.b,[Ku.h]),(n()(),Ku._27(0,["\n            "])),(n()(),Ku._6(0,null,0,1,"ion-icon",[["name","arrow-back"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ku._5(147456,null,0,aa.a,[Uu.a,Ku.l,Ku.G],{name:[0,"name"]},null),(n()(),Ku._27(0,["\n          "])),(n()(),Ku._27(null,["\n        "])),(n()(),Ku._27(null,["\n        "])),(n()(),Ku._6(0,null,null,10,"ion-col",[["class","col"]],null,null,null,null,null)),Ku._5(16384,null,0,Sa.a,[],null,null),(n()(),Ku._27(null,["\n          "])),(n()(),Ku._6(0,null,null,6,"button",[["block",""],["clear",""],["icon-only",""],["ion-button",""],["small",""]],[[8,"disabled",0]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.nextKing()&&t),t},ea.b,ea.a)),Ku._5(1097728,null,0,la.a,[[8,""],Uu.a,Ku.l,Ku.G],{small:[0,"small"],clear:[1,"clear"],block:[2,"block"]},null),Ku._22(131072,Yu.b,[Ku.h]),(n()(),Ku._27(0,["\n            "])),(n()(),Ku._6(0,null,0,1,"ion-icon",[["name","arrow-forward"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ku._5(147456,null,0,aa.a,[Uu.a,Ku.l,Ku.G],{name:[0,"name"]},null),(n()(),Ku._27(0,["\n          "])),(n()(),Ku._27(null,["\n        "])),(n()(),Ku._27(null,["\n      "])),(n()(),Ku._27(null,["\n    "])),(n()(),Ku._27(3,["\n  "])),(n()(),Ku._27(null,["\n"])),(n()(),Ku._27(null,["\n"]))],function(n,e){var l=e.component;n(e,10,0,"");n(e,15,0,"menu");n(e,28,0,"","progress","true"),n(e,31,0,Ku._28(e,31,0,Ku._19(e,32).transform(l.kings$)));n(e,41,0,"primary");n(e,44,0,"md-albums");n(e,65,0,"","","");n(e,69,0,"arrow-back");n(e,77,0,"","","");n(e,81,0,"arrow-forward")},function(n,e){var l=e.component;n(e,5,0,Ku._19(e,6)._hidden,Ku._19(e,6)._sbPadding),n(e,8,0,Ku._19(e,10).isHidden),n(e,14,0,Ku._19(e,15)._hidden),n(e,24,0,Ku._19(e,25).statusbarPadding,Ku._19(e,25)._hasRefresher),n(e,43,0,Ku._19(e,44)._hidden),n(e,52,0,Ku._19(e,53)._sbPadding),n(e,64,0,1==Ku._28(e,64,0,Ku._19(e,66).transform(l.selectedKing$))),n(e,68,0,Ku._19(e,69)._hidden),n(e,76,0,20==Ku._28(e,76,0,Ku._19(e,78).transform(l.selectedKing$))),n(e,80,0,Ku._19(e,81)._hidden)})}function T(n){return Aa._29(0,[(n()(),Aa._6(0,null,null,6,"li",[["class","tl--item"]],[[4,"border-left-width",null],[4,"padding-left",null],[4,"left",null],[4,"width",null]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.clickTimelineItem(n.context.$implicit)&&t),t},null,null)),Aa._5(278528,null,0,Ma.g,[Aa.t,Aa.u,Aa.l,Aa.G],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),Aa._21(2),(n()(),Aa._27(null,["\n         "])),(n()(),Aa._6(0,null,null,1,"span",[["class","tl--item-title"]],[[4,"color",null]],null,null,null,null)),(n()(),Aa._27(null,["",""])),(n()(),Aa._27(null,["\n      "]))],function(n,e){var l=e.component;n(e,1,0,"tl--item",n(e,2,0,"tl--row-"+l.rows+"-"+e.context.$implicit.tier,l.isItemShort(e.context.$implicit.start,e.context.$implicit.end,l.timelineData.increment)?"tl--side-"+l.rowNumber:"tl--bg-"+l.rowNumber))},function(n,e){var l=e.component;n(e,0,0,l.getBorderWidth(l.timelineData,e.context.$implicit.start,e.context.$implicit.end),l.isItemShort(e.context.$implicit.start,e.context.$implicit.end,l.timelineData.increment)?"0px":"5px",l.getYearAlignment(l.timelineData,e.context.$implicit.start),l.getWidth(l.timelineData,e.context.$implicit.start,e.context.$implicit.end)),n(e,4,0,"TIMELINE_DATES"==e.context.$implicit.group?"#003740":"black"),n(e,5,0,l.isItemShort(e.context.$implicit.start,e.context.$implicit.end,l.timelineData.increment)?"◀ "+e.context.$implicit.name:e.context.$implicit.name)})}function J(n){return Aa._29(2,[(n()(),Aa._27(null,["\n   "])),(n()(),Aa._6(0,null,null,4,"ol",[["class","tl--items"]],null,null,null,null,null)),(n()(),Aa._27(null,["\n      "])),(n()(),Aa._2(16777216,null,null,1,null,T)),Aa._5(802816,null,0,Ma.h,[Aa.Q,Aa.N,Aa.t],{ngForOf:[0,"ngForOf"]},null),(n()(),Aa._27(null,["\n   "])),(n()(),Aa._27(null,["\n   "]))],function(n,e){n(e,4,0,e.component.items)},null)}function I(n){return Ia._29(0,[(n()(),Ia._6(0,null,null,8,"ion-row",[["class","box box--2 row"]],null,null,null,null,null)),Ia._5(16384,null,0,Na.a,[],null,null),(n()(),Ia._27(null,["\n               "])),(n()(),Ia._6(0,null,null,4,"app-timeline-row",[],null,null,null,J,Ja)),Ia._5(49152,null,0,Ke,[Ra.a,Ba.a],{rows:[0,"rows"],rowNumber:[1,"rowNumber"],items:[2,"items"],timelineData:[3,"timelineData"]},null),Ia._22(131072,$a.b,[Ia.h]),Ia._22(131072,$a.b,[Ia.h]),Ia._22(131072,$a.b,[Ia.h]),(n()(),Ia._27(null,["\n            "]))],function(n,e){var l=e.component;n(e,4,0,l.getGroupRowCount(Ia._28(e,4,0,Ia._19(e,5).transform(l.items$)),e.context.$implicit),e.context.index+1,l.listGroupItems(Ia._28(e,4,2,Ia._19(e,6).transform(l.items$)),e.context.$implicit),Ia._28(e,4,3,Ia._19(e,7).transform(l.timelineData$)))},null)}function N(n){return Ia._29(0,[(n()(),Ia._27(null,["\n"])),(n()(),Ia._6(0,null,null,32,"ion-header",[],null,null,null,null,null)),Ia._5(16384,null,0,La.a,[qa.a,Ia.l,Ia.G,[2,Ka.a]],null,null),(n()(),Ia._27(null,["\n"])),(n()(),Ia._6(0,null,null,28,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,za.b,za.a)),Ia._5(49152,null,0,Fa.a,[Ha.a,[2,Ka.a],[2,Ra.a],qa.a,Ia.l,Ia.G],null,null),(n()(),Ia._27(3,["\n   "])),(n()(),Ia._6(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,e,l){var t=!0;return"click"===e&&(t=!1!==Ia._19(n,9).toggle()&&t),t},Ya.b,Ya.a)),Ia._5(1097728,[[1,4]],0,Va.a,[[8,""],qa.a,Ia.l,Ia.G],null,null),Ia._5(1064960,null,0,Ua.a,[Qa.a,[2,Ka.a],[2,Va.a],[2,Fa.a]],{menuToggle:[0,"menuToggle"]},null),Ia._5(16384,null,1,Za.a,[qa.a,Ia.l,Ia.G,[2,Wa.a],[2,Fa.a]],null,null),Ia._25(603979776,1,{_buttons:1}),(n()(),Ia._27(0,["\n      "])),(n()(),Ia._6(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ia._5(147456,null,0,Xa.a,[qa.a,Ia.l,Ia.G],{name:[0,"name"]},null),(n()(),Ia._27(0,["\n   "])),(n()(),Ia._27(3,["\n   "])),(n()(),Ia._6(0,null,3,2,"ion-title",[],null,null,null,ns.b,ns.a)),Ia._5(49152,null,0,es.a,[qa.a,Ia.l,Ia.G,[2,Wa.a],[2,Fa.a]],null,null),(n()(),Ia._27(0,["Timeline"])),(n()(),Ia._27(3,["\n   "])),(n()(),Ia._6(0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),Ia._5(16384,null,1,Za.a,[qa.a,Ia.l,Ia.G,[2,Wa.a],[2,Fa.a]],null,null),Ia._25(603979776,2,{_buttons:1}),(n()(),Ia._27(null,["\n      "])),(n()(),Ia._6(0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.showGroupSelection(o.items$,o.groups$)&&t),t},Ya.b,Ya.a)),Ia._5(1097728,[[2,4]],0,Va.a,[[8,""],qa.a,Ia.l,Ia.G],null,null),(n()(),Ia._27(0,["\n         "])),(n()(),Ia._6(0,null,0,1,"ion-icon",[["name","md-options"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ia._5(147456,null,0,Xa.a,[qa.a,Ia.l,Ia.G],{name:[0,"name"]},null),(n()(),Ia._27(0,["\n      "])),(n()(),Ia._27(null,["\n   "])),(n()(),Ia._27(3,["\n"])),(n()(),Ia._27(null,["\n"])),(n()(),Ia._27(null,["\n\n"])),(n()(),Ia._6(0,null,null,60,"ion-content",[["no-padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ls.b,ls.a)),Ia._5(4374528,null,0,ts.a,[qa.a,os.a,is.a,Ia.l,Ia.G,Ha.a,us.a,Ia.A,[2,Ka.a],[2,Ra.a]],null,null),(n()(),Ia._27(1,["\n   "])),(n()(),Ia._6(0,null,1,22,"div",[["class","timeline--outer"]],null,null,null,null,null)),(n()(),Ia._27(null,["\n      "])),(n()(),Ia._6(0,null,null,19,"div",[["class","timeline--inner"]],[[4,"width",null]],null,null,null,null)),Ia._22(131072,$a.b,[Ia.h]),(n()(),Ia._27(null,["\n         "])),(n()(),Ia._6(0,null,null,15,"ion-grid",[["class","timeline--grid grid"],["no-padding",""]],null,null,null,null,null)),Ia._5(16384,null,0,as.a,[],null,null),(n()(),Ia._27(null,["\n            "])),(n()(),Ia._6(0,null,null,7,"ion-row",[["class","box box--1 row"]],null,null,null,null,null)),Ia._5(16384,null,0,Na.a,[],null,null),(n()(),Ia._27(null,["\n               "])),(n()(),Ia._6(0,null,null,3,"app-timeline-row",[],null,null,null,J,Ja)),Ia._5(49152,null,0,Ke,[Ra.a,Ba.a],{rows:[0,"rows"],rowNumber:[1,"rowNumber"],items:[2,"items"],timelineData:[3,"timelineData"]},null),Ia._22(131072,$a.b,[Ia.h]),Ia._22(131072,$a.b,[Ia.h]),(n()(),Ia._27(null,["\n            "])),(n()(),Ia._27(null,["\n            "])),(n()(),Ia._2(16777216,null,null,2,null,I)),Ia._5(802816,null,0,$a.h,[Ia.Q,Ia.N,Ia.t],{ngForOf:[0,"ngForOf"]},null),Ia._22(131072,$a.b,[Ia.h]),(n()(),Ia._27(null,["\n         "])),(n()(),Ia._27(null,["\n      "])),(n()(),Ia._27(null,["\n   "])),(n()(),Ia._27(1,["\n   "])),(n()(),Ia._6(0,null,0,32,"ion-fab",[["bottom",""],["right",""]],null,null,null,ss.b,ss.a)),Ia._5(1228800,null,2,rs.a,[os.a],null,null),Ia._25(335544320,3,{_mainButton:0}),Ia._25(603979776,4,{_fabLists:1}),(n()(),Ia._27(0,["\n      "])),(n()(),Ia._6(0,null,0,3,"button",[["ion-fab",""]],null,null,null,cs.b,cs.a)),Ia._5(49152,[[3,4]],0,_s.a,[qa.a,Ia.l,Ia.G],null,null),(n()(),Ia._6(0,null,0,1,"ion-icon",[["name","md-settings"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ia._5(147456,null,0,Xa.a,[qa.a,Ia.l,Ia.G],{name:[0,"name"]},null),(n()(),Ia._27(0,["\n      "])),(n()(),Ia._6(0,null,0,21,"ion-fab-list",[["side","left"]],null,null,null,null,null)),Ia._5(16384,[[4,4]],1,ms.a,[Ia.l,Ia.G,qa.a,os.a],null,null),Ia._25(603979776,5,{_setbuttons:1}),(n()(),Ia._27(null,["\n         "])),(n()(),Ia._6(0,null,null,7,"button",[["ion-fab",""],["mini",""]],[[8,"disabled",0]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.zoomIn()&&t),t},cs.b,cs.a)),Ia._5(278528,null,0,$a.g,[Ia.t,Ia.u,Ia.l,Ia.G],{ngClass:[0,"ngClass"]},null),Ia._22(131072,$a.b,[Ia.h]),Ia._23(["disabled"]),Ia._5(49152,[[5,4],[3,4]],0,_s.a,[qa.a,Ia.l,Ia.G],null,null),Ia._22(131072,$a.b,[Ia.h]),(n()(),Ia._6(0,null,0,1,"ion-icon",[["name","md-add"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ia._5(147456,null,0,Xa.a,[qa.a,Ia.l,Ia.G],{name:[0,"name"]},null),(n()(),Ia._27(null,["\n         "])),(n()(),Ia._6(0,null,null,7,"button",[["ion-fab",""],["mini",""]],[[8,"disabled",0]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.zoomOut()&&t),t},cs.b,cs.a)),Ia._5(278528,null,0,$a.g,[Ia.t,Ia.u,Ia.l,Ia.G],{ngClass:[0,"ngClass"]},null),Ia._22(131072,$a.b,[Ia.h]),Ia._23(["disabled"]),Ia._5(49152,[[5,4],[3,4]],0,_s.a,[qa.a,Ia.l,Ia.G],null,null),Ia._22(131072,$a.b,[Ia.h]),(n()(),Ia._6(0,null,0,1,"ion-icon",[["name","md-remove"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Ia._5(147456,null,0,Xa.a,[qa.a,Ia.l,Ia.G],{name:[0,"name"]},null),(n()(),Ia._27(null,["\n      "])),(n()(),Ia._27(0,["\n   "])),(n()(),Ia._27(1,["\n"])),(n()(),Ia._27(null,["\n\n"])),(n()(),Ia._6(0,null,null,2,"ion-footer",[],null,null,null,null,null)),Ia._5(16384,null,0,ps.a,[qa.a,Ia.l,Ia.G,[2,Ka.a]],null,null),(n()(),Ia._27(null,["\n\n"])),(n()(),Ia._27(null,["\n"]))],function(n,e){var l=e.component;n(e,9,0,"");n(e,14,0,"menu");n(e,29,0,"md-options");n(e,50,0,1,1,l.listYearItems(Ia._28(e,50,2,Ia._19(e,51).transform(l.years$))),Ia._28(e,50,3,Ia._19(e,52).transform(l.timelineData$))),n(e,56,0,Ia._28(e,56,0,Ia._19(e,57).transform(l.groups$)));n(e,70,0,"md-settings"),n(e,77,0,n(e,79,0,Ia._28(e,77,0,Ia._19(e,78).transform(l.timelineData$)).increment<=1));n(e,83,0,"md-add"),n(e,86,0,n(e,88,0,Ia._28(e,86,0,Ia._19(e,87).transform(l.timelineData$)).increment>=50));n(e,92,0,"md-remove")},function(n,e){var l=e.component;n(e,4,0,Ia._19(e,5)._hidden,Ia._19(e,5)._sbPadding),n(e,7,0,Ia._19(e,9).isHidden),n(e,13,0,Ia._19(e,14)._hidden),n(e,28,0,Ia._19(e,29)._hidden),n(e,35,0,Ia._19(e,36).statusbarPadding,Ia._19(e,36)._hasRefresher),n(e,40,0,l.getTimelineWidth(Ia._28(e,40,0,Ia._19(e,41).transform(l.timelineData$)))),n(e,69,0,Ia._19(e,70)._hidden),n(e,76,0,Ia._28(e,76,0,Ia._19(e,81).transform(l.timelineData$)).increment<=1),n(e,82,0,Ia._19(e,83)._hidden),n(e,85,0,Ia._28(e,85,0,Ia._19(e,90).transform(l.timelineData$)).increment>=50),n(e,91,0,Ia._19(e,92)._hidden)})}function R(n){return bs._29(0,[(n()(),bs._6(0,null,null,4,"span",[],null,null,null,null,null)),(n()(),bs._27(null,["\n          "," "])),(n()(),bs._6(0,null,null,1,"div",[["style","color:gray;float: right"],["text-right",""]],null,null,null,null,null)),(n()(),bs._27(null,["",""])),(n()(),bs._27(null,["\n        "]))],null,function(n,e){n(e,1,0,e.parent.context.$implicit.kingName),n(e,3,0,e.parent.context.$implicit.startReignYear)})}function B(n){return bs._29(0,[(n()(),bs._6(0,null,null,4,"span",[["style","color:#488aff;"]],null,null,null,null,null)),(n()(),bs._27(null,["\n          "," "])),(n()(),bs._6(0,null,null,1,"div",[["style","color:#488aff;float: right"],["text-right",""]],null,null,null,null,null)),(n()(),bs._27(null,["",""])),(n()(),bs._27(null,["\n        "]))],null,function(n,e){n(e,1,0,e.parent.context.$implicit.kingName),n(e,3,0,e.parent.context.$implicit.startReignYear)})}function $(n){return bs._29(0,[(n()(),bs._6(0,null,null,14,"ion-item",[["class","item item-block"]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.dismiss(n.context.$implicit.kingNumber)&&t),t},ys.b,ys.a)),bs._5(1097728,null,3,ws.a,[ks.a,vs.a,bs.l,bs.G,[2,Cs.a]],null,null),bs._25(335544320,3,{contentLabel:0}),bs._25(603979776,4,{_buttons:1}),bs._25(603979776,5,{_icons:1}),bs._5(16384,null,0,Ss.a,[],null,null),(n()(),bs._27(2,["\n        "])),(n()(),bs._2(16777216,null,2,2,null,R)),bs._5(16384,null,0,Ps.i,[bs.Q,bs.N],{ngIf:[0,"ngIf"]},null),bs._22(131072,Ps.b,[bs.h]),(n()(),bs._27(2,["\n        "])),(n()(),bs._2(16777216,null,2,2,null,B)),bs._5(16384,null,0,Ps.i,[bs.Q,bs.N],{ngIf:[0,"ngIf"]},null),bs._22(131072,Ps.b,[bs.h]),(n()(),bs._27(2,["\n      "]))],function(n,e){var l=e.component;n(e,8,0,e.context.$implicit.kingNumber!=bs._28(e,8,0,bs._19(e,9).transform(l.selectedKing$))),n(e,12,0,e.context.$implicit.kingNumber==bs._28(e,12,0,bs._19(e,13).transform(l.selectedKing$)))},null)}function L(n){return bs._29(0,[(n()(),bs._27(null,["\n"])),(n()(),bs._6(0,null,null,28,"ion-header",[],null,null,null,null,null)),bs._5(16384,null,0,Os.a,[vs.a,bs.l,bs.G,[2,js.a]],null,null),(n()(),bs._27(null,["\n  "])),(n()(),bs._6(0,null,null,24,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,Gs.b,Gs.a)),bs._5(49152,null,0,Es.a,[vs.a,bs.l,bs.G],null,null),(n()(),bs._27(3,["\n    "])),(n()(),bs._6(0,null,3,2,"ion-title",[],null,null,null,As.b,As.a)),bs._5(49152,null,0,Ms.a,[vs.a,bs.l,bs.G,[2,Es.a],[2,xs.a]],null,null),(n()(),bs._27(0,["\n      Choose a king\n    "])),(n()(),bs._27(3,["\n    "])),(n()(),bs._6(0,null,3,16,"ion-buttons",[],null,null,null,null,null)),bs._5(16384,null,1,Ds.a,[vs.a,bs.l,bs.G,[2,Es.a],[2,xs.a]],null,null),bs._25(603979776,1,{_buttons:1}),(n()(),bs._27(null,["\n      "])),(n()(),bs._6(0,null,null,11,"button",[["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.dismiss(0)&&t),t},Ts.b,Ts.a)),bs._5(1097728,[[1,4]],0,Js.a,[[8,""],vs.a,bs.l,bs.G],null,null),(n()(),bs._27(0,["\n        "])),(n()(),bs._6(0,null,0,3,"span",[["color","primary"],["ion-text",""],["showWhen","ios"]],[[2,"hidden-show-when",null]],null,null,null,null)),bs._5(147456,null,0,Is.a,[[8,"ios"],Ns.a,bs.A],null,null),bs._5(16384,null,0,Rs.a,[vs.a,bs.l,bs.G],{color:[0,"color"]},null),(n()(),bs._27(null,["Cancel"])),(n()(),bs._27(0,["\n        "])),(n()(),bs._6(0,null,0,2,"ion-icon",[["name","md-close"],["role","img"],["showWhen","android, windows"]],[[2,"hide",null],[2,"hidden-show-when",null]],null,null,null,null)),bs._5(147456,null,0,Bs.a,[vs.a,bs.l,bs.G],{name:[0,"name"]},null),bs._5(147456,null,0,Is.a,[[8,"android, windows"],Ns.a,bs.A],null,null),(n()(),bs._27(0,["\n      "])),(n()(),bs._27(null,["\n    "])),(n()(),bs._27(3,["\n  "])),(n()(),bs._27(null,["\n"])),(n()(),bs._27(null,["\n"])),(n()(),bs._6(0,null,null,13,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,$s.b,$s.a)),bs._5(4374528,null,0,Ls.a,[vs.a,Ns.a,qs.a,bs.l,bs.G,Ks.a,zs.a,bs.A,[2,js.a],[2,Fs.a]],null,null),(n()(),bs._27(1,["\n   "])),(n()(),bs._6(0,null,1,9,"ion-list",[["radio-group",""],["role","radiogroup"]],null,null,null,null,null)),bs._5(16384,null,0,Hs.a,[vs.a,bs.l,bs.G,Ns.a,Ys.h,qs.a],null,null),bs._5(1064960,null,1,Vs.a,[bs.G,bs.l,bs.h],null,null),bs._25(335544320,2,{_header:0}),bs._24(5120,null,Us.e,function(n){return[n]},[Vs.a]),(n()(),bs._27(null,["\n      "])),(n()(),bs._2(16777216,null,null,2,null,$)),bs._5(802816,null,0,Ps.h,[bs.Q,bs.N,bs.t],{ngForOf:[0,"ngForOf"]},null),bs._22(131072,Ps.b,[bs.h]),(n()(),bs._27(null,["\n   "])),(n()(),bs._27(1,["\n"])),(n()(),bs._27(null,["\n"]))],function(n,e){var l=e.component;n(e,20,0,"primary");n(e,24,0,"md-close"),n(e,41,0,bs._28(e,41,0,bs._19(e,42).transform(l.kings$)))},function(n,e){n(e,4,0,bs._19(e,5)._sbPadding),n(e,18,0,!bs._19(e,19).isMatch),n(e,23,0,bs._19(e,24)._hidden,!bs._19(e,25).isMatch),n(e,31,0,bs._19(e,32).statusbarPadding,bs._19(e,32)._hasRefresher)})}function q(n){return nr._29(0,[(n()(),nr._27(null,["\n"])),(n()(),nr._6(0,null,null,28,"ion-header",[],null,null,null,null,null)),nr._5(16384,null,0,er.a,[lr.a,nr.l,nr.G,[2,tr.a]],null,null),(n()(),nr._27(null,["\n  "])),(n()(),nr._6(0,null,null,24,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,or.b,or.a)),nr._5(49152,null,0,ir.a,[lr.a,nr.l,nr.G],null,null),(n()(),nr._27(3,["\n    "])),(n()(),nr._6(0,null,3,2,"ion-title",[],null,null,null,ur.b,ur.a)),nr._5(49152,null,0,ar.a,[lr.a,nr.l,nr.G,[2,ir.a],[2,sr.a]],null,null),(n()(),nr._27(0,["\n      ","\n    "])),(n()(),nr._27(3,["\n    "])),(n()(),nr._6(0,null,3,16,"ion-buttons",[],null,null,null,null,null)),nr._5(16384,null,1,rr.a,[lr.a,nr.l,nr.G,[2,ir.a],[2,sr.a]],null,null),nr._25(603979776,1,{_buttons:1}),(n()(),nr._27(null,["\n      "])),(n()(),nr._6(0,null,null,11,"button",[["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.dismiss()&&t),t},cr.b,cr.a)),nr._5(1097728,[[1,4]],0,_r.a,[[8,""],lr.a,nr.l,nr.G],null,null),(n()(),nr._27(0,["\n        "])),(n()(),nr._6(0,null,0,3,"span",[["color","primary"],["ion-text",""],["showWhen","ios"]],[[2,"hidden-show-when",null]],null,null,null,null)),nr._5(147456,null,0,mr.a,[[8,"ios"],pr.a,nr.A],null,null),nr._5(16384,null,0,hr.a,[lr.a,nr.l,nr.G],{color:[0,"color"]},null),(n()(),nr._27(null,["Close"])),(n()(),nr._27(0,["\n        "])),(n()(),nr._6(0,null,0,2,"ion-icon",[["name","md-close"],["role","img"],["showWhen","android, windows"]],[[2,"hide",null],[2,"hidden-show-when",null]],null,null,null,null)),nr._5(147456,null,0,gr.a,[lr.a,nr.l,nr.G],{name:[0,"name"]},null),nr._5(147456,null,0,mr.a,[[8,"android, windows"],pr.a,nr.A],null,null),(n()(),nr._27(0,["\n      "])),(n()(),nr._27(null,["\n    "])),(n()(),nr._27(3,["\n  "])),(n()(),nr._27(null,["\n"])),(n()(),nr._27(null,["\n"])),(n()(),nr._6(0,null,null,28,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,dr.b,dr.a)),nr._5(4374528,null,0,fr.a,[lr.a,pr.a,br.a,nr.l,nr.G,yr.a,wr.a,nr.A,[2,tr.a],[2,kr.a]],null,null),(n()(),nr._27(1,["\n   "])),(n()(),nr._6(0,null,1,24,"ion-card",[],null,null,null,null,null)),nr._5(16384,null,0,vr.a,[lr.a,nr.l,nr.G],null,null),(n()(),nr._27(null,["\n      "])),(n()(),nr._6(0,null,null,20,"ion-card-content",[],null,null,null,null,null)),nr._5(16384,null,0,Cr.a,[lr.a,nr.l,nr.G],null,null),(n()(),nr._27(null,["\n         "])),(n()(),nr._6(0,null,null,2,"ion-card-title",[["text-center",""]],null,null,null,null,null)),nr._5(16384,null,0,Sr.a,[lr.a,nr.l,nr.G],null,null),(n()(),nr._27(null,["",""])),(n()(),nr._27(null,["\n         "])),(n()(),nr._6(0,null,null,2,"ion-label",[["text-center",""]],null,null,null,null,null)),nr._5(16384,null,0,Pr.a,[lr.a,nr.l,nr.G,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),nr._27(null,["",""])),(n()(),nr._27(null,["\n         "])),(n()(),nr._6(0,null,null,8,"div",[["text-center",""]],null,null,null,null,null)),(n()(),nr._27(null,["\n            "])),(n()(),nr._6(0,null,null,5,"a",[["ion-button",""],["outline",""],["target","_onblank"]],[[1,"href",4]],null,null,cr.b,cr.a)),nr._5(1097728,null,0,_r.a,[[8,""],lr.a,nr.l,nr.G],{outline:[0,"outline"]},null),(n()(),nr._27(0,["\n               Online Library \n               "])),(n()(),nr._6(0,null,0,1,"ion-icon",[["name","md-open"],["role","img"]],[[2,"hide",null]],null,null,null,null)),nr._5(147456,null,0,gr.a,[lr.a,nr.l,nr.G],{name:[0,"name"]},null),(n()(),nr._27(0,["\n            "])),(n()(),nr._27(null,["\n         "])),(n()(),nr._27(null,["\n      "])),(n()(),nr._27(null,["\n   "])),(n()(),nr._27(1,["\n"])),(n()(),nr._27(null,["\n"]))],function(n,e){n(e,20,0,"primary");n(e,24,0,"md-close");n(e,51,0,"");n(e,54,0,"md-open")},function(n,e){var l=e.component;n(e,4,0,nr._19(e,5)._sbPadding),n(e,9,0,l.profile.name),n(e,18,0,!nr._19(e,19).isMatch),n(e,23,0,nr._19(e,24)._hidden,!nr._19(e,25).isMatch),n(e,31,0,nr._19(e,32).statusbarPadding,nr._19(e,32)._hasRefresher),n(e,42,0,l.profile.name),n(e,46,0,l.getTimeFrame(l.profile.start,l.profile.end)),n(e,50,0,l.profile.url),n(e,53,0,nr._19(e,54)._hidden)})}function K(n){return Ar._29(0,[(n()(),Ar._6(0,null,null,14,"ion-item",[["class","item item-block"]],null,null,null,Mr.b,Mr.a)),Ar._5(1097728,null,3,xr.a,[Dr.a,Tr.a,Ar.l,Ar.G,[2,Jr.a]],null,null),Ar._25(335544320,7,{contentLabel:0}),Ar._25(603979776,8,{_buttons:1}),Ar._25(603979776,9,{_icons:1}),Ar._5(16384,null,0,Ir.a,[],null,null),(n()(),Ar._27(2,["\n            "])),(n()(),Ar._6(0,null,1,2,"ion-label",[],null,null,null,null,null)),Ar._5(16384,[[7,4]],0,Nr.a,[Tr.a,Ar.l,Ar.G,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),Ar._27(null,["",""])),(n()(),Ar._27(2,["\n            "])),(n()(),Ar._6(0,null,0,2,"ion-checkbox",[],[[2,"checkbox-disabled",null]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==Ar._19(n,12)._click(l)&&t),"click"===e&&(t=!1!==o.selectGroup(n.context.$implicit)&&t),t},Rr.b,Rr.a)),Ar._5(1228800,null,0,Br.a,[Tr.a,Dr.a,[2,xr.a],Ar.l,Ar.G],{checked:[0,"checked"]},null),Ar._24(5120,null,$r.e,function(n){return[n]},[Br.a]),(n()(),Ar._27(2,["\n         "]))],function(n,e){var l=e.component;n(e,12,0,l.isGroupVisible(e.context.$implicit,l.groups))},function(n,e){n(e,9,0,e.context.$implicit),n(e,11,0,Ar._19(e,12)._disabled)})}function z(n){return Ar._29(0,[(n()(),Ar._27(null,["\n   "])),(n()(),Ar._6(0,null,null,37,"ion-header",[],null,null,null,null,null)),Ar._5(16384,null,0,Lr.a,[Tr.a,Ar.l,Ar.G,[2,qr.a]],null,null),(n()(),Ar._27(null,["\n   "])),(n()(),Ar._6(0,null,null,33,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,Kr.b,Kr.a)),Ar._5(49152,null,0,zr.a,[Tr.a,Ar.l,Ar.G],null,null),(n()(),Ar._27(3,["\n      "])),(n()(),Ar._6(0,null,3,2,"ion-title",[],null,null,null,Fr.b,Fr.a)),Ar._5(49152,null,0,Hr.a,[Tr.a,Ar.l,Ar.G,[2,zr.a],[2,Yr.a]],null,null),(n()(),Ar._27(0,["\n         Timeline Groups\n      "])),(n()(),Ar._27(3,["\n      "])),(n()(),Ar._6(0,null,3,16,"ion-buttons",[],null,null,null,null,null)),Ar._5(16384,null,1,Vr.a,[Tr.a,Ar.l,Ar.G,[2,zr.a],[2,Yr.a]],null,null),Ar._25(603979776,1,{_buttons:1}),(n()(),Ar._27(null,["\n         "])),(n()(),Ar._6(0,null,null,11,"button",[["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.dismiss("cancel")&&t),t},Ur.b,Ur.a)),Ar._5(1097728,[[1,4]],0,Qr.a,[[8,""],Tr.a,Ar.l,Ar.G],null,null),(n()(),Ar._27(0,["\n         "])),(n()(),Ar._6(0,null,0,3,"span",[["color","primary"],["ion-text",""],["showWhen","ios"]],[[2,"hidden-show-when",null]],null,null,null,null)),Ar._5(147456,null,0,Zr.a,[[8,"ios"],Wr.a,Ar.A],null,null),Ar._5(16384,null,0,Xr.a,[Tr.a,Ar.l,Ar.G],{color:[0,"color"]},null),(n()(),Ar._27(null,["Cancel"])),(n()(),Ar._27(0,["\n         "])),(n()(),Ar._6(0,null,0,2,"ion-icon",[["name","md-close"],["role","img"],["showWhen","android, windows"]],[[2,"hide",null],[2,"hidden-show-when",null]],null,null,null,null)),Ar._5(147456,null,0,nc.a,[Tr.a,Ar.l,Ar.G],{name:[0,"name"]},null),Ar._5(147456,null,0,Zr.a,[[8,"android, windows"],Wr.a,Ar.A],null,null),(n()(),Ar._27(0,["\n         "])),(n()(),Ar._27(null,["\n      "])),(n()(),Ar._27(3,["\n      "])),(n()(),Ar._6(0,null,2,7,"ion-buttons",[["end",""]],null,null,null,null,null)),Ar._5(16384,null,1,Vr.a,[Tr.a,Ar.l,Ar.G,[2,zr.a],[2,Yr.a]],null,null),Ar._25(603979776,2,{_buttons:1}),(n()(),Ar._27(null,["\n         "])),(n()(),Ar._6(0,null,null,2,"button",[["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.dismiss("save")&&t),t},Ur.b,Ur.a)),Ar._5(1097728,[[2,4]],0,Qr.a,[[8,""],Tr.a,Ar.l,Ar.G],null,null),(n()(),Ar._27(0,["\n            Save\n         "])),(n()(),Ar._27(null,["\n      "])),(n()(),Ar._27(3,["\n   "])),(n()(),Ar._27(null,["\n   "])),(n()(),Ar._27(null,["\n   "])),(n()(),Ar._6(0,null,null,20,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ec.b,ec.a)),Ar._5(4374528,null,0,lc.a,[Tr.a,Wr.a,tc.a,Ar.l,Ar.G,oc.a,ic.a,Ar.A,[2,qr.a],[2,uc.a]],null,null),(n()(),Ar._27(1,["\n      "])),(n()(),Ar._6(0,null,1,16,"ion-list",[["radio-group",""],["role","radiogroup"]],null,null,null,null,null)),Ar._5(16384,null,0,ac.a,[Tr.a,Ar.l,Ar.G,Wr.a,sc.h,tc.a],null,null),Ar._5(1064960,null,1,rc.a,[Ar.G,Ar.l,Ar.h],null,null),Ar._25(335544320,3,{_header:0}),Ar._24(5120,null,$r.e,function(n){return[n]},[rc.a]),(n()(),Ar._27(null,["\n         "])),(n()(),Ar._6(0,null,null,6,"ion-item-divider",[["class","item item-divider"],["text-center",""]],[[4,"backgroundColor",null],[4,"color",null]],null,null,Mr.b,Mr.a)),Ar._5(1097728,null,3,xr.a,[Dr.a,Tr.a,Ar.l,Ar.G,[2,Jr.a]],null,null),Ar._25(335544320,4,{contentLabel:0}),Ar._25(603979776,5,{_buttons:1}),Ar._25(603979776,6,{_icons:1}),Ar._5(16384,null,0,cc.a,[Tr.a,Ar.l,Ar.G],null,null),(n()(),Ar._27(2,["Choose up to 6 groups"])),(n()(),Ar._27(null,["\n         "])),(n()(),Ar._2(16777216,null,null,1,null,K)),Ar._5(802816,null,0,_c.h,[Ar.Q,Ar.N,Ar.t],{ngForOf:[0,"ngForOf"]},null),(n()(),Ar._27(null,["\n      "])),(n()(),Ar._27(1,["\n   "])),(n()(),Ar._27(null,["\n   "]))],function(n,e){var l=e.component;n(e,20,0,"primary");n(e,24,0,"md-close"),n(e,58,0,l.listAllGroups(l.items))},function(n,e){var l=e.component;n(e,4,0,Ar._19(e,5)._sbPadding),n(e,18,0,!Ar._19(e,19).isMatch),n(e,23,0,Ar._19(e,24)._hidden,!Ar._19(e,25).isMatch),n(e,33,0,l.groups.length>6),n(e,40,0,Ar._19(e,41).statusbarPadding,Ar._19(e,41)._hasRefresher),n(e,49,0,l.groups.length>6?"red":"lightgray",l.groups.length>6?"white":"black")})}function F(n){return dc._29(0,[(n()(),dc._6(0,null,null,1,"ion-icon",[["color","secondary"],["name","md-checkmark-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),dc._5(147456,[[4,4]],0,fc.a,[bc.a,dc.l,dc.G],{color:[0,"color"],name:[1,"name"]},null)],function(n,e){n(e,1,0,"secondary","md-checkmark-circle")},function(n,e){n(e,0,0,dc._19(e,1)._hidden)})}function H(n){return dc._29(0,[(n()(),dc._6(0,null,null,9,"ion-item",[["class","item item-block"],["detail-push",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.showSection(n.context.$implicit)&&t),t},yc.b,yc.a)),dc._5(1097728,null,3,wc.a,[kc.a,bc.a,dc.l,dc.G,[2,vc.a]],null,null),dc._25(335544320,2,{contentLabel:0}),dc._25(603979776,3,{_buttons:1}),dc._25(603979776,4,{_icons:1}),dc._5(16384,null,0,Cc.a,[],null,null),(n()(),dc._27(2,["\n         ","\n         "])),(n()(),dc._2(16777216,null,2,1,null,F)),dc._5(16384,null,0,Sc.i,[dc.Q,dc.N],{ngIf:[0,"ngIf"]},null),(n()(),dc._27(2,["\n      "]))],function(n,e){n(e,8,0,e.context.$implicit.sections.length>0&&e.context.$implicit.complete)},function(n,e){n(e,6,0,e.context.$implicit.name)})}function Y(n){return dc._29(0,[(n()(),dc._27(null,["\n"])),(n()(),dc._6(0,null,null,20,"ion-header",[],null,null,null,null,null)),dc._5(16384,null,0,Pc.a,[bc.a,dc.l,dc.G,[2,Oc.a]],null,null),(n()(),dc._27(null,["\n  "])),(n()(),dc._6(0,null,null,16,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,jc.b,jc.a)),dc._5(49152,null,0,Gc.a,[Ec.a,[2,Oc.a],[2,Ac.a],bc.a,dc.l,dc.G],null,null),(n()(),dc._27(3,["\n    "])),(n()(),dc._6(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,e,l){var t=!0;return"click"===e&&(t=!1!==dc._19(n,9).toggle()&&t),t},Mc.b,Mc.a)),dc._5(1097728,[[1,4]],0,xc.a,[[8,""],bc.a,dc.l,dc.G],null,null),dc._5(1064960,null,0,Dc.a,[Tc.a,[2,Oc.a],[2,xc.a],[2,Gc.a]],{menuToggle:[0,"menuToggle"]},null),dc._5(16384,null,1,Jc.a,[bc.a,dc.l,dc.G,[2,Ic.a],[2,Gc.a]],null,null),dc._25(603979776,1,{_buttons:1}),(n()(),dc._27(0,["\n      "])),(n()(),dc._6(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),dc._5(147456,null,0,fc.a,[bc.a,dc.l,dc.G],{name:[0,"name"]},null),(n()(),dc._27(0,["\n    "])),(n()(),dc._27(3,["\n    "])),(n()(),dc._6(0,null,3,2,"ion-title",[],null,null,null,Nc.b,Nc.a)),dc._5(49152,null,0,Rc.a,[bc.a,dc.l,dc.G,[2,Ic.a],[2,Gc.a]],null,null),(n()(),dc._27(0,["Schedules"])),(n()(),dc._27(3,["\n  "])),(n()(),dc._27(null,["\n"])),(n()(),dc._27(null,["\n\n"])),(n()(),dc._6(0,null,null,10,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Bc.b,Bc.a)),dc._5(4374528,null,0,$c.a,[bc.a,Lc.a,qc.a,dc.l,dc.G,Ec.a,Kc.a,dc.A,[2,Oc.a],[2,Ac.a]],null,null),(n()(),dc._27(1,["\n   "])),(n()(),dc._6(0,null,1,6,"ion-list",[],null,null,null,null,null)),dc._5(16384,null,0,zc.a,[bc.a,dc.l,dc.G,Lc.a,Fc.h,qc.a],null,null),(n()(),dc._27(null,["\n      "])),(n()(),dc._2(16777216,null,null,2,null,H)),dc._5(802816,null,0,Sc.h,[dc.Q,dc.N,dc.t],{ngForOf:[0,"ngForOf"]},null),dc._22(131072,Sc.b,[dc.h]),(n()(),dc._27(null,["\n   "])),(n()(),dc._27(1,["\n"])),(n()(),dc._27(null,["\n\n"])),(n()(),dc._6(0,null,null,2,"ion-footer",[],null,null,null,null,null)),dc._5(16384,null,0,Hc.a,[bc.a,dc.l,dc.G,[2,Oc.a]],null,null),(n()(),dc._27(null,["\n  \n"])),(n()(),dc._27(null,["\n"]))],function(n,e){var l=e.component;n(e,9,0,"");n(e,14,0,"menu"),n(e,30,0,dc._28(e,30,0,dc._19(e,31).transform(l.schedules$)))},function(n,e){n(e,4,0,dc._19(e,5)._hidden,dc._19(e,5)._sbPadding),n(e,7,0,dc._19(e,9).isHidden),n(e,13,0,dc._19(e,14)._hidden),n(e,23,0,dc._19(e,24).statusbarPadding,dc._19(e,24)._hasRefresher)})}function V(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,6,"ion-list-header",[["class","item"],["color","primary"],["text-center",""]],null,null,null,Wc.b,Wc.a)),Zc._5(1097728,null,3,Xc.a,[n_.a,e_.a,Zc.l,Zc.G,[2,l_.a]],{color:[0,"color"]},null),Zc._25(335544320,3,{contentLabel:0}),Zc._25(603979776,4,{_buttons:1}),Zc._25(603979776,5,{_icons:1}),Zc._5(16384,null,0,t_.a,[e_.a,Zc.G,Zc.l,[8,null]],{color:[0,"color"]},null),(n()(),Zc._27(2,["\n         ","\n      "]))],function(n,e){n(e,1,0,"primary");n(e,5,0,"primary")},function(n,e){n(e,6,0,e.component.getHiddenText())})}function U(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,1,"span",[],[[4,"color",null]],null,null,null,null)),(n()(),Zc._27(null,["(",")"]))],null,function(n,e){var l=e.component;n(e,0,0,"gray"),n(e,1,0,l.getCompletenessText(e.parent.parent.context.$implicit.sections))})}function Q(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,1,"ion-icon",[["color","secondary"],["name","md-checkmark-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Zc._5(147456,[[8,4]],0,o_.a,[e_.a,Zc.l,Zc.G],{color:[0,"color"],name:[1,"name"]},null)],function(n,e){n(e,1,0,"secondary","md-checkmark-circle")},function(n,e){n(e,0,0,Zc._19(e,1)._hidden)})}function Z(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,1,"ion-icon",[["item-end",""],["name","ios-arrow-forward"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Zc._5(147456,[[8,4]],0,o_.a,[e_.a,Zc.l,Zc.G],{name:[0,"name"]},null)],function(n,e){n(e,1,0,"ios-arrow-forward")},function(n,e){n(e,0,0,Zc._19(e,1)._hidden)})}function W(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,1,"ion-icon",[["color","secondary"],["item-end",""],["name","md-checkmark"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Zc._5(147456,[[8,4]],0,o_.a,[e_.a,Zc.l,Zc.G],{color:[0,"color"],name:[1,"name"]},null)],function(n,e){n(e,1,0,"secondary","md-checkmark")},function(n,e){n(e,0,0,Zc._19(e,1)._hidden)})}function X(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,1,"ion-icon",[["color","secondary"],["item-end",""],["name","md-checkmark-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Zc._5(147456,[[8,4]],0,o_.a,[e_.a,Zc.l,Zc.G],{color:[0,"color"],name:[1,"name"]},null)],function(n,e){n(e,1,0,"secondary","md-checkmark-circle")},function(n,e){n(e,0,0,Zc._19(e,1)._hidden)})}function nn(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,21,"ion-item",[["class","item item-block"]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.tapSection(n.parent.context.$implicit)&&t),t},Wc.b,Wc.a)),Zc._5(1097728,null,3,Xc.a,[n_.a,e_.a,Zc.l,Zc.G,[2,l_.a]],null,null),Zc._25(335544320,6,{contentLabel:0}),Zc._25(603979776,7,{_buttons:1}),Zc._25(603979776,8,{_icons:1}),Zc._5(16384,null,0,i_.a,[],null,null),(n()(),Zc._27(2,["\n            "," \n            "])),(n()(),Zc._2(16777216,null,2,1,null,U)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(2,["\n            "])),(n()(),Zc._2(16777216,null,2,1,null,Q)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(2,["\n\n            "])),(n()(),Zc._2(16777216,null,4,1,null,Z)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(2,["\n            "])),(n()(),Zc._2(16777216,null,4,1,null,W)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(2,["\n            "])),(n()(),Zc._2(16777216,null,4,1,null,X)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(2,["\n         "]))],function(n,e){n(e,8,0,e.parent.context.$implicit.sections.length>0),n(e,11,0,e.parent.context.$implicit.sections.length>0&&e.parent.context.$implicit.complete),n(e,14,0,e.parent.context.$implicit.sections.length>0),n(e,17,0,0==e.parent.context.$implicit.sections.length&&!e.parent.context.$implicit.complete),n(e,20,0,0==e.parent.context.$implicit.sections.length&&e.parent.context.$implicit.complete)},function(n,e){n(e,6,0,e.parent.context.$implicit.name)})}function en(n){return Zc._29(0,[(n()(),Zc._27(null,["\n         "])),(n()(),Zc._2(16777216,null,null,1,null,nn)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(null,["\n      "]))],function(n,e){n(e,2,0,e.component.sectionCanAppear(e.context.$implicit))},null)}function ln(n){return Zc._29(0,[(n()(),Zc._27(null,["\n"])),(n()(),Zc._6(0,null,null,32,"ion-header",[],null,null,null,null,null)),Zc._5(16384,null,0,a_.a,[e_.a,Zc.l,Zc.G,[2,s_.a]],null,null),(n()(),Zc._27(null,["\n  "])),(n()(),Zc._6(0,null,null,28,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,r_.b,r_.a)),Zc._5(49152,null,0,c_.a,[__.a,[2,s_.a],[2,m_.a],e_.a,Zc.l,Zc.G],null,null),(n()(),Zc._27(3,["\n    "])),(n()(),Zc._6(0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,e,l){var t=!0;return"click"===e&&(t=!1!==Zc._19(n,9).toggle()&&t),t},p_.b,p_.a)),Zc._5(1097728,[[1,4]],0,h_.a,[[8,""],e_.a,Zc.l,Zc.G],null,null),Zc._5(1064960,null,0,g_.a,[d_.a,[2,s_.a],[2,h_.a],[2,c_.a]],{menuToggle:[0,"menuToggle"]},null),Zc._5(16384,null,1,f_.a,[e_.a,Zc.l,Zc.G,[2,b_.a],[2,c_.a]],null,null),Zc._25(603979776,1,{_buttons:1}),(n()(),Zc._27(0,["\n      "])),(n()(),Zc._6(0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Zc._5(147456,null,0,o_.a,[e_.a,Zc.l,Zc.G],{name:[0,"name"]},null),(n()(),Zc._27(0,["\n    "])),(n()(),Zc._27(3,["\n    "])),(n()(),Zc._6(0,null,3,2,"ion-title",[],null,null,null,y_.b,y_.a)),Zc._5(49152,null,0,w_.a,[e_.a,Zc.l,Zc.G,[2,b_.a],[2,c_.a]],null,null),(n()(),Zc._27(0,["",""])),(n()(),Zc._27(3,["\n    "])),(n()(),Zc._6(0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),Zc._5(16384,null,1,f_.a,[e_.a,Zc.l,Zc.G,[2,b_.a],[2,c_.a]],null,null),Zc._25(603979776,2,{_buttons:1}),(n()(),Zc._27(null,["\n      "])),(n()(),Zc._6(0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.showSettings(l)&&t),t},p_.b,p_.a)),Zc._5(1097728,[[2,4]],0,h_.a,[[8,""],e_.a,Zc.l,Zc.G],null,null),(n()(),Zc._27(0,["\n        "])),(n()(),Zc._6(0,null,0,1,"ion-icon",[["name","md-more"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Zc._5(147456,null,0,o_.a,[e_.a,Zc.l,Zc.G],{name:[0,"name"]},null),(n()(),Zc._27(0,["\n      "])),(n()(),Zc._27(null,["\n    "])),(n()(),Zc._27(3,["\n  "])),(n()(),Zc._27(null,["\n"])),(n()(),Zc._27(null,["\n\n"])),(n()(),Zc._6(0,null,null,12,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,k_.b,k_.a)),Zc._5(4374528,null,0,v_.a,[e_.a,C_.a,S_.a,Zc.l,Zc.G,__.a,P_.a,Zc.A,[2,s_.a],[2,m_.a]],null,null),(n()(),Zc._27(1,["\n   "])),(n()(),Zc._6(0,null,1,8,"ion-list",[],null,null,null,null,null)),Zc._5(16384,null,0,O_.a,[e_.a,Zc.l,Zc.G,C_.a,j_.h,S_.a],null,null),(n()(),Zc._27(null,["\n      "])),(n()(),Zc._2(16777216,null,null,1,null,V)),Zc._5(16384,null,0,u_.i,[Zc.Q,Zc.N],{ngIf:[0,"ngIf"]},null),(n()(),Zc._27(null,["\n      "])),(n()(),Zc._2(16777216,null,null,1,null,en)),Zc._5(802816,null,0,u_.h,[Zc.Q,Zc.N,Zc.t],{ngForOf:[0,"ngForOf"]},null),(n()(),Zc._27(null,["\n   "])),(n()(),Zc._27(1,["\n"])),(n()(),Zc._27(null,["\n\n"])),(n()(),Zc._6(0,null,null,10,"ion-footer",[],null,null,null,null,null)),Zc._5(16384,null,0,G_.a,[e_.a,Zc.l,Zc.G,[2,s_.a]],null,null),(n()(),Zc._27(null,["\n  "])),(n()(),Zc._6(0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,E_.b,E_.a)),Zc._5(49152,null,0,b_.a,[e_.a,Zc.l,Zc.G],null,null),(n()(),Zc._27(3,["\n    "])),(n()(),Zc._6(0,null,3,2,"ion-title",[],null,null,null,y_.b,y_.a)),Zc._5(49152,null,0,w_.a,[e_.a,Zc.l,Zc.G,[2,b_.a],[2,c_.a]],null,null),(n()(),Zc._27(0,["",""])),(n()(),Zc._27(3,["\n  "])),(n()(),Zc._27(null,["\n"])),(n()(),Zc._27(null,["\n"]))],function(n,e){var l=e.component;n(e,9,0,"");n(e,14,0,"menu");n(e,29,0,"md-more"),n(e,42,0,l.hideCompleted),n(e,45,0,l.section.sections)},function(n,e){var l=e.component;n(e,4,0,Zc._19(e,5)._hidden,Zc._19(e,5)._sbPadding),n(e,7,0,Zc._19(e,9).isHidden),n(e,13,0,Zc._19(e,14)._hidden),n(e,19,0,l.section.name),n(e,28,0,Zc._19(e,29)._hidden),n(e,35,0,Zc._19(e,36).statusbarPadding,Zc._19(e,36)._hasRefresher),n(e,52,0,Zc._19(e,53)._sbPadding),n(e,57,0,l.getCompletenessText(l.section.sections))})}function tn(n){return I_._29(0,[(n()(),I_._27(null,["\n   "])),(n()(),I_._6(0,null,null,54,"ion-list",[],null,null,null,null,null)),I_._5(16384,null,0,N_.a,[R_.a,I_.l,I_.G,B_.a,$_.h,L_.a],null,null),(n()(),I_._27(null,["\n      "])),(n()(),I_._6(0,null,null,5,"button",[["color","danger"],["full",""],["icon-start",""],["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.clearData()&&t),t},q_.b,q_.a)),I_._5(1097728,null,0,K_.a,[[8,""],R_.a,I_.l,I_.G],{color:[0,"color"],full:[1,"full"]},null),(n()(),I_._27(0,["\n         "])),(n()(),I_._6(0,null,0,1,"ion-icon",[["name","md-trash"],["role","img"]],[[2,"hide",null]],null,null,null,null)),I_._5(147456,null,0,z_.a,[R_.a,I_.l,I_.G],{name:[0,"name"]},null),(n()(),I_._27(0,["\n         Reset Schedule\n      "])),(n()(),I_._27(null,["\n      "])),(n()(),I_._6(0,null,null,17,"ion-item",[["class","item item-block"]],null,null,null,F_.b,F_.a)),I_._5(1097728,null,3,H_.a,[Y_.a,R_.a,I_.l,I_.G,[2,V_.a]],null,null),I_._25(335544320,1,{contentLabel:0}),I_._25(603979776,2,{_buttons:1}),I_._25(603979776,3,{_icons:1}),I_._5(16384,null,0,U_.a,[],null,null),(n()(),I_._27(2,["\n         "])),(n()(),I_._6(0,null,1,2,"ion-label",[],null,null,null,null,null)),I_._5(16384,[[1,4]],0,Q_.a,[R_.a,I_.l,I_.G,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),I_._27(null,["Hide completed"])),(n()(),I_._27(2,["\n         "])),(n()(),I_._6(0,null,0,5,"ion-checkbox",[],[[2,"checkbox-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==I_._19(n,23)._click(l)&&t),"ngModelChange"===e&&(t=!1!==(o.hideCompleted=l)&&t),t},Z_.b,Z_.a)),I_._5(1228800,null,0,W_.a,[R_.a,Y_.a,[2,H_.a],I_.l,I_.G],null,null),I_._24(1024,null,X_.e,function(n){return[n]},[W_.a]),I_._5(671744,null,0,X_.h,[[8,null],[8,null],[8,null],[2,X_.e]],{model:[0,"model"]},{update:"ngModelChange"}),I_._24(2048,null,X_.f,null,[X_.h]),I_._5(16384,null,0,X_.g,[X_.f],null,null),(n()(),I_._27(2,["\n      "])),(n()(),I_._27(null,["\n      "])),(n()(),I_._6(0,null,null,17,"ion-item",[["class","item item-block"]],null,null,null,F_.b,F_.a)),I_._5(1097728,null,3,H_.a,[Y_.a,R_.a,I_.l,I_.G,[2,V_.a]],null,null),I_._25(335544320,4,{contentLabel:0}),I_._25(603979776,5,{_buttons:1}),I_._25(603979776,6,{_icons:1}),I_._5(16384,null,0,U_.a,[],null,null),(n()(),I_._27(2,["\n         "])),(n()(),I_._6(0,null,1,2,"ion-label",[],null,null,null,null,null)),I_._5(16384,[[4,4]],0,Q_.a,[R_.a,I_.l,I_.G,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),I_._27(null,["Mark all"])),(n()(),I_._27(2,["\n         "])),(n()(),I_._6(0,null,0,5,"ion-checkbox",[],[[2,"checkbox-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==I_._19(n,42)._click(l)&&t),"ngModelChange"===e&&(t=!1!==(o.markAll=l)&&t),t},Z_.b,Z_.a)),I_._5(1228800,null,0,W_.a,[R_.a,Y_.a,[2,H_.a],I_.l,I_.G],null,null),I_._24(1024,null,X_.e,function(n){return[n]},[W_.a]),I_._5(671744,null,0,X_.h,[[8,null],[8,null],[8,null],[2,X_.e]],{model:[0,"model"]},{update:"ngModelChange"}),I_._24(2048,null,X_.f,null,[X_.h]),I_._5(16384,null,0,X_.g,[X_.f],null,null),(n()(),I_._27(2,["\n      "])),(n()(),I_._27(null,["\n      "])),(n()(),I_._6(0,null,null,5,"button",[["clear",""],["full",""],["icon-start",""],["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0,o=n.component;return"click"===e&&(t=!1!==o.closePopover()&&t),t},q_.b,q_.a)),I_._5(1097728,null,0,K_.a,[[8,""],R_.a,I_.l,I_.G],{clear:[0,"clear"],full:[1,"full"]},null),(n()(),I_._27(0,["\n         "])),(n()(),I_._6(0,null,0,1,"ion-icon",[["name","md-checkmark"],["role","img"]],[[2,"hide",null]],null,null,null,null)),I_._5(147456,null,0,z_.a,[R_.a,I_.l,I_.G],{name:[0,"name"]},null),(n()(),I_._27(0,["\n         Save Settings\n      "])),(n()(),I_._27(null,["\n   "])),(n()(),I_._27(null,["\n"]))],function(n,e){var l=e.component;n(e,5,0,"danger","");n(e,8,0,"md-trash"),n(e,25,0,l.hideCompleted),n(e,44,0,l.markAll);n(e,50,0,"","");n(e,53,0,"md-checkmark")},function(n,e){n(e,7,0,I_._19(e,8)._hidden),n(e,22,0,I_._19(e,23)._disabled,I_._19(e,27).ngClassUntouched,I_._19(e,27).ngClassTouched,I_._19(e,27).ngClassPristine,I_._19(e,27).ngClassDirty,I_._19(e,27).ngClassValid,I_._19(e,27).ngClassInvalid,I_._19(e,27).ngClassPending),n(e,41,0,I_._19(e,42)._disabled,I_._19(e,46).ngClassUntouched,I_._19(e,46).ngClassTouched,I_._19(e,46).ngClassPristine,I_._19(e,46).ngClassDirty,I_._19(e,46).ngClassValid,I_._19(e,46).ngClassInvalid,I_._19(e,46).ngClassPending),n(e,52,0,I_._19(e,53)._hidden)})}Object.defineProperty(e,"__esModule",{value:!0});var on="[Measures] Add Auxilary Measurement",un="[Measures] Change Auxilary Measure",an="[Measures] Change Auxilary Value",sn="[Measures] Change Base Measure",rn="[Measures] Change Base Value",cn="[Measures] Change Type",_n="[Measures] Init Measures",mn="[Measures] Loaded Measures",pn="[Measures] Failed to load Measures",hn="[Measures] Measurement Types Set",gn=function(){return function(){this.type=on}}(),dn=function(){return function(n){this.payload=n,this.type=un}}(),fn=function(){return function(n){this.payload=n,this.type=an}}(),bn=function(){return function(n){this.payload=n,this.type=sn}}(),yn=function(){return function(n){this.payload=n,this.type=rn}}(),wn=function(){return function(n){this.payload=n,this.type=cn}}(),kn=function(){return function(){this.type=_n}}(),vn=function(){return function(n){this.payload=n,this.type=mn}}(),Cn=function(){return function(){this.type=pn}}(),Sn=function(){return function(n){this.payload=n,this.type=hn}}(),Pn=l(17),On={measurements:[],baseMeasure:{value:1,measure:{id:6,name:"Inches",amount:1,type:"Length"}},auxMeasures:[{value:.05714285714,measure:{id:1,name:"Cubits",amount:17.5,type:"Length"}}],selectedType:"Length",types:[]},jn=function(n){return n.measurements},Gn=Object(Pn.v)(jn,function(n){return n.measurements}),En=Object(Pn.v)(jn,function(n){return n.baseMeasure}),An=Object(Pn.v)(jn,function(n){return n.auxMeasures}),Mn=Object(Pn.v)(jn,function(n){return n.selectedType}),xn=Object(Pn.v)(jn,function(n){return n.types}),Dn=(l(0),l(28),l(17),function(){function n(n,e){this.navCtrl=n,this.store=e,this.measurements$=this.store.select(Gn),this.selectedType$=this.store.select(Mn),this.types$=this.store.select(xn),this.baseMeasure$=this.store.select(En),this.auxMeasures$=this.store.select(An)}return n.prototype.ngOnInit=function(){this.store.dispatch(new kn)},n.prototype.addMeasurement=function(){this.store.dispatch(new gn)},n.prototype.changeAuxMeasure=function(n){this.store.dispatch(new dn(n))},n.prototype.changeAuxValue=function(n){this.store.dispatch(new fn(n))},n.prototype.changeBaseMeasure=function(n){this.store.dispatch(new bn(n.name))},n.prototype.changeBaseValue=function(n){this.store.dispatch(new yn(n.value))},n.prototype.changeType=function(n){this.store.dispatch(new wn(n))},n.prototype.listTypeMeasurements=function(n,e){return e.filter(function(e){return e.type==n})},n.prototype.trackAux=function(n,e,l){return n},n}()),Tn=(l(0),l(28),function(){function n(n){this.navCtrl=n}return n.prototype.ngOnInit=function(){},n.prototype.navigateToApp=function(n){switch(n){case"kings":this.navCtrl.setRoot(ce);break;case"timeline":this.navCtrl.setRoot(De);break;case"converter":this.navCtrl.setRoot(Dn);break;case"schedules":this.navCtrl.setRoot(dl)}},n}()),Jn=(l(0),l(28),function(){function n(n,e,l){this.platform=n,this.params=e,this.viewCtrl=l,this.kings$=this.params.get("kings"),this.selectedKing$=this.params.get("selectedKing")}return n.prototype.dismiss=function(n){var e=this;n>0?this.viewCtrl.dismiss(n):this.selectedKing$.subscribe(function(n){e.viewCtrl.dismiss(n)})},n}()),In="[Kings] Init Kings",Nn="[Kings] Next King",Rn="[Kings] Previous King",Bn="[Kings] Set King",$n="[Kings] Kings loaded",Ln="[Kings] Kings Failed to load",qn="[Kings] Toggle view sons",Kn="[Kings] Toggle view priests",zn="[Kings] Toggle view prophets",Fn=function(){return function(){this.type=Nn}}(),Hn=function(){return function(){this.type=Rn}}(),Yn=function(){return function(){this.type=In}}(),Vn=function(){return function(n){this.payload=n,this.type=$n}}(),Un=function(){return function(){this.type=Ln}}(),Qn=function(){return function(n){this.payload=n,this.type=Bn}}(),Zn=function(){return function(){this.type=Kn}}(),Wn=function(){return function(){this.type=zn}}(),Xn=function(){return function(){this.type=qn}}(),ne=l(17),ee={kings:[],selectedKing:1,showPriests:!1,showProphets:!1,showSons:!1},le=function(n){return n.kings},te=Object(ne.v)(le,function(n){return n.kings}),oe=Object(ne.v)(le,function(n){return n.selectedKing}),ie=Object(ne.v)(le,function(n){return n.showPriests}),ue=Object(ne.v)(le,function(n){return n.showProphets}),ae=Object(ne.v)(le,function(n){return n.showSons}),se=(l(0),l(28),l(17),l(62)),re=(l.n(se),l(162)),ce=(l.n(re),function(){function n(n,e,l){this.navCtrl=n,this.modalCtrl=e,this.store=l,this.kings$=this.store.select(te),this.selectedKing$=this.store.select(oe),this.showPriests$=this.store.select(ie),this.showProphets$=this.store.select(ue),this.showSons$=this.store.select(ae)}return n.prototype.ngOnInit=function(){this.store.dispatch(new Yn)},n.prototype.showKingsListModal=function(){var n=this,e=this.modalCtrl.create(Jn,{kings:this.kings$,selectedKing:this.selectedKing$});e.present(),e.onDidDismiss(function(e){n.store.dispatch(new Qn(e)),n.slides.slideTo(e-1)})},n.prototype.nextKing=function(){this.store.dispatch(new Fn),this.slides.slideNext()},n.prototype.prevKing=function(){this.store.dispatch(new Hn),this.slides.slidePrev()},n.prototype.updateKingNumber=function(n){this.store.dispatch(new Qn(n.realIndex+1))},n.prototype.toggleSons=function(){this.store.dispatch(new Xn)},n.prototype.togglePriests=function(){this.store.dispatch(new Zn)},n.prototype.toggleProphets=function(){this.store.dispatch(new Wn)},n}()),_e=(l(0),l(28),function(){function n(n,e,l){var t=this;this.platform=n,this.params=e,this.viewCtrl=l,this.params.get("groups").subscribe(function(n){return t.groups=Object.assign([],n)}),this.params.get("items").subscribe(function(n){return t.items=n})}return n.prototype.selectGroup=function(n){var e=this.groups.indexOf(n);e>-1?this.groups.splice(e,1):this.groups.push(n)},n.prototype.isGroupVisible=function(n,e){return e.indexOf(n)>-1},n.prototype.listAllGroups=function(n){return new Set(n.map(function(n){return n.group}))},n.prototype.dismiss=function(n){var e={};switch(n){case"save":e={groups:this.groups};break;default:e={}}this.viewCtrl.dismiss(e)},n}()),me="[Timeline] Init Timeline",pe="[Timeline] Loaded Timeline",he="[Timeline] Failed to load Timeline",ge="[Timeline] Set groups",de="[Timeline] Zoom In",fe="[Timeline] Zoom Out",be=function(){return function(){this.type=me}}(),ye=function(){return function(n){this.payload=n,this.type=pe}}(),we=function(){return function(){this.type=he}}(),ke=function(){return function(n){this.payload=n,this.type=ge}}(),ve=function(){return function(){this.type=de}}(),Ce=function(){return function(){this.type=fe}}(),Se=l(17),Pe={items:[],groups:["Kings of Judah","Kings of Samaria","Prophets","Events"],years:[],timelineData:{start:1e3,end:500,increment:10}},Oe=function(n){return n.timeline},je=Object(Se.v)(Oe,function(n){return n.groups}),Ge=Object(Se.v)(Oe,function(n){return n.items}),Ee=Object(Se.v)(Oe,function(n){return n.years}),Ae=Object(Se.v)(Oe,function(n){return n.timelineData}),Me=(l(0),l(28),l(17),l(62)),xe=(l.n(Me),l(162)),De=(l.n(xe),function(){function n(n,e,l){this.navCtrl=n,this.modalCtrl=e,this.store=l,this.groups$=this.store.select(je),this.items$=this.store.select(Ge),this.years$=this.store.select(Ee),this.timelineData$=this.store.select(Ae)}return n.prototype.ngOnInit=function(){this.store.dispatch(new be)},n.prototype.showGroupSelection=function(n,e){var l=this,t=this.modalCtrl.create(_e,{items:n,groups:e});t.present(),t.onDidDismiss(function(n){n&&n.groups&&n.groups.length<=6&&l.store.dispatch(new ke(n.groups))})},n.prototype.getGroupRowCount=function(n,e){return this.listGroupItems(n,e).map(function(n){return n.tier}).reduce(function(n,e){return n>e?n:e})},n.prototype.getTimelineWidth=function(n){return(n.start-n.end)*n.increment+"px"},n.prototype.listGroupItems=function(n,e){return n.filter(function(n){return n.group==e})},n.prototype.listYearItems=function(n){return n.filter(function(n){return n<=4100}).map(function(n){return{name:4100==n?"Creation":n+" B.C.E.",start:n,end:n,tier:1,url:"",group:"TIMELINE_DATES"}})},n.prototype.zoomIn=function(){this.store.dispatch(new ve)},n.prototype.zoomOut=function(){this.store.dispatch(new Ce)},n}()),Te=l(0),Je=l(211),Ie=(l.n(Je),function(){function n(){this.changeValue=new Te.n,this.changeMeasure=new Te.n}return n.prototype.handleChangeValue=function(n,e){this.changeValue.emit({index:n,value:e})},n.prototype.handleChangeMeasure=function(n,e){this.changeMeasure.emit({index:n,name:e})},n.prototype.isMeasureSelected=function(n){return n==this.measureValue.measure.id},n}()),Ne=l(0),Re=function(){function n(){this.toggleExpanderChange=new Ne.n}return n.prototype.handleToggleExpander=function(){this.toggleExpander=!this.toggleExpander,this.toggleExpanderChange.emit(this.toggleExpander)},n}(),Be=l(0),$e=function(){function n(){this.toggleSonsChange=new Be.n,this.togglePriestsChange=new Be.n,this.toggleProphetsChange=new Be.n}return n.prototype.handleToggleSons=function(){this.toggleSons=!this.toggleSons,this.toggleSonsChange.emit(this.toggleSons)},n.prototype.handleTogglePriests=function(){this.togglePriests=!this.togglePriests,this.togglePriestsChange.emit(this.togglePriests)},n.prototype.handleToggleProphets=function(){this.toggleProphets=!this.toggleProphets,this.toggleProphetsChange.emit(this.toggleProphets)},n}(),Le=(l(0),l(28),function(){function n(n,e,l){this.platform=n,this.params=e,this.viewCtrl=l,this.profile=this.params.get("profile")}return n.prototype.dismiss=function(){this.viewCtrl.dismiss()},n.prototype.getTimeFrame=function(n,e){return n-e<=0?n+" B.C.E.":n+" - "+e+" B.C.E."},n}()),qe=(l(0),l(28),function(){function n(n,e){this.navParams=n,this.viewCtrl=e}return n.prototype.ngOnInit=function(){this.hideCompleted=this.navParams.data.hideCompleted,this.markAll=this.navParams.data.markAll},n.prototype.closePopover=function(){this.viewCtrl.dismiss({hideCompleted:this.hideCompleted,markAll:this.markAll})},n.prototype.clearData=function(){confirm("Warning! Schedule progress will be lost. Are you sure you want to continue?")&&this.viewCtrl.dismiss({clearData:!0})},n}()),Ke=(l(0),l(28),function(){function n(n,e){this.navCtrl=n,this.modalCtrl=e}return n.prototype.clickTimelineItem=function(n){n.url&&this.modalCtrl.create(Le,{profile:n}).present()},n.prototype.pixelize=function(n){return n+"px"},n.prototype.getYearPosition=function(n,e,l){return 100/l*(n-e)},n.prototype.getYearAlignment=function(n,e){return this.pixelize(this.getYearPosition(n.start,e,n.increment))},n.prototype.getWidth=function(n,e,l){var t=this.getYearPosition(n.start,l,n.increment)-this.getYearPosition(n.start,e,n.increment);return 0===t?t=300:this.isItemShort(e,l,n.increment)&&(t+=100),this.pixelize(t)},n.prototype.getBorderWidth=function(n,e,l){var t=this.getYearPosition(n.start,l,n.increment)-this.getYearPosition(n.start,e,n.increment);return 0!==t&&this.isItemShort(e,l,n.increment)||(t=1),this.pixelize(t)},n.prototype.isItemShort=function(n,e,l){return n-e<l/2},n}()),ze="[Schedules] Clear Schedule",Fe="[Schedules] Init Schedules",He="[Schedules] Load Schedules",Ye="[Schedules] Load Saved Schedule",Ve="[Schedules] Save Schedule",Ue="[Schedules] Save Success",Qe=function(){return function(n){this.payload=n,this.type=ze}}(),Ze=function(){return function(){this.type=Fe}}(),We=function(){return function(n){this.payload=n,this.type=He}}(),Xe=function(){return function(n){this.payload=n,this.type=Ye}}(),nl=function(){return function(n){this.payload=n,this.type=Ve}}(),el=function(){return function(){this.type=Ue}}(),ll=l(0),tl=l(28),ol=l(17),il=this&&this.__decorate||function(n,e,l,t){var o,i=arguments.length,u=i<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,l):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)u=Reflect.decorate(n,e,l,t);else for(var a=n.length-1;a>=0;a--)(o=n[a])&&(u=(i<3?o(u):i>3?o(e,l,u):o(e,l))||u);return i>3&&u&&Object.defineProperty(e,l,u),u},ul=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},al=sl=function(){function n(n,e,l,t){this.navCtrl=n,this.navParams=e,this.popCtrl=l,this.store=t,this.hideCompleted=!1,this.key=this.navParams.get("key"),this.schedules$=this.navParams.get("schedules"),this.section=this.navParams.get("section")}return n.prototype.ngOnInit=function(){},n.prototype.getCompletenessText=function(n){return n.filter(function(n){return n.complete}).length+"/"+n.length},n.prototype.getHiddenText=function(){return this.section.sections.filter(function(n){return n.complete}).length+" items hidden"},n.prototype.isSectionComplete=function(n){return n.sections.filter(function(n){return n.complete}).length==n.sections.length},n.prototype.markSchedule=function(n,e){var l=this;this.markAll(n,e),this.schedules$.subscribe(function(n){l.store.dispatch(new nl({key:l.key,schedules:n}))}).unsubscribe()},n.prototype.markAll=function(n,e){var l=this;this.section.complete=this.section.sections.filter(function(n){return n.complete}).length==this.section.sections.length,n.forEach(function(n){n.complete=e,l.markAll(n.sections,e)})},n.prototype.sectionCanAppear=function(n){return!this.hideCompleted||this.hideCompleted&&!n.complete},n.prototype.showSettings=function(n){var e=this,l=this.popCtrl.create(qe,{hideCompleted:this.hideCompleted,markAll:this.isSectionComplete(this.section)});l.present({ev:event}),l.onDidDismiss(function(n){n&&n.hasOwnProperty("hideCompleted")&&(e.hideCompleted=n.hideCompleted),n&&n.hasOwnProperty("markAll")&&n.markAll!==e.isSectionComplete(e.section)&&e.markSchedule(e.section.sections,n.markAll),n&&n.clearData&&(e.store.dispatch(new Qe(e.key)),e.navCtrl.setRoot(dl))})},n.prototype.tapSection=function(n){var e=this;n.sections.length>0?this.navCtrl.push(sl,{key:this.key,schedules:this.schedules$,section:n}):(n.complete=!n.complete,this.section.complete=this.isSectionComplete(this.section),this.schedules$.subscribe(function(n){e.store.dispatch(new nl({key:e.key,schedules:n}))}).unsubscribe())},n.prototype.toggleComplete=function(){this.hideCompleted=!this.hideCompleted},n}();al=sl=il([Object(ll.j)({selector:"page-schedule-section",template:'\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{section.name}}</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="showSettings($event)">\n        <ion-icon name="md-more"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-list>\n      <ion-list-header *ngIf="hideCompleted" text-center color="primary">\n         {{getHiddenText()}}\n      </ion-list-header>\n      <ng-template ngFor let-sect [ngForOf]="section.sections">\n         <ion-item *ngIf="sectionCanAppear(sect)" (click)="tapSection(sect)">\n            {{sect.name}} \n            <span *ngIf="sect.sections.length > 0" [style.color]="\'gray\'">({{getCompletenessText(sect.sections)}})</span>\n            <ion-icon *ngIf="sect.sections.length > 0 && sect.complete" color="secondary" name="md-checkmark-circle"></ion-icon>\n\n            <ion-icon *ngIf="sect.sections.length > 0" item-end name="ios-arrow-forward"></ion-icon>\n            <ion-icon *ngIf="sect.sections.length == 0 && !sect.complete" item-end color="secondary" name="md-checkmark"></ion-icon>\n            <ion-icon *ngIf="sect.sections.length == 0 && sect.complete" item-end color="secondary" name="md-checkmark-circle"></ion-icon>\n         </ion-item>\n      </ng-template>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-title>{{getCompletenessText(section.sections)}}</ion-title>\n  </ion-toolbar>\n</ion-footer>\n'}),ul("design:paramtypes",["function"==typeof(rl=void 0!==tl.a&&tl.a)&&rl||Object,"function"==typeof(cl=void 0!==tl.b&&tl.b)&&cl||Object,"function"==typeof(_l=void 0!==tl.c&&tl.c)&&_l||Object,"function"==typeof(ml=void 0!==ol.m&&ol.m)&&ml||Object])],al);var sl,rl,cl,_l,ml,pl=l(17),hl={schedules:[]},gl=Object(pl.v)(function(n){return n.schedules},function(n){return n.schedules}),dl=(l(0),l(28),l(17),function(){function n(n,e){this.navCtrl=n,(this.store=e).dispatch(new Ze)}return n.prototype.ngOnInit=function(){this.schedules$=this.store.select(gl)},n.prototype.showSection=function(n){this.navCtrl.push(al,{key:n.name,schedules:this.schedules$,section:n})},n}()),fl=(l(0),l(28),l(96),l(97),function(){function n(n,e,l){this.platform=n,this.statusBar=e,this.splashScreen=l,this.rootPage=Tn,this.initializeApp(),this.pages=[{title:"Home",component:Tn},{title:"Kings",component:ce},{title:"Timeline",component:De},{title:"Converter",component:Dn},{title:"Schedule",component:dl}]}return n.prototype.initializeApp=function(){var n=this;this.platform.ready().then(function(){n.statusBar.styleDefault(),n.splashScreen.hide()})},n.prototype.openPage=function(n){this.nav.setRoot(n.component)},n}()),bl=(l(0),l(5)),yl=(l.n(bl),function(){function n(){}return n.prototype.getKings=function(){return bl.Observable.create(function(n){n.next(wl)})},n}()),wl=[{kingNumber:1,kingName:"Re·ho·boʹam",kingNamePlain:"Rehoboam",age:41,startReignYear:"997 B.C.E.",endReignYear:"980 B.C.E.",highPriests:["Zadok"],chosenOffspring:"A·biʹjah",prophets:["A·hiʹjah","Id·do","Shemaiah"],sons:["A·biʹjah","Je'ush","Shem·a·riʹah","Zaʹham","Atʹtai","Ziʹza","She·loʹmith","(21 other sons)"],wives:["Abʹi·ha·il","Maʹha·lath","Maʹa·cah"]},{kingNumber:2,kingName:"A·biʹjah",kingNamePlain:"Abijah",startReignYear:"980 B.C.E.",endReignYear:"978 B.C.E.",highPriests:["Zadok"],chosenOffspring:"Aʹsa",prophets:["Id·do"],sons:["Aʹsa","(21 other sons)"]},{kingNumber:3,kingName:"Aʹsa",kingNamePlain:"Asa",startReignYear:"978 B.C.E.",endReignYear:"937 B.C.E",highPriests:["Zadok"],chosenOffspring:"Je·hoshʹa·phat",prophets:["Az·a·riʹah","Oded","Hanani","Jehu (son of Hanani)","Elijah","Micaiah"],sons:["Je·hoshʹa·phat"]},{kingNumber:4,kingName:"Je·hoshʹa·phat",kingNamePlain:"Jehoshaphat",startReignYear:"937 B.C.E.",endReignYear:"913 B.C.E.",highPriests:["Amariah"],chosenOffspring:"Je·hoʹram",prophets:["Jehu (son of Hanani)","Eliezer","Jahaziel","Elijah","Elishah"],sons:["Je·hoʹram","Az·a·riʹah","Je·hiʹel","Zech·a·riʹah","Miʹcha·el","Sheph·a·tiʹah"]},{kingNumber:5,kingName:"Je·hoʹram",kingNamePlain:"Jehoram",age:32,startReignYear:"913 B.C.E.",endReignYear:"c. 906 B.C.E.",highPriests:["Amariah"],chosenOffspring:"A·ha·ziʹah",prophets:["Elijah","Elishah"],sons:["A·ha·ziʹah"]},{kingNumber:6,kingName:"A·ha·ziʹah",kingNamePlain:"Ahaziah",age:22,startReignYear:"c. 906 B.C.E.",endReignYear:"c. 905 B.C.E.",highPriests:["Je·hoiʹa·da"],chosenOffspring:"Je·hoʹash",prophets:["E·liʹjah","E·liʹshah"],sons:["Je·hoʹash"]},{kingNumber:7,kingName:"Ath·a·liʹah",kingNamePlain:"Athaliah",startReignYear:"c. 905 B.C.E.",endReignYear:"898 B.C.E.",highPriests:["Je·hoiʹa·da"],chosenOffspring:null,prophets:["E·liʹshah"],sons:[]},{kingNumber:8,kingName:"Je·hoʹash",kingNamePlain:"Jehoash",age:7,startReignYear:"898 B.C.E.",endReignYear:"858 B.C.E.",highPriests:["Je·hoiʹa·da","Zech·a·riʹah","Jo·haʹnan"],chosenOffspring:"Am·a·ziʹah",prophets:["E·liʹshah"],sons:["Am·a·ziʹah"]},{kingNumber:9,kingName:"Am·a·ziʹah",kingNamePlain:"Amaziah",age:25,startReignYear:"858 B.C.E.",endReignYear:"829 B.C.E.",highPriests:["Jo·haʹnan"],chosenOffspring:"Uz·ziʹah",prophets:["E·liʹshah","Jonah","Hosea","Amos"],sons:["Uz·ziʹah"]},{kingNumber:10,kingName:"Uz·ziʹah",kingNamePlain:"Uzziah",age:16,startReignYear:"829 B.C.E.",endReignYear:"777 B.C.E.",highPriests:["Az·a·riʹah II"],prophets:["Micah","Hosea","Isaiah","Joel (?)"],chosenOffspring:"Joʹtham",sons:["Joʹtham"]},{kingNumber:11,kingName:"Joʹtham",kingNamePlain:"Jotham",age:25,startReignYear:"777 B.C.E.",endReignYear:"762 B.C.E.",highPriests:["Az·a·riʹah II"],prophets:["Micah","Hosea","Isaiah"],chosenOffspring:"Aʹhaz",sons:["Aʹhaz"]},{kingNumber:12,kingName:"Aʹhaz",kingNamePlain:"Ahaz",age:20,startReignYear:"762 B.C.E.",endReignYear:"746 B.C.E.",highPriests:["Urijah (?)"],prophets:["Micah","Hosea","Isaiah"],chosenOffspring:"Hez·e·kiʹah",sons:["Hez·e·kiʹah"]},{kingNumber:13,kingName:"Hez·e·kiʹah",kingNamePlain:"Hezekiah",age:25,startReignYear:"746 B.C.E.",endReignYear:"716 B.C.E.",highPriests:["Az·a·riʹah (II or III)"],prophets:["Micah","Hosea","Isaiah"],chosenOffspring:"Ma·nasʹseh",sons:["Ma·nasʹseh"]},{kingNumber:14,kingName:"Ma·nasʹseh",kingNamePlain:"Manasseh",age:12,startReignYear:"716 B.C.E.",endReignYear:"661 B.C.E.",highPriests:["Az·a·riʹah (II or III)"],chosenOffspring:"Aʹmon",prophets:["Isaiah (?)"],sons:["Aʹmon"]},{kingNumber:15,kingName:"Aʹmon",kingNamePlain:"Amon",age:22,startReignYear:"661 B.C.E.",endReignYear:"659 B.C.E.",highPriests:["Az·a·riʹah (II or III)"],prophets:[],chosenOffspring:"Jo·siʹah",sons:["Jo·siʹah"]},{kingNumber:16,kingName:"Jo·siʹah",kingNamePlain:"Josiah",age:8,startReignYear:"659 B.C.E.",endReignYear:"628 B.C.E.",highPriests:["Hilkiah"],prophets:["Zephaniah","Jeremiah","Huldah"],chosenOffspring:"Je·hoiʹa·kim",sons:["Je·hoʹa·haz","Jo·haʹnan","Je·hoiʹa·kim","Zed·e·kiʹah"]},{kingNumber:17,kingName:"Je·hoʹa·haz (Shalʹlum)",kingNamePlain:"Jehoahaz",age:23,startReignYear:"628 B.C.E.",endReignYear:"628 B.C.E.",highPriests:["Hilkiah"],prophets:["Jeremiah"],chosenOffspring:null,sons:[]},{kingNumber:18,kingName:"Je·hoiʹa·kim (E·liʹa·kim)",kingNamePlain:"Jehoiakim",age:25,startReignYear:"628 B.C.E.",endReignYear:"618 B.C.E.",highPriests:["Hilkiah"],prophets:["Habakkuk (?), Jeremiah"],chosenOffspring:"Je·hoiʹa·chin",sons:["Je·hoiʹa·chin"]},{kingNumber:19,kingName:"Je·hoiʹa·chin (Jec·o·niʹah)",kingNamePlain:"Jehoiachin",age:18,startReignYear:"618 B.C.E.",endReignYear:"617 B.C.E.",highPriests:["Hilkiah"],prophets:["Jeremiah"],chosenOffspring:"Shealtiel",sons:["Shealtiel"]},{kingNumber:20,kingName:"Zed·e·kiʹah",kingNamePlain:"Zedekiah",age:21,startReignYear:"617 B.C.E.",endReignYear:"607 B.C.E.",highPriests:["Se·raiʹah"],prophets:["Jeremiah","Ezekiel"],chosenOffspring:null,sons:[]}],kl=l(0),vl=l(61),Cl=l(5),Sl=(l.n(Cl),l(98)),Pl=(l.n(Sl),l(99)),Ol=(l.n(Pl),l(62)),jl=(l.n(Ol),this&&this.__decorate||function(n,e,l,t){var o,i=arguments.length,u=i<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,l):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)u=Reflect.decorate(n,e,l,t);else for(var a=n.length-1;a>=0;a--)(o=n[a])&&(u=(i<3?o(u):i>3?o(e,l,u):o(e,l))||u);return i>3&&u&&Object.defineProperty(e,l,u),u}),Gl=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},El=function(){return function(n,e){var l=this;this.$actions=n,this.kingsService=e,this.$loadKings=this.$actions.ofType(In).switchMap(function(){return l.kingsService.getKings().map(function(n){return new Vn(n)}).catch(function(){return new Un})})}}();jl([Object(vl.b)(),Gl("design:type","function"==typeof(Al=void 0!==Cl.Observable&&Cl.Observable)&&Al||Object)],El.prototype,"$loadKings",void 0),El=jl([Object(kl.q)(),Gl("design:paramtypes",["function"==typeof(Ml=void 0!==vl.a&&vl.a)&&Ml||Object,"function"==typeof(xl=void 0!==yl&&yl)&&xl||Object])],El);l(0);var Al,Ml,xl,Dl=l(5),Tl=(l.n(Dl),function(){function n(){}return n.prototype.getMeasures=function(){return Dl.Observable.create(function(n){n.next(Jl)})},n}()),Jl=[{id:101,name:"Cubits",amount:17.5,type:"Length"},{id:102,name:"Fathoms",amount:72,type:"Length"},{id:103,name:"Feet",amount:12,type:"Length"},{id:104,name:"Fingerbreadths",amount:.73,type:"Length"},{id:105,name:"Handbreadths",amount:2.9,type:"Length"},{id:106,name:"Inches",amount:1,type:"Length"},{id:107,name:"Long Cubits",amount:20.4,type:"Length"},{id:108,name:"Long Reeds",amount:122.4,type:"Length"},{id:109,name:"Miles",amount:63360,type:"Length"},{id:110,name:"Reeds",amount:105,type:"Length"},{id:111,name:"Roman stadii",amount:7283.4,type:"Length"},{id:112,name:"Short Cubits",amount:15,type:"Length"},{id:113,name:"Spans",amount:8.75,type:"Length"},{id:114,name:"Yards",amount:36,type:"Length"},{id:201,name:"Bekah",amount:5.7,type:"Weight"},{id:202,name:"Gerah",amount:.57,type:"Weight"},{id:203,name:"Gram",amount:1,type:"Weight"},{id:204,name:"Shekel",amount:11.4,type:"Weight"},{id:205,name:"Mina",amount:570,type:"Weight"},{id:206,name:"Talent",amount:34200,type:"Weight"},{id:207,name:"Pim",amount:7.8,type:"Weight"},{id:208,name:"Daric",amount:8.4,type:"Weight"},{id:209,name:"Pound",amount:327,type:"Weight"},{id:300,name:"A Day's Wage",amount:1,type:"Currency"},{id:301,name:"Lepton",amount:1/128,type:"Currency"},{id:302,name:"Quadrons",amount:1/64,type:"Currency"},{id:303,name:"Assarion",amount:1/16,type:"Currency"},{id:304,name:"Denarius",amount:1,type:"Currency"},{id:305,name:"Drachma",amount:1,type:"Currency"},{id:306,name:"Didrachma",amount:2,type:"Currency"},{id:307,name:"Tetradrachma",amount:4,type:"Currency"},{id:308,name:"Mina",amount:100,type:"Currency"},{id:309,name:"Talent",amount:6e4,type:"Currency"},{id:401,name:"Bath",amount:22,type:"Liquid"},{id:402,name:"Cor",amount:220,type:"Liquid"},{id:403,name:"Hin",amount:3.67,type:"Liquid"},{id:404,name:"Liter",amount:1,type:"Liquid"},{id:405,name:"Log",amount:.31,type:"Liquid"},{id:501,name:"Cab",amount:1.22,type:"Dry"},{id:502,name:"Ephah",amount:22,type:"Dry"},{id:503,name:"Homer",amount:220,type:"Dry"},{id:504,name:"Liter",amount:1,type:"Dry"},{id:505,name:"Omer",amount:2.2,type:"Dry"},{id:506,name:"Seah",amount:7.33,type:"Dry"},{id:507,name:"Quart",amount:1.08,type:"Dry"}],Il=l(0),Nl=l(61),Rl=l(5),Bl=(l.n(Rl),l(213)),$l=(l.n(Bl),l(98)),Ll=(l.n($l),l(99)),ql=(l.n(Ll),l(62)),Kl=(l.n(ql),this&&this.__decorate||function(n,e,l,t){var o,i=arguments.length,u=i<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,l):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)u=Reflect.decorate(n,e,l,t);else for(var a=n.length-1;a>=0;a--)(o=n[a])&&(u=(i<3?o(u):i>3?o(e,l,u):o(e,l))||u);return i>3&&u&&Object.defineProperty(e,l,u),u}),zl=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},Fl=function(){return function(n,e){var l=this;this.$actions=n,this.measurementsService=e,this.$loadMeasurements=this.$actions.ofType(_n).switchMap(function(){return l.measurementsService.getMeasures().map(function(n){return new vn(n)}).catch(function(){return new Cn})}),this.$setTypes=this.$actions.ofType(mn).switchMap(function(n){return Object(Bl.of)(new Sn(n.payload))})}}();Kl([Object(Nl.b)(),zl("design:type","function"==typeof(Hl=void 0!==Rl.Observable&&Rl.Observable)&&Hl||Object)],Fl.prototype,"$loadMeasurements",void 0),Kl([Object(Nl.b)(),zl("design:type","function"==typeof(Yl=void 0!==Rl.Observable&&Rl.Observable)&&Yl||Object)],Fl.prototype,"$setTypes",void 0),Fl=Kl([Object(Il.q)(),zl("design:paramtypes",["function"==typeof(Vl=void 0!==Nl.a&&Nl.a)&&Vl||Object,"function"==typeof(Ul=void 0!==Tl&&Tl)&&Ul||Object])],Fl);var Hl,Yl,Vl,Ul,Ql={name:"All Watchtowers",complete:!1,sections:[{name:"2017",complete:!1,sections:[{name:"January",complete:!1,sections:[]},{name:"February",complete:!1,sections:[]},{name:"March",complete:!1,sections:[]},{name:"April",complete:!1,sections:[]},{name:"May",complete:!1,sections:[]},{name:"June",complete:!1,sections:[]},{name:"July",complete:!1,sections:[]},{name:"August",complete:!1,sections:[]},{name:"September",complete:!1,sections:[]},{name:"October",complete:!1,sections:[]},{name:"November",complete:!1,sections:[]},{name:"December",complete:!1,sections:[]},{name:"No. 1",complete:!1,sections:[]},{name:"No. 2",complete:!1,sections:[]},{name:"No. 3",complete:!1,sections:[]},{name:"No. 4",complete:!1,sections:[]},{name:"No. 5",complete:!1,sections:[]},{name:"No. 6",complete:!1,sections:[]}]},{name:"2016",complete:!1,sections:[{name:"January",complete:!1,sections:[]},{name:"February",complete:!1,sections:[]},{name:"March",complete:!1,sections:[]},{name:"April",complete:!1,sections:[]},{name:"May",complete:!1,sections:[]},{name:"June",complete:!1,sections:[]},{name:"July",complete:!1,sections:[]},{name:"August",complete:!1,sections:[]},{name:"September",complete:!1,sections:[]},{name:"October",complete:!1,sections:[]},{name:"November",complete:!1,sections:[]},{name:"December",complete:!1,sections:[]},{name:"No. 1",complete:!1,sections:[]},{name:"No. 2",complete:!1,sections:[]},{name:"No. 3",complete:!1,sections:[]},{name:"No. 4",complete:!1,sections:[]},{name:"No. 5",complete:!1,sections:[]},{name:"No. 6",complete:!1,sections:[]}]},{name:"2015",complete:!1,sections:[{name:"January 1",complete:!1,sections:[]},{name:"January 15",complete:!1,sections:[]},{name:"February 1",complete:!1,sections:[]},{name:"February 15",complete:!1,sections:[]},{name:"March 1",complete:!1,sections:[]},{name:"March 15",complete:!1,sections:[]},{name:"April 1",complete:!1,sections:[]},{name:"April 15",complete:!1,sections:[]},{name:"May 1",complete:!1,sections:[]},{name:"May 15",complete:!1,sections:[]},{name:"June 1",complete:!1,sections:[]},{name:"June 15",complete:!1,sections:[]},{name:"July 1",complete:!1,sections:[]},{name:"July 15",complete:!1,sections:[]},{name:"August 1",complete:!1,sections:[]},{name:"August 15",complete:!1,sections:[]},{name:"September 1",complete:!1,sections:[]},{name:"September 15",complete:!1,sections:[]},{name:"October 1",complete:!1,sections:[]},{name:"October 15",complete:!1,sections:[]},{name:"November 1",complete:!1,sections:[]},{name:"November 15",complete:!1,sections:[]},{name:"December 1",complete:!1,sections:[]},{name:"December 15",complete:!1,sections:[]}]},{name:"2014",complete:!1,sections:[{name:"January 1",complete:!1,sections:[]},{name:"January 15",complete:!1,sections:[]},{name:"February 1",complete:!1,sections:[]},{name:"February 15",complete:!1,sections:[]},{name:"March 1",complete:!1,sections:[]},{name:"March 15",complete:!1,sections:[]},{name:"April 1",complete:!1,sections:[]},{name:"April 15",complete:!1,sections:[]},{name:"May 1",complete:!1,sections:[]},{name:"May 15",complete:!1,sections:[]},{name:"June 1",complete:!1,sections:[]},{name:"June 15",complete:!1,sections:[]},{name:"July 1",complete:!1,sections:[]},{name:"July 15",complete:!1,sections:[]},{name:"August 1",complete:!1,sections:[]},{name:"August 15",complete:!1,sections:[]},{name:"September 1",complete:!1,sections:[]},{name:"September 15",complete:!1,sections:[]},{name:"October 1",complete:!1,sections:[]},{name:"October 15",complete:!1,sections:[]},{name:"November 1",complete:!1,sections:[]},{name:"November 15",complete:!1,sections:[]},{name:"December 1",complete:!1,sections:[]},{name:"December 15",complete:!1,sections:[]}]},{name:"2013",complete:!1,sections:[{name:"January 1",complete:!1,sections:[]},{name:"January 15",complete:!1,sections:[]},{name:"February 1",complete:!1,sections:[]},{name:"February 15",complete:!1,sections:[]},{name:"March 1",complete:!1,sections:[]},{name:"March 15",complete:!1,sections:[]},{name:"April 1",complete:!1,sections:[]},{name:"April 15",complete:!1,sections:[]},{name:"May 1",complete:!1,sections:[]},{name:"May 15",complete:!1,sections:[]},{name:"June 1",complete:!1,sections:[]},{name:"June 15",complete:!1,sections:[]},{name:"July 1",complete:!1,sections:[]},{name:"July 15",complete:!1,sections:[]},{name:"August 1",complete:!1,sections:[]},{name:"August 15",complete:!1,sections:[]},{name:"September 1",complete:!1,sections:[]},{name:"September 15",complete:!1,sections:[]},{name:"October 1",complete:!1,sections:[]},{name:"October 15",complete:!1,sections:[]},{name:"November 1",complete:!1,sections:[]},{name:"November 15",complete:!1,sections:[]},{name:"December 1",complete:!1,sections:[]},{name:"December 15",complete:!1,sections:[]}]},{name:"2012",complete:!1,sections:[{name:"January 1",complete:!1,sections:[]},{name:"January 15",complete:!1,sections:[]},{name:"February 1",complete:!1,sections:[]},{name:"February 15",complete:!1,sections:[]},{name:"March 1",complete:!1,sections:[]},{name:"March 15",complete:!1,sections:[]},{name:"April 1",complete:!1,sections:[]},{name:"April 15",complete:!1,sections:[]},{name:"May 1",complete:!1,sections:[]},{name:"May 15",complete:!1,sections:[]},{name:"June 1",complete:!1,sections:[]},{name:"June 15",complete:!1,sections:[]},{name:"July 1",complete:!1,sections:[]},{name:"July 15",complete:!1,sections:[]},{name:"August 1",complete:!1,sections:[]},{name:"August 15",complete:!1,sections:[]},{name:"September 1",complete:!1,sections:[]},{name:"September 15",complete:!1,sections:[]},{name:"October 1",complete:!1,sections:[]},{name:"October 15",complete:!1,sections:[]},{name:"November 1",complete:!1,sections:[]},{name:"November 15",complete:!1,sections:[]},{name:"December 1",complete:!1,sections:[]},{name:"December 15",complete:!1,sections:[]}]},{name:"2011",complete:!1,sections:[{name:"January 1",complete:!1,sections:[]},{name:"January 15",complete:!1,sections:[]},{name:"February 1",complete:!1,sections:[]},{name:"February 15",complete:!1,sections:[]},{name:"March 1",complete:!1,sections:[]},{name:"March 15",complete:!1,sections:[]},{name:"April 1",complete:!1,sections:[]},{name:"April 15",complete:!1,sections:[]},{name:"May 1",complete:!1,sections:[]},{name:"May 15",complete:!1,sections:[]},{name:"June 1",complete:!1,sections:[]},{name:"June 15",complete:!1,sections:[]},{name:"July 1",complete:!1,sections:[]},{name:"July 15",complete:!1,sections:[]},{name:"August 1",complete:!1,sections:[]},{name:"August 15",complete:!1,sections:[]},{name:"September 1",complete:!1,sections:[]},{name:"September 15",complete:!1,sections:[]},{name:"October 1",complete:!1,sections:[]},{name:"October 15",complete:!1,sections:[]},{name:"November 1",complete:!1,sections:[]},{name:"November 15",complete:!1,sections:[]},{name:"December 1",complete:!1,sections:[]},{name:"December 15",complete:!1,sections:[]}]}]},Zl={name:"Bible - Chronological",complete:!1,sections:[{name:"Day 1",complete:!1,sections:[{name:"Genesis 1",complete:!1,sections:[]},{name:"Genesis 2",complete:!1,sections:[]},{name:"Genesis 3",complete:!1,sections:[]}]},{name:"Day 2",complete:!1,sections:[{name:"Genesis 4",complete:!1,sections:[]},{name:"Genesis 5",complete:!1,sections:[]},{name:"1 Chronicles 1:1-4",complete:!1,sections:[]},{name:"Genesis 6",complete:!1,sections:[]}]},{name:"Day 3",complete:!1,sections:[{name:"Genesis 7",complete:!1,sections:[]},{name:"Genesis 8",complete:!1,sections:[]},{name:"Genesis 9",complete:!1,sections:[]}]},{name:"Day 4",complete:!1,sections:[{name:"Genesis 10:1-5",complete:!1,sections:[]},{name:"1 Chronicles 1:5-7",complete:!1,sections:[]},{name:"Genesis 10:6-20",complete:!1,sections:[]},{name:"1 Chronicles 1:8-16",complete:!1,sections:[]},{name:"Genesis 10:21-11:26",complete:!1,sections:[]},{name:"1 Chronicles 1:17-27",complete:!1,sections:[]}]},{name:"Day 5",complete:!1,sections:[{name:"Genesis 11:27-32",complete:!1,sections:[]},{name:"Genesis 12",complete:!1,sections:[]},{name:"Genesis 13",complete:!1,sections:[]},{name:"Genesis 14",complete:!1,sections:[]},{name:"Genesis 15",complete:!1,sections:[]}]},{name:"Day 6",complete:!1,sections:[{name:"Genesis 16",complete:!1,sections:[]},{name:"Genesis 17",complete:!1,sections:[]},{name:"Genesis 18",complete:!1,sections:[]}]},{name:"Day 7",complete:!1,sections:[{name:"Genesis 19",complete:!1,sections:[]},{name:"Genesis 20",complete:!1,sections:[]},{name:"Genesis 21",complete:!1,sections:[]},{name:"Genesis 25:12-18",complete:!1,sections:[]},{name:"1 Chronicles 1:28-31",complete:!1,sections:[]}]},{name:"Day 8",complete:!1,sections:[{name:"Genesis 22",complete:!1,sections:[]},{name:"Genesis 23",complete:!1,sections:[]},{name:"Genesis 24",complete:!1,sections:[]}]},{name:"Day 9",complete:!1,sections:[{name:"Genesis 25:1-4",complete:!1,sections:[]},{name:"1 Chronicles 1:32-34",complete:!1,sections:[]},{name:"Genesis 25:5-11",complete:!1,sections:[]},{name:"Genesis 25:19-34",complete:!1,sections:[]},{name:"Genesis 26",complete:!1,sections:[]}]},{name:"Day 10",complete:!1,sections:[{name:"Genesis 27",complete:!1,sections:[]},{name:"Genesis 28:1-9",complete:!1,sections:[]},{name:"Genesis 36",complete:!1,sections:[]},{name:"1 Chronicles 1:35-54",complete:!1,sections:[]}]},{name:"Day 11",complete:!1,sections:[{name:"Genesis 28:10-22",complete:!1,sections:[]},{name:"Genesis 29",complete:!1,sections:[]},{name:"Genesis 30",complete:!1,sections:[]}]},{name:"Day 12",complete:!1,sections:[{name:"Genesis 31",complete:!1,sections:[]},{name:"Genesis 32",complete:!1,sections:[]}]},{name:"Day 13",complete:!1,sections:[{name:"Genesis 33",complete:!1,sections:[]},{name:"Genesis 34",complete:!1,sections:[]},{name:"Genesis 35",complete:!1,sections:[]},{name:"1 Chronicles 2:1,2",complete:!1,sections:[]}]},{name:"Day 14",complete:!1,sections:[{name:"Genesis 37",complete:!1,sections:[]},{name:"Genesis 38",complete:!1,sections:[]},{name:"Genesis 39",complete:!1,sections:[]}]},{name:"Day 15",complete:!1,sections:[{name:"Genesis 40",complete:!1,sections:[]},{name:"Genesis 41",complete:!1,sections:[]}]},{name:"Day 16",complete:!1,sections:[{name:"Genesis 42",complete:!1,sections:[]},{name:"Genesis 43",complete:!1,sections:[]},{name:"Genesis 44",complete:!1,sections:[]}]},{name:"Day 17",complete:!1,sections:[{name:"Genesis 45",complete:!1,sections:[]},{name:"Genesis 46:1-9",complete:!1,sections:[]},{name:"1 Chronicles 5:1-6",complete:!1,sections:[]},{name:"Genesis 46:10-12",complete:!1,sections:[]},{name:"1 Chronicles 2:18-55",complete:!1,sections:[]}]},{name:"Day 18",complete:!1,sections:[{name:"1 Chronicles 4:1-23",complete:!1,sections:[]},{name:"Genesis 46:13",complete:!1,sections:[]},{name:"1 Chronicles 7:1-5",complete:!1,sections:[]},{name:"Genesis 46:14-18",complete:!1,sections:[]},{name:"1 Chronicles 7:30-40",complete:!1,sections:[]},{name:"Genesis 46:19-25",complete:!1,sections:[]},{name:"1 Chronicles 7:6-12",complete:!1,sections:[]},{name:"Genesis 46:26-34",complete:!1,sections:[]},{name:"Genesis 47:1-12",complete:!1,sections:[]}]},{name:"Day 19",complete:!1,sections:[{name:"Genesis 47:13-31",complete:!1,sections:[]},{name:"Genesis 48",complete:!1,sections:[]},{name:"Genesis 49",complete:!1,sections:[]},{name:"Genesis 50",complete:!1,sections:[]}]},{name:"Day 20",complete:!1,sections:[{name:"Job 1",complete:!1,sections:[]},{name:"Job 2",complete:!1,sections:[]},{name:"Job 3",complete:!1,sections:[]}]},{name:"Day 21",complete:!1,sections:[{name:"Job 4",complete:!1,sections:[]},{name:"Job 5",complete:!1,sections:[]},{name:"Job 6",complete:!1,sections:[]},{name:"Job 7",complete:!1,sections:[]}]},{name:"Day 22",complete:!1,sections:[{name:"Job 8",complete:!1,sections:[]},{name:"Job 9",complete:!1,sections:[]},{name:"Job 10",complete:!1,sections:[]}]},{name:"Day 23",complete:!1,sections:[{name:"Job 11",complete:!1,sections:[]},{name:"Job 12",complete:!1,sections:[]},{name:"Job 13",complete:!1,sections:[]},{name:"Job 14",complete:!1,sections:[]}]},{name:"Day 24",complete:!1,sections:[{name:"Job 15",complete:!1,sections:[]},{name:"Job 16",complete:!1,sections:[]},{name:"Job 17",complete:!1,sections:[]},{name:"Job 18",complete:!1,sections:[]}]},{name:"Day 25",complete:!1,sections:[{name:"Job 19",complete:!1,sections:[]},{name:"Job 20",complete:!1,sections:[]},{name:"Job 21",complete:!1,sections:[]}]},{name:"Day 26",complete:!1,sections:[{name:"Job 22",complete:!1,sections:[]},{name:"Job 23",complete:!1,sections:[]},{name:"Job 24",complete:!1,sections:[]},{name:"Job 25",complete:!1,sections:[]},{name:"Job 26",complete:!1,sections:[]}]},{name:"Day 27",complete:!1,sections:[{name:"Job 27",complete:!1,sections:[]},{name:"Job 28",complete:!1,sections:[]},{name:"Job 29",complete:!1,sections:[]}]},{name:"Day 28",complete:!1,sections:[{name:"Job 30",complete:!1,sections:[]},{name:"Job 31",complete:!1,sections:[]}]},{name:"Day 29",complete:!1,sections:[{name:"Job 32",complete:!1,sections:[]},{name:"Job 33",complete:!1,sections:[]},{name:"Job 34",complete:!1,sections:[]}]},{name:"Day 30",complete:!1,sections:[{name:"Job 35",complete:!1,sections:[]},{name:"Job 36",complete:!1,sections:[]},{name:"Job 37",complete:!1,sections:[]}]},{name:"Day 31",complete:!1,sections:[{name:"Job 38",complete:!1,sections:[]},{name:"Job 39",complete:!1,sections:[]}]},{name:"Day 32",complete:!1,sections:[{name:"Job 40",complete:!1,sections:[]},{name:"Job 41",complete:!1,sections:[]},{name:"Job 42",complete:!1,sections:[]}]},{name:"Day 33",complete:!1,sections:[{name:"Exodus 1",complete:!1,sections:[]},{name:"Exodus 2",complete:!1,sections:[]},{name:"Exodus 3",complete:!1,sections:[]},{name:"Exodus 4:1-17",complete:!1,sections:[]}]},{name:"Day 34",complete:!1,sections:[{name:"Exodus 4:18-31",complete:!1,sections:[]},{name:"Exodus 5",complete:!1,sections:[]},{name:"Exodus 6:1-27",complete:!1,sections:[]},{name:"1 Chronicles 6:1-4a",complete:!1,sections:[]},{name:"Exodus 6:28-30",complete:!1,sections:[]},{name:"Exodus 7:1-13",complete:!1,sections:[]}]},{name:"Day 35",complete:!1,sections:[{name:"Exodus 7:14-25",complete:!1,sections:[]},{name:"Exodus 8",complete:!1,sections:[]},{name:"Exodus 9",complete:!1,sections:[]}]},{name:"Day 36",complete:!1,sections:[{name:"Exodus 10",complete:!1,sections:[]},{name:"Exodus 11",complete:!1,sections:[]},{name:"Exodus 12",complete:!1,sections:[]}]},{name:"Day 37",complete:!1,sections:[{name:"Exodus 13",complete:!1,sections:[]},{name:"Exodus 14",complete:!1,sections:[]},{name:"Exodus 15",complete:!1,sections:[]}]},{name:"Day 38",complete:!1,sections:[{name:"Exodus 16",complete:!1,sections:[]},{name:"Exodus 17",complete:!1,sections:[]},{name:"Exodus 18",complete:!1,sections:[]}]},{name:"Day 39",complete:!1,sections:[{name:"Exodus 19",complete:!1,sections:[]},{name:"Exodus 20",complete:!1,sections:[]},{name:"Exodus 21",complete:!1,sections:[]}]},{name:"Day 40",complete:!1,sections:[{name:"Exodus 22",complete:!1,sections:[]},{name:"Exodus 23",complete:!1,sections:[]},{name:"Exodus 24",complete:!1,sections:[]}]},{name:"Day 41",complete:!1,sections:[{name:"Exodus 25",complete:!1,sections:[]},{name:"Exodus 26",complete:!1,sections:[]},{name:"Exodus 27",complete:!1,sections:[]}]},{name:"Day 42",complete:!1,sections:[{name:"Exodus 28",complete:!1,sections:[]},{name:"Exodus 29",complete:!1,sections:[]}]},{name:"Day 43",complete:!1,sections:[{name:"Exodus 31",complete:!1,sections:[]},{name:"Exodus 32",complete:!1,sections:[]},{name:"Exodus 33:1-6",complete:!1,sections:[]}]},{name:"Day 44",complete:!1,sections:[{name:"Exodus 33:7-23",complete:!1,sections:[]},{name:"Exodus 34",complete:!1,sections:[]},{name:"Exodus 35",complete:!1,sections:[]},{name:"Exodus 36:1-7",complete:!1,sections:[]}]},{name:"Day 45",complete:!1,sections:[{name:"Exodus 36:8-38",complete:!1,sections:[]},{name:"Exodus 37",complete:!1,sections:[]},{name:"Exodus 38",complete:!1,sections:[]}]},{name:"Day 46",complete:!1,sections:[{name:"Exodus 39",complete:!1,sections:[]},{name:"Exodus 40",complete:!1,sections:[]}]}]},Wl=l(0),Xl=l(5),nt=(l.n(Xl),l(214)),et=(l.n(nt),l(215)),lt=(l.n(et),l(122)),tt=this&&this.__decorate||function(n,e,l,t){var o,i=arguments.length,u=i<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,l):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)u=Reflect.decorate(n,e,l,t);else for(var a=n.length-1;a>=0;a--)(o=n[a])&&(u=(i<3?o(u):i>3?o(e,l,u):o(e,l))||u);return i>3&&u&&Object.defineProperty(e,l,u),u},ot=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},it=function(){function n(n){this.storage=n,this.schedules=Object.assign([],[Ql,Zl])}return n.prototype.clearSchedule=function(n){return Xl.Observable.fromPromise(this.storage.set(n,JSON.stringify(this.schedules.find(function(e){return e.name==n}))))},n.prototype.getSchedules=function(){var n=this;return Xl.Observable.create(function(e){e.next(n.schedules)})},n.prototype.getAllSaved=function(){return Xl.Observable.merge(this.storage.get(Ql.name),this.storage.get(Zl.name))},n.prototype.getSavedSchedule=function(n){return Xl.Observable.fromPromise(this.storage.get(n))},n.prototype.saveSchedule=function(n,e){return Xl.Observable.fromPromise(this.storage.set(n,JSON.stringify(e.find(function(e){return e.name==n}))))},n}();it=tt([Object(Wl.q)(),ot("design:paramtypes",["function"==typeof(ut=void 0!==lt.b&&lt.b)&&ut||Object])],it);l(0);var ut,at=l(5),st=(l.n(at),function(){function n(){}return n.prototype.getAllItems=function(){var n=_t.concat(gt,mt,pt,rt,ht,ct);return at.Observable.create(function(e){e.next(n)})},n}()),rt=[{name:"Jehovah",start:4100,end:1,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehovah",group:"Lifespans"},{name:"Adam",start:4026,end:3096,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam",group:"Lifespans"},{name:"Enoch",start:3404,end:3039,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch",group:"Lifespans"},{name:"Methuselah",start:3339,end:2370,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah",group:"Lifespans"}],ct=[{name:"Adam's creation",start:4026,end:4026,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam",group:"Outstanding Historical Dates"},{name:"Edenic covenant made, first prophecy",start:4026,end:4026,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Covenant",group:"Outstanding Historical Dates"},{name:"Cain slays Abel",start:3896,end:3896,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Cain",group:"Outstanding Historical Dates"},{name:"Birth of Seth",start:3896,end:3896,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Seth",group:"Outstanding Historical Dates"},{name:"Birth of righteous Enoch",start:3404,end:3404,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch",group:"Outstanding Historical Dates"},{name:"Birth of Methuselah",start:3339,end:3339,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah",group:"Outstanding Historical Dates"},{name:"Birth of Lamech",start:3152,end:3152,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Lamech",group:"Outstanding Historical Dates"},{name:"Death of Adam",start:3096,end:3096,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam",group:"Outstanding Historical Dates"},{name:"Transference of Enoch",start:3039,end:3039,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch",group:"Outstanding Historical Dates"},{name:"Birth of Noah",start:2970,end:2970,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Noah",group:"Outstanding Historical Dates"},{name:"God's pronouncement as to mankind",start:2490,end:2490,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Flood",group:"Outstanding Historical Dates"},{name:"Birth of Japeth",start:2470,end:2470,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Japeth",group:"Outstanding Historical Dates"},{name:"Birth of Shem",start:2468,end:2468,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Shem",group:"Outstanding Historical Dates"},{name:"Death of Methuselah",start:2370,end:2370,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah",group:"Outstanding Historical Dates"},{name:"The Great Flood",start:2370,end:2370,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Flood",group:"Outstanding Historical Dates"}],_t=[{name:"Genesis",start:4100,end:1657,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Genesis",group:"Bible Books Time Period"},{name:"Exodus",start:1657,end:1512,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Exodus",group:"Bible Books Time Period"},{name:"Leviticus",start:1512,end:1512,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Leviticus",group:"Bible Books Time Period"},{name:"Numbers",start:1512,end:1473,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Numbers",group:"Bible Books Time Period"},{name:"Deuteronomy",start:1473,end:1473,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Deuteronomy",group:"Bible Books Time Period"},{name:"Joshua",start:1473,end:1450,tier:6,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Joshua",group:"Bible Books Time Period"},{name:"Judges",start:1450,end:1120,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Judges",group:"Bible Books Time Period"},{name:"Ruth",start:1131,end:1120,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ruth",group:"Bible Books Time Period"},{name:"1 Samuel",start:1180,end:1078,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Samuel",group:"Bible Books Time Period"},{name:"2 Samuel",start:1077,end:1040,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Samuel",group:"Bible Books Time Period"},{name:"1 Kings",start:1040,end:911,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Kings",group:"Bible Books Time Period"},{name:"2 Kings",start:920,end:580,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Kings",group:"Bible Books Time Period"},{name:"1 Chronicles",start:1077,end:1037,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Chronicles",group:"Bible Books Time Period"},{name:"2 Chronicles",start:1037,end:537,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Chronicles",group:"Bible Books Time Period"},{name:"Ezra",start:537,end:467,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezra",group:"Bible Books Time Period"},{name:"Nehemiah",start:456,end:443,tier:6,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Nehemiah",group:"Bible Books Time Period"},{name:"Esther",start:493,end:475,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Esther",group:"Bible Books Time Period"},{name:"Psalms",start:460,end:460,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Psalms",group:"Bible Books Time Period"},{name:"Proverbs",start:717,end:717,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Proverbs",group:"Bible Books Time Period"},{name:"Ecclesiastes",start:1e3,end:1e3,tier:6,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ecclesiastes",group:"Bible Books Time Period"},{name:"Song of Solomon",start:1020,end:1020,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Song%20of%20Solomon",group:"Bible Books Time Period"},{name:"Isaiah",start:778,end:732,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Isaiah",group:"Bible Books Time Period"},{name:"Jeremiah",start:647,end:580,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeremiah",group:"Bible Books Time Period"},{name:"Lamentations",start:607,end:607,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Lamentations",group:"Bible Books Time Period"},{name:"Ezekiel",start:613,end:591,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezekiel",group:"Bible Books Time Period"},{name:"Daniel",start:618,end:536,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Daniel",group:"Bible Books Time Period"},{name:"Hosea",start:804,end:745,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Hosea",group:"Bible Books Time Period"},{name:"Joel",start:820,end:820,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Joel",group:"Bible Books Time Period"},{name:"Amos",start:804,end:804,tier:6,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Amos",group:"Bible Books Time Period"},{name:"Obadiah",start:607,end:607,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Obadiah",group:"Bible Books Time Period"},{name:"Jonah",start:844,end:844,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jonah",group:"Bible Books Time Period"},{name:"Micah",start:777,end:717,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Micah",group:"Bible Books Time Period"},{name:"Nahum",start:632,end:632,tier:6,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Nahum",group:"Bible Books Time Period"},{name:"Habakkuk",start:628,end:628,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Habakkukl",group:"Bible Books Time Period"},{name:"Zephaniah",start:648,end:648,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Zephaniah",group:"Bible Books Time Period"},{name:"Haggai",start:520,end:520,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Haggai",group:"Bible Books Time Period"},{name:"Zechariah",start:520,end:518,tier:6,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Zechariah",group:"Bible Books Time Period"},{name:"Malachi",start:443,end:443,tier:5,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Malachi",group:"Bible Books Time Period"}],mt=[{name:"Rehoboam",start:997,end:980,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Rehoboam",group:"Kings of Judah"},{name:"Abijah",start:980,end:978,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Abijah",group:"Kings of Judah"},{name:"Asa",start:978,end:937,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Asa",group:"Kings of Judah"},{name:"Jehoshaphat",start:937,end:913,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoshaphat",group:"Kings of Judah"},{name:"Jehoram",start:913,end:906,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram",group:"Kings of Judah"},{name:"Ahaziah",start:906,end:905,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah",group:"Kings of Judah"},{name:"Athaliah",start:905,end:898,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Athaliah",group:"Kings of Judah"},{name:"Jehoash",start:898,end:858,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash",group:"Kings of Judah"},{name:"Amaziah",start:858,end:829,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Amaziah",group:"Kings of Judah"},{name:"Uzziah",start:829,end:777,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Uzziah",group:"Kings of Judah"},{name:"Jotham",start:777,end:762,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jotham",group:"Kings of Judah"},{name:"Ahaz",start:762,end:746,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaz",group:"Kings of Judah"},{name:"Hezekiah",start:746,end:716,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Hezekiah",group:"Kings of Judah"},{name:"Manasseh",start:716,end:661,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Manasseh",group:"Kings of Judah"},{name:"Amon",start:661,end:659,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Amon",group:"Kings of Judah"},{name:"Josiah",start:659,end:628,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Josiah",group:"Kings of Judah"},{name:"Jehoahaz",start:628,end:628,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz",group:"Kings of Judah"},{name:"Jehoiakim",start:628,end:618,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiakim",group:"Kings of Judah"},{name:"Jehoiachin",start:618,end:617,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiachin",group:"Kings of Judah"},{name:"Zedekiah",start:617,end:607,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Zedekiah",group:"Kings of Judah"}],pt=[{name:"Jeroboam",start:997,end:976,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeroboam",group:"Kings of Samaria"},{name:"Nadab",start:976,end:975,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Nadab",group:"Kings of Samaria"},{name:"Baasha",start:975,end:952,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Baasha",group:"Kings of Samaria"},{name:"Elah",start:952,end:951,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Elah",group:"Kings of Samaria"},{name:"Zimri",start:951,end:951,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Zimri",group:"Kings of Samaria"},{name:"Tibni",start:951,end:947,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Tibni",group:"Kings of Samaria"},{name:"Omri",start:951,end:940,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Omri",group:"Kings of Samaria"},{name:"Ahab",start:940,end:920,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahab",group:"Kings of Samaria"},{name:"Ahaziah",start:920,end:917,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah",group:"Kings of Samaria"},{name:"Jehoram",start:917,end:905,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram",group:"Kings of Samaria"},{name:"Jehu",start:905,end:876,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehu",group:"Kings of Samaria"},{name:"Jehoahaz",start:876,end:859,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz",group:"Kings of Samaria"},{name:"Jehoash",start:862,end:844,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash",group:"Kings of Samaria"},{name:"Jeroboam II",start:844,end:803,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeroboam",group:"Kings of Samaria"},{name:"Zechariah",start:803,end:791,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Zechariah",group:"Kings of Samaria"},{name:"Shallum",start:791,end:791,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Shallum",group:"Kings of Samaria"},{name:"Menahem",start:791,end:780,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Menahem",group:"Kings of Samaria"},{name:"Pekahiah",start:780,end:778,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Pekahiah",group:"Kings of Samaria"},{name:"Pekah",start:778,end:758,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Pekah",group:"Kings of Samaria"},{name:"Hoshea",start:758,end:740,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Hoshea",group:"Kings of Samaria"}],ht=[{name:"Elijah",start:940,end:905,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Elijah",group:"Prophets"},{name:"Elishah",start:917,end:852,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Elishah",group:"Prophets"},{name:"Jonah",start:849,end:818,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jonah",group:"Prophets"},{name:"Amos",start:829,end:803,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Amos",group:"Prophets"},{name:"Joel",start:825,end:820,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Joel",group:"Prophets"},{name:"Hosea",start:808,end:740,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Hosea",group:"Prophets"},{name:"Isaiah",start:780,end:730,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Isaiah",group:"Prophets"},{name:"Micah",start:775,end:716,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Micah",group:"Prophets"},{name:"Zephaniah",start:659,end:640,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Zephaniah",group:"Prophets"},{name:"Nahum",start:659,end:635,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Nahum",group:"Prophets"},{name:"Jeremiah",start:645,end:570,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeremiah",group:"Prophets"},{name:"Habakkuk",start:633,end:623,tier:4,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Habakkuk",group:"Prophets"},{name:"Obadiah",start:613,end:600,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Obadiah",group:"Prophets"},{name:"Ezekiel",start:610,end:591,tier:2,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezekiel",group:"Prophets"},{name:"Daniel",start:617,end:535,tier:3,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Daniel",group:"Prophets"}],gt=[{name:"Destruction of Samaria",start:740,end:740,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Destruction%20of%20Samaria",group:"Events"},{name:"Destruction of Jerusalem",start:607,end:607,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Destruction%20of%20Jerusalem",group:"Events"},{name:"Freed from Babylonian Captivity",start:535,end:535,tier:1,url:"https://wol.jw.org/en/wol/s/r1/lp-e?q=Freed%20from%20Babylonian%20Captivity",group:"Events"}],dt=l(0),ft=l(61),bt=l(5),yt=(l.n(bt),l(98)),wt=(l.n(yt),l(99)),kt=(l.n(wt),l(62)),vt=(l.n(kt),this&&this.__decorate||function(n,e,l,t){var o,i=arguments.length,u=i<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,l):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)u=Reflect.decorate(n,e,l,t);else for(var a=n.length-1;a>=0;a--)(o=n[a])&&(u=(i<3?o(u):i>3?o(e,l,u):o(e,l))||u);return i>3&&u&&Object.defineProperty(e,l,u),u}),Ct=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},St=function(){return function(n,e){var l=this;this.$actions=n,this.schedulesService=e,this.$loadSchedules=this.$actions.ofType(Fe).switchMap(function(){return l.schedulesService.getSchedules().map(function(n){return new We(n)})}),this.$loadSavedSchedule=this.$actions.ofType(He).switchMap(function(n){return l.schedulesService.getAllSaved().filter(function(n){return null!==n}).map(function(n){return new Xe(JSON.parse(n))})}),this.$saveSchedule=this.$actions.ofType(Ve).switchMap(function(n){return l.schedulesService.saveSchedule(n.payload.key,n.payload.schedules).map(function(n){return new el})}),this.$clearSchedule=this.$actions.ofType(ze).switchMap(function(n){return l.schedulesService.clearSchedule(n.payload).map(function(n){return new Ze})})}}();vt([Object(ft.b)(),Ct("design:type","function"==typeof(Pt=void 0!==bt.Observable&&bt.Observable)&&Pt||Object)],St.prototype,"$loadSchedules",void 0),vt([Object(ft.b)(),Ct("design:type","function"==typeof(Ot=void 0!==bt.Observable&&bt.Observable)&&Ot||Object)],St.prototype,"$loadSavedSchedule",void 0),vt([Object(ft.b)(),Ct("design:type","function"==typeof(jt=void 0!==bt.Observable&&bt.Observable)&&jt||Object)],St.prototype,"$saveSchedule",void 0),vt([Object(ft.b)(),Ct("design:type","function"==typeof(Gt=void 0!==bt.Observable&&bt.Observable)&&Gt||Object)],St.prototype,"$clearSchedule",void 0),St=vt([Object(dt.q)(),Ct("design:paramtypes",["function"==typeof(Et=void 0!==ft.a&&ft.a)&&Et||Object,"function"==typeof(At=void 0!==it&&it)&&At||Object])],St);var Pt,Ot,jt,Gt,Et,At,Mt=l(0),xt=l(61),Dt=l(5),Tt=(l.n(Dt),l(98)),Jt=(l.n(Tt),l(99)),It=(l.n(Jt),l(62)),Nt=(l.n(It),this&&this.__decorate||function(n,e,l,t){var o,i=arguments.length,u=i<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,l):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)u=Reflect.decorate(n,e,l,t);else for(var a=n.length-1;a>=0;a--)(o=n[a])&&(u=(i<3?o(u):i>3?o(e,l,u):o(e,l))||u);return i>3&&u&&Object.defineProperty(e,l,u),u}),Rt=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},Bt=function(){return function(n,e){var l=this;this.$actions=n,this.timelineService=e,this.$loadKings=this.$actions.ofType(me).switchMap(function(){return l.timelineService.getAllItems().map(function(n){return new ye(n)}).catch(function(){return new we})})}}();Nt([Object(xt.b)(),Rt("design:type","function"==typeof($t=void 0!==Dt.Observable&&Dt.Observable)&&$t||Object)],Bt.prototype,"$loadKings",void 0),Bt=Nt([Object(Mt.q)(),Rt("design:paramtypes",["function"==typeof(Lt=void 0!==xt.a&&xt.a)&&Lt||Object,"function"==typeof(qt=void 0!==st&&st)&&qt||Object])],Bt);l(48),l(0),l(28),l(122),l(96),l(97),l(17),l(61),l(160);var $t,Lt,qt,Kt=function(){return function(){}}(),zt=l(0),Ft=l(37),Ht=l(13),Yt=l(12),Vt=l(1),Ut=l(27),Qt=l(31),Zt=l(114),Wt=l(22),Xt=l(222),no=l(89),eo=l(3),lo=l(19),to=l(8),oo=l(7),io=l(6),uo=l(52),ao=l(32),so=l(4),ro=l(63),co=l(24),_o=l(38),mo=l(30),po=l(20),ho=l(39),go=l(16),fo=l(14),bo=l(34),yo=l(10),wo=l(223),ko=l(73),vo=l(50),Co=l(26),So=l(96),Po=l(97),Oo=[],jo=zt._4({encapsulation:2,styles:Oo,data:{}}),Go=zt._3("ng-component",fl,function(n){return zt._29(0,[(n()(),zt._6(0,null,null,1,"ng-component",[],null,null,null,g,jo)),zt._5(49152,null,0,fl,[eo.a,So.a,Po.a],null,null)],null,null)},{},{},[]),Eo=l(0),Ao=l(74),Mo=l(37),xo=l(13),Do=l(12),To=l(1),Jo=l(27),Io=l(31),No=l(224),Ro=l(23),Bo=l(86),$o=l(3),Lo=l(6),qo=l(16),Ko=l(7),zo=l(163),Fo=l(75),Ho=l(26),Yo=l(10),Vo=[],Uo=Eo._4({encapsulation:2,styles:Vo,data:{}}),Qo=(Eo._3("app-conversion-item",Ie,function(n){return Eo._29(0,[(n()(),Eo._6(0,null,null,1,"app-conversion-item",[],null,null,null,f,Uo)),Eo._5(49152,null,0,Ie,[],null,null)],null,null)},{index:"index",measureValue:"measureValue",measurements:"measurements"},{changeValue:"changeValue",changeMeasure:"changeMeasure"},[]),l(0)),Zo=l(74),Wo=l(10),Xo=l(32),ni=l(1),ei=l(4),li=l(64),ti=l(20),oi=l(6),ii=l(14),ui=l(21),ai=l(11),si=l(46),ri=l(22),ci=l(35),_i=l(24),mi=l(18),pi=l(38),hi=l(30),gi=l(39),di=l(16),fi=l(3),bi=l(7),yi=l(19),wi=l(56),ki=l(68),vi=l(34),Ci=l(8),Si=l(37),Pi=l(13),Oi=l(12),ji=l(27),Gi=l(31),Ei=l(36),Ai=l(163),Mi=l(75),xi=l(26),Di=l(23),Ti=l(67),Ji=l(87),Ii=l(47),Ni=l(17),Ri=[],Bi=Qo._4({encapsulation:2,styles:Ri,data:{}}),$i=Qo._3("page-converter",Dn,function(n){return Qo._29(0,[(n()(),Qo._6(0,null,null,1,"page-converter",[],null,null,null,w,Bi)),Qo._5(114688,null,0,Dn,[ii.a,Ni.m],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),Li=l(0),qi=l(32),Ki=l(1),zi=l(4),Fi=l(64),Hi=l(20),Yi=l(6),Vi=l(14),Ui=l(21),Qi=l(11),Zi=l(46),Wi=l(22),Xi=l(35),nu=l(24),eu=l(18),lu=l(38),tu=l(30),ou=l(39),iu=l(16),uu=l(3),au=l(7),su=l(19),ru=l(71),cu=l(72),_u=l(85),mu=l(56),pu=l(68),hu=l(47),gu=[],du=Li._4({encapsulation:2,styles:gu,data:{}}),fu=Li._3("page-dashboard",Tn,function(n){return Li._29(0,[(n()(),Li._6(0,null,null,1,"page-dashboard",[],null,null,null,k,du)),Li._5(114688,null,0,Tn,[Vi.a],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),bu=l(0),yu=l(37),wu=l(13),ku=l(12),vu=l(1),Cu=l(27),Su=l(31),Pu=l(10),Ou=l(113),ju=[],Gu=bu._4({encapsulation:2,styles:ju,data:{}}),Eu=(bu._3("app-expander",Re,function(n){return bu._29(0,[(n()(),bu._6(0,null,null,1,"app-expander",[],null,null,null,P,Gu)),bu._5(49152,null,0,Re,[],null,null)],null,null)},{title:"title",boldItem:"boldItem",list:"list",toggleExpander:"toggleExpander"},{toggleExpanderChange:"toggleExpanderChange"},[]),l(0)),Au=l(36),Mu=l(1),xu=l(56),Du=l(68),Tu=l(67),Ju=l(83),Iu=l(10),Nu=l(34),Ru=l(3),Bu=l(8),$u=l(7),Lu=[],qu=Eu._4({encapsulation:2,styles:Lu,data:{}}),Ku=(Eu._3("app-person-card",$e,function(n){return Eu._29(0,[(n()(),Eu._6(0,null,null,1,"app-person-card",[],null,null,null,M,qu)),Eu._5(49152,null,0,$e,[],null,null)],null,null)},{king:"king",toggleSons:"toggleSons",togglePriests:"togglePriests",toggleProphets:"toggleProphets"},{toggleSonsChange:"toggleSonsChange",togglePriestsChange:"togglePriestsChange",toggleProphetsChange:"toggleProphetsChange"},[]),l(0)),zu=l(225),Fu=l(95),Hu=l(60),Yu=l(10),Vu=l(32),Uu=l(1),Qu=l(4),Zu=l(64),Wu=l(20),Xu=l(6),na=l(14),ea=l(21),la=l(11),ta=l(46),oa=l(22),ia=l(35),ua=l(24),aa=l(18),sa=l(38),ra=l(30),ca=l(39),_a=l(16),ma=l(3),pa=l(7),ha=l(19),ga=l(226),da=l(164),fa=l(70),ba=l(165),ya=l(51),wa=l(47),ka=l(63),va=l(71),Ca=l(72),Sa=l(85),Pa=l(59),Oa=l(17),ja=[],Ga=Ku._4({encapsulation:2,styles:ja,data:{}}),Ea=Ku._3("page-home",ce,function(n){return Ku._29(0,[(n()(),Ku._6(0,null,null,1,"page-home",[],null,null,null,D,Ga)),Ku._5(114688,null,0,ce,[na.a,Pa.a,Oa.m],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),Aa=l(0),Ma=l(10),xa=l(14),Da=l(59),Ta=[],Ja=Aa._4({encapsulation:2,styles:Ta,data:{}}),Ia=(Aa._3("app-timeline-row",Ke,function(n){return Aa._29(0,[(n()(),Aa._6(0,null,null,1,"app-timeline-row",[],null,null,null,J,Ja)),Aa._5(49152,null,0,Ke,[xa.a,Da.a],null,null)],null,null)},{rows:"rows",rowNumber:"rowNumber",items:"items",timelineData:"timelineData"},{},[]),l(0)),Na=l(72),Ra=l(14),Ba=l(59),$a=l(10),La=l(32),qa=l(1),Ka=l(4),za=l(64),Fa=l(20),Ha=l(6),Ya=l(21),Va=l(11),Ua=l(46),Qa=l(22),Za=l(35),Wa=l(24),Xa=l(18),ns=l(38),es=l(30),ls=l(39),ts=l(16),os=l(3),is=l(7),us=l(19),as=l(71),ss=l(164),rs=l(70),cs=l(165),_s=l(51),ms=l(84),ps=l(47),hs=l(17),gs=[],ds=Ia._4({encapsulation:2,styles:gs,data:{}}),fs=Ia._3("page-timeline",De,function(n){return Ia._29(0,[(n()(),Ia._6(0,null,null,1,"page-timeline",[],null,null,null,N,ds)),Ia._5(114688,null,0,De,[Ra.a,Ba.a,hs.m],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),bs=l(0),ys=l(37),ws=l(13),ks=l(12),vs=l(1),Cs=l(27),Ss=l(31),Ps=l(10),Os=l(32),js=l(4),Gs=l(63),Es=l(24),As=l(38),Ms=l(30),xs=l(20),Ds=l(35),Ts=l(21),Js=l(11),Is=l(76),Ns=l(3),Rs=l(77),Bs=l(18),$s=l(39),Ls=l(16),qs=l(7),Ks=l(6),zs=l(19),Fs=l(14),Hs=l(34),Ys=l(8),Vs=l(53),Us=l(23),Qs=l(15),Zs=[".selected[_ngcontent-%COMP%] {color: blue;}"],Ws=bs._4({encapsulation:0,styles:Zs,data:{}}),Xs=bs._3("ng-component",Jn,function(n){return bs._29(0,[(n()(),bs._6(0,null,null,1,"ng-component",[],null,null,null,L,Ws)),bs._5(49152,null,0,Jn,[Ns.a,Qs.a,js.a],null,null)],null,null)},{},{},[]),nr=l(0),er=l(32),lr=l(1),tr=l(4),or=l(63),ir=l(24),ur=l(38),ar=l(30),sr=l(20),rr=l(35),cr=l(21),_r=l(11),mr=l(76),pr=l(3),hr=l(77),gr=l(18),dr=l(39),fr=l(16),br=l(7),yr=l(6),wr=l(19),kr=l(14),vr=l(56),Cr=l(67),Sr=l(83),Pr=l(36),Or=l(15),jr=[],Gr=nr._4({encapsulation:2,styles:jr,data:{}}),Er=nr._3("ng-component",Le,function(n){return nr._29(0,[(n()(),nr._6(0,null,null,1,"ng-component",[],null,null,null,q,Gr)),nr._5(49152,null,0,Le,[pr.a,Or.a,tr.a],null,null)],null,null)},{},{},[]),Ar=l(0),Mr=l(37),xr=l(13),Dr=l(12),Tr=l(1),Jr=l(27),Ir=l(31),Nr=l(36),Rr=l(166),Br=l(69),$r=l(23),Lr=l(32),qr=l(4),Kr=l(63),zr=l(24),Fr=l(38),Hr=l(30),Yr=l(20),Vr=l(35),Ur=l(21),Qr=l(11),Zr=l(76),Wr=l(3),Xr=l(77),nc=l(18),ec=l(39),lc=l(16),tc=l(7),oc=l(6),ic=l(19),uc=l(14),ac=l(34),sc=l(8),rc=l(53),cc=l(87),_c=l(10),mc=l(15),pc=[".selected[_ngcontent-%COMP%] {color: blue;}"],hc=Ar._4({encapsulation:0,styles:pc,data:{}}),gc=Ar._3("ng-component",_e,function(n){return Ar._29(0,[(n()(),Ar._6(0,null,null,1,"ng-component",[],null,null,null,z,hc)),Ar._5(49152,null,0,_e,[Wr.a,mc.a,qr.a],null,null)],null,null)},{},{},[]),dc=l(0),fc=l(18),bc=l(1),yc=l(37),wc=l(13),kc=l(12),vc=l(27),Cc=l(31),Sc=l(10),Pc=l(32),Oc=l(4),jc=l(64),Gc=l(20),Ec=l(6),Ac=l(14),Mc=l(21),xc=l(11),Dc=l(46),Tc=l(22),Jc=l(35),Ic=l(24),Nc=l(38),Rc=l(30),Bc=l(39),$c=l(16),Lc=l(3),qc=l(7),Kc=l(19),zc=l(34),Fc=l(8),Hc=l(47),Yc=l(17),Vc=[],Uc=dc._4({encapsulation:2,styles:Vc,data:{}}),Qc=dc._3("page-schedules",dl,function(n){return dc._29(0,[(n()(),dc._6(0,null,null,1,"page-schedules",[],null,null,null,Y,Uc)),dc._5(114688,null,0,dl,[Ac.a,Yc.m],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),Zc=l(0),Wc=l(37),Xc=l(13),n_=l(12),e_=l(1),l_=l(27),t_=l(88),o_=l(18),i_=l(31),u_=l(10),a_=l(32),s_=l(4),r_=l(64),c_=l(20),__=l(6),m_=l(14),p_=l(21),h_=l(11),g_=l(46),d_=l(22),f_=l(35),b_=l(24),y_=l(38),w_=l(30),k_=l(39),v_=l(16),C_=l(3),S_=l(7),P_=l(19),O_=l(34),j_=l(8),G_=l(47),E_=l(63),A_=l(15),M_=l(93),x_=l(17),D_=[],T_=Zc._4({encapsulation:2,styles:D_,data:{}}),J_=Zc._3("page-schedule-section",al,function(n){return Zc._29(0,[(n()(),Zc._6(0,null,null,1,"page-schedule-section",[],null,null,null,ln,T_)),Zc._5(114688,null,0,al,[m_.a,A_.a,M_.a,x_.m],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),I_=l(0),N_=l(34),R_=l(1),B_=l(3),$_=l(8),L_=l(7),q_=l(21),K_=l(11),z_=l(18),F_=l(37),H_=l(13),Y_=l(12),V_=l(27),U_=l(31),Q_=l(36),Z_=l(166),W_=l(69),X_=l(23),nm=l(15),em=l(4),lm=[],tm=I_._4({encapsulation:2,styles:lm,data:{}}),om=I_._3("ng-component",qe,function(n){return I_._29(0,[(n()(),I_._6(0,null,null,1,"ng-component",[],null,null,null,tn,tm)),I_._5(114688,null,0,qe,[nm.a,em.a],null,null)],function(n,e){n(e,1,0)},null)},{},{},[]),im=l(0),um=l(10),am=l(152),sm=l(7),rm=l(22),cm=l(6),_m=l(8),mm=l(115),pm=l(48),hm=l(23),gm=l(153),dm=l(122),fm=l(17),bm=l(160),ym=l(61),wm=l(121),km=l(118),vm=l(12),Cm=l(91),Sm=l(19),Pm=l(59),Om=l(93),jm=l(117),Gm=l(50),Em=l(96),Am=l(97),Mm=l(216),xm=l(217),Dm=l(218),Tm=l(219),Jm=l(220),Im=l(221),Nm=l(80),Rm=l(26),Bm=l(119),$m=l(3),Lm=l(1),qm=l(58),Km=l(120),zm=l(155),Fm=l(65),Hm=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,e){n.__proto__=e}||function(n,e){for(var l in e)e.hasOwnProperty(l)&&(n[l]=e[l])};return function(e,l){function t(){this.constructor=e}n(e,l),e.prototype=null===l?Object.create(l):(t.prototype=l.prototype,new t)}}(),Ym=function(n){function e(e){return n.call(this,e,[Mm.a,xm.a,Dm.a,Tm.a,Jm.a,Im.a,Go,$i,fu,Ea,fs,Xs,Er,gc,Qc,J_,om],[Dm.a])||this}return Hm(e,n),Object.defineProperty(e.prototype,"_LOCALE_ID_64",{get:function(){return null==this.__LOCALE_ID_64&&(this.__LOCALE_ID_64=im._17(this.parent.get(im.v,null))),this.__LOCALE_ID_64},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_NgLocalization_65",{get:function(){return null==this.__NgLocalization_65&&(this.__NgLocalization_65=new um.j(this._LOCALE_ID_64)),this.__NgLocalization_65},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_APP_ID_66",{get:function(){return null==this.__APP_ID_66&&(this.__APP_ID_66=im._8()),this.__APP_ID_66},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_IterableDiffers_67",{get:function(){return null==this.__IterableDiffers_67&&(this.__IterableDiffers_67=im._14()),this.__IterableDiffers_67},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_KeyValueDiffers_68",{get:function(){return null==this.__KeyValueDiffers_68&&(this.__KeyValueDiffers_68=im._16()),this.__KeyValueDiffers_68},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_DomSanitizer_69",{get:function(){return null==this.__DomSanitizer_69&&(this.__DomSanitizer_69=new pm.s(this.parent.get(pm.b))),this.__DomSanitizer_69},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Sanitizer_70",{get:function(){return null==this.__Sanitizer_70&&(this.__Sanitizer_70=this._DomSanitizer_69),this.__Sanitizer_70},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_HAMMER_GESTURE_CONFIG_71",{get:function(){return null==this.__HAMMER_GESTURE_CONFIG_71&&(this.__HAMMER_GESTURE_CONFIG_71=new wm.a),this.__HAMMER_GESTURE_CONFIG_71},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_EVENT_MANAGER_PLUGINS_72",{get:function(){return null==this.__EVENT_MANAGER_PLUGINS_72&&(this.__EVENT_MANAGER_PLUGINS_72=[new pm.l(this.parent.get(pm.b)),new pm.p(this.parent.get(pm.b)),new pm.o(this.parent.get(pm.b),this._HAMMER_GESTURE_CONFIG_71)]),this.__EVENT_MANAGER_PLUGINS_72},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_EventManager_73",{get:function(){return null==this.__EventManager_73&&(this.__EventManager_73=new pm.e(this._EVENT_MANAGER_PLUGINS_72,this.parent.get(im.A))),this.__EventManager_73},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_ɵDomSharedStylesHost_74",{get:function(){return null==this.__ɵDomSharedStylesHost_74&&(this.__ɵDomSharedStylesHost_74=new pm.n(this.parent.get(pm.b))),this.__ɵDomSharedStylesHost_74},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_ɵDomRendererFactory2_75",{get:function(){return null==this.__ɵDomRendererFactory2_75&&(this.__ɵDomRendererFactory2_75=new pm.m(this._EventManager_73,this._ɵDomSharedStylesHost_74)),this.__ɵDomRendererFactory2_75},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_RendererFactory2_76",{get:function(){return null==this.__RendererFactory2_76&&(this.__RendererFactory2_76=this._ɵDomRendererFactory2_75),this.__RendererFactory2_76},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_ɵSharedStylesHost_77",{get:function(){return null==this.__ɵSharedStylesHost_77&&(this.__ɵSharedStylesHost_77=this._ɵDomSharedStylesHost_74),this.__ɵSharedStylesHost_77},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Testability_78",{get:function(){return null==this.__Testability_78&&(this.__Testability_78=new im.O(this.parent.get(im.A))),this.__Testability_78},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Meta_79",{get:function(){return null==this.__Meta_79&&(this.__Meta_79=new pm.h(this.parent.get(pm.b))),this.__Meta_79},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Title_80",{get:function(){return null==this.__Title_80&&(this.__Title_80=new pm.j(this.parent.get(pm.b))),this.__Title_80},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_ɵi_81",{get:function(){return null==this.__ɵi_81&&(this.__ɵi_81=new hm.k),this.__ɵi_81},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_FormBuilder_82",{get:function(){return null==this.__FormBuilder_82&&(this.__FormBuilder_82=new hm.c),this.__FormBuilder_82},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Events_87",{get:function(){return null==this.__Events_87&&(this.__Events_87=new km.a),this.__Events_87},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Form_88",{get:function(){return null==this.__Form_88&&(this.__Form_88=new vm.a),this.__Form_88},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Haptic_89",{get:function(){return null==this.__Haptic_89&&(this.__Haptic_89=new Cm.a(this._Platform_4)),this.__Haptic_89},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Keyboard_90",{get:function(){return null==this.__Keyboard_90&&(this.__Keyboard_90=new Sm.a(this._Config_5,this._Platform_4,this.parent.get(im.A),this._DomController_6)),this.__Keyboard_90},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_LocationStrategy_92",{get:function(){return null==this.__LocationStrategy_92&&(this.__LocationStrategy_92=gm.b(this.parent.get(um.p),this._APP_BASE_HREF_84,this._Config_5)),this.__LocationStrategy_92},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_Location_93",{get:function(){return null==this.__Location_93&&(this.__Location_93=new um.e(this._LocationStrategy_92)),this.__Location_93},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_UrlSerializer_94",{get:function(){return null==this.__UrlSerializer_94&&(this.__UrlSerializer_94=Nm.d(this._DeepLinkConfigToken_10)),this.__UrlSerializer_94},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_DeepLinker_95",{get:function(){return null==this.__DeepLinker_95&&(this.__DeepLinker_95=Rm.b(this._App_8,this._UrlSerializer_94,this._Location_93,this._ModuleLoader_13,this.componentFactoryResolver)),this.__DeepLinker_95},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_ModalController_96",{get:function(){return null==this.__ModalController_96&&(this.__ModalController_96=new Pm.a(this._App_8,this._Config_5,this._DeepLinker_95)),this.__ModalController_96},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_PopoverController_98",{get:function(){return null==this.__PopoverController_98&&(this.__PopoverController_98=new Om.a(this._App_8,this._Config_5,this._DeepLinker_95)),this.__PopoverController_98},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_TapClick_99",{get:function(){return null==this.__TapClick_99&&(this.__TapClick_99=new jm.a(this._Config_5,this._Platform_4,this._DomController_6,this._App_8,this._GestureController_9)),this.__TapClick_99},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_TransitionController_101",{get:function(){return null==this.__TransitionController_101&&(this.__TransitionController_101=new Gm.a(this._Platform_4,this._Config_5)),this.__TransitionController_101},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_State_102",{get:function(){return null==this.__State_102&&(this.__State_102=new fm.k(this._ActionsSubject_25,this._ReducerObservable_35,this._ScannedActionsSubject_36,this._INITIAL_STATE_29)),this.__State_102},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_ɵa_103",{get:function(){return null==this.__ɵa_103&&(this.__ɵa_103=bm.d(this._ɵj_41,this._ɵh_44)),this.__ɵa_103},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_StatusBar_104",{get:function(){return null==this.__StatusBar_104&&(this.__StatusBar_104=new Em.a),this.__StatusBar_104},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"_SplashScreen_105",{get:function(){return null==this.__SplashScreen_105&&(this.__SplashScreen_105=new Am.a),this.__SplashScreen_105},enumerable:!0,configurable:!0}),e.prototype.createInternal=function(){return this._CommonModule_0=new um.c,this._ErrorHandler_1=new am.a,this._ConfigToken_2=null,this._PlatformConfigToken_3=Bm.b(),this._Platform_4=$m.b(this.parent.get(pm.b),this._PlatformConfigToken_3,this.parent.get(im.A)),this._Config_5=Lm.c(this._ConfigToken_2,this._Platform_4),this._DomController_6=new sm.a(this._Platform_4),this._MenuController_7=new rm.a,this._App_8=new cm.a(this._Config_5,this._Platform_4,this._MenuController_7),this._GestureController_9=new _m.h(this._App_8),this._DeepLinkConfigToken_10=null,this._Compiler_11=new im.i,this._NgModuleLoader_12=new mm.a(this._Compiler_11),this._ModuleLoader_13=qm.c(this._NgModuleLoader_12,this),this._APP_INITIALIZER_14=[im._20,pm.r(this.parent.get(pm.i,null),this.parent.get(im.z,null)),Km.a(this._Config_5),km.b(this._Platform_4,this._DomController_6),jm.b(this._Config_5,this._Platform_4,this._DomController_6,this._App_8,this._GestureController_9),qm.d(this._Config_5,this._DeepLinkConfigToken_10,this._ModuleLoader_13,this.parent.get(im.A))],this._ApplicationInitStatus_15=new im.d(this._APP_INITIALIZER_14),this._ɵf_16=new im._7(this.parent.get(im.A),this.parent.get(im._0),this,this._ErrorHandler_1,this.componentFactoryResolver,this._ApplicationInitStatus_15),this._ApplicationRef_17=this._ɵf_16,this._ApplicationModule_18=new im.e(this._ApplicationRef_17),this._BrowserModule_19=new pm.a(this.parent.get(pm.a,null)),this._ɵba_20=new hm.j,this._FormsModule_21=new hm.d,this._ReactiveFormsModule_22=new hm.i,this._IonicModule_23=new gm.a,this._IonicStorageModule_24=new dm.a,this._ActionsSubject_25=new fm.a,this._ɵg_26=new bm.h,this._ReducerManagerDispatcher_27=this._ɵg_26,this.__INITIAL_STATE_28=void 0,this._INITIAL_STATE_29=fm.r(this.__INITIAL_STATE_28),this._INITIAL_REDUCERS_30={kings:a,measurements:u,schedules:p,timeline:m},this.__REDUCER_FACTORY_31=fm.s,this._META_REDUCERS_32=[],this._REDUCER_FACTORY_33=fm.u(this.__REDUCER_FACTORY_31,this._META_REDUCERS_32),this._ReducerManager_34=new fm.g(this._ReducerManagerDispatcher_27,this._INITIAL_STATE_29,this._INITIAL_REDUCERS_30,this._REDUCER_FACTORY_33),this._ReducerObservable_35=this._ReducerManager_34,this._ScannedActionsSubject_36=new fm.j,this._StoreRootModule_37=new fm.n(this._ActionsSubject_25,this._ReducerObservable_35,this._ScannedActionsSubject_36),this._ɵe_38=void 0,this._ɵg_39=new ym.h(this._ɵe_38),this._EffectSources_40=new ym.c(this._ɵg_39),this._ɵj_41=bm.e(),this._ɵk_42=new bm.l(this._ɵj_41),this._ɵi_43={},this._ɵh_44=bm.g(this._ɵi_43),this._StoreDevtools_45=new bm.a(this._ɵg_26,this._ActionsSubject_25,this._ReducerObservable_35,this._ɵk_42,this._ScannedActionsSubject_36,this._INITIAL_STATE_29,this._ɵh_44),this._StateObservable_46=bm.f(this._StoreDevtools_45),this._Store_47=new fm.m(this._StateObservable_46,this._ActionsSubject_25,this._ReducerManager_34),this._ɵh_48=new ym.i(this._EffectSources_40,this._Store_47),this._Actions_49=new ym.a(this._ScannedActionsSubject_36),this._KingsService_50=new yl,this._KingsEffects_51=new El(this._Actions_49,this._KingsService_50),this._MeasurementsService_52=new Tl,this._MeasurementsEffects_53=new Fl(this._Actions_49,this._MeasurementsService_52),this._StorageConfigToken_54=null,this._Storage_55=zm.c(this._StorageConfigToken_54),this._SchedulesService_56=new it(this._Storage_55),this._SchedulesEffects_57=new St(this._Actions_49,this._SchedulesService_56),this._TimelineService_58=new st,this._TimelineEffects_59=new Bt(this._Actions_49,this._TimelineService_58),this._ɵc_60=ym.d(this._KingsEffects_51,this._MeasurementsEffects_53,this._SchedulesEffects_57,this._TimelineEffects_59),this._ɵf_61=new ym.g(this._EffectSources_40,this._ɵh_48,this._ɵc_60),this._StoreDevtoolsModule_62=new bm.b,this._AppModule_63=new Kt,this._AppRootToken_83=fl,this._APP_BASE_HREF_84="/",this._AppModule_63},e.prototype.getInternal=function(n,e){return n===um.c?this._CommonModule_0:n===im.m?this._ErrorHandler_1:n===Lm.b?this._ConfigToken_2:n===Bm.a?this._PlatformConfigToken_3:n===$m.a?this._Platform_4:n===Lm.a?this._Config_5:n===sm.a?this._DomController_6:n===rm.a?this._MenuController_7:n===cm.a?this._App_8:n===_m.h?this._GestureController_9:n===Nm.a?this._DeepLinkConfigToken_10:n===im.i?this._Compiler_11:n===mm.a?this._NgModuleLoader_12:n===qm.b?this._ModuleLoader_13:n===im.c?this._APP_INITIALIZER_14:n===im.d?this._ApplicationInitStatus_15:n===im._7?this._ɵf_16:n===im.f?this._ApplicationRef_17:n===im.e?this._ApplicationModule_18:n===pm.a?this._BrowserModule_19:n===hm.j?this._ɵba_20:n===hm.d?this._FormsModule_21:n===hm.i?this._ReactiveFormsModule_22:n===gm.a?this._IonicModule_23:n===dm.a?this._IonicStorageModule_24:n===fm.a?this._ActionsSubject_25:n===bm.h?this._ɵg_26:n===fm.h?this._ReducerManagerDispatcher_27:n===fm.p?this.__INITIAL_STATE_28:n===fm.d?this._INITIAL_STATE_29:n===fm.c?this._INITIAL_REDUCERS_30:n===fm.q?this.__REDUCER_FACTORY_31:n===fm.e?this._META_REDUCERS_32:n===fm.f?this._REDUCER_FACTORY_33:n===fm.g?this._ReducerManager_34:n===fm.i?this._ReducerObservable_35:n===fm.j?this._ScannedActionsSubject_36:n===fm.n?this._StoreRootModule_37:n===ym.f?this._ɵe_38:n===ym.h?this._ɵg_39:n===ym.c?this._EffectSources_40:n===bm.k?this._ɵj_41:n===bm.l?this._ɵk_42:n===bm.j?this._ɵi_43:n===bm.i?this._ɵh_44:n===bm.a?this._StoreDevtools_45:n===fm.l?this._StateObservable_46:n===fm.m?this._Store_47:n===ym.i?this._ɵh_48:n===ym.a?this._Actions_49:n===yl?this._KingsService_50:n===El?this._KingsEffects_51:n===Tl?this._MeasurementsService_52:n===Fl?this._MeasurementsEffects_53:n===zm.b?this._StorageConfigToken_54:n===zm.a?this._Storage_55:n===it?this._SchedulesService_56:n===St?this._SchedulesEffects_57:n===st?this._TimelineService_58:n===Bt?this._TimelineEffects_59:n===ym.e?this._ɵc_60:n===ym.g?this._ɵf_61:n===bm.b?this._StoreDevtoolsModule_62:n===Kt?this._AppModule_63:n===im.v?this._LOCALE_ID_64:n===um.k?this._NgLocalization_65:n===im.b?this._APP_ID_66:n===im.t?this._IterableDiffers_67:n===im.u?this._KeyValueDiffers_68:n===pm.c?this._DomSanitizer_69:n===im.J?this._Sanitizer_70:n===pm.f?this._HAMMER_GESTURE_CONFIG_71:n===pm.d?this._EVENT_MANAGER_PLUGINS_72:n===pm.e?this._EventManager_73:n===pm.n?this._ɵDomSharedStylesHost_74:n===pm.m?this._ɵDomRendererFactory2_75:n===im.H?this._RendererFactory2_76:n===pm.q?this._ɵSharedStylesHost_77:n===im.O?this._Testability_78:n===pm.h?this._Meta_79:n===pm.j?this._Title_80:n===hm.k?this._ɵi_81:n===hm.c?this._FormBuilder_82:n===Fm.a?this._AppRootToken_83:n===um.a?this._APP_BASE_HREF_84:n===km.a?this._Events_87:n===vm.a?this._Form_88:n===Cm.a?this._Haptic_89:n===Sm.a?this._Keyboard_90:n===um.f?this._LocationStrategy_92:n===um.e?this._Location_93:n===Nm.b?this._UrlSerializer_94:n===Rm.a?this._DeepLinker_95:n===Pm.a?this._ModalController_96:n===Om.a?this._PopoverController_98:n===jm.a?this._TapClick_99:n===Gm.a?this._TransitionController_101:n===fm.k?this._State_102:n===bm.c?this._ɵa_103:n===Em.a?this._StatusBar_104:n===Am.a?this._SplashScreen_105:e},e.prototype.destroyInternal=function(){this._ɵf_16.ngOnDestroy(),this._ActionsSubject_25.ngOnDestroy(),this._ɵg_26.ngOnDestroy(),this._ReducerManager_34.ngOnDestroy(),this._ScannedActionsSubject_36.ngOnDestroy(),this._ɵh_48.ngOnDestroy(),this.__ɵDomSharedStylesHost_74&&this._ɵDomSharedStylesHost_74.ngOnDestroy(),this.__State_102&&this._State_102.ngOnDestroy()},e}(im._1),Vm=new im.x(Ym,Kt),Um=l(48),Qm=l(0);Object(Qm.U)(),Object(Um.k)().bootstrapModuleFactory(Vm)},211:function(n,e){}},[167]);
+webpackJsonp([0],{
+
+/***/ 114:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ADDAUXMEASUREMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CHANGEAUXMEASURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return CHANGEAUXVALUE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return CHANGEBASEMEASURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CHANGEBASEVALUE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return CHANGETYPE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return INIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return MEASURESLOADED; });
+/* unused harmony export MEASURESFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SETTYPES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AddAuxMeasurementAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return ChangeAuxMeasureAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return ChangeAuxValueAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ChangeBaseMeasureAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return ChangeBaseValueAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return ChangeTypeAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return InitMeasuresAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return MeasuresLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return MeasuresFailedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return TypesSetAction; });
+var ADDAUXMEASUREMENT = '[Measures] Add Auxilary Measurement';
+var CHANGEAUXMEASURE = '[Measures] Change Auxilary Measure';
+var CHANGEAUXVALUE = '[Measures] Change Auxilary Value';
+var CHANGEBASEMEASURE = '[Measures] Change Base Measure';
+var CHANGEBASEVALUE = '[Measures] Change Base Value';
+var CHANGETYPE = '[Measures] Change Type';
+var INIT = '[Measures] Init Measures';
+var MEASURESLOADED = '[Measures] Loaded Measures';
+var MEASURESFAILED = '[Measures] Failed to load Measures';
+var SETTYPES = '[Measures] Measurement Types Set';
+var AddAuxMeasurementAction = (function () {
+    function AddAuxMeasurementAction() {
+        this.type = ADDAUXMEASUREMENT;
+    }
+    return AddAuxMeasurementAction;
+}());
+
+var ChangeAuxMeasureAction = (function () {
+    function ChangeAuxMeasureAction(payload) {
+        this.payload = payload;
+        this.type = CHANGEAUXMEASURE;
+    }
+    return ChangeAuxMeasureAction;
+}());
+
+var ChangeAuxValueAction = (function () {
+    function ChangeAuxValueAction(payload) {
+        this.payload = payload;
+        this.type = CHANGEAUXVALUE;
+    }
+    return ChangeAuxValueAction;
+}());
+
+var ChangeBaseMeasureAction = (function () {
+    function ChangeBaseMeasureAction(payload) {
+        this.payload = payload;
+        this.type = CHANGEBASEMEASURE;
+    }
+    return ChangeBaseMeasureAction;
+}());
+
+var ChangeBaseValueAction = (function () {
+    function ChangeBaseValueAction(payload) {
+        this.payload = payload;
+        this.type = CHANGEBASEVALUE;
+    }
+    return ChangeBaseValueAction;
+}());
+
+var ChangeTypeAction = (function () {
+    function ChangeTypeAction(payload) {
+        this.payload = payload;
+        this.type = CHANGETYPE;
+    }
+    return ChangeTypeAction;
+}());
+
+var InitMeasuresAction = (function () {
+    function InitMeasuresAction() {
+        this.type = INIT;
+    }
+    return InitMeasuresAction;
+}());
+
+var MeasuresLoadedAction = (function () {
+    function MeasuresLoadedAction(payload) {
+        this.payload = payload;
+        this.type = MEASURESLOADED;
+    }
+    return MeasuresLoadedAction;
+}());
+
+var MeasuresFailedAction = (function () {
+    function MeasuresFailedAction() {
+        this.type = MEASURESFAILED;
+    }
+    return MeasuresFailedAction;
+}());
+
+var TypesSetAction = (function () {
+    function TypesSetAction(payload) {
+        this.payload = payload;
+        this.type = SETTYPES;
+    }
+    return TypesSetAction;
+}());
+
+//# sourceMappingURL=measurements.actions.js.map
+
+/***/ }),
+
+/***/ 115:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return INIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return NEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return PREV; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SETKING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return KINGSLOADED; });
+/* unused harmony export KINGSFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return TOGGLESONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return TOGGLEPRIESTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return TOGGLEPROPHETS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NextAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return PrevAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return InitKingsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return KingsLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return KingsFailedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return SetKingAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return TogglePriestsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return ToggleProphetsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return ToggleSonsAction; });
+var INIT = '[Kings] Init Kings';
+var NEXT = '[Kings] Next King';
+var PREV = '[Kings] Previous King';
+var SETKING = '[Kings] Set King';
+var KINGSLOADED = '[Kings] Kings loaded';
+var KINGSFAILED = '[Kings] Kings Failed to load';
+var TOGGLESONS = '[Kings] Toggle view sons';
+var TOGGLEPRIESTS = '[Kings] Toggle view priests';
+var TOGGLEPROPHETS = '[Kings] Toggle view prophets';
+var NextAction = (function () {
+    function NextAction() {
+        this.type = NEXT;
+    }
+    return NextAction;
+}());
+
+var PrevAction = (function () {
+    function PrevAction() {
+        this.type = PREV;
+    }
+    return PrevAction;
+}());
+
+var InitKingsAction = (function () {
+    function InitKingsAction() {
+        this.type = INIT;
+    }
+    return InitKingsAction;
+}());
+
+var KingsLoadedAction = (function () {
+    function KingsLoadedAction(payload) {
+        this.payload = payload;
+        this.type = KINGSLOADED;
+    }
+    return KingsLoadedAction;
+}());
+
+var KingsFailedAction = (function () {
+    function KingsFailedAction() {
+        this.type = KINGSFAILED;
+    }
+    return KingsFailedAction;
+}());
+
+var SetKingAction = (function () {
+    function SetKingAction(payload) {
+        this.payload = payload;
+        this.type = SETKING;
+    }
+    return SetKingAction;
+}());
+
+var TogglePriestsAction = (function () {
+    function TogglePriestsAction() {
+        this.type = TOGGLEPRIESTS;
+    }
+    return TogglePriestsAction;
+}());
+
+var ToggleProphetsAction = (function () {
+    function ToggleProphetsAction() {
+        this.type = TOGGLEPROPHETS;
+    }
+    return ToggleProphetsAction;
+}());
+
+var ToggleSonsAction = (function () {
+    function ToggleSonsAction() {
+        this.type = TOGGLESONS;
+    }
+    return ToggleSonsAction;
+}());
+
+//# sourceMappingURL=kings.actions.js.map
+
+/***/ }),
+
+/***/ 116:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return INIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return TIMELINELOADED; });
+/* unused harmony export TIMELINEFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SETGROUPS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return ZOOMIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return ZOOMOUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return InitTimelineAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return TimelineLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return TimelineFailedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SetGroupsAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ZoomInAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return ZoomOutAction; });
+var INIT = '[Timeline] Init Timeline';
+var TIMELINELOADED = '[Timeline] Loaded Timeline';
+var TIMELINEFAILED = '[Timeline] Failed to load Timeline';
+var SETGROUPS = '[Timeline] Set groups';
+var ZOOMIN = '[Timeline] Zoom In';
+var ZOOMOUT = '[Timeline] Zoom Out';
+var InitTimelineAction = (function () {
+    function InitTimelineAction() {
+        this.type = INIT;
+    }
+    return InitTimelineAction;
+}());
+
+var TimelineLoadedAction = (function () {
+    function TimelineLoadedAction(payload) {
+        this.payload = payload;
+        this.type = TIMELINELOADED;
+    }
+    return TimelineLoadedAction;
+}());
+
+var TimelineFailedAction = (function () {
+    function TimelineFailedAction() {
+        this.type = TIMELINEFAILED;
+    }
+    return TimelineFailedAction;
+}());
+
+var SetGroupsAction = (function () {
+    function SetGroupsAction(payload) {
+        this.payload = payload;
+        this.type = SETGROUPS;
+    }
+    return SetGroupsAction;
+}());
+
+var ZoomInAction = (function () {
+    function ZoomInAction() {
+        this.type = ZOOMIN;
+    }
+    return ZoomInAction;
+}());
+
+var ZoomOutAction = (function () {
+    function ZoomOutAction() {
+        this.type = ZOOMOUT;
+    }
+    return ZoomOutAction;
+}());
+
+//# sourceMappingURL=timeline.actions.js.map
+
+/***/ }),
+
+/***/ 117:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var KingsService = (function () {
+    function KingsService() {
+    }
+    KingsService.prototype.getKings = function () {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            observer.next(kings);
+        });
+    };
+    return KingsService;
+}());
+KingsService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
+], KingsService);
+
+var kings = [
+    {
+        "kingNumber": 1,
+        "kingName": "Re·ho·boʹam",
+        "kingNamePlain": "Rehoboam",
+        "age": 41,
+        "startReignYear": "997 B.C.E.",
+        "endReignYear": "980 B.C.E.",
+        "highPriests": ["Zadok"],
+        "chosenOffspring": "A·biʹjah",
+        "prophets": [
+            "A·hiʹjah",
+            "Id·do",
+            "Shemaiah",
+        ],
+        "sons": [
+            "A·biʹjah",
+            "Je'ush",
+            "Shem·a·riʹah",
+            "Zaʹham",
+            "Atʹtai",
+            "Ziʹza",
+            "She·loʹmith",
+            "(21 other sons)",
+        ],
+        "wives": [
+            "Abʹi·ha·il",
+            "Maʹha·lath",
+            "Maʹa·cah"
+        ]
+    },
+    {
+        "kingNumber": 2,
+        "kingName": "A·biʹjah",
+        "kingNamePlain": "Abijah",
+        "startReignYear": "980 B.C.E.",
+        "endReignYear": "978 B.C.E.",
+        "highPriests": ["Zadok"],
+        "chosenOffspring": "Aʹsa",
+        "prophets": ["Id·do"],
+        "sons": [
+            "Aʹsa",
+            "(21 other sons)"
+        ],
+    },
+    {
+        "kingNumber": 3,
+        "kingName": "Aʹsa",
+        "kingNamePlain": "Asa",
+        "startReignYear": "978 B.C.E.",
+        "endReignYear": "937 B.C.E",
+        "highPriests": ["Zadok"],
+        "chosenOffspring": "Je·hoshʹa·phat",
+        "prophets": ["Az·a·riʹah", "Oded", "Hanani", "Jehu (son of Hanani)", "Elijah", "Micaiah"],
+        "sons": [
+            "Je·hoshʹa·phat"
+        ],
+    },
+    {
+        "kingNumber": 4,
+        "kingName": "Je·hoshʹa·phat",
+        "kingNamePlain": "Jehoshaphat",
+        "startReignYear": "937 B.C.E.",
+        "endReignYear": "913 B.C.E.",
+        "highPriests": ["Amariah"],
+        "chosenOffspring": "Je·hoʹram",
+        "prophets": ["Jehu (son of Hanani)", "Eliezer", "Jahaziel", "Elijah", "Elishah"],
+        "sons": [
+            "Je·hoʹram",
+            "Az·a·riʹah",
+            "Je·hiʹel",
+            "Zech·a·riʹah",
+            "Miʹcha·el",
+            "Sheph·a·tiʹah"
+        ],
+    },
+    {
+        "kingNumber": 5,
+        "kingName": "Je·hoʹram",
+        "kingNamePlain": "Jehoram",
+        "age": 32,
+        "startReignYear": "913 B.C.E.",
+        "endReignYear": "c. 906 B.C.E.",
+        "highPriests": ["Amariah"],
+        "chosenOffspring": "A·ha·ziʹah",
+        "prophets": ["Elijah", "Elishah"],
+        "sons": [
+            "A·ha·ziʹah"
+        ],
+    },
+    {
+        "kingNumber": 6,
+        "kingName": "A·ha·ziʹah",
+        "kingNamePlain": "Ahaziah",
+        "age": 22,
+        "startReignYear": "c. 906 B.C.E.",
+        "endReignYear": "c. 905 B.C.E.",
+        "highPriests": ["Je·hoiʹa·da"],
+        "chosenOffspring": "Je·hoʹash",
+        "prophets": ["E·liʹjah", "E·liʹshah"],
+        "sons": ["Je·hoʹash"],
+    },
+    {
+        "kingNumber": 7,
+        "kingName": "Ath·a·liʹah",
+        "kingNamePlain": "Athaliah",
+        "startReignYear": "c. 905 B.C.E.",
+        "endReignYear": "898 B.C.E.",
+        "highPriests": ["Je·hoiʹa·da"],
+        "chosenOffspring": null,
+        "prophets": ["E·liʹshah"],
+        "sons": [],
+    },
+    {
+        "kingNumber": 8,
+        "kingName": "Je·hoʹash",
+        "kingNamePlain": "Jehoash",
+        "age": 7,
+        "startReignYear": "898 B.C.E.",
+        "endReignYear": "858 B.C.E.",
+        "highPriests": ["Je·hoiʹa·da", "Zech·a·riʹah", "Jo·haʹnan"],
+        "chosenOffspring": "Am·a·ziʹah",
+        "prophets": ["E·liʹshah"],
+        "sons": ["Am·a·ziʹah"],
+    },
+    {
+        "kingNumber": 9,
+        "kingName": "Am·a·ziʹah",
+        "kingNamePlain": "Amaziah",
+        "age": 25,
+        "startReignYear": "858 B.C.E.",
+        "endReignYear": "829 B.C.E.",
+        "highPriests": ["Jo·haʹnan"],
+        "chosenOffspring": "Uz·ziʹah",
+        "prophets": ["E·liʹshah", "Jonah", "Hosea", "Amos"],
+        "sons": ["Uz·ziʹah"],
+    },
+    {
+        "kingNumber": 10,
+        "kingName": "Uz·ziʹah",
+        "kingNamePlain": "Uzziah",
+        "age": 16,
+        "startReignYear": "829 B.C.E.",
+        "endReignYear": "777 B.C.E.",
+        "highPriests": [
+            "Az·a·riʹah II"
+        ],
+        "prophets": ["Micah", "Hosea", "Isaiah", "Joel (?)"],
+        "chosenOffspring": "Joʹtham",
+        "sons": ["Joʹtham"],
+    },
+    {
+        "kingNumber": 11,
+        "kingName": "Joʹtham",
+        "kingNamePlain": "Jotham",
+        "age": 25,
+        "startReignYear": "777 B.C.E.",
+        "endReignYear": "762 B.C.E.",
+        "highPriests": [
+            "Az·a·riʹah II"
+        ],
+        "prophets": ["Micah", "Hosea", "Isaiah"],
+        "chosenOffspring": "Aʹhaz",
+        "sons": ["Aʹhaz"],
+    },
+    {
+        "kingNumber": 12,
+        "kingName": "Aʹhaz",
+        "kingNamePlain": "Ahaz",
+        "age": 20,
+        "startReignYear": "762 B.C.E.",
+        "endReignYear": "746 B.C.E.",
+        "highPriests": [
+            "Urijah (?)"
+        ],
+        "prophets": ["Micah", "Hosea", "Isaiah"],
+        "chosenOffspring": "Hez·e·kiʹah",
+        "sons": ["Hez·e·kiʹah"],
+    },
+    {
+        "kingNumber": 13,
+        "kingName": "Hez·e·kiʹah",
+        "kingNamePlain": "Hezekiah",
+        "age": 25,
+        "startReignYear": "746 B.C.E.",
+        "endReignYear": "716 B.C.E.",
+        "highPriests": ["Az·a·riʹah (II or III)"],
+        "prophets": ["Micah", "Hosea", "Isaiah"],
+        "chosenOffspring": "Ma·nasʹseh",
+        "sons": ["Ma·nasʹseh"],
+    },
+    {
+        "kingNumber": 14,
+        "kingName": "Ma·nasʹseh",
+        "kingNamePlain": "Manasseh",
+        "age": 12,
+        "startReignYear": "716 B.C.E.",
+        "endReignYear": "661 B.C.E.",
+        "highPriests": ["Az·a·riʹah (II or III)"],
+        "chosenOffspring": "Aʹmon",
+        "prophets": ["Isaiah (?)"],
+        "sons": ["Aʹmon"],
+    },
+    {
+        "kingNumber": 15,
+        "kingName": "Aʹmon",
+        "kingNamePlain": "Amon",
+        "age": 22,
+        "startReignYear": "661 B.C.E.",
+        "endReignYear": "659 B.C.E.",
+        "highPriests": ["Az·a·riʹah (II or III)"],
+        "prophets": [],
+        "chosenOffspring": "Jo·siʹah",
+        "sons": ["Jo·siʹah"],
+    },
+    {
+        "kingNumber": 16,
+        "kingName": "Jo·siʹah",
+        "kingNamePlain": "Josiah",
+        "age": 8,
+        "startReignYear": "659 B.C.E.",
+        "endReignYear": "628 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Zephaniah", "Jeremiah", "Huldah"],
+        "chosenOffspring": "Je·hoiʹa·kim",
+        "sons": ["Je·hoʹa·haz", "Jo·haʹnan", "Je·hoiʹa·kim", "Zed·e·kiʹah"],
+    },
+    {
+        "kingNumber": 17,
+        "kingName": "Je·hoʹa·haz (Shalʹlum)",
+        "kingNamePlain": "Jehoahaz",
+        "age": 23,
+        "startReignYear": "628 B.C.E.",
+        "endReignYear": "628 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Jeremiah"],
+        "chosenOffspring": null,
+        "sons": [],
+    },
+    {
+        "kingNumber": 18,
+        "kingName": "Je·hoiʹa·kim (E·liʹa·kim)",
+        "kingNamePlain": "Jehoiakim",
+        "age": 25,
+        "startReignYear": "628 B.C.E.",
+        "endReignYear": "618 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Habakkuk (?), Jeremiah"],
+        "chosenOffspring": "Je·hoiʹa·chin",
+        "sons": ["Je·hoiʹa·chin"],
+    },
+    {
+        "kingNumber": 19,
+        "kingName": "Je·hoiʹa·chin (Jec·o·niʹah)",
+        "kingNamePlain": "Jehoiachin",
+        "age": 18,
+        "startReignYear": "618 B.C.E.",
+        "endReignYear": "617 B.C.E.",
+        "highPriests": ["Hilkiah"],
+        "prophets": ["Jeremiah"],
+        "chosenOffspring": "Shealtiel",
+        "sons": ["Shealtiel"],
+    },
+    {
+        "kingNumber": 20,
+        "kingName": "Zed·e·kiʹah",
+        "kingNamePlain": "Zedekiah",
+        "age": 21,
+        "startReignYear": "617 B.C.E.",
+        "endReignYear": "607 B.C.E.",
+        "highPriests": ["Se·raiʹah"],
+        "prophets": ["Jeremiah", "Ezekiel"],
+        "chosenOffspring": null,
+        "sons": [],
+    },
+];
+//# sourceMappingURL=kings.service.js.map
+
+/***/ }),
+
+/***/ 118:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MeasurementsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var MeasurementsService = (function () {
+    function MeasurementsService() {
+    }
+    MeasurementsService.prototype.getMeasures = function () {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            observer.next(Measurements);
+        });
+    };
+    return MeasurementsService;
+}());
+MeasurementsService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
+], MeasurementsService);
+
+var Measurements = [
+    // Lengths are relative to inches
+    { id: 101, name: "Cubits", amount: 17.5, type: "Length" },
+    { id: 102, name: "Fathoms", amount: 72, type: "Length" },
+    { id: 103, name: "Feet", amount: 12, type: "Length" },
+    { id: 104, name: "Fingerbreadths", amount: 0.73, type: "Length" },
+    { id: 105, name: "Handbreadths", amount: 2.9, type: "Length" },
+    { id: 106, name: "Inches", amount: 1, type: "Length" },
+    { id: 107, name: "Long Cubits", amount: 20.4, type: "Length" },
+    { id: 108, name: "Long Reeds", amount: 122.4, type: "Length" },
+    { id: 109, name: "Miles", amount: 63360, type: "Length" },
+    { id: 110, name: "Reeds", amount: 105, type: "Length" },
+    { id: 111, name: "Roman stadii", amount: 7283.4, type: "Length" },
+    { id: 112, name: "Short Cubits", amount: 15, type: "Length" },
+    { id: 113, name: "Spans", amount: 8.75, type: "Length" },
+    { id: 114, name: "Yards", amount: 36, type: "Length" },
+    // Weights are relative to grams
+    { id: 201, name: "Bekah", amount: 5.7, type: "Weight" },
+    { id: 202, name: "Gerah", amount: 0.57, type: "Weight" },
+    { id: 203, name: "Gram", amount: 1, type: "Weight" },
+    { id: 204, name: "Shekel", amount: 11.4, type: "Weight" },
+    { id: 205, name: "Mina", amount: 570, type: "Weight" },
+    { id: 206, name: "Talent", amount: 34200, type: "Weight" },
+    { id: 207, name: "Pim", amount: 7.8, type: "Weight" },
+    { id: 208, name: "Daric", amount: 8.4, type: "Weight" },
+    { id: 209, name: "Pound", amount: 327, type: "Weight" },
+    // Currency is relative to a day's wage
+    { id: 300, name: "A Day's Wage", amount: 1, type: "Currency" },
+    { id: 301, name: "Lepton", amount: 1 / 128, type: "Currency" },
+    { id: 302, name: "Quadrons", amount: 1 / 64, type: "Currency" },
+    { id: 303, name: "Assarion", amount: 1 / 16, type: "Currency" },
+    { id: 304, name: "Denarius", amount: 1, type: "Currency" },
+    { id: 305, name: "Drachma", amount: 1, type: "Currency" },
+    { id: 306, name: "Didrachma", amount: 2, type: "Currency" },
+    { id: 307, name: "Tetradrachma", amount: 4, type: "Currency" },
+    { id: 308, name: "Mina", amount: 100, type: "Currency" },
+    { id: 309, name: "Talent", amount: 60000, type: "Currency" },
+    // Liquid Measures are based on Liters
+    { id: 401, name: "Bath", amount: 22, type: "Liquid" },
+    { id: 402, name: "Cor", amount: 220, type: "Liquid" },
+    { id: 403, name: "Hin", amount: 3.67, type: "Liquid" },
+    { id: 404, name: "Liter", amount: 1, type: "Liquid" },
+    { id: 405, name: "Log", amount: 0.31, type: "Liquid" },
+    // Dry Measures are based on Liters
+    { id: 501, name: "Cab", amount: 1.22, type: "Dry" },
+    { id: 502, name: "Ephah", amount: 22, type: "Dry" },
+    { id: 503, name: "Homer", amount: 220, type: "Dry" },
+    { id: 504, name: "Liter", amount: 1, type: "Dry" },
+    { id: 505, name: "Omer", amount: 2.2, type: "Dry" },
+    { id: 506, name: "Seah", amount: 7.33, type: "Dry" },
+    { id: 507, name: "Quart", amount: 1.08, type: "Dry" },
+];
+//# sourceMappingURL=measurements.service.js.map
+
+/***/ }),
+
+/***/ 128:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 128;
+
+/***/ }),
+
+/***/ 171:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 171;
+
+/***/ }),
+
+/***/ 220:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["f"] = measurementsReducer;
+/* unused harmony export getState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getMeasurements; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getBaseMeasure; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getAuxMeasures; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getSelectedType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return getTypes; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__ = __webpack_require__(114);
+
+
+var baseMeasure = {
+    value: 1,
+    measure: {
+        id: 6,
+        name: "Inches",
+        amount: 1,
+        type: "Length"
+    }
+};
+var auxMeasures = [
+    {
+        value: 0.05714285714,
+        measure: {
+            id: 1,
+            name: "Cubits",
+            amount: 17.5,
+            type: "Length"
+        }
+    }
+];
+var initState = {
+    measurements: [],
+    baseMeasure: baseMeasure,
+    auxMeasures: auxMeasures,
+    selectedType: "Length",
+    types: []
+};
+function getTypeMeasures(measurements, type) {
+    return measurements.filter(function (m) { return m.type == type; });
+}
+function setAuxMeasures(baseValue, baseAmount, state) {
+    return state.auxMeasures.map(function (aux) {
+        return {
+            value: calculateMeasure(baseValue, baseAmount, aux.measure.amount),
+            measure: aux.measure
+        };
+    });
+}
+function calculateMeasure(baseValue, baseMeasureAmount, auxMeasureAmount) {
+    return parseFloat((baseValue * baseMeasureAmount / auxMeasureAmount).toPrecision(10));
+}
+function measurementsReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["a" /* ADDAUXMEASUREMENT */]:
+            var newAuxMeasures = state.auxMeasures.map(function (aux) { return Object.assign({}, aux); });
+            var thisNewAux = state.measurements.filter(function (m) { return m.type == state.selectedType; })[0];
+            if (newAuxMeasures.length <= 5) {
+                newAuxMeasures.push({
+                    measure: thisNewAux,
+                    value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, thisNewAux.amount)
+                });
+            }
+            return Object.assign({}, state, {
+                auxMeasures: newAuxMeasures
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["c" /* CHANGEAUXMEASURE */]:
+            var auxMeasureAction_1 = action;
+            var auxMeasures_1 = state.auxMeasures.map(function (aux) { return Object.assign({}, aux); });
+            var auxMeasure = state.measurements.find(function (m) { return (m.name === auxMeasureAction_1.payload.name && m.type == state.selectedType); });
+            auxMeasures_1[auxMeasureAction_1.payload.index] = {
+                value: calculateMeasure(state.baseMeasure.value, state.baseMeasure.measure.amount, auxMeasure.amount),
+                measure: auxMeasure
+            };
+            var newState = Object.assign({}, state, {
+                auxMeasures: auxMeasures_1
+            });
+            return newState;
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["d" /* CHANGEAUXVALUE */]:
+            var auxValueAction = action;
+            var auxValues = Object.assign({}, state.auxMeasures);
+            auxValues[auxValueAction.payload.index] = {
+                value: auxValueAction.payload.value,
+                measure: state.auxMeasures[auxValueAction.payload.index].measure
+            };
+            return Object.assign({}, state, {
+                baseMeasure: {
+                    value: calculateMeasure(auxValues[auxValueAction.payload.index].value, auxValues[auxValueAction.payload.index].measure.amount, state.baseMeasure.measure.amount),
+                    measure: state.baseMeasure.measure
+                },
+                auxMeasures: setAuxMeasures(auxValues[auxValueAction.payload.index].value, auxValues[auxValueAction.payload.index].measure.amount, state)
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["e" /* CHANGEBASEMEASURE */]:
+            var newMeasure = state.measurements.find(function (m) { return (m.name === action.payload && m.type == state.selectedType); });
+            return Object.assign({}, state, {
+                auxMeasures: setAuxMeasures(state.baseMeasure.value, newMeasure.amount, state),
+                baseMeasure: {
+                    value: state.baseMeasure.value,
+                    measure: newMeasure
+                }
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["f" /* CHANGEBASEVALUE */]:
+            return Object.assign({}, state, {
+                auxMeasures: setAuxMeasures(action.payload, state.baseMeasure.measure.amount, state),
+                baseMeasure: {
+                    value: action.payload,
+                    measure: state.baseMeasure.measure
+                }
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["g" /* CHANGETYPE */]:
+            var baseMeasure_1 = getTypeMeasures(state.measurements, action.payload)[0];
+            var newAuxMeasure = getTypeMeasures(state.measurements, action.payload)[1];
+            return Object.assign({}, state, {
+                selectedType: action.payload,
+                baseMeasure: {
+                    value: 1,
+                    measure: baseMeasure_1
+                },
+                auxMeasures: [{
+                        value: calculateMeasure(1, baseMeasure_1.amount, newAuxMeasure.amount),
+                        measure: newAuxMeasure
+                    }]
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["o" /* MEASURESLOADED */]:
+            return Object.assign({}, state, {
+                measurements: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_measurements_actions__["r" /* SETTYPES */]:
+            return Object.assign({}, state, {
+                types: action.payload.map(function (m) { return m.type; }).filter(function (v, i, self) { return self.indexOf(v) === i; }).sort(),
+            });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.measurements; };
+var getMeasurements = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.measurements; });
+var getBaseMeasure = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.baseMeasure; });
+var getAuxMeasures = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.auxMeasures; });
+var getSelectedType = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.selectedType; });
+var getTypes = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.types; });
+//# sourceMappingURL=measurements.reducer.js.map
+
+/***/ }),
+
+/***/ 221:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsListModal; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var KingsListModal = (function () {
+    function KingsListModal(platform, params, viewCtrl) {
+        this.platform = platform;
+        this.params = params;
+        this.viewCtrl = viewCtrl;
+        this.kings$ = this.params.get('kings');
+        this.selectedKing$ = this.params.get('selectedKing');
+    }
+    KingsListModal.prototype.dismiss = function (kingNumber) {
+        var _this = this;
+        if (kingNumber > 0) {
+            this.viewCtrl.dismiss(kingNumber);
+        }
+        else {
+            this.selectedKing$.subscribe(function (kingNo) {
+                _this.viewCtrl.dismiss(kingNo);
+            });
+        }
+    };
+    return KingsListModal;
+}());
+KingsListModal = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        template: "\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Choose a king\n    </ion-title>\n    <ion-buttons>\n      <button ion-button (click)=\"dismiss(0)\">\n        <span ion-text color=\"primary\" showWhen=\"ios\">Cancel</span>\n        <ion-icon name=\"md-close\" showWhen=\"android, windows\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n   <ion-list radio-group>\n      <ion-item *ngFor=\"let king of (kings$ | async)\" (click)=\"dismiss(king.kingNumber)\">\n        <span *ngIf=\"king.kingNumber != (selectedKing$ | async)\">\n          {{king.kingName}} <div style=\"color:gray;float: right\" text-right>{{king.startReignYear}}</div>\n        </span>\n        <span *ngIf=\"king.kingNumber == (selectedKing$ | async)\" style=\"color:#488aff;\">\n          {{king.kingName}} <div style=\"color:#488aff;float: right\" text-right>{{king.startReignYear}}</div>\n        </span>\n      </ion-item>\n   </ion-list>\n</ion-content>\n",
+        styles: [".selected {color: blue;}"]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+], KingsListModal);
+
+//# sourceMappingURL=kings-list.modal.js.map
+
+/***/ }),
+
+/***/ 223:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["f"] = kingsReducer;
+/* unused harmony export getState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getKings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getSelectedKing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getShowPriests; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getShowProphets; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return getShowSons; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__ = __webpack_require__(115);
+
+
+var initState = {
+    kings: [],
+    selectedKing: 1,
+    showPriests: false,
+    showProphets: false,
+    showSons: false,
+};
+function kingsReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["f" /* NEXT */]:
+            return Object.assign({}, state, {
+                selectedKing: (state.selectedKing < 20) ? state.selectedKing + 1 : 1
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["h" /* PREV */]:
+            return Object.assign({}, state, {
+                selectedKing: (state.selectedKing > 1) ? state.selectedKing - 1 : 1
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["c" /* KINGSLOADED */]:
+            return Object.assign({}, state, {
+                kings: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["j" /* SETKING */]:
+            return Object.assign({}, state, {
+                selectedKing: (action.payload >= 1 && action.payload <= 20) ? action.payload : state.selectedKing
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["l" /* TOGGLEPRIESTS */]:
+            return Object.assign({}, state, {
+                showPriests: !state.showPriests
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["m" /* TOGGLEPROPHETS */]:
+            return Object.assign({}, state, {
+                showProphets: !state.showProphets
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_kings_actions__["n" /* TOGGLESONS */]:
+            return Object.assign({}, state, {
+                showSons: !state.showSons
+            });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.kings; };
+var getKings = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.kings; });
+var getSelectedKing = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.selectedKing; });
+var getShowPriests = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.showPriests; });
+var getShowProphets = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.showProphets; });
+var getShowSons = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.showSons; });
+//# sourceMappingURL=kings.reducer.js.map
+
+/***/ }),
+
+/***/ 224:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineListModal; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TimelineListModal = (function () {
+    function TimelineListModal(platform, params, viewCtrl) {
+        var _this = this;
+        this.platform = platform;
+        this.params = params;
+        this.viewCtrl = viewCtrl;
+        this.params.get('groups').subscribe(function (groups) { return _this.groups = Object.assign([], groups); });
+        this.params.get('items').subscribe(function (items) { return _this.items = items; });
+    }
+    TimelineListModal.prototype.selectGroup = function (group) {
+        var index = this.groups.indexOf(group);
+        if (index > -1) {
+            this.groups.splice(index, 1);
+        }
+        else {
+            this.groups.push(group);
+        }
+    };
+    TimelineListModal.prototype.isGroupVisible = function (group, groups) {
+        return groups.indexOf(group) > -1;
+    };
+    TimelineListModal.prototype.listAllGroups = function (items) {
+        return new Set(items.map(function (item) { return item.group; }));
+    };
+    TimelineListModal.prototype.dismiss = function (message) {
+        var data = {};
+        switch (message) {
+            case 'save':
+                data = { groups: this.groups };
+                break;
+            default:
+                data = {};
+                break;
+        }
+        this.viewCtrl.dismiss(data);
+    };
+    return TimelineListModal;
+}());
+TimelineListModal = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        template: "\n   <ion-header>\n   <ion-toolbar>\n      <ion-title>\n         Timeline Groups\n      </ion-title>\n      <ion-buttons>\n         <button ion-button (click)=\"dismiss('cancel')\">\n         <span ion-text color=\"primary\" showWhen=\"ios\">Cancel</span>\n         <ion-icon name=\"md-close\" showWhen=\"android, windows\"></ion-icon>\n         </button>\n      </ion-buttons>\n      <ion-buttons end>\n         <button ion-button (click)=\"dismiss('save')\" [disabled]=\"groups.length > 6\">\n            Save\n         </button>\n      </ion-buttons>\n   </ion-toolbar>\n   </ion-header>\n   <ion-content>\n      <ion-list radio-group>\n         <ion-item-divider text-center\n            [style.backgroundColor]=\"(groups.length > 6) ? 'red' : 'lightgray'\"\n            [style.color]=\"(groups.length > 6) ? 'white' : 'black'\">Choose up to 6 groups</ion-item-divider>\n         <ion-item *ngFor=\"let group of listAllGroups(items)\">\n            <ion-label>{{group}}</ion-label>\n            <ion-checkbox [checked]=\"isGroupVisible(group, (groups))\" (click)=\"selectGroup(group)\"></ion-checkbox>\n         </ion-item>\n      </ion-list>\n   </ion-content>\n   ",
+        styles: [".selected {color: blue;}"]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+], TimelineListModal);
+
+//# sourceMappingURL=timeline-list.modal.js.map
+
+/***/ }),
+
+/***/ 225:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["e"] = timelineReducer;
+/* unused harmony export getState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getGroups; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getYears; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getTimelineData; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__ = __webpack_require__(116);
+
+
+var initState = {
+    items: [],
+    groups: ["Kings of Judah", "Kings of Samaria", "Prophets", "Events"],
+    years: [],
+    timelineData: {
+        start: 1000,
+        end: 500,
+        increment: 10
+    },
+};
+function listYears(timelineData) {
+    var years = [];
+    for (var i = timelineData.start; i >= timelineData.end; i = i - timelineData.increment) {
+        years.push(i);
+    }
+    return years;
+}
+function getGroupsTimelineData(state, groups) {
+    var listedItems = state.items.filter(function (item) { return groups.indexOf(item.group) > -1; });
+    var oldestDate = listedItems.map(function (item) { return item.start; }).reduce(function (dt1, dt2) { return dt1 > dt2 ? dt1 : dt2; });
+    var newestDate = listedItems.map(function (item) { return item.start; }).reduce(function (dt1, dt2) { return dt1 < dt2 ? dt1 : dt2; });
+    var start = Math.ceil(oldestDate / 100) * 100;
+    var end = Math.floor(newestDate / 100) * 100;
+    return {
+        start: start,
+        end: end,
+        increment: state.timelineData.increment,
+    };
+}
+function getNextZoomIn(increment) {
+    switch (increment) {
+        case 50:
+            return 20;
+        case 20:
+            return 10;
+        case 10:
+            return 5;
+        default:
+            return 1;
+    }
+}
+function getNextZoomOut(increment) {
+    switch (increment) {
+        case 1:
+            return 5;
+        case 5:
+            return 10;
+        case 10:
+            return 20;
+        default:
+            return 50;
+    }
+}
+function timelineReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__["e" /* TIMELINELOADED */]:
+            return Object.assign({}, state, {
+                items: action.payload,
+                years: listYears(state.timelineData),
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__["c" /* SETGROUPS */]:
+            if (action.payload.length > 6) {
+                return Object.assign({}, state);
+            }
+            var tlData = getGroupsTimelineData(state, action.payload);
+            return Object.assign({}, state, {
+                groups: action.payload,
+                timelineData: tlData,
+                years: listYears(tlData),
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__["h" /* ZOOMIN */]:
+            var zoomInData = Object.assign({}, state.timelineData, {
+                increment: getNextZoomIn(state.timelineData.increment),
+            });
+            return Object.assign({}, state, {
+                timelineData: zoomInData,
+                years: listYears(zoomInData),
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__["i" /* ZOOMOUT */]:
+            var zoomOutData = Object.assign({}, state.timelineData, {
+                increment: getNextZoomOut(state.timelineData.increment),
+            });
+            return Object.assign({}, state, {
+                timelineData: zoomOutData,
+                years: listYears(zoomOutData),
+            });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.timeline; };
+var getGroups = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.groups; });
+var getItems = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.items; });
+var getYears = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.years; });
+var getTimelineData = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.timelineData; });
+//# sourceMappingURL=timeline.reducer.js.map
+
+/***/ }),
+
+/***/ 226:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleSectionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__actions_schedules_actions__ = __webpack_require__(57);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ScheduleSectionComponent = ScheduleSectionComponent_1 = (function () {
+    function ScheduleSectionComponent(navCtrl, navParams, popCtrl, store) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.popCtrl = popCtrl;
+        this.store = store;
+        this.hideCompleted = false;
+        this.key = this.navParams.get('key');
+        this.schedules$ = this.navParams.get('schedules');
+        this.section = this.navParams.get('section');
+    }
+    ScheduleSectionComponent.prototype.ngOnInit = function () { };
+    ScheduleSectionComponent.prototype.getCompletenessText = function (sections) {
+        return sections.filter(function (sect) { return sect.complete; }).length + "/" + sections.length;
+    };
+    ScheduleSectionComponent.prototype.getHiddenText = function () {
+        var completed = this.section.sections.filter(function (s) { return s.complete; }).length;
+        return completed + " items hidden";
+    };
+    ScheduleSectionComponent.prototype.isSectionComplete = function (section) {
+        return (section.sections.filter(function (s) { return s.complete; }).length == section.sections.length);
+    };
+    ScheduleSectionComponent.prototype.markSchedule = function (sections, complete) {
+        var _this = this;
+        this.markAll(sections, complete);
+        this.schedules$.subscribe(function (s) {
+            _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__actions_schedules_actions__["i" /* SaveScheduleAction */]({ key: _this.key, schedules: s }));
+        }).unsubscribe();
+    };
+    ScheduleSectionComponent.prototype.markAll = function (sections, complete) {
+        var _this = this;
+        this.section.complete = (this.section.sections.filter(function (s) { return s.complete; }).length == this.section.sections.length);
+        sections.forEach(function (s) {
+            s.complete = complete;
+            _this.markAll(s.sections, complete);
+        });
+    };
+    ScheduleSectionComponent.prototype.sectionCanAppear = function (section) {
+        return !this.hideCompleted || (this.hideCompleted && !section.complete);
+    };
+    ScheduleSectionComponent.prototype.showSettings = function (ev) {
+        var _this = this;
+        var settings = this.popCtrl.create(__WEBPACK_IMPORTED_MODULE_3__components__["f" /* ScheduleSettingsPopover */], {
+            hideCompleted: this.hideCompleted,
+            markAll: this.isSectionComplete(this.section)
+        });
+        settings.present({ ev: event });
+        settings.onDidDismiss(function (data) {
+            if (data && data.hasOwnProperty('hideCompleted')) {
+                _this.hideCompleted = data.hideCompleted;
+            }
+            if (data && data.hasOwnProperty('markAll') && data.markAll !== _this.isSectionComplete(_this.section)) {
+                _this.markSchedule(_this.section.sections, data.markAll);
+            }
+            if (data && data.clearData) {
+                _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__actions_schedules_actions__["b" /* ClearScheduleAction */](_this.key));
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__containers__["e" /* ReadingSchedulesComponent */]);
+            }
+        });
+    };
+    ScheduleSectionComponent.prototype.tapSection = function (section) {
+        var _this = this;
+        if (section.sections.length > 0) {
+            this.navCtrl.push(ScheduleSectionComponent_1, {
+                key: this.key,
+                schedules: this.schedules$,
+                section: section
+            });
+        }
+        else {
+            section.complete = !section.complete;
+            this.section.complete = this.isSectionComplete(this.section);
+            this.schedules$.subscribe(function (s) {
+                _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__actions_schedules_actions__["i" /* SaveScheduleAction */]({ key: _this.key, schedules: s }));
+            }).unsubscribe();
+        }
+    };
+    ScheduleSectionComponent.prototype.toggleComplete = function () {
+        this.hideCompleted = !this.hideCompleted;
+    };
+    return ScheduleSectionComponent;
+}());
+ScheduleSectionComponent = ScheduleSectionComponent_1 = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-schedule-section',
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>{{section.name}}</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)=\"showSettings($event)\">\n        <ion-icon name=\"md-more\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-list>\n      <ion-list-header *ngIf=\"hideCompleted\" text-center color=\"primary\">\n         {{getHiddenText()}}\n      </ion-list-header>\n      <ng-template ngFor let-sect [ngForOf]=\"section.sections\">\n         <ion-item *ngIf=\"sectionCanAppear(sect)\" (click)=\"tapSection(sect)\">\n            {{sect.name}} \n            <span *ngIf=\"sect.sections.length > 0\" [style.color]=\"'gray'\">({{getCompletenessText(sect.sections)}})</span>\n            <ion-icon *ngIf=\"sect.sections.length > 0 && sect.complete\" color=\"secondary\" name=\"md-checkmark-circle\"></ion-icon>\n\n            <ion-icon *ngIf=\"sect.sections.length > 0\" item-end name=\"ios-arrow-forward\"></ion-icon>\n            <ion-icon *ngIf=\"sect.sections.length == 0 && !sect.complete\" item-end color=\"secondary\" name=\"md-checkmark\"></ion-icon>\n            <ion-icon *ngIf=\"sect.sections.length == 0 && sect.complete\" item-end color=\"secondary\" name=\"md-checkmark-circle\"></ion-icon>\n         </ion-item>\n      </ng-template>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-title>{{getCompletenessText(section.sections)}}</ion-title>\n  </ion-toolbar>\n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */],
+        __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+], ScheduleSectionComponent);
+
+var ScheduleSectionComponent_1;
+//# sourceMappingURL=schedule-section.component.js.map
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__conversion_input_component__ = __webpack_require__(324);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__conversion_input_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__expander_component__ = __webpack_require__(325);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__expander_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kings_list_modal__ = __webpack_require__(221);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__kings_list_modal__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__person_card_component__ = __webpack_require__(326);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__person_card_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_modal__ = __webpack_require__(228);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__profile_modal__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__schedule_settings_popover__ = __webpack_require__(327);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__schedule_settings_popover__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__timeline_row_component__ = __webpack_require__(328);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_6__timeline_row_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__timeline_list_modal__ = __webpack_require__(224);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_7__timeline_list_modal__["a"]; });
+
+
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileModal; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ProfileModal = (function () {
+    function ProfileModal(platform, params, viewCtrl) {
+        this.platform = platform;
+        this.params = params;
+        this.viewCtrl = viewCtrl;
+        this.profile = this.params.get('profile');
+    }
+    ProfileModal.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    ProfileModal.prototype.getTimeFrame = function (start, end) {
+        var timeFrame = "";
+        return ((start - end) <= 0) ? timeFrame = start + " B.C.E." : timeFrame = start + " - " + end + " B.C.E.";
+    };
+    return ProfileModal;
+}());
+ProfileModal = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        template: "\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{profile.name}}\n    </ion-title>\n    <ion-buttons>\n      <button ion-button (click)=\"dismiss()\">\n        <span ion-text color=\"primary\" showWhen=\"ios\">Close</span>\n        <ion-icon name=\"md-close\" showWhen=\"android, windows\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n   <ion-card>\n      <ion-card-content>\n         <ion-card-title text-center>{{profile.name}}</ion-card-title>\n         <ion-label text-center>{{getTimeFrame(profile.start, profile.end)}}</ion-label>\n         <div text-center>\n            <a outline ion-button target=\"_onblank\" [attr.href]=\"profile.url\">\n               Online Library&nbsp;\n               <ion-icon name=\"md-open\"></ion-icon>\n            </a>\n         </div>\n      </ion-card-content>\n   </ion-card>\n</ion-content>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+], ProfileModal);
+
+//# sourceMappingURL=profile.modal.js.map
+
+/***/ }),
+
+/***/ 229:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = schedulesReducer;
+/* unused harmony export getState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getSchedules; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__ = __webpack_require__(57);
+
+
+var initState = {
+    schedules: [],
+};
+function schedulesReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["f" /* LOADSCHEDULES */]:
+            return Object.assign({}, state, {
+                schedules: action.payload.sort(function (a, b) { return a.name.localeCompare(b.name); })
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["e" /* LOADSAVEDSCHEDULE */]:
+            var updated = Object.assign([], state.schedules).filter(function (s) { return s.name !== action.payload.name; });
+            updated.push(action.payload);
+            return Object.assign({}, state, {
+                schedules: updated.sort(function (a, b) { return a.name.localeCompare(b.name); })
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["h" /* SAVESCHEDULE */]:
+            return Object.assign({}, state, {
+                schedules: action.payload.schedules.sort(function (a, b) { return a.name.localeCompare(b.name); })
+            });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.schedules; };
+var getSchedules = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.schedules; });
+//# sourceMappingURL=schedules.reducer.js.map
+
+/***/ }),
+
+/***/ 230:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchedulesService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_fromPromise__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_fromPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__schedules__ = __webpack_require__(335);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var SchedulesService = (function () {
+    function SchedulesService(storage) {
+        this.storage = storage;
+        this.schedules = Object.assign([], [
+            __WEBPACK_IMPORTED_MODULE_5__schedules__["b" /* watchtowerComplete */],
+            __WEBPACK_IMPORTED_MODULE_5__schedules__["a" /* bibleReadingChrono */],
+        ]);
+    }
+    SchedulesService.prototype.clearSchedule = function (scheduleKey) {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].fromPromise(this.storage.set(scheduleKey, JSON.stringify(this.schedules.find(function (s) { return s.name == scheduleKey; }))));
+    };
+    SchedulesService.prototype.getSchedules = function () {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            observer.next(_this.schedules);
+        });
+    };
+    SchedulesService.prototype.getAllSaved = function () {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].merge(this.storage.get(__WEBPACK_IMPORTED_MODULE_5__schedules__["b" /* watchtowerComplete */].name), this.storage.get(__WEBPACK_IMPORTED_MODULE_5__schedules__["a" /* bibleReadingChrono */].name));
+    };
+    SchedulesService.prototype.getSavedSchedule = function (scheduleKey) {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].fromPromise(this.storage.get(scheduleKey));
+    };
+    SchedulesService.prototype.saveSchedule = function (key, schedules) {
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].fromPromise(this.storage.set(key, JSON.stringify(schedules.find(function (s) { return s.name == key; }))));
+    };
+    return SchedulesService;
+}());
+SchedulesService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
+], SchedulesService);
+
+//# sourceMappingURL=schedules.service.js.map
+
+/***/ }),
+
+/***/ 231:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kings_service__ = __webpack_require__(117);
+/* unused harmony reexport KingsService */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__measurements_service__ = __webpack_require__(118);
+/* unused harmony reexport MeasurementsService */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schedules_service__ = __webpack_require__(230);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__schedules_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__timeline_service__ = __webpack_require__(232);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__timeline_service__["a"]; });
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 232:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var TimelineService = (function () {
+    function TimelineService() {
+    }
+    TimelineService.prototype.getAllItems = function () {
+        var items = bibleBooksCoverage.concat(events, kingsOfJudah, kingsOfSamaria, lifespans, prophets, outstandingHistoricalDates);
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].create(function (observer) {
+            observer.next(items);
+        });
+    };
+    return TimelineService;
+}());
+TimelineService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
+], TimelineService);
+
+var lifespans = [
+    { name: "Jehovah", start: 4100, end: 1, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehovah", group: "Lifespans" },
+    { name: "Adam", start: 4026, end: 3096, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam", group: "Lifespans" },
+    { name: "Enoch", start: 3404, end: 3039, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch", group: "Lifespans" },
+    { name: "Methuselah", start: 3339, end: 2370, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah", group: "Lifespans" },
+];
+var outstandingHistoricalDates = [
+    { name: "Adam's creation", start: 4026, end: 4026, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam", group: "Outstanding Historical Dates" },
+    { name: "Edenic covenant made, first prophecy", start: 4026, end: 4026, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Covenant", group: "Outstanding Historical Dates" },
+    { name: "Cain slays Abel", start: 3896, end: 3896, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Cain", group: "Outstanding Historical Dates" },
+    { name: "Birth of Seth", start: 3896, end: 3896, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Seth", group: "Outstanding Historical Dates" },
+    { name: "Birth of righteous Enoch", start: 3404, end: 3404, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch", group: "Outstanding Historical Dates" },
+    { name: "Birth of Methuselah", start: 3339, end: 3339, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah", group: "Outstanding Historical Dates" },
+    { name: "Birth of Lamech", start: 3152, end: 3152, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Lamech", group: "Outstanding Historical Dates" },
+    { name: "Death of Adam", start: 3096, end: 3096, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Adam", group: "Outstanding Historical Dates" },
+    { name: "Transference of Enoch", start: 3039, end: 3039, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Enoch", group: "Outstanding Historical Dates" },
+    { name: "Birth of Noah", start: 2970, end: 2970, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Noah", group: "Outstanding Historical Dates" },
+    { name: "God's pronouncement as to mankind", start: 2490, end: 2490, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Flood", group: "Outstanding Historical Dates" },
+    { name: "Birth of Japeth", start: 2470, end: 2470, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Japeth", group: "Outstanding Historical Dates" },
+    { name: "Birth of Shem", start: 2468, end: 2468, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Shem", group: "Outstanding Historical Dates" },
+    { name: "Death of Methuselah", start: 2370, end: 2370, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Methuselah", group: "Outstanding Historical Dates" },
+    { name: "The Great Flood", start: 2370, end: 2370, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Flood", group: "Outstanding Historical Dates" },
+];
+var bibleBooksCoverage = [
+    { name: 'Genesis', start: 4100, end: 1657, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Genesis", group: "Bible Books Time Period" },
+    { name: 'Exodus', start: 1657, end: 1512, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Exodus", group: "Bible Books Time Period" },
+    { name: 'Leviticus', start: 1512, end: 1512, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Leviticus", group: "Bible Books Time Period" },
+    { name: 'Numbers', start: 1512, end: 1473, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Numbers", group: "Bible Books Time Period" },
+    { name: 'Deuteronomy', start: 1473, end: 1473, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Deuteronomy", group: "Bible Books Time Period" },
+    { name: 'Joshua', start: 1473, end: 1450, tier: 6, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Joshua", group: "Bible Books Time Period" },
+    { name: 'Judges', start: 1450, end: 1120, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Judges", group: "Bible Books Time Period" },
+    { name: 'Ruth', start: 1131, end: 1120, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ruth", group: "Bible Books Time Period" },
+    { name: '1 Samuel', start: 1180, end: 1078, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Samuel", group: "Bible Books Time Period" },
+    { name: '2 Samuel', start: 1077, end: 1040, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Samuel", group: "Bible Books Time Period" },
+    { name: '1 Kings', start: 1040, end: 911, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Kings", group: "Bible Books Time Period" },
+    { name: '2 Kings', start: 920, end: 580, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Kings", group: "Bible Books Time Period" },
+    { name: '1 Chronicles', start: 1077, end: 1037, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=1%20Chronicles", group: "Bible Books Time Period" },
+    { name: '2 Chronicles', start: 1037, end: 537, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=2%20Chronicles", group: "Bible Books Time Period" },
+    { name: 'Ezra', start: 537, end: 467, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezra", group: "Bible Books Time Period" },
+    { name: 'Nehemiah', start: 456, end: 443, tier: 6, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nehemiah", group: "Bible Books Time Period" },
+    { name: 'Esther', start: 493, end: 475, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Esther", group: "Bible Books Time Period" },
+    { name: 'Psalms', start: 460, end: 460, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Psalms", group: "Bible Books Time Period" },
+    { name: 'Proverbs', start: 717, end: 717, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Proverbs", group: "Bible Books Time Period" },
+    { name: 'Ecclesiastes', start: 1000, end: 1000, tier: 6, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ecclesiastes", group: "Bible Books Time Period" },
+    { name: 'Song of Solomon', start: 1020, end: 1020, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Song%20of%20Solomon", group: "Bible Books Time Period" },
+    { name: 'Isaiah', start: 778, end: 732, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Isaiah", group: "Bible Books Time Period" },
+    { name: 'Jeremiah', start: 647, end: 580, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeremiah", group: "Bible Books Time Period" },
+    { name: 'Lamentations', start: 607, end: 607, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Lamentations", group: "Bible Books Time Period" },
+    { name: 'Ezekiel', start: 613, end: 591, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezekiel", group: "Bible Books Time Period" },
+    { name: 'Daniel', start: 618, end: 536, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Daniel", group: "Bible Books Time Period" },
+    { name: 'Hosea', start: 804, end: 745, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hosea", group: "Bible Books Time Period" },
+    { name: 'Joel', start: 820, end: 820, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Joel", group: "Bible Books Time Period" },
+    { name: 'Amos', start: 804, end: 804, tier: 6, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amos", group: "Bible Books Time Period" },
+    { name: 'Obadiah', start: 607, end: 607, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Obadiah", group: "Bible Books Time Period" },
+    { name: 'Jonah', start: 844, end: 844, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jonah", group: "Bible Books Time Period" },
+    { name: 'Micah', start: 777, end: 717, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Micah", group: "Bible Books Time Period" },
+    { name: 'Nahum', start: 632, end: 632, tier: 6, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nahum", group: "Bible Books Time Period" },
+    { name: 'Habakkuk', start: 628, end: 628, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Habakkukl", group: "Bible Books Time Period" },
+    { name: 'Zephaniah', start: 648, end: 648, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zephaniah", group: "Bible Books Time Period" },
+    { name: 'Haggai', start: 520, end: 520, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Haggai", group: "Bible Books Time Period" },
+    { name: 'Zechariah', start: 520, end: 518, tier: 6, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zechariah", group: "Bible Books Time Period" },
+    { name: 'Malachi', start: 443, end: 443, tier: 5, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Malachi", group: "Bible Books Time Period" },
+];
+var kingsOfJudah = [
+    { name: 'Rehoboam', start: 997, end: 980, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Rehoboam", group: "Kings of Judah" },
+    { name: 'Abijah', start: 980, end: 978, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Abijah", group: "Kings of Judah" },
+    { name: 'Asa', start: 978, end: 937, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Asa", group: "Kings of Judah" },
+    { name: 'Jehoshaphat', start: 937, end: 913, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoshaphat", group: "Kings of Judah" },
+    { name: 'Jehoram', start: 913, end: 906, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram", group: "Kings of Judah" },
+    { name: 'Ahaziah', start: 906, end: 905, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah", group: "Kings of Judah" },
+    { name: 'Athaliah', start: 905, end: 898, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Athaliah", group: "Kings of Judah" },
+    { name: 'Jehoash', start: 898, end: 858, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash", group: "Kings of Judah" },
+    { name: 'Amaziah', start: 858, end: 829, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amaziah", group: "Kings of Judah" },
+    { name: 'Uzziah', start: 829, end: 777, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Uzziah", group: "Kings of Judah" },
+    { name: 'Jotham', start: 777, end: 762, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jotham", group: "Kings of Judah" },
+    { name: 'Ahaz', start: 762, end: 746, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaz", group: "Kings of Judah" },
+    { name: 'Hezekiah', start: 746, end: 716, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hezekiah", group: "Kings of Judah" },
+    { name: 'Manasseh', start: 716, end: 661, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Manasseh", group: "Kings of Judah" },
+    { name: 'Amon', start: 661, end: 659, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amon", group: "Kings of Judah" },
+    { name: 'Josiah', start: 659, end: 628, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Josiah", group: "Kings of Judah" },
+    { name: 'Jehoahaz', start: 628, end: 628, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz", group: "Kings of Judah" },
+    { name: 'Jehoiakim', start: 628, end: 618, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiakim", group: "Kings of Judah" },
+    { name: 'Jehoiachin', start: 618, end: 617, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoiachin", group: "Kings of Judah" },
+    { name: 'Zedekiah', start: 617, end: 607, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zedekiah", group: "Kings of Judah" },
+];
+var kingsOfSamaria = [
+    { name: 'Jeroboam', start: 997, end: 976, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeroboam", group: "Kings of Samaria" },
+    { name: 'Nadab', start: 976, end: 975, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nadab", group: "Kings of Samaria" },
+    { name: 'Baasha', start: 975, end: 952, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Baasha", group: "Kings of Samaria" },
+    { name: 'Elah', start: 952, end: 951, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Elah", group: "Kings of Samaria" },
+    { name: 'Zimri', start: 951, end: 951, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zimri", group: "Kings of Samaria" },
+    { name: 'Tibni', start: 951, end: 947, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Tibni", group: "Kings of Samaria" },
+    { name: 'Omri', start: 951, end: 940, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Omri", group: "Kings of Samaria" },
+    { name: 'Ahab', start: 940, end: 920, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahab", group: "Kings of Samaria" },
+    { name: 'Ahaziah', start: 920, end: 917, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ahaziah", group: "Kings of Samaria" },
+    { name: 'Jehoram', start: 917, end: 905, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoram", group: "Kings of Samaria" },
+    { name: 'Jehu', start: 905, end: 876, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehu", group: "Kings of Samaria" },
+    { name: 'Jehoahaz', start: 876, end: 859, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoahaz", group: "Kings of Samaria" },
+    { name: 'Jehoash', start: 862, end: 844, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jehoash", group: "Kings of Samaria" },
+    { name: 'Jeroboam II', start: 844, end: 803, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeroboam", group: "Kings of Samaria" },
+    { name: 'Zechariah', start: 803, end: 791, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zechariah", group: "Kings of Samaria" },
+    { name: 'Shallum', start: 791, end: 791, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Shallum", group: "Kings of Samaria" },
+    { name: 'Menahem', start: 791, end: 780, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Menahem", group: "Kings of Samaria" },
+    { name: 'Pekahiah', start: 780, end: 778, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Pekahiah", group: "Kings of Samaria" },
+    { name: 'Pekah', start: 778, end: 758, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Pekah", group: "Kings of Samaria" },
+    { name: 'Hoshea', start: 758, end: 740, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hoshea", group: "Kings of Samaria" },
+];
+var prophets = [
+    { name: 'Elijah', start: 940, end: 905, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Elijah", group: "Prophets" },
+    { name: 'Elishah', start: 917, end: 852, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Elishah", group: "Prophets" },
+    { name: 'Jonah', start: 849, end: 818, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jonah", group: "Prophets" },
+    { name: 'Amos', start: 829, end: 803, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Amos", group: "Prophets" },
+    { name: 'Joel', start: 825, end: 820, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Joel", group: "Prophets" },
+    { name: 'Hosea', start: 808, end: 740, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Hosea", group: "Prophets" },
+    { name: 'Isaiah', start: 780, end: 730, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Isaiah", group: "Prophets" },
+    { name: 'Micah', start: 775, end: 716, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Micah", group: "Prophets" },
+    { name: 'Zephaniah', start: 659, end: 640, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Zephaniah", group: "Prophets" },
+    { name: 'Nahum', start: 659, end: 635, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Nahum", group: "Prophets" },
+    { name: 'Jeremiah', start: 645, end: 570, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Jeremiah", group: "Prophets" },
+    { name: 'Habakkuk', start: 633, end: 623, tier: 4, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Habakkuk", group: "Prophets" },
+    { name: 'Obadiah', start: 613, end: 600, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Obadiah", group: "Prophets" },
+    { name: 'Ezekiel', start: 610, end: 591, tier: 2, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Ezekiel", group: "Prophets" },
+    { name: 'Daniel', start: 617, end: 535, tier: 3, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Daniel", group: "Prophets" },
+];
+var events = [
+    { name: 'Destruction of Samaria', start: 740, end: 740, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Destruction%20of%20Samaria", group: "Events" },
+    { name: 'Destruction of Jerusalem', start: 607, end: 607, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Destruction%20of%20Jerusalem", group: "Events" },
+    { name: 'Freed from Babylonian Captivity', start: 535, end: 535, tier: 1, url: "https://wol.jw.org/en/wol/s/r1/lp-e?q=Freed%20from%20Babylonian%20Captivity", group: "Events" },
+];
+//# sourceMappingURL=timeline.service.js.map
+
+/***/ }),
+
+/***/ 233:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(246);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 246:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngrx_effects__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngrx_store_devtools__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__containers__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_kings_service__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__effects_kings_effects__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_measurements_service__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__effects_measurements_effects__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_schedules_service__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__effects_schedules_effects__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_timeline_service__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__effects_timeline_effects__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__reducers_kings_reducer__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__reducers_measurements_reducer__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__reducers_schedules_reducer__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__reducers_timeline_reducer__ = __webpack_require__(225);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["a" /* ConversionItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["a" /* ConverterComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["b" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["b" /* ExpanderComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["c" /* KingsComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["d" /* KingsTimelineComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["d" /* PersonCardComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["f" /* ScheduleSettingsPopover */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["g" /* TimelineListModal */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["h" /* TimelineRowComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["c" /* KingsListModal */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["e" /* ProfileModal */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["e" /* ReadingSchedulesComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["f" /* ScheduleSectionComponent */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */]),
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_6__ngrx_store__["i" /* StoreModule */].forRoot({
+                kings: __WEBPACK_IMPORTED_MODULE_20__reducers_kings_reducer__["f" /* kingsReducer */],
+                measurements: __WEBPACK_IMPORTED_MODULE_21__reducers_measurements_reducer__["f" /* measurementsReducer */],
+                schedules: __WEBPACK_IMPORTED_MODULE_22__reducers_schedules_reducer__["b" /* schedulesReducer */],
+                timeline: __WEBPACK_IMPORTED_MODULE_23__reducers_timeline_reducer__["e" /* timelineReducer */],
+            }),
+            __WEBPACK_IMPORTED_MODULE_7__ngrx_effects__["c" /* EffectsModule */].forRoot([__WEBPACK_IMPORTED_MODULE_13__effects_kings_effects__["a" /* KingsEffects */], __WEBPACK_IMPORTED_MODULE_15__effects_measurements_effects__["a" /* MeasurementsEffects */], __WEBPACK_IMPORTED_MODULE_17__effects_schedules_effects__["a" /* SchedulesEffects */], __WEBPACK_IMPORTED_MODULE_19__effects_timeline_effects__["a" /* TimelineEffects */]]),
+            __WEBPACK_IMPORTED_MODULE_8__ngrx_store_devtools__["a" /* StoreDevtoolsModule */].instrument(),
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["a" /* ConverterComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["b" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["c" /* KingsComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["d" /* KingsTimelineComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["c" /* KingsListModal */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["e" /* ProfileModal */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["g" /* TimelineListModal */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["e" /* ReadingSchedulesComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__containers__["f" /* ScheduleSectionComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components__["f" /* ScheduleSettingsPopover */],
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */],
+            { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+            __WEBPACK_IMPORTED_MODULE_12__services_kings_service__["a" /* KingsService */],
+            __WEBPACK_IMPORTED_MODULE_14__services_measurements_service__["a" /* MeasurementsService */],
+            __WEBPACK_IMPORTED_MODULE_16__services_schedules_service__["a" /* SchedulesService */],
+            __WEBPACK_IMPORTED_MODULE_18__services_timeline_service__["a" /* TimelineService */],
+        ]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 318:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.platform = platform;
+        this.statusBar = statusBar;
+        this.splashScreen = splashScreen;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__containers__["b" /* DashboardComponent */];
+        this.initializeApp();
+        // used for an example of ngFor and navigation
+        this.pages = [
+            { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__containers__["b" /* DashboardComponent */] },
+            { title: 'Kings', component: __WEBPACK_IMPORTED_MODULE_4__containers__["c" /* KingsComponent */] },
+            { title: 'Timeline', component: __WEBPACK_IMPORTED_MODULE_4__containers__["d" /* KingsTimelineComponent */] },
+            { title: 'Converter', component: __WEBPACK_IMPORTED_MODULE_4__containers__["a" /* ConverterComponent */] },
+            { title: 'Schedule', component: __WEBPACK_IMPORTED_MODULE_4__containers__["e" /* ReadingSchedulesComponent */] },
+        ];
+    }
+    MyApp.prototype.initializeApp = function () {
+        var _this = this;
+        this.platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            _this.statusBar.styleDefault();
+            _this.splashScreen.hide();
+        });
+    };
+    MyApp.prototype.openPage = function (page) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.nav.setRoot(page.component);
+    };
+    return MyApp;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
+], MyApp.prototype, "nav", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\src\code\projects\lifegems.github.io\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\src\code\projects\lifegems.github.io\src\app\app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 319:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__ = __webpack_require__(220);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ConverterComponent = (function () {
+    function ConverterComponent(navCtrl, store) {
+        this.navCtrl = navCtrl;
+        this.store = store;
+        this.measurements$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__["c" /* getMeasurements */]);
+        this.selectedType$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__["d" /* getSelectedType */]);
+        this.types$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__["e" /* getTypes */]);
+        this.baseMeasure$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__["b" /* getBaseMeasure */]);
+        this.auxMeasures$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__["a" /* getAuxMeasures */]);
+    }
+    ConverterComponent.prototype.ngOnInit = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["n" /* InitMeasuresAction */]());
+    };
+    ConverterComponent.prototype.addMeasurement = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["b" /* AddAuxMeasurementAction */]());
+    };
+    ConverterComponent.prototype.changeAuxMeasure = function (aux) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["h" /* ChangeAuxMeasureAction */](aux));
+    };
+    ConverterComponent.prototype.changeAuxValue = function (aux) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["i" /* ChangeAuxValueAction */](aux));
+    };
+    ConverterComponent.prototype.changeBaseMeasure = function (base) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["j" /* ChangeBaseMeasureAction */](base.name));
+    };
+    ConverterComponent.prototype.changeBaseValue = function (base) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["k" /* ChangeBaseValueAction */](base.value));
+    };
+    ConverterComponent.prototype.changeType = function (type) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__["l" /* ChangeTypeAction */](type));
+    };
+    ConverterComponent.prototype.listTypeMeasurements = function (type, measurements) {
+        return measurements.filter(function (m) { return m.type == type; });
+    };
+    ConverterComponent.prototype.trackAux = function (index, item, any) {
+        return index;
+    };
+    return ConverterComponent;
+}());
+ConverterComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-converter',
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Unit Converter</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)=\"addMeasurement()\">\n        <ion-icon name=\"md-add\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-card>\n      <ion-card-header no-padding>\n         <ion-list>\n            <ion-item>\n               <ion-label>Measurement Type</ion-label>\n               <ion-select style=\"font-size:12px\" [ngModel]=\"(selectedType$ | async)\" (ngModelChange)=\"changeType($event)\">\n                  <ion-option [selected]=\"type == (selectedType$ | async)\" *ngFor=\"let type of (types$ | async)\">{{type}}</ion-option>\n               </ion-select>\n            </ion-item>\n          </ion-list>\n      </ion-card-header>\n      <ion-card-content no-padding>\n         <ion-list>\n            <ion-item-divider text-center>Units</ion-item-divider>\n            <app-conversion-item\n               [index]=\"0\" [measureValue]=\"(baseMeasure$ | async)\" [measurements]=\"listTypeMeasurements(selectedType$ | async, measurements$ | async)\"\n               (changeValue)=\"changeBaseValue($event)\" (changeMeasure)=\"changeBaseMeasure($event)\">\n            </app-conversion-item>\n            <app-conversion-item *ngFor=\"let aux of (auxMeasures$ | async); let i = index; trackBy:trackAux\"\n               [index]=\"i\" [measureValue]=\"aux\" [measurements]=\"listTypeMeasurements(selectedType$ | async, measurements$ | async)\"\n               (changeValue)=\"changeAuxValue($event)\" (changeMeasure)=\"changeAuxMeasure($event)\">\n            </app-conversion-item>\n         </ion-list>\n      </ion-card-content>\n   </ion-card>\n</ion-content>\n\n<ion-footer>\n  \n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+], ConverterComponent);
+
+//# sourceMappingURL=converter.component.js.map
+
+/***/ }),
+
+/***/ 320:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DashboardComponent = (function () {
+    function DashboardComponent(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    DashboardComponent.prototype.ngOnInit = function () {
+    };
+    DashboardComponent.prototype.navigateToApp = function (app) {
+        switch (app) {
+            case 'kings':
+                this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__containers__["c" /* KingsComponent */]);
+                break;
+            case 'timeline':
+                this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__containers__["d" /* KingsTimelineComponent */]);
+                break;
+            case 'converter':
+                this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__containers__["a" /* ConverterComponent */]);
+                break;
+            case 'schedules':
+                this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__containers__["e" /* ReadingSchedulesComponent */]);
+                break;
+        }
+    };
+    return DashboardComponent;
+}());
+DashboardComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-dashboard',
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <div class=\"apps--grid\">\n      <div class=\"app\" (click)=\"navigateToApp('kings')\">\n         <div class=\"app--icon app--icon--purple\">\n            <i class=\"fa fa-user fa-2x\"></i>\n         </div>\n         <div class=\"app--title\">Kings</div>\n      </div>\n      <div class=\"app\" (click)=\"navigateToApp('timeline')\">\n         <div class=\"app--icon app--icon--green\">\n            <i class=\"fa fa-sliders-h fa-2x\"></i>\n         </div>\n         <div class=\"app--title\">Timeline</div>\n      </div>\n      <div class=\"app\" (click)=\"navigateToApp('converter')\">\n         <div class=\"app--icon app--icon--skyblue\">\n            <i class=\"fa fa-sliders-h fa-2x\"></i>\n         </div>\n         <div class=\"app--title\">Converter</div>\n      </div>\n      <div class=\"app\" (click)=\"navigateToApp('schedules')\">\n         <div class=\"app--icon app--icon--gray\">\n            <i class=\"fa fa-book fa-2x\"></i>\n         </div>\n         <div class=\"app--title\">Schedules</div>\n      </div>\n   </div>\n   <!--<ion-grid>\n      <ion-row>\n         <ion-col col-4>\n            <ion-card>\n               <ion-card-header text-center (click)=\"navigateToApp('kings')\">\n                  <div style=\"color:purple\"><i class=\"fa fa-user\"></i></div>\n               </ion-card-header>\n            </ion-card>\n            <div text-center>Kings</div>\n         </ion-col>\n         <ion-col col-4>\n            <ion-card>\n               <ion-card-header text-center (click)=\"navigateToApp('timeline')\">\n                  <div style=\"color:green\"><i class=\"fa fa-sliders-h\"></i></div>\n               </ion-card-header>\n            </ion-card>\n            <div text-center>Timeline</div>\n         </ion-col>\n         <ion-col col-4>\n            <ion-card>\n               <ion-card-header text-center (click)=\"navigateToApp('converter')\">\n                  <div style=\"color:skyblue\"><i class=\"fa fa-balance-scale\"></i></div>\n               </ion-card-header>\n            </ion-card>\n            <div text-center>Converter</div>\n         </ion-col>\n      </ion-row>\n      <ion-row>\n         <ion-col col-4>\n            <ion-card>\n               <ion-card-header text-center (click)=\"navigateToApp('schedules')\">\n                  <div style=\"color:gray\"><i class=\"fa fa-book\"></i></div>\n               </ion-card-header>\n            </ion-card>\n            <div text-center>Schedules</div>\n         </ion-col>\n      </ion-row>\n   </ion-grid>-->\n</ion-content>\n\n<ion-footer>\n  \n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+], DashboardComponent);
+
+//# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
+/***/ 321:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_kings_list_modal__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__ = __webpack_require__(223);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var KingsComponent = (function () {
+    function KingsComponent(navCtrl, modalCtrl, store) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.store = store;
+        this.kings$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["a" /* getKings */]);
+        this.selectedKing$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["b" /* getSelectedKing */]);
+        this.showPriests$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["c" /* getShowPriests */]);
+        this.showProphets$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["d" /* getShowProphets */]);
+        this.showSons$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__["e" /* getShowSons */]);
+    }
+    KingsComponent.prototype.ngOnInit = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["b" /* InitKingsAction */]());
+    };
+    KingsComponent.prototype.showKingsListModal = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__components_kings_list_modal__["a" /* KingsListModal */], { kings: this.kings$, selectedKing: this.selectedKing$ });
+        modal.present();
+        modal.onDidDismiss(function (kingNumber) {
+            _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["k" /* SetKingAction */](kingNumber));
+            _this.slides.slideTo(kingNumber - 1);
+        });
+    };
+    KingsComponent.prototype.nextKing = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["g" /* NextAction */]());
+        this.slides.slideNext();
+    };
+    KingsComponent.prototype.prevKing = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["i" /* PrevAction */]());
+        this.slides.slidePrev();
+    };
+    KingsComponent.prototype.updateKingNumber = function (event) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["k" /* SetKingAction */](event.realIndex + 1));
+    };
+    KingsComponent.prototype.toggleSons = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["q" /* ToggleSonsAction */]());
+    };
+    KingsComponent.prototype.togglePriests = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["o" /* TogglePriestsAction */]());
+    };
+    KingsComponent.prototype.toggleProphets = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["p" /* ToggleProphetsAction */]());
+    };
+    return KingsComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Slides */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Slides */])
+], KingsComponent.prototype, "slides", void 0);
+KingsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-home',
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Kings of Judah</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-slides pager paginationType=\"progress\" centeredSlides=\"true\" (ionSlideDidChange)=\"updateKingNumber($event)\">\n    <ion-slide *ngFor=\"let king of (kings$ | async)\">\n      <app-person-card [king]=\"king\" \n        [toggleSons]=\"showSons$ | async\" (toggleSonsChange)=\"toggleSons()\"\n        [togglePriests]=\"showPriests$ | async\" (togglePriestsChange)=\"togglePriests()\"\n        [toggleProphets]=\"showProphets$ | async\" (toggleProphetsChange)=\"toggleProphets()\">\n      </app-person-card>\n    </ion-slide>\n  </ion-slides>\n  <ion-fab right bottom>\n    <button ion-fab color=\"primary\" (click)=\"showKingsListModal()\">\n      <ion-icon name=\"md-albums\"></ion-icon>\n    </button>\n  </ion-fab>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <button [disabled]=\"(selectedKing$ | async) == 1\" (click)=\"prevKing()\" block small ion-button icon-only clear>\n            <ion-icon name=\"arrow-back\"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col>\n          <button [disabled]=\"(selectedKing$ | async) == 20\" (click)=\"nextKing()\" block small ion-button icon-only clear>\n            <ion-icon name=\"arrow-forward\"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */], __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["h" /* Store */]])
+], KingsComponent);
+
+//# sourceMappingURL=kings.component.js.map
+
+/***/ }),
+
+/***/ 322:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsTimelineComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_timeline_list_modal__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__ = __webpack_require__(225);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var KingsTimelineComponent = (function () {
+    function KingsTimelineComponent(navCtrl, modalCtrl, store) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.store = store;
+        this.groups$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__["a" /* getGroups */]);
+        this.items$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__["b" /* getItems */]);
+        this.years$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__["d" /* getYears */]);
+        this.timelineData$ = this.store.select(__WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__["c" /* getTimelineData */]);
+    }
+    KingsTimelineComponent.prototype.ngOnInit = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["b" /* InitTimelineAction */]());
+    };
+    KingsTimelineComponent.prototype.showGroupSelection = function (items$, groups$) {
+        var _this = this;
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_5__components_timeline_list_modal__["a" /* TimelineListModal */], {
+            items: items$,
+            groups: groups$
+        });
+        modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data && data.groups && data.groups.length <= 6) {
+                _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["d" /* SetGroupsAction */](data.groups));
+            }
+        });
+    };
+    KingsTimelineComponent.prototype.getGroupRowCount = function (items, group) {
+        return this.listGroupItems(items, group).map(function (item) { return item.tier; }).reduce(function (a, b) { return a > b ? a : b; });
+    };
+    KingsTimelineComponent.prototype.getTimelineWidth = function (timelineData) {
+        return ((timelineData.start - timelineData.end) * timelineData.increment) + 'px';
+    };
+    KingsTimelineComponent.prototype.listGroupItems = function (items, group) {
+        return items.filter(function (item) { return item.group == group; });
+    };
+    KingsTimelineComponent.prototype.listYearItems = function (years) {
+        return years.filter(function (y) { return y <= 4100; }).map(function (year) {
+            return {
+                name: (year == 4100) ? "Creation" : year + " B.C.E.",
+                start: year,
+                end: year,
+                tier: 1,
+                url: "",
+                group: "TIMELINE_DATES"
+            };
+        });
+    };
+    KingsTimelineComponent.prototype.zoomIn = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["j" /* ZoomInAction */]());
+    };
+    KingsTimelineComponent.prototype.zoomOut = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["k" /* ZoomOutAction */]());
+    };
+    return KingsTimelineComponent;
+}());
+KingsTimelineComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-timeline',
+        template: "\n<ion-header>\n<ion-navbar>\n   <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n   </button>\n   <ion-title>Timeline</ion-title>\n   <ion-buttons end>\n      <button ion-button icon-only (click)=\"showGroupSelection(items$, groups$)\">\n         <ion-icon name=\"md-options\"></ion-icon>\n      </button>\n   </ion-buttons>\n</ion-navbar>\n</ion-header>\n\n<ion-content no-padding>\n   <div class=\"timeline--outer\">\n      <div [style.width]=\"getTimelineWidth(timelineData$ | async)\" class=\"timeline--inner\">\n         <ion-grid class=\"timeline--grid\" no-padding>\n            <ion-row class=\"box box--1\">\n               <app-timeline-row [timelineData]=\"(timelineData$ | async)\" [rows]=\"1\" [rowNumber]=\"1\" [items]=\"listYearItems(years$ | async)\"></app-timeline-row>\n            </ion-row>\n            <ion-row class=\"box box--2\" *ngFor=\"let group of (groups$ | async); let i = index\">\n               <app-timeline-row [timelineData]=\"(timelineData$ | async)\" [rows]=\"getGroupRowCount((items$ | async), group)\" [rowNumber]=\"i + 1\" [items]=\"listGroupItems((items$ | async), group)\"></app-timeline-row>\n            </ion-row>\n         </ion-grid>\n      </div>\n   </div>\n   <ion-fab right bottom>\n      <button ion-fab><ion-icon name=\"md-settings\"></ion-icon></button>\n      <ion-fab-list side=\"left\">\n         <button ion-fab mini\n            [ngClass]=\"{'disabled':(timelineData$ | async).increment <= 1}\"\n            [disabled]=\"(timelineData$ | async).increment <= 1\"\n            (click)=\"zoomIn()\"><ion-icon name=\"md-add\"></ion-icon></button>\n         <button ion-fab mini\n            [ngClass]=\"{'disabled':(timelineData$ | async).increment >= 50}\"\n            [disabled]=\"(timelineData$ | async).increment >= 50\"\n            (click)=\"zoomOut()\"><ion-icon name=\"md-remove\"></ion-icon></button>\n      </ion-fab-list>\n   </ion-fab>\n</ion-content>\n\n<ion-footer>\n\n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+], KingsTimelineComponent);
+
+//# sourceMappingURL=kings-timeline.component.js.map
+
+/***/ }),
+
+/***/ 323:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReadingSchedulesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__schedule_section_component__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__ = __webpack_require__(229);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ReadingSchedulesComponent = (function () {
+    function ReadingSchedulesComponent(navCtrl, store) {
+        this.navCtrl = navCtrl;
+        this.store = store;
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["d" /* InitSchedulesAction */]());
+    }
+    ReadingSchedulesComponent.prototype.ngOnInit = function () {
+        this.schedules$ = this.store.select(__WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__["a" /* getSchedules */]);
+    };
+    ReadingSchedulesComponent.prototype.showSection = function (section) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__schedule_section_component__["a" /* ScheduleSectionComponent */], {
+            key: section.name,
+            schedules: this.schedules$,
+            section: section,
+        });
+    };
+    return ReadingSchedulesComponent;
+}());
+ReadingSchedulesComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-schedules',
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Schedules</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-list>\n      <ion-item detail-push *ngFor=\"let schedule of (schedules$ | async)\" (click)=\"showSection(schedule)\">\n         {{schedule.name}}\n         <ion-icon *ngIf=\"schedule.sections.length > 0 && schedule.complete\" color=\"secondary\" name=\"md-checkmark-circle\"></ion-icon>\n      </ion-item>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n  \n</ion-footer>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+], ReadingSchedulesComponent);
+
+//# sourceMappingURL=reading-schedules.component.js.map
+
+/***/ }),
+
+/***/ 324:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConversionItemComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ConversionItemComponent = (function () {
+    function ConversionItemComponent() {
+        this.changeValue = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.changeMeasure = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ConversionItemComponent.prototype.handleChangeValue = function (index, value) {
+        this.changeValue.emit({
+            index: index,
+            value: value
+        });
+    };
+    ConversionItemComponent.prototype.handleChangeMeasure = function (index, name) {
+        this.changeMeasure.emit({
+            index: index,
+            name: name
+        });
+    };
+    ConversionItemComponent.prototype.isMeasureSelected = function (id) {
+        return (id == this.measureValue.measure.id);
+    };
+    return ConversionItemComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Number)
+], ConversionItemComponent.prototype, "index", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], ConversionItemComponent.prototype, "measureValue", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Array)
+], ConversionItemComponent.prototype, "measurements", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ConversionItemComponent.prototype, "changeValue", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ConversionItemComponent.prototype, "changeMeasure", void 0);
+ConversionItemComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-conversion-item',
+        template: "\n   <ion-item>\n      <ion-input [ngModel]=\"measureValue.value\" (ngModelChange)=\"handleChangeValue(index, $event)\"></ion-input>\n      <ion-select style=\"font-size:12px\" [ngModel]=\"measureValue.measure.name\" (ngModelChange)=\"handleChangeMeasure(index, $event)\">\n         <ng-template ngFor let-measure [ngForOf]=\"measurements\">\n            <ion-option [selected]=\"isMeasureSelected(measure.id)\">{{measure.name}}</ion-option>\n         </ng-template>\n      </ion-select>\n   </ion-item>\n   ",
+        changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush
+    })
+], ConversionItemComponent);
+
+//# sourceMappingURL=conversion-input.component.js.map
+
+/***/ }),
+
+/***/ 325:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExpanderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ExpanderComponent = (function () {
+    function ExpanderComponent() {
+        this.toggleExpanderChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ExpanderComponent.prototype.handleToggleExpander = function () {
+        this.toggleExpander = !this.toggleExpander;
+        this.toggleExpanderChange.emit(this.toggleExpander);
+    };
+    return ExpanderComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", String)
+], ExpanderComponent.prototype, "title", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", String)
+], ExpanderComponent.prototype, "boldItem", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Array)
+], ExpanderComponent.prototype, "list", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], ExpanderComponent.prototype, "toggleExpander", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ExpanderComponent.prototype, "toggleExpanderChange", void 0);
+ExpanderComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-expander',
+        template: "\n   <ion-item-group style=\"border-bottom:0.5px solid white\">\n      <button ion-item color=\"secondary\" *ngIf=\"list && list.length > 0\" (click)=\"handleToggleExpander()\">{{title}} ({{list.length}})</button>\n      <span *ngIf=\"toggleExpander\">\n         <ion-item *ngFor=\"let item of list\" [ngClass]=\"{'bold':item == boldItem}\">{{item}}</ion-item>\n      </span>\n   </ion-item-group>\n   "
+    })
+], ExpanderComponent);
+
+//# sourceMappingURL=expander.component.js.map
+
+/***/ }),
+
+/***/ 326:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonCardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PersonCardComponent = (function () {
+    function PersonCardComponent() {
+        this.toggleSonsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.togglePriestsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.toggleProphetsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    PersonCardComponent.prototype.handleToggleSons = function () {
+        this.toggleSons = !this.toggleSons;
+        this.toggleSonsChange.emit(this.toggleSons);
+    };
+    PersonCardComponent.prototype.handleTogglePriests = function () {
+        this.togglePriests = !this.togglePriests;
+        this.togglePriestsChange.emit(this.togglePriests);
+    };
+    PersonCardComponent.prototype.handleToggleProphets = function () {
+        this.toggleProphets = !this.toggleProphets;
+        this.toggleProphetsChange.emit(this.toggleProphets);
+    };
+    return PersonCardComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], PersonCardComponent.prototype, "king", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], PersonCardComponent.prototype, "toggleSons", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], PersonCardComponent.prototype, "toggleSonsChange", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], PersonCardComponent.prototype, "togglePriests", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], PersonCardComponent.prototype, "togglePriestsChange", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Boolean)
+], PersonCardComponent.prototype, "toggleProphets", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], PersonCardComponent.prototype, "toggleProphetsChange", void 0);
+PersonCardComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-person-card',
+        template: "\n   <ion-card>\n        <ion-card-header text-center>{{king.startReignYear}} - {{king.endReignYear}}</ion-card-header>\n        <ion-card-content>\n          <ion-card-title>\n            <ion-label *ngIf=\"king.kingNumber != 7\" color=\"primary\" stacked>King</ion-label>\n            <ion-label *ngIf=\"king.kingNumber === 7\" color=\"primary\" stacked>Queen</ion-label>\n            <span (click)=\"showKingsListModal()\">\n              {{king.kingName}}\n              <span style=\"color:cornflowerblue;font-size:14px\">Age: {{king.age||'?'}}</span>\n            </span>\n          </ion-card-title>\n        </ion-card-content>\n\n        <ion-list>\n          <app-expander *ngIf=\"king?.sons && king.sons.length > 0\"\n            [title]=\"'Sons'\" [list]=\"king?.sons\" [boldItem]=\"king?.chosenOffspring\"\n            [toggleExpander]=\"toggleSons\"\n            (toggleExpanderChange)=\"handleToggleSons()\">\n          </app-expander>\n          <app-expander *ngIf=\"king?.highPriests && king.highPriests.length > 0\"\n            [title]=\"'High Priests'\" [list]=\"king?.highPriests\"\n            [toggleExpander]=\"togglePriests\"\n            (toggleExpanderChange)=\"handleTogglePriests()\">\n          </app-expander>\n          <app-expander *ngIf=\"king?.prophets && king.prophets.length > 0\"\n            [title]=\"'Prophets'\" [list]=\"king?.prophets\"\n            [toggleExpander]=\"toggleProphets\"\n            (toggleExpanderChange)=\"handleToggleProphets()\">\n          </app-expander>\n        </ion-list>\n      </ion-card>\n   "
+    }),
+    __metadata("design:paramtypes", [])
+], PersonCardComponent);
+
+//# sourceMappingURL=person-card.component.js.map
+
+/***/ }),
+
+/***/ 327:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleSettingsPopover; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ScheduleSettingsPopover = (function () {
+    function ScheduleSettingsPopover(navParams, viewCtrl) {
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+    }
+    ScheduleSettingsPopover.prototype.ngOnInit = function () {
+        this.hideCompleted = this.navParams.data.hideCompleted;
+        this.markAll = this.navParams.data.markAll;
+    };
+    ScheduleSettingsPopover.prototype.closePopover = function () {
+        this.viewCtrl.dismiss({
+            hideCompleted: this.hideCompleted,
+            markAll: this.markAll,
+        });
+    };
+    ScheduleSettingsPopover.prototype.clearData = function () {
+        if (confirm("Warning! Schedule progress will be lost. Are you sure you want to continue?")) {
+            this.viewCtrl.dismiss({
+                clearData: true
+            });
+        }
+    };
+    return ScheduleSettingsPopover;
+}());
+ScheduleSettingsPopover = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        template: "\n   <ion-list>\n      <button ion-button color=\"danger\" full icon-start (click)=\"clearData()\">\n         <ion-icon name=\"md-trash\"></ion-icon>\n         Reset Schedule\n      </button>\n      <ion-item>\n         <ion-label>Hide completed</ion-label>\n         <ion-checkbox [(ngModel)]=\"hideCompleted\"></ion-checkbox>\n      </ion-item>\n      <ion-item>\n         <ion-label>Mark all</ion-label>\n         <ion-checkbox [(ngModel)]=\"markAll\"></ion-checkbox>\n      </ion-item>\n      <button ion-button clear full icon-start (click)=\"closePopover()\">\n         <ion-icon name=\"md-checkmark\"></ion-icon>\n         Save Settings\n      </button>\n   </ion-list>\n"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+], ScheduleSettingsPopover);
+
+//# sourceMappingURL=schedule-settings.popover.js.map
+
+/***/ }),
+
+/***/ 328:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineRowComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_profile_modal__ = __webpack_require__(228);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TimelineRowComponent = (function () {
+    function TimelineRowComponent(navCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+    }
+    TimelineRowComponent.prototype.clickTimelineItem = function (item) {
+        if (item.url) {
+            var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__components_profile_modal__["a" /* ProfileModal */], { profile: item });
+            modal.present();
+        }
+    };
+    TimelineRowComponent.prototype.pixelize = function (digit) {
+        return digit + 'px';
+    };
+    TimelineRowComponent.prototype.getYearPosition = function (start, year, increment) {
+        //   1 year  =   10px
+        //  10 years =  100px
+        // 100 years = 1000px
+        return (start - year) * (100 / increment);
+    };
+    TimelineRowComponent.prototype.getYearAlignment = function (timelineData, year) {
+        return this.pixelize(this.getYearPosition(timelineData.start, year, timelineData.increment));
+    };
+    TimelineRowComponent.prototype.getWidth = function (timelineData, start, end) {
+        var width = this.getYearPosition(timelineData.start, end, timelineData.increment) - this.getYearPosition(timelineData.start, start, timelineData.increment);
+        if (width === 0) {
+            width = 300;
+        }
+        else if (this.isItemShort(start, end, timelineData.increment)) {
+            width += 100;
+        }
+        return this.pixelize(width);
+    };
+    TimelineRowComponent.prototype.getBorderWidth = function (timelineData, start, end) {
+        var width = this.getYearPosition(timelineData.start, end, timelineData.increment) - this.getYearPosition(timelineData.start, start, timelineData.increment);
+        if (width === 0 || !this.isItemShort(start, end, timelineData.increment)) {
+            width = 1;
+        }
+        return this.pixelize(width);
+    };
+    TimelineRowComponent.prototype.isItemShort = function (start, end, increment) {
+        return (start - end) < (increment / 2);
+    };
+    return TimelineRowComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Number)
+], TimelineRowComponent.prototype, "rows", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Number)
+], TimelineRowComponent.prototype, "rowNumber", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Array)
+], TimelineRowComponent.prototype, "items", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], TimelineRowComponent.prototype, "timelineData", void 0);
+TimelineRowComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-timeline-row',
+        template: "\n   <ol class=\"tl--items\">\n      <li class=\"tl--item\" \n      (click)=\"clickTimelineItem(item)\"\n         [ngClass]=\"[\n            'tl--row-' + rows + '-' + item.tier, \n            isItemShort(item.start, item.end, timelineData.increment) ? 'tl--side-' + rowNumber :'tl--bg-' + rowNumber\n         ]\"\n         [style.border-left-width]=\"getBorderWidth(timelineData, item.start, item.end)\"\n         [style.padding-left]=\"isItemShort(item.start, item.end, timelineData.increment) ? '0px' : '5px'\"\n         [style.left]=\"getYearAlignment(timelineData, item.start)\"\n         [style.width]=\"getWidth(timelineData, item.start, item.end)\"\n         *ngFor=\"let item of items\">\n         <span [style.color]=\"(item.group == 'TIMELINE_DATES') ? '#003740':'black'\" \n         class=\"tl--item-title\">{{(isItemShort(item.start, item.end, timelineData.increment)) ? '&#9664; ' + item.name : item.name}}</span>\n      </li>\n   </ol>\n   ",
+        changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */]])
+], TimelineRowComponent);
+
+//# sourceMappingURL=timeline-row.component.js.map
+
+/***/ }),
+
+/***/ 329:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsEffects; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_kings_service__ = __webpack_require__(117);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var KingsEffects = (function () {
+    function KingsEffects($actions, kingsService) {
+        var _this = this;
+        this.$actions = $actions;
+        this.kingsService = kingsService;
+        this.$loadKings = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["a" /* INIT */])
+            .switchMap(function () {
+            return _this.kingsService.getKings()
+                .map(function (kings) { return new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["e" /* KingsLoadedAction */](kings); })
+                .catch(function () { return new __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__["d" /* KingsFailedAction */](); });
+        });
+    }
+    return KingsEffects;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], KingsEffects.prototype, "$loadKings", void 0);
+KingsEffects = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_7__services_kings_service__["a" /* KingsService */]])
+], KingsEffects);
+
+//# sourceMappingURL=kings.effects.js.map
+
+/***/ }),
+
+/***/ 331:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MeasurementsEffects; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_measurements_service__ = __webpack_require__(118);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var MeasurementsEffects = (function () {
+    function MeasurementsEffects($actions, measurementsService) {
+        var _this = this;
+        this.$actions = $actions;
+        this.measurementsService = measurementsService;
+        this.$loadMeasurements = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__["m" /* INIT */])
+            .switchMap(function () {
+            return _this.measurementsService.getMeasures()
+                .map(function (measures) { return new __WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__["q" /* MeasuresLoadedAction */](measures); })
+                .catch(function () { return new __WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__["p" /* MeasuresFailedAction */](); });
+        });
+        this.$setTypes = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__["o" /* MEASURESLOADED */])
+            .switchMap(function (action) {
+            return Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__["of"])(new __WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__["s" /* TypesSetAction */](action.payload));
+        });
+    }
+    return MeasurementsEffects;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], MeasurementsEffects.prototype, "$loadMeasurements", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], MeasurementsEffects.prototype, "$setTypes", void 0);
+MeasurementsEffects = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_8__services_measurements_service__["a" /* MeasurementsService */]])
+], MeasurementsEffects);
+
+//# sourceMappingURL=measurements.effects.js.map
+
+/***/ }),
+
+/***/ 335:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__watchtower_complete__ = __webpack_require__(336);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__watchtower_complete__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bible_reading_chrono__ = __webpack_require__(337);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__bible_reading_chrono__["a"]; });
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 336:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return watchtowerComplete; });
+var watchtowerComplete = {
+    name: "All Watchtowers",
+    complete: false,
+    sections: [
+        {
+            name: "2017",
+            complete: false,
+            sections: [
+                { name: "January", complete: false, sections: [] },
+                { name: "February", complete: false, sections: [] },
+                { name: "March", complete: false, sections: [] },
+                { name: "April", complete: false, sections: [] },
+                { name: "May", complete: false, sections: [] },
+                { name: "June", complete: false, sections: [] },
+                { name: "July", complete: false, sections: [] },
+                { name: "August", complete: false, sections: [] },
+                { name: "September", complete: false, sections: [] },
+                { name: "October", complete: false, sections: [] },
+                { name: "November", complete: false, sections: [] },
+                { name: "December", complete: false, sections: [] },
+                { name: "No. 1", complete: false, sections: [] },
+                { name: "No. 2", complete: false, sections: [] },
+                { name: "No. 3", complete: false, sections: [] },
+                { name: "No. 4", complete: false, sections: [] },
+                { name: "No. 5", complete: false, sections: [] },
+                { name: "No. 6", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "2016",
+            complete: false,
+            sections: [
+                { name: "January", complete: false, sections: [] },
+                { name: "February", complete: false, sections: [] },
+                { name: "March", complete: false, sections: [] },
+                { name: "April", complete: false, sections: [] },
+                { name: "May", complete: false, sections: [] },
+                { name: "June", complete: false, sections: [] },
+                { name: "July", complete: false, sections: [] },
+                { name: "August", complete: false, sections: [] },
+                { name: "September", complete: false, sections: [] },
+                { name: "October", complete: false, sections: [] },
+                { name: "November", complete: false, sections: [] },
+                { name: "December", complete: false, sections: [] },
+                { name: "No. 1", complete: false, sections: [] },
+                { name: "No. 2", complete: false, sections: [] },
+                { name: "No. 3", complete: false, sections: [] },
+                { name: "No. 4", complete: false, sections: [] },
+                { name: "No. 5", complete: false, sections: [] },
+                { name: "No. 6", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "2015",
+            complete: false,
+            sections: [
+                { name: "January 1", complete: false, sections: [] },
+                { name: "January 15", complete: false, sections: [] },
+                { name: "February 1", complete: false, sections: [] },
+                { name: "February 15", complete: false, sections: [] },
+                { name: "March 1", complete: false, sections: [] },
+                { name: "March 15", complete: false, sections: [] },
+                { name: "April 1", complete: false, sections: [] },
+                { name: "April 15", complete: false, sections: [] },
+                { name: "May 1", complete: false, sections: [] },
+                { name: "May 15", complete: false, sections: [] },
+                { name: "June 1", complete: false, sections: [] },
+                { name: "June 15", complete: false, sections: [] },
+                { name: "July 1", complete: false, sections: [] },
+                { name: "July 15", complete: false, sections: [] },
+                { name: "August 1", complete: false, sections: [] },
+                { name: "August 15", complete: false, sections: [] },
+                { name: "September 1", complete: false, sections: [] },
+                { name: "September 15", complete: false, sections: [] },
+                { name: "October 1", complete: false, sections: [] },
+                { name: "October 15", complete: false, sections: [] },
+                { name: "November 1", complete: false, sections: [] },
+                { name: "November 15", complete: false, sections: [] },
+                { name: "December 1", complete: false, sections: [] },
+                { name: "December 15", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "2014",
+            complete: false,
+            sections: [
+                { name: "January 1", complete: false, sections: [] },
+                { name: "January 15", complete: false, sections: [] },
+                { name: "February 1", complete: false, sections: [] },
+                { name: "February 15", complete: false, sections: [] },
+                { name: "March 1", complete: false, sections: [] },
+                { name: "March 15", complete: false, sections: [] },
+                { name: "April 1", complete: false, sections: [] },
+                { name: "April 15", complete: false, sections: [] },
+                { name: "May 1", complete: false, sections: [] },
+                { name: "May 15", complete: false, sections: [] },
+                { name: "June 1", complete: false, sections: [] },
+                { name: "June 15", complete: false, sections: [] },
+                { name: "July 1", complete: false, sections: [] },
+                { name: "July 15", complete: false, sections: [] },
+                { name: "August 1", complete: false, sections: [] },
+                { name: "August 15", complete: false, sections: [] },
+                { name: "September 1", complete: false, sections: [] },
+                { name: "September 15", complete: false, sections: [] },
+                { name: "October 1", complete: false, sections: [] },
+                { name: "October 15", complete: false, sections: [] },
+                { name: "November 1", complete: false, sections: [] },
+                { name: "November 15", complete: false, sections: [] },
+                { name: "December 1", complete: false, sections: [] },
+                { name: "December 15", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "2013",
+            complete: false,
+            sections: [
+                { name: "January 1", complete: false, sections: [] },
+                { name: "January 15", complete: false, sections: [] },
+                { name: "February 1", complete: false, sections: [] },
+                { name: "February 15", complete: false, sections: [] },
+                { name: "March 1", complete: false, sections: [] },
+                { name: "March 15", complete: false, sections: [] },
+                { name: "April 1", complete: false, sections: [] },
+                { name: "April 15", complete: false, sections: [] },
+                { name: "May 1", complete: false, sections: [] },
+                { name: "May 15", complete: false, sections: [] },
+                { name: "June 1", complete: false, sections: [] },
+                { name: "June 15", complete: false, sections: [] },
+                { name: "July 1", complete: false, sections: [] },
+                { name: "July 15", complete: false, sections: [] },
+                { name: "August 1", complete: false, sections: [] },
+                { name: "August 15", complete: false, sections: [] },
+                { name: "September 1", complete: false, sections: [] },
+                { name: "September 15", complete: false, sections: [] },
+                { name: "October 1", complete: false, sections: [] },
+                { name: "October 15", complete: false, sections: [] },
+                { name: "November 1", complete: false, sections: [] },
+                { name: "November 15", complete: false, sections: [] },
+                { name: "December 1", complete: false, sections: [] },
+                { name: "December 15", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "2012",
+            complete: false,
+            sections: [
+                { name: "January 1", complete: false, sections: [] },
+                { name: "January 15", complete: false, sections: [] },
+                { name: "February 1", complete: false, sections: [] },
+                { name: "February 15", complete: false, sections: [] },
+                { name: "March 1", complete: false, sections: [] },
+                { name: "March 15", complete: false, sections: [] },
+                { name: "April 1", complete: false, sections: [] },
+                { name: "April 15", complete: false, sections: [] },
+                { name: "May 1", complete: false, sections: [] },
+                { name: "May 15", complete: false, sections: [] },
+                { name: "June 1", complete: false, sections: [] },
+                { name: "June 15", complete: false, sections: [] },
+                { name: "July 1", complete: false, sections: [] },
+                { name: "July 15", complete: false, sections: [] },
+                { name: "August 1", complete: false, sections: [] },
+                { name: "August 15", complete: false, sections: [] },
+                { name: "September 1", complete: false, sections: [] },
+                { name: "September 15", complete: false, sections: [] },
+                { name: "October 1", complete: false, sections: [] },
+                { name: "October 15", complete: false, sections: [] },
+                { name: "November 1", complete: false, sections: [] },
+                { name: "November 15", complete: false, sections: [] },
+                { name: "December 1", complete: false, sections: [] },
+                { name: "December 15", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "2011",
+            complete: false,
+            sections: [
+                { name: "January 1", complete: false, sections: [] },
+                { name: "January 15", complete: false, sections: [] },
+                { name: "February 1", complete: false, sections: [] },
+                { name: "February 15", complete: false, sections: [] },
+                { name: "March 1", complete: false, sections: [] },
+                { name: "March 15", complete: false, sections: [] },
+                { name: "April 1", complete: false, sections: [] },
+                { name: "April 15", complete: false, sections: [] },
+                { name: "May 1", complete: false, sections: [] },
+                { name: "May 15", complete: false, sections: [] },
+                { name: "June 1", complete: false, sections: [] },
+                { name: "June 15", complete: false, sections: [] },
+                { name: "July 1", complete: false, sections: [] },
+                { name: "July 15", complete: false, sections: [] },
+                { name: "August 1", complete: false, sections: [] },
+                { name: "August 15", complete: false, sections: [] },
+                { name: "September 1", complete: false, sections: [] },
+                { name: "September 15", complete: false, sections: [] },
+                { name: "October 1", complete: false, sections: [] },
+                { name: "October 15", complete: false, sections: [] },
+                { name: "November 1", complete: false, sections: [] },
+                { name: "November 15", complete: false, sections: [] },
+                { name: "December 1", complete: false, sections: [] },
+                { name: "December 15", complete: false, sections: [] },
+            ]
+        }
+    ],
+};
+//# sourceMappingURL=watchtower-complete.js.map
+
+/***/ }),
+
+/***/ 337:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bibleReadingChrono; });
+var bibleReadingChrono = {
+    name: "Bible - Chronological",
+    complete: false,
+    sections: [
+        {
+            name: "Day 1",
+            complete: false,
+            sections: [
+                { name: "Genesis 1", complete: false, sections: [] },
+                { name: "Genesis 2", complete: false, sections: [] },
+                { name: "Genesis 3", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 2",
+            complete: false,
+            sections: [
+                { name: "Genesis 4", complete: false, sections: [] },
+                { name: "Genesis 5", complete: false, sections: [] },
+                { name: "1 Chronicles 1:1-4", complete: false, sections: [] },
+                { name: "Genesis 6", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 3",
+            complete: false,
+            sections: [
+                { name: "Genesis 7", complete: false, sections: [] },
+                { name: "Genesis 8", complete: false, sections: [] },
+                { name: "Genesis 9", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 4",
+            complete: false,
+            sections: [
+                { name: "Genesis 10:1-5", complete: false, sections: [] },
+                { name: "1 Chronicles 1:5-7", complete: false, sections: [] },
+                { name: "Genesis 10:6-20", complete: false, sections: [] },
+                { name: "1 Chronicles 1:8-16", complete: false, sections: [] },
+                { name: "Genesis 10:21-11:26", complete: false, sections: [] },
+                { name: "1 Chronicles 1:17-27", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 5",
+            complete: false,
+            sections: [
+                { name: "Genesis 11:27-32", complete: false, sections: [] },
+                { name: "Genesis 12", complete: false, sections: [] },
+                { name: "Genesis 13", complete: false, sections: [] },
+                { name: "Genesis 14", complete: false, sections: [] },
+                { name: "Genesis 15", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 6",
+            complete: false,
+            sections: [
+                { name: "Genesis 16", complete: false, sections: [] },
+                { name: "Genesis 17", complete: false, sections: [] },
+                { name: "Genesis 18", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 7",
+            complete: false,
+            sections: [
+                { name: "Genesis 19", complete: false, sections: [] },
+                { name: "Genesis 20", complete: false, sections: [] },
+                { name: "Genesis 21", complete: false, sections: [] },
+                { name: "Genesis 25:12-18", complete: false, sections: [] },
+                { name: "1 Chronicles 1:28-31", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 8",
+            complete: false,
+            sections: [
+                { name: "Genesis 22", complete: false, sections: [] },
+                { name: "Genesis 23", complete: false, sections: [] },
+                { name: "Genesis 24", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 9",
+            complete: false,
+            sections: [
+                { name: "Genesis 25:1-4", complete: false, sections: [] },
+                { name: "1 Chronicles 1:32-34", complete: false, sections: [] },
+                { name: "Genesis 25:5-11", complete: false, sections: [] },
+                { name: "Genesis 25:19-34", complete: false, sections: [] },
+                { name: "Genesis 26", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 10",
+            complete: false,
+            sections: [
+                { name: "Genesis 27", complete: false, sections: [] },
+                { name: "Genesis 28:1-9", complete: false, sections: [] },
+                { name: "Genesis 36", complete: false, sections: [] },
+                { name: "1 Chronicles 1:35-54", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 11",
+            complete: false,
+            sections: [
+                { name: "Genesis 28:10-22", complete: false, sections: [] },
+                { name: "Genesis 29", complete: false, sections: [] },
+                { name: "Genesis 30", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 12",
+            complete: false,
+            sections: [
+                { name: "Genesis 31", complete: false, sections: [] },
+                { name: "Genesis 32", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 13",
+            complete: false,
+            sections: [
+                { name: "Genesis 33", complete: false, sections: [] },
+                { name: "Genesis 34", complete: false, sections: [] },
+                { name: "Genesis 35", complete: false, sections: [] },
+                { name: "1 Chronicles 2:1,2", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 14",
+            complete: false,
+            sections: [
+                { name: "Genesis 37", complete: false, sections: [] },
+                { name: "Genesis 38", complete: false, sections: [] },
+                { name: "Genesis 39", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 15",
+            complete: false,
+            sections: [
+                { name: "Genesis 40", complete: false, sections: [] },
+                { name: "Genesis 41", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 16",
+            complete: false,
+            sections: [
+                { name: "Genesis 42", complete: false, sections: [] },
+                { name: "Genesis 43", complete: false, sections: [] },
+                { name: "Genesis 44", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 17",
+            complete: false,
+            sections: [
+                { name: "Genesis 45", complete: false, sections: [] },
+                { name: "Genesis 46:1-9", complete: false, sections: [] },
+                { name: "1 Chronicles 5:1-6", complete: false, sections: [] },
+                { name: "Genesis 46:10-12", complete: false, sections: [] },
+                { name: "1 Chronicles 2:18-55", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 18",
+            complete: false,
+            sections: [
+                { name: "1 Chronicles 4:1-23", complete: false, sections: [] },
+                { name: "Genesis 46:13", complete: false, sections: [] },
+                { name: "1 Chronicles 7:1-5", complete: false, sections: [] },
+                { name: "Genesis 46:14-18", complete: false, sections: [] },
+                { name: "1 Chronicles 7:30-40", complete: false, sections: [] },
+                { name: "Genesis 46:19-25", complete: false, sections: [] },
+                { name: "1 Chronicles 7:6-12", complete: false, sections: [] },
+                { name: "Genesis 46:26-34", complete: false, sections: [] },
+                { name: "Genesis 47:1-12", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 19",
+            complete: false,
+            sections: [
+                { name: "Genesis 47:13-31", complete: false, sections: [] },
+                { name: "Genesis 48", complete: false, sections: [] },
+                { name: "Genesis 49", complete: false, sections: [] },
+                { name: "Genesis 50", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 20",
+            complete: false,
+            sections: [
+                { name: "Job 1", complete: false, sections: [] },
+                { name: "Job 2", complete: false, sections: [] },
+                { name: "Job 3", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 21",
+            complete: false,
+            sections: [
+                { name: "Job 4", complete: false, sections: [] },
+                { name: "Job 5", complete: false, sections: [] },
+                { name: "Job 6", complete: false, sections: [] },
+                { name: "Job 7", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 22",
+            complete: false,
+            sections: [
+                { name: "Job 8", complete: false, sections: [] },
+                { name: "Job 9", complete: false, sections: [] },
+                { name: "Job 10", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 23",
+            complete: false,
+            sections: [
+                { name: "Job 11", complete: false, sections: [] },
+                { name: "Job 12", complete: false, sections: [] },
+                { name: "Job 13", complete: false, sections: [] },
+                { name: "Job 14", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 24",
+            complete: false,
+            sections: [
+                { name: "Job 15", complete: false, sections: [] },
+                { name: "Job 16", complete: false, sections: [] },
+                { name: "Job 17", complete: false, sections: [] },
+                { name: "Job 18", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 25",
+            complete: false,
+            sections: [
+                { name: "Job 19", complete: false, sections: [] },
+                { name: "Job 20", complete: false, sections: [] },
+                { name: "Job 21", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 26",
+            complete: false,
+            sections: [
+                { name: "Job 22", complete: false, sections: [] },
+                { name: "Job 23", complete: false, sections: [] },
+                { name: "Job 24", complete: false, sections: [] },
+                { name: "Job 25", complete: false, sections: [] },
+                { name: "Job 26", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 27",
+            complete: false,
+            sections: [
+                { name: "Job 27", complete: false, sections: [] },
+                { name: "Job 28", complete: false, sections: [] },
+                { name: "Job 29", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 28",
+            complete: false,
+            sections: [
+                { name: "Job 30", complete: false, sections: [] },
+                { name: "Job 31", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 29",
+            complete: false,
+            sections: [
+                { name: "Job 32", complete: false, sections: [] },
+                { name: "Job 33", complete: false, sections: [] },
+                { name: "Job 34", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 30",
+            complete: false,
+            sections: [
+                { name: "Job 35", complete: false, sections: [] },
+                { name: "Job 36", complete: false, sections: [] },
+                { name: "Job 37", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 31",
+            complete: false,
+            sections: [
+                { name: "Job 38", complete: false, sections: [] },
+                { name: "Job 39", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 32",
+            complete: false,
+            sections: [
+                { name: "Job 40", complete: false, sections: [] },
+                { name: "Job 41", complete: false, sections: [] },
+                { name: "Job 42", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 33",
+            complete: false,
+            sections: [
+                { name: "Exodus 1", complete: false, sections: [] },
+                { name: "Exodus 2", complete: false, sections: [] },
+                { name: "Exodus 3", complete: false, sections: [] },
+                { name: "Exodus 4:1-17", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 34",
+            complete: false,
+            sections: [
+                { name: "Exodus 4:18-31", complete: false, sections: [] },
+                { name: "Exodus 5", complete: false, sections: [] },
+                { name: "Exodus 6:1-27", complete: false, sections: [] },
+                { name: "1 Chronicles 6:1-4a", complete: false, sections: [] },
+                { name: "Exodus 6:28-30", complete: false, sections: [] },
+                { name: "Exodus 7:1-13", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 35",
+            complete: false,
+            sections: [
+                { name: "Exodus 7:14-25", complete: false, sections: [] },
+                { name: "Exodus 8", complete: false, sections: [] },
+                { name: "Exodus 9", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 36",
+            complete: false,
+            sections: [
+                { name: "Exodus 10", complete: false, sections: [] },
+                { name: "Exodus 11", complete: false, sections: [] },
+                { name: "Exodus 12", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 37",
+            complete: false,
+            sections: [
+                { name: "Exodus 13", complete: false, sections: [] },
+                { name: "Exodus 14", complete: false, sections: [] },
+                { name: "Exodus 15", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 38",
+            complete: false,
+            sections: [
+                { name: "Exodus 16", complete: false, sections: [] },
+                { name: "Exodus 17", complete: false, sections: [] },
+                { name: "Exodus 18", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 39",
+            complete: false,
+            sections: [
+                { name: "Exodus 19", complete: false, sections: [] },
+                { name: "Exodus 20", complete: false, sections: [] },
+                { name: "Exodus 21", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 40",
+            complete: false,
+            sections: [
+                { name: "Exodus 22", complete: false, sections: [] },
+                { name: "Exodus 23", complete: false, sections: [] },
+                { name: "Exodus 24", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 41",
+            complete: false,
+            sections: [
+                { name: "Exodus 25", complete: false, sections: [] },
+                { name: "Exodus 26", complete: false, sections: [] },
+                { name: "Exodus 27", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 42",
+            complete: false,
+            sections: [
+                { name: "Exodus 28", complete: false, sections: [] },
+                { name: "Exodus 29", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 43",
+            complete: false,
+            sections: [
+                { name: "Exodus 31", complete: false, sections: [] },
+                { name: "Exodus 32", complete: false, sections: [] },
+                { name: "Exodus 33:1-6", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 44",
+            complete: false,
+            sections: [
+                { name: "Exodus 33:7-23", complete: false, sections: [] },
+                { name: "Exodus 34", complete: false, sections: [] },
+                { name: "Exodus 35", complete: false, sections: [] },
+                { name: "Exodus 36:1-7", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 45",
+            complete: false,
+            sections: [
+                { name: "Exodus 36:8-38", complete: false, sections: [] },
+                { name: "Exodus 37", complete: false, sections: [] },
+                { name: "Exodus 38", complete: false, sections: [] },
+            ]
+        },
+        {
+            name: "Day 46",
+            complete: false,
+            sections: [
+                { name: "Exodus 39", complete: false, sections: [] },
+                { name: "Exodus 40", complete: false, sections: [] },
+            ]
+        },
+    ],
+};
+//# sourceMappingURL=bible-reading-chrono.js.map
+
+/***/ }),
+
+/***/ 338:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchedulesEffects; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__(231);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var SchedulesEffects = (function () {
+    function SchedulesEffects($actions, schedulesService) {
+        var _this = this;
+        this.$actions = $actions;
+        this.schedulesService = schedulesService;
+        this.$loadSchedules = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["c" /* INIT */])
+            .switchMap(function () {
+            return _this.schedulesService.getSchedules()
+                .map(function (schedules) { return new __WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["k" /* SchedulesLoadedAction */](schedules); });
+        });
+        this.$loadSavedSchedule = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["f" /* LOADSCHEDULES */])
+            .switchMap(function (action) {
+            return _this.schedulesService.getAllSaved()
+                .filter(function (s) { return s !== null; })
+                .map(function (s) { return new __WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["g" /* LoadSavedScheduleAction */](JSON.parse(s)); });
+        });
+        this.$saveSchedule = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["h" /* SAVESCHEDULE */])
+            .switchMap(function (action) {
+            return _this.schedulesService.saveSchedule(action.payload.key, action.payload.schedules)
+                .map(function (s) { return new __WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["j" /* SaveSuccessAction */](); });
+        });
+        this.$clearSchedule = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["a" /* CLEARSCHEDULE */])
+            .switchMap(function (action) {
+            return _this.schedulesService.clearSchedule(action.payload)
+                .map(function (s) { return new __WEBPACK_IMPORTED_MODULE_6__actions_schedules_actions__["d" /* InitSchedulesAction */](); });
+        });
+    }
+    return SchedulesEffects;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "$loadSchedules", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "$loadSavedSchedule", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "$saveSchedule", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "$clearSchedule", void 0);
+SchedulesEffects = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_7__services__["a" /* SchedulesService */]])
+], SchedulesEffects);
+
+//# sourceMappingURL=schedules.effects.js.map
+
+/***/ }),
+
+/***/ 339:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineEffects; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__(231);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var TimelineEffects = (function () {
+    function TimelineEffects($actions, timelineService) {
+        var _this = this;
+        this.$actions = $actions;
+        this.timelineService = timelineService;
+        this.$loadKings = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["a" /* INIT */])
+            .switchMap(function () {
+            return _this.timelineService.getAllItems()
+                .map(function (items) { return new __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["g" /* TimelineLoadedAction */](items); })
+                .catch(function () { return new __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__["f" /* TimelineFailedAction */](); });
+        });
+    }
+    return TimelineEffects;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], TimelineEffects.prototype, "$loadKings", void 0);
+TimelineEffects = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_7__services__["b" /* TimelineService */]])
+], TimelineEffects);
+
+//# sourceMappingURL=timeline.effects.js.map
+
+/***/ }),
+
+/***/ 56:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__converter_component__ = __webpack_require__(319);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__converter_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dashboard_component__ = __webpack_require__(320);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__dashboard_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kings_component__ = __webpack_require__(321);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__kings_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kings_timeline_component__ = __webpack_require__(322);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__kings_timeline_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reading_schedules_component__ = __webpack_require__(323);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__reading_schedules_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__schedule_section_component__ = __webpack_require__(226);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__schedule_section_component__["a"]; });
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 57:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CLEARSCHEDULE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return INIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return LOADSCHEDULES; });
+/* unused harmony export FAILSCHEDULES */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return LOADSAVEDSCHEDULE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SAVESCHEDULE; });
+/* unused harmony export SAVESUCCESS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ClearScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return InitSchedulesAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return SchedulesLoadedAction; });
+/* unused harmony export SchedulesFailedAction */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return LoadSavedScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SaveScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SaveSuccessAction; });
+var CLEARSCHEDULE = '[Schedules] Clear Schedule';
+var INIT = '[Schedules] Init Schedules';
+var LOADSCHEDULES = '[Schedules] Load Schedules';
+var FAILSCHEDULES = '[Schedules] Fail Schedules';
+var LOADSAVEDSCHEDULE = '[Schedules] Load Saved Schedule';
+var SAVESCHEDULE = '[Schedules] Save Schedule';
+var SAVESUCCESS = '[Schedules] Save Success';
+var ClearScheduleAction = (function () {
+    function ClearScheduleAction(payload) {
+        this.payload = payload;
+        this.type = CLEARSCHEDULE;
+    }
+    return ClearScheduleAction;
+}());
+
+var InitSchedulesAction = (function () {
+    function InitSchedulesAction() {
+        this.type = INIT;
+    }
+    return InitSchedulesAction;
+}());
+
+var SchedulesLoadedAction = (function () {
+    function SchedulesLoadedAction(payload) {
+        this.payload = payload;
+        this.type = LOADSCHEDULES;
+    }
+    return SchedulesLoadedAction;
+}());
+
+var SchedulesFailedAction = (function () {
+    function SchedulesFailedAction() {
+        this.type = FAILSCHEDULES;
+    }
+    return SchedulesFailedAction;
+}());
+
+var LoadSavedScheduleAction = (function () {
+    function LoadSavedScheduleAction(payload) {
+        this.payload = payload;
+        this.type = LOADSAVEDSCHEDULE;
+    }
+    return LoadSavedScheduleAction;
+}());
+
+var SaveScheduleAction = (function () {
+    function SaveScheduleAction(payload) {
+        this.payload = payload;
+        this.type = SAVESCHEDULE;
+    }
+    return SaveScheduleAction;
+}());
+
+var SaveSuccessAction = (function () {
+    function SaveSuccessAction() {
+        this.type = SAVESUCCESS;
+    }
+    return SaveSuccessAction;
+}());
+
+//# sourceMappingURL=schedules.actions.js.map
+
+/***/ })
+
+},[233]);
+//# sourceMappingURL=main.js.map

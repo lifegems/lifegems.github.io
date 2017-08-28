@@ -31,7 +31,7 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
       </div>
       <div class="app" (click)="navigateToApp('converter')">
          <div class="app--icon app--icon--skyblue">
-            <i class="fa fa-sliders-h fa-2x"></i>
+            <i class="fa fa-balance-scale fa-2x"></i>
          </div>
          <div class="app--title">Converter</div>
       </div>
@@ -42,44 +42,6 @@ import { ConverterComponent, KingsComponent, KingsTimelineComponent, ReadingSche
          <div class="app--title">Schedules</div>
       </div>
    </div>
-   <!--<ion-grid>
-      <ion-row>
-         <ion-col col-4>
-            <ion-card>
-               <ion-card-header text-center (click)="navigateToApp('kings')">
-                  <div style="color:purple"><i class="fa fa-user"></i></div>
-               </ion-card-header>
-            </ion-card>
-            <div text-center>Kings</div>
-         </ion-col>
-         <ion-col col-4>
-            <ion-card>
-               <ion-card-header text-center (click)="navigateToApp('timeline')">
-                  <div style="color:green"><i class="fa fa-sliders-h"></i></div>
-               </ion-card-header>
-            </ion-card>
-            <div text-center>Timeline</div>
-         </ion-col>
-         <ion-col col-4>
-            <ion-card>
-               <ion-card-header text-center (click)="navigateToApp('converter')">
-                  <div style="color:skyblue"><i class="fa fa-balance-scale"></i></div>
-               </ion-card-header>
-            </ion-card>
-            <div text-center>Converter</div>
-         </ion-col>
-      </ion-row>
-      <ion-row>
-         <ion-col col-4>
-            <ion-card>
-               <ion-card-header text-center (click)="navigateToApp('schedules')">
-                  <div style="color:gray"><i class="fa fa-book"></i></div>
-               </ion-card-header>
-            </ion-card>
-            <div text-center>Schedules</div>
-         </ion-col>
-      </ion-row>
-   </ion-grid>-->
 </ion-content>
 
 <ion-footer>

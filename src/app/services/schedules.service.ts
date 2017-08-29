@@ -8,6 +8,7 @@ import { Schedule } from '../models/schedule.model';
 import {
    watchtowerComplete,
    bibleReadingChrono,
+   bibleReadingCover,
    memorialReading,
 } from './schedules';
 
@@ -19,6 +20,7 @@ export class SchedulesService {
       this.schedules = Object.assign([], [
          watchtowerComplete,
          bibleReadingChrono,
+         bibleReadingCover,
          memorialReading,
       ]);
    }
@@ -35,8 +37,10 @@ export class SchedulesService {
 
    getAllSaved() {
       return Observable.merge(
-         this.storage.get(watchtowerComplete.name),
          this.storage.get(bibleReadingChrono.name),
+         this.storage.get(bibleReadingCover.name),
+         this.storage.get(memorialReading.name),
+         this.storage.get(watchtowerComplete.name),
       );
    }
 

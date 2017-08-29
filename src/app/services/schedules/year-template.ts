@@ -629,6 +629,12 @@ export const yearSchedule: Schedule = {
          ]
       },
       {
+         name: "Day 105",
+         complete: false,
+         sections: [
+         ]
+      },
+      {
          name: "Day 106",
          complete: false,
          sections: [
@@ -1223,6 +1229,12 @@ export const yearSchedule: Schedule = {
          ]
       },
       {
+         name: "Day 205",
+         complete: false,
+         sections: [
+         ]
+      },
+      {
          name: "Day 206",
          complete: false,
          sections: [
@@ -1812,6 +1824,12 @@ export const yearSchedule: Schedule = {
       },
       {
          name: "Day 304",
+         complete: false,
+         sections: [
+         ]
+      },
+      {
+         name: "Day 305",
          complete: false,
          sections: [
          ]

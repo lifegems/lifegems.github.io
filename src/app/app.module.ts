@@ -22,6 +22,7 @@ import {
   KingsListModal,
   ProfileModal,
   PersonCardComponent,
+  ScheduleItemComponent,
   ScheduleSettingsPopover,
   TimelineListModal,
   TimelineRowComponent } from './components';
@@ -51,6 +52,7 @@ import { timelineReducer } from './reducers/timeline.reducer';
     KingsComponent,
     KingsTimelineComponent,
     PersonCardComponent,
+    ScheduleItemComponent,
     ScheduleSettingsPopover,
     TimelineListModal,
     TimelineRowComponent,

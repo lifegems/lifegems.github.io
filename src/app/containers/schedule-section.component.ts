@@ -31,15 +31,20 @@ import * as schedulesReducer from '../reducers/schedules.reducer';
          {{getHiddenText()}}
       </ion-list-header>
       <ng-template ngFor let-sect [ngForOf]="section.sections">
-         <ion-item *ngIf="sectionCanAppear(sect)" (click)="tapSection(sect)">
-            {{sect.name}} 
-            <span *ngIf="sect.sections.length > 0" [style.color]="'gray'">({{getCompletenessText(sect.sections)}})</span>
-            <ion-icon *ngIf="sect.sections.length > 0 && sect.complete" color="secondary" name="md-checkmark-circle"></ion-icon>
-
-            <ion-icon *ngIf="sect.sections.length > 0" item-end name="ios-arrow-forward"></ion-icon>
-            <ion-icon *ngIf="sect.sections.length == 0 && !sect.complete" item-end color="secondary" name="md-checkmark"></ion-icon>
-            <ion-icon *ngIf="sect.sections.length == 0 && sect.complete" item-end color="secondary" name="md-checkmark-circle"></ion-icon>
-         </ion-item>
+         <ng-template [ngIf]="isLevelsView">
+            <app-schedule-item *ngIf="sectionCanAppear(sect)" [section]="sect" (tapSection)="tapSection($event)"></app-schedule-item>
+         </ng-template>
+         <ng-template [ngIf]="!isLevelsView">
+            <ng-template [ngIf]="sect.sections.length > 0 && sectionCanAppear(sect)">
+               <ion-item-divider *ngIf="sectionCanAppear(sect)">{{sect.name}}</ion-item-divider>
+               <ng-template ngFor let-subsect [ngForOf]="sect.sections">
+                  <app-schedule-item *ngIf="sectionCanAppear(subsect)" [section]="subsect" (tapSection)="tapSection($event)"></app-schedule-item>
+               </ng-template>
+            </ng-template>
+            <ng-template [ngIf]="sect.sections.length == 0 && sectionCanAppear(sect)">
+               <app-schedule-item [section]="sect" (tapSection)="tapSection($event)"></app-schedule-item>
+            </ng-template>
+         </ng-template>
       </ng-template>
    </ion-list>
 </ion-content>
@@ -56,6 +61,7 @@ export class ScheduleSectionComponent implements OnInit {
    public schedules$: Store<Schedule[]>;
    public section: Section;
    public hideCompleted: boolean = false;
+   public isLevelsView: boolean = true;
 
    constructor(
       public navCtrl: NavController,

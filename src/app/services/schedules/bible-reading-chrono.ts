@@ -975,7 +975,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 106",
+         name: "Day 105",
          complete: false,
          sections: [
             { name: "1 Chronicles 9:35-44", complete: false, sections: [] },
@@ -987,7 +987,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 107",
+         name: "Day 106",
          complete: false,
          sections: [
             { name: "1 Samuel 17", complete: false, sections: [] },
@@ -996,7 +996,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 108",
+         name: "Day 107",
          complete: false,
          sections: [
             { name: "1 Samuel 19", complete: false, sections: [] },
@@ -1006,7 +1006,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 109",
+         name: "Day 108",
          complete: false,
          sections: [
             { name: "1 Samuel 21",          complete: false, sections: [] },
@@ -1019,7 +1019,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 110",
+         name: "Day 109",
          complete: false,
          sections: [
             { name: "1 Samuel 22:6-23", complete: false, sections: [] },
@@ -1030,7 +1030,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 111",
+         name: "Day 110",
          complete: false,
          sections: [
             { name: "Psalm 13",    complete: false, sections: [] },
@@ -1039,7 +1039,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 112",
+         name: "Day 111",
          complete: false,
          sections: [
             { name: "Psalm 7",  complete: false, sections: [] },
@@ -1048,7 +1048,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 113",
+         name: "Day 112",
          complete: false,
          sections: [
             { name: "1 Samuel 25", complete: false, sections: [] },
@@ -1057,7 +1057,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 114",
+         name: "Day 113",
          complete: false,
          sections: [
             { name: "2 Samuel 25", complete: false, sections: [] },
@@ -1066,7 +1066,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 115",
+         name: "Day 114",
          complete: false,
          sections: [
             { name: "1 Samuel 27",           complete: false, sections: [] },
@@ -1081,7 +1081,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 116",
+         name: "Day 115",
          complete: false,
          sections: [
             { name: "Psalm 69",         complete: false, sections: [] },
@@ -1091,7 +1091,7 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
-         name: "Day 117",
+         name: "Day 116",
          complete: false,
          sections: [
             { name: "1 Samuel 30",     complete: false, sections: [] },
@@ -1102,27 +1102,77 @@ export const bibleReadingChrono: Schedule = {
          ]
       },
       {
+         name: "Day 117",
+         complete: false,
+         sections: [
+            { name: "2 Samuel 2",          complete: false, sections: [] },
+            { name: "2 Samuel 3:1-5",      complete: false, sections: [] },
+            { name: "1 Chronicles 3:1-4a", complete: false, sections: [] },
+            { name: "2 Samuel 3:6-39",     complete: false, sections: [] },
+            { name: "2 Samuel 4:1-3",      complete: false, sections: [] },
+            { name: "2 Samuel 4:5-12",     complete: false, sections: [] },
+            { name: "2 Samuel 5:1-5",      complete: false, sections: [] },
+            { name: "1 Chronicles 11:1-3", complete: false, sections: [] },
+         ]
+      },
+      {
          name: "Day 118",
          complete: false,
          sections: [
+            { name: "1 Chronicles 12:23-40", complete: false, sections: [] },
+            { name: "Psalm 2",               complete: false, sections: [] },
+            { name: "Psalm 78",              complete: false, sections: [] },
          ]
       },
       {
          name: "Day 119",
          complete: false,
          sections: [
+            { name: "2 Samuel 5:6-10",        complete: false, sections: [] },
+            { name: "1 Chronicles 11:4-9",    complete: false, sections: [] },
+            { name: "2 Samuel 5:17-21",       complete: false, sections: [] },
+            { name: "1 Chronicles 14:8-12",   complete: false, sections: [] },
+            { name: "2 Samuel 23:13-19",      complete: false, sections: [] },
+            { name: "1 Chronicles 11:15-21",  complete: false, sections: [] },
+            { name: "2 Samuel 5:22-25",       complete: false, sections: [] },
+            { name: "1 Chronicles 14:13-17",  complete: false, sections: [] },
+            { name: "2 Samuel 5:11,12",       complete: false, sections: [] },
+            { name: "1 Chronicles 14:1,2",    complete: false, sections: [] },
+            { name: "1 Chronicles 13",        complete: false, sections: [] },
+            { name: "2 Samuel 6:1-11",        complete: false, sections: [] },
+            { name: "Psalm 101",              complete: false, sections: [] },
+            { name: "Psalm 16",               complete: false, sections: [] },
          ]
       },
       {
          name: "Day 120",
          complete: false,
          sections: [
+            { name: "2 Samuel 6:12-23", complete: false, sections: [] },
+            { name: "1 Chronicles 15",  complete: false, sections: [] },
+            { name: "1 Chronicles 16",  complete: false, sections: [] },
+            { name: "Psalm 15",         complete: false, sections: [] },
+            { name: "Psalm 30",         complete: false, sections: [] },
+            { name: "Psalm 122",        complete: false, sections: [] },
          ]
       },
       {
          name: "Day 121",
          complete: false,
          sections: [
+            { name: "Psalm 103",            complete: false, sections: [] },
+            { name: "2 Samuel 12:26-31",    complete: false, sections: [] },
+            { name: "1 Chronicles 20:1b-3", complete: false, sections: [] },
+            { name: "Psalm 21",             complete: false, sections: [] },
+            { name: "2 Samuel 12:24b-25",   complete: false, sections: [] },
+            { name: "2 Samuel 8:2",         complete: false, sections: [] },
+            { name: "1 Chronicles 18:2",    complete: false, sections: [] },
+            { name: "2 Samuel 8:3-4",       complete: false, sections: [] },
+            { name: "1 Chronicles 18:3-4",  complete: false, sections: [] },
+            { name: "2 Samuel 8:7-8",       complete: false, sections: [] },
+            { name: "1 Chronicles 18:7-8",  complete: false, sections: [] },
+            { name: "2 Samuel 8:5-6",       complete: false, sections: [] },
+            { name: "1 Chronicles 18:5-6",  complete: false, sections: [] },
          ]
       },
       {
@@ -1619,6 +1669,12 @@ export const bibleReadingChrono: Schedule = {
       },
       {
          name: "Day 204",
+         complete: false,
+         sections: [
+         ]
+      },
+      {
+         name: "Day 205",
          complete: false,
          sections: [
          ]
@@ -2213,6 +2269,12 @@ export const bibleReadingChrono: Schedule = {
       },
       {
          name: "Day 304",
+         complete: false,
+         sections: [
+         ]
+      },
+      {
+         name: "Day 305",
          complete: false,
          sections: [
          ]

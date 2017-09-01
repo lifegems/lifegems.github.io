@@ -1179,276 +1179,547 @@ export const bibleReadingChrono: Schedule = {
          name: "Day 122",
          complete: false,
          sections: [
+            { name: "2 Samuel 8:9-14",      complete: false, sections: [] },
+            { name: "1 Chronicles 18:9-13", complete: false, sections: [] },
+            { name: "Psalm 44",             complete: false, sections: [] },
+            { name: "Psalm 20",             complete: false, sections: [] },
+            { name: "Psalm 60",             complete: false, sections: [] },
+            { name: "Psalm 108",            complete: false, sections: [] },
+            { name: "Psalm 124",            complete: false, sections: [] },
          ]
       },
       {
          name: "Day 123",
          complete: false,
          sections: [
+            { name: "2 Samuel 23:20-39",     complete: false, sections: [] },
+            { name: "1 Chronicles 11:22-47", complete: false, sections: [] },
+            { name: "2 Samuel 8:15-18",      complete: false, sections: [] },
+            { name: "1 Chronicles 18:14-17", complete: false, sections: [] },
+            { name: "2 Samuel 7",            complete: false, sections: [] },
+            { name: "1 Chronicles 17",       complete: false, sections: [] },
          ]
       },
       {
          name: "Day 124",
          complete: false,
          sections: [
+            { name: "Psalm 138",        complete: false, sections: [] },
+            { name: "Psalm 139",        complete: false, sections: [] },
+            { name: "Psalm 145",        complete: false, sections: [] },
+            { name: "2 Samuel 21:1-14", complete: false, sections: [] },
+            { name: "2 Samuel 9",       complete: false, sections: [] },
+            { name: "Psalm 8",          complete: false, sections: [] },
          ]
       },
       {
          name: "Day 125",
          complete: false,
          sections: [
+            { name: "2 Samuel 5:13-16",    complete: false, sections: [] },
+            { name: "1 Chronicles 14:3-7", complete: false, sections: [] },
+            { name: "1 Chronicles 3:4b-9", complete: false, sections: [] },
+            { name: "2 Samuel 13",         complete: false, sections: [] },
+            { name: "2 Samuel 14",         complete: false, sections: [] },
+            { name: "2 Samuel 15:1-6",     complete: false, sections: [] },
+            { name: "Psalm 109",           complete: false, sections: [] },
          ]
       },
       {
          name: "Day 126",
          complete: false,
          sections: [
+            { name: "2 Samuel 24",          complete: false, sections: [] },
+            { name: "Psalm 38",             complete: false, sections: [] },
+            { name: "1 Chronicles 21:4-30", complete: false, sections: [] },
+            { name: "2 Samuel 15:7-36",     complete: false, sections: [] },
+            { name: "Psalm 3",              complete: false, sections: [] },
          ]
       },
       {
          name: "Day 127",
          complete: false,
          sections: [
+            { name: "Psalm 4",          complete: false, sections: [] },
+            { name: "Psalm 11",         complete: false, sections: [] },
+            { name: "Psalm 23",         complete: false, sections: [] },
+            { name: "Psalm 26",         complete: false, sections: [] },
+            { name: "2 Samuel 16:1-14", complete: false, sections: [] },
+            { name: "Psalm 12",         complete: false, sections: [] },
+            { name: "Psalm 36",         complete: false, sections: [] },
          ]
       },
       {
          name: "Day 128",
          complete: false,
          sections: [
+            { name: "Psalm 37",       complete: false, sections: [] },
+            { name: "Psalm 9",        complete: false, sections: [] },
+            { name: "Psalm 10",       complete: false, sections: [] },
+            { name: "2 Samuel 15:37", complete: false, sections: [] },
+            { name: "2 Samuel 16:15", complete: false, sections: [] },
+            { name: "Psalm 27",       complete: false, sections: [] },
          ]
       },
       {
          name: "Day 129",
          complete: false,
          sections: [
+            { name: "2 Samuel 16:16-23", complete: false, sections: [] },
+            { name: "2 Samuel 17:1-23",  complete: false, sections: [] },
+            { name: "Psalm 28",          complete: false, sections: [] },
+            { name: "Psalm 41",          complete: false, sections: [] },
+            { name: "Psalm 42",          complete: false, sections: [] },
+            { name: "Psalm 43",          complete: false, sections: [] },
+            { name: "Psalm 55",          complete: false, sections: [] },
+            { name: "Psalm 64",          complete: false, sections: [] },
          ]
       },
       {
          name: "Day 130",
          complete: false,
          sections: [
+            { name: "2 Samuel 17:24-26", complete: false, sections: [] },
+            { name: "1 Chronicles 2:17", complete: false, sections: [] },
+            { name: "2 Samuel 17:27-29",   complete: false, sections: [] },
+            { name: "2 Samuel 18:1-18",  complete: false, sections: [] },
+            { name: "Psalm 58",          complete: false, sections: [] },
+            { name: "Psalm 61",          complete: false, sections: [] },
+            { name: "Psalm 62",          complete: false, sections: [] },
          ]
       },
       {
          name: "Day 131",
          complete: false,
          sections: [
+            { name: "2 Samuel 18:19-33", complete: false, sections: [] },
+            { name: "Psalm 39",          complete: false, sections: [] },
+            { name: "Psalm 70",          complete: false, sections: [] },
+            { name: "Psalm 71",          complete: false, sections: [] },
+            { name: "Psalm 84",          complete: false, sections: [] },
+            { name: "Psalm 143",         complete: false, sections: [] },
+            { name: "2 Samuel 19",       complete: false, sections: [] },
          ]
       },
       {
          name: "Day 132",
          complete: false,
          sections: [
+            { name: "2 Samuel 20",     complete: false, sections: [] },
+            { name: "Psalm 140",       complete: false, sections: [] },
+            { name: "Psalm 141",       complete: false, sections: [] },
+            { name: "1 Chronicles 22", complete: false, sections: [] },
+            { name: "Psalm 1",         complete: false, sections: [] },
+            { name: "Psalm 29",        complete: false, sections: [] },
+            { name: "Psalm 33",        complete: false, sections: [] },
          ]
       },
       {
          name: "Day 133",
          complete: false,
          sections: [
+            { name: "1 Chronicles 23:1-23", complete: false, sections: [] },
+            { name: "1 Chronicles 6:16-30", complete: false, sections: [] },
+            { name: "1 Chronicles 23:24-32", complete: false, sections: [] },
+            { name: "1 Chronicles 24:1-31", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 134",
          complete: false,
          sections: [
+            { name: "1 Chronicles 25",      complete: false, sections: [] },
+            { name: "1 Chronicles 6:31-53", complete: false, sections: [] },
+            { name: "1 Chronicles 26",      complete: false, sections: [] },
          ]
       },
       {
          name: "Day 135",
          complete: false,
          sections: [
+            { name: "1 Chronicles 27", complete: false, sections: [] },
+            { name: "1 Chronicles 28", complete: false, sections: [] },
+            { name: "1 Chronicles 29:1-22", complete: false, sections: [] },
+            { name: "1 Kings 1:1-27", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 136",
          complete: false,
          sections: [
+            { name: "1 Kings 1:28-40",       complete: false, sections: [] },
+            { name: "Psalm 25",              complete: false, sections: [] },
+            { name: "1 Kings 1:41-53",       complete: false, sections: [] },
+            { name: "1 Kings 2:1-9",         complete: false, sections: [] },
+            { name: "2 Samuel 23:1-7",       complete: false, sections: [] },
+            { name: "1 Kings 2:10,11",       complete: false, sections: [] },
+            { name: "1 Chronicles 29:26-30", complete: false, sections: [] },
+            { name: "1 Kings 2:12",          complete: false, sections: [] },
+            { name: "1 Chronicles 29:23-25", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 137",
          complete: false,
          sections: [
+            { name: "1 Kings 2:13-46",     complete: false, sections: [] },
+            { name: "1 Kings 3:1-15",      complete: false, sections: [] },
+            { name: "2 Chronicles 1:1-13", complete: false, sections: [] },
+            { name: "1 Kings 3:16-28",     complete: false, sections: [] },
+            { name: "Psalm 72",            complete: false, sections: [] },
          ]
       },
       {
          name: "Day 138",
          complete: false,
          sections: [
+            { name: "Psalm 45", complete: false, sections: [] },
+            { name: "Song of Solomon 1", complete: false, sections: [] },
+            { name: "Song of Solomon 2", complete: false, sections: [] },
+            { name: "Song of Solomon 3", complete: false, sections: [] },
+            { name: "Song of Solomon 4", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 139",
          complete: false,
          sections: [
+            { name: "Song of Solomon 6",   complete: false, sections: [] },
+            { name: "Song of Solomon 7",   complete: false, sections: [] },
+            { name: "Song of Solomon 8",   complete: false, sections: [] },
+            { name: "Song of Solomon 9",   complete: false, sections: [] },
+            { name: "1 Kings 5:1-12",      complete: false, sections: [] },
+            { name: "2 Chronicles 2:1",    complete: false, sections: [] },
+            { name: "2 Chronicles 2:3-16", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 140",
          complete: false,
          sections: [
+            { name: "1 Kings 5:13-18",      complete: false, sections: [] },
+            { name: "2 Chronicles 2:2",     complete: false, sections: [] },
+            { name: "2 Chronicles 2:17,18", complete: false, sections: [] },
+            { name: "1 Kings 9:15,16",      complete: false, sections: [] },
+            { name: "1 Kings 9:20-23",      complete: false, sections: [] },
+            { name: "2 Chronicles 8:7-10",  complete: false, sections: [] },
+            { name: "1 Kings 6",            complete: false, sections: [] },
+            { name: "2 Chronicles 3",       complete: false, sections: [] },
+            { name: "Psalm 127",            complete: false, sections: [] },
+            { name: "1 Kings 7:1-12",       complete: false, sections: [] },
          ]
       },
       {
          name: "Day 141",
          complete: false,
          sections: [
+            { name: "1 Kings 7:13-51",     complete: false, sections: [] },
+            { name: "2 Chronicles 4:1-22", complete: false, sections: [] },
+            { name: "2 Chronicles 5:1",    complete: false, sections: [] },
+            { name: "1 Kings 8:1-21",      complete: false, sections: [] },
+            { name: "2 Chronicles 5:2-14", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 142",
          complete: false,
          sections: [
+            { name: "2 Chronicles 6:1-11",  complete: false, sections: [] },
+            { name: "1 Kings 8:22-61",      complete: false, sections: [] },
+            { name: "2 Chronicles 6:12-42", complete: false, sections: [] },
+            { name: "2 Chronicles 7:1-3",   complete: false, sections: [] },
          ]
       },
       {
          name: "Day 143",
          complete: false,
          sections: [
+            { name: "1 Kings 8:62-66",      complete: false, sections: [] },
+            { name: "2 Chronicles 7:4-10",  complete: false, sections: [] },
+            { name: "Psalm 132",            complete: false, sections: [] },
+            { name: "Psalm 33",             complete: false, sections: [] },
+            { name: "1 Kings 9:1-9",        complete: false, sections: [] },
+            { name: "2 Chronicles 7:11-22", complete: false, sections: [] },
+            { name: "1 Kings 9:10-14",      complete: false, sections: [] },
+            { name: "2 Chronicles 8:1-3",   complete: false, sections: [] },
+            { name: "1 Kings 9:24",         complete: false, sections: [] },
+            { name: "2 Chronicles 8:11",    complete: false, sections: [] },
+            { name: "1 Kings 9:25",         complete: false, sections: [] },
+            { name: "2 Chronicles 8:12-16", complete: false, sections: [] },
+            { name: "1 Kings 9:17-19",      complete: false, sections: [] },
+            { name: "2 Chronicles 8:4-6",   complete: false, sections: [] },
+            { name: "1 Kings 9:26-28",      complete: false, sections: [] },
+            { name: "2 Chronicles 8:17,18", complete: false, sections: [] },
+            { name: "1 Kings 10:22",        complete: false, sections: [] },
+            { name: "2 Chronicles 9:21",    complete: false, sections: [] },
          ]
       },
       {
          name: "Day 144",
          complete: false,
          sections: [
+            { name: "1 Kings 10:1-13",     complete: false, sections: [] },
+            { name: "2 Chronicles 9:1-12", complete: false, sections: [] },
+            { name: "1 Kings 4:1-19",      complete: false, sections: [] },
+            { name: "1 Kings 4:29-34",     complete: false, sections: [] },
+            { name: "Proverbs 1",          complete: false, sections: [] },
          ]
       },
       {
          name: "Day 145",
          complete: false,
          sections: [
+            { name: "Proverbs 2", complete: false, sections: [] },
+            { name: "Proverbs 3", complete: false, sections: [] },
+            { name: "Proverbs 4", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 146",
          complete: false,
          sections: [
+            { name: "Proverbs 5", complete: false, sections: [] },
+            { name: "Proverbs 6", complete: false, sections: [] },
+            { name: "Proverbs 7", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 147",
          complete: false,
          sections: [
+            { name: "Proverbs 8",  complete: false, sections: [] },
+            { name: "Proverbs 9",  complete: false, sections: [] },
+            { name: "Proverbs 10", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 148",
          complete: false,
          sections: [
+            { name: "Proverbs 11", complete: false, sections: [] },
+            { name: "Proverbs 12", complete: false, sections: [] },
+            { name: "Proverbs 13", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 149",
          complete: false,
          sections: [
+            { name: "Proverbs 14", complete: false, sections: [] },
+            { name: "Proverbs 15", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 150",
          complete: false,
          sections: [
+            { name: "Proverbs 16", complete: false, sections: [] },
+            { name: "Proverbs 17", complete: false, sections: [] },
+            { name: "Proverbs 18", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 151",
          complete: false,
          sections: [
+            { name: "Proverbs 19", complete: false, sections: [] },
+            { name: "Proverbs 20", complete: false, sections: [] },
+            { name: "Proverbs 21", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 152",
          complete: false,
          sections: [
+            { name: "Proverbs 22", complete: false, sections: [] },
+            { name: "Proverbs 23", complete: false, sections: [] },
+            { name: "Proverbs 24", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 153",
          complete: false,
          sections: [
+            { name: "Proverbs 25", complete: false, sections: [] },
+            { name: "Proverbs 26", complete: false, sections: [] },
+            { name: "Proverbs 27", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 154",
          complete: false,
          sections: [
+            { name: "Proverbs 28", complete: false, sections: [] },
+            { name: "Proverbs 29", complete: false, sections: [] },
+            { name: "Proverbs 30", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 155",
          complete: false,
          sections: [
+            { name: "Proverbs 31",          complete: false, sections: [] },
+            { name: "1 Kings 4:20-28",      complete: false, sections: [] },
+            { name: "1 Kings 10:14-21",     complete: false, sections: [] },
+            { name: "2 Chronicles 9:13-20", complete: false, sections: [] },
+            { name: "1 Kings 10:23-25",     complete: false, sections: [] },
+            { name: "2 Chronicles 9:22-24", complete: false, sections: [] },
+            { name: "1 Kings 10:26-29",     complete: false, sections: [] },
+            { name: "2 Chronicles 1:14-17", complete: false, sections: [] },
+            { name: "2 Chronicles 9:25-28", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 156",
          complete: false,
          sections: [
+            { name: "1 Kings 11:1-40", complete: false, sections: [] },
+            { name: "Ecclesiastes 1", complete: false, sections: [] },
+            { name: "Ecclesiastes 2", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 157",
          complete: false,
          sections: [
+            { name: "Ecclesiastes 3", complete: false, sections: [] },
+            { name: "Ecclesiastes 4", complete: false, sections: [] },
+            { name: "Ecclesiastes 5", complete: false, sections: [] },
+            { name: "Ecclesiastes 6", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 158",
          complete: false,
          sections: [
+            { name: "Ecclesiastes 7",  complete: false, sections: [] },
+            { name: "Ecclesiastes 8",  complete: false, sections: [] },
+            { name: "Ecclesiastes 9",  complete: false, sections: [] },
+            { name: "Ecclesiastes 10", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 159",
          complete: false,
          sections: [
+            { name: "Ecclesiastes 11",       complete: false, sections: [] },
+            { name: "Ecclesiastes 12",       complete: false, sections: [] },
+            { name: "Psalm 73",              complete: false, sections: [] },
+            { name: "Psalm 88",              complete: false, sections: [] },
+            { name: "1 Kings 11:41-43",      complete: false, sections: [] },
+            { name: "1 Kings 12:1-19",       complete: false, sections: [] },
+            { name: "2 Chronicles 10",       complete: false, sections: [] },
+            { name: "1 Kings 12:20-24",      complete: false, sections: [] },
+            { name: "2 Chronicles 11:1-4",   complete: false, sections: [] },
+            { name: "1 Kings 12:25-31",      complete: false, sections: [] },
+            { name: "2 Chronicles 11:13-17", complete: false, sections: [] },
+            { name: "1 Kings 12:32,33",      complete: false, sections: [] },
+            { name: "1 Kings 13:1-34",       complete: false, sections: [] },
          ]
       },
       {
          name: "Day 160",
          complete: false,
          sections: [
+            { name: "1 Kings 14:1-18",       complete: false, sections: [] },
+            { name: "2 Chronicles 11:5-12",  complete: false, sections: [] },
+            { name: "2 Chronicles 11:18-23", complete: false, sections: [] },
+            { name: "1 Kings 14:22-28",      complete: false, sections: [] },
+            { name: "2 Chronicles 12:1-12",  complete: false, sections: [] },
+            { name: "Psalm 89",              complete: false, sections: [] },
          ]
       },
       {
          name: "Day 161",
          complete: false,
          sections: [
+            { name: "1 Kings 14:29-31",      complete: false, sections: [] },
+            { name: "2 Chronicles 12:15,16", complete: false, sections: [] },
+            { name: "1 Kings 15:1-8",        complete: false, sections: [] },
+            { name: "2 Chronicles 13:1-22",  complete: false, sections: [] },
+            { name: "2 Chronicles 14:1",     complete: false, sections: [] },
+            { name: "1 Kings 15:9-11",       complete: false, sections: [] },
+            { name: "2 Chronicles 14:2-7",   complete: false, sections: [] },
+            { name: "1 Kings 14:19,20",      complete: false, sections: [] },
+            { name: "1 Kings 15:25-31",      complete: false, sections: [] },
+            { name: "2 Chronicles 14:8-15",  complete: false, sections: [] },
+            { name: "2 Chronicles 15:1-7",   complete: false, sections: [] },
+            { name: "1 Kings 15:12-15",      complete: false, sections: [] },
+            { name: "2 Chronicles 15:8-19",  complete: false, sections: [] },
          ]
       },
       {
          name: "Day 162",
          complete: false,
          sections: [
+            { name: "1 Kings 15:33,34",      complete: false, sections: [] },
+            { name: "1 Kings 15:16",         complete: false, sections: [] },
+            { name: "1 Kings 15:32",         complete: false, sections: [] },
+            { name: "1 Kings 15:17-22",      complete: false, sections: [] },
+            { name: "2 Chronicles 16:1-10",  complete: false, sections: [] },
+            { name: "1 Kings 16:1-33",       complete: false, sections: [] },
+            { name: "1 Kings 15:23,24",      complete: false, sections: [] },
+            { name: "2 Chronicles 16:11-14", complete: false, sections: [] },
+            { name: "1 Kings 22:41-46",      complete: false, sections: [] },
+            { name: "2 Chronicles 20:31-34", complete: false, sections: [] },
+            { name: "2 Chronicles 17",       complete: false, sections: [] },
+            { name: "2 Chronicles 18:1",     complete: false, sections: [] },
+            { name: "1 Kings 16:34",         complete: false, sections: [] },
          ]
       },
       {
          name: "Day 163",
          complete: false,
          sections: [
+            { name: "1 Kings 17",  complete: false, sections: [] },
+            { name: "1 Kings 18",  complete: false, sections: [] },
+            { name: "1 Kings 19",  complete: false, sections: [] },
          ]
       },
       {
          name: "Day 164",
          complete: false,
          sections: [
+            { name: "Psalm 104",  complete: false, sections: [] },
+            { name: "Psalm 114",  complete: false, sections: [] },
+            { name: "Psalm 115",  complete: false, sections: [] },
+            { name: "1 Kings 20", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 165",
          complete: false,
          sections: [
+            { name: "1 Kings 21",           complete: false, sections: [] },
+            { name: "1 Kings 22:51-53",     complete: false, sections: [] },
+            { name: "1 Kings 22:1-35",      complete: false, sections: [] },
+            { name: "2 Chronicles 18:2-34", complete: false, sections: [] },
          ]
       },
       {
          name: "Day 166",
          complete: false,
          sections: [
+            { name: "1 Kings 22:36-40", complete: false, sections: [] },
+            { name: "2 Kings 1:1",      complete: false, sections: [] },
+            { name: "2 Chronicles 19",  complete: false, sections: [] },
+            { name: "1 Kings 20:1-30",  complete: false, sections: [] },
+            { name: "Psalm 46",         complete: false, sections: [] },
+            { name: "Psalm 47",         complete: false, sections: [] },
+            { name: "Psalm 48",         complete: false, sections: [] },
          ]
       },
       {
          name: "Day 167",
          complete: false,
          sections: [
+            { name: "Psalm 49",              complete: false, sections: [] },
+            { name: "Psalm 83",              complete: false, sections: [] },
+            { name: "Psalm 91",              complete: false, sections: [] },
+            { name: "1 Kings 22:47-49",      complete: false, sections: [] },
+            { name: "2 Chronicles 20:35-37", complete: false, sections: [] },
+            { name: "2 Kings 1:2-18",        complete: false, sections: [] },
+            { name: "2 Kings 3:1-3",         complete: false, sections: [] },
          ]
       },
       {

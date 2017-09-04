@@ -9,6 +9,7 @@ export const FAILSCHEDULES     = '[Schedules] Fail Schedules';
 export const LOADSAVEDSCHEDULE = '[Schedules] Load Saved Schedule';
 export const SAVESCHEDULE      = '[Schedules] Save Schedule';
 export const SAVESUCCESS       = '[Schedules] Save Success';
+export const UPDATESCHEDULE    = '[Schedules] Update Schedule';
 
 export class ClearScheduleAction implements Action {
   readonly type = CLEARSCHEDULE;
@@ -46,6 +47,12 @@ export class SaveSuccessAction implements Action {
   readonly type = SAVESUCCESS;
 }
 
+export class UpdateScheduleAction implements Action {
+  readonly type = UPDATESCHEDULE;
+
+  constructor(public payload: string) {}
+}
+
 export type ALL
  = ClearScheduleAction
  | InitSchedulesAction
@@ -53,4 +60,5 @@ export type ALL
  | SchedulesFailedAction
  | LoadSavedScheduleAction
  | SaveScheduleAction
- | SaveSuccessAction;
+ | SaveSuccessAction
+ | UpdateScheduleAction;

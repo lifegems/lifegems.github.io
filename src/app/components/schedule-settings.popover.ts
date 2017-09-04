@@ -18,6 +18,10 @@ template: `
          <ion-label>Mark all</ion-label>
          <ion-checkbox [(ngModel)]="markAll"></ion-checkbox>
       </ion-item>
+      <ion-item>
+         <ion-label>Update Schedule</ion-label>
+         <ion-checkbox [(ngModel)]="update"></ion-checkbox>
+      </ion-item>
       <button ion-button clear full icon-start (click)="closePopover()">
          <ion-icon name="md-checkmark"></ion-icon>
          Save Settings
@@ -28,6 +32,7 @@ template: `
 export class ScheduleSettingsPopover implements OnInit {
    public hideCompleted: boolean;
    public markAll: boolean;
+   public update: boolean;
 
    constructor(private navParams: NavParams, private viewCtrl: ViewController) {
 
@@ -36,12 +41,14 @@ export class ScheduleSettingsPopover implements OnInit {
    ngOnInit() {
       this.hideCompleted = this.navParams.data.hideCompleted;
       this.markAll       = this.navParams.data.markAll;
+      this.update        = false;
    }
 
    closePopover() {
       this.viewCtrl.dismiss({
          hideCompleted: this.hideCompleted,
          markAll:       this.markAll,
+         update:        this.update,
       });
    }
 

@@ -44,5 +44,13 @@ export class SchedulesEffects {
             .map(s => new schedulesActions.InitSchedulesAction());
       });
    
+   @Effect()
+   $updateSchedule: Observable<Action> = this.$actions
+      .ofType(schedulesActions.UPDATESCHEDULE)
+      .switchMap((action: schedulesActions.UpdateScheduleAction) => {
+         this.schedulesService.updateSchedule(action.payload)
+         return new schedulesActions.InitSchedulesAction();
+      });
+   
    constructor(private $actions: Actions, private schedulesService: SchedulesService) {}
 }

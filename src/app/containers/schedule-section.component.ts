@@ -118,6 +118,9 @@ export class ScheduleSectionComponent implements OnInit {
        if (data && data.hasOwnProperty('hideCompleted')) {
           this.hideCompleted = data.hideCompleted;
        }
+       if (data && data.hasOwnProperty('update') && data.update) {
+          this.store.dispatch(new schedulesActions.UpdateScheduleAction(data.update));
+       }
        if (data && data.hasOwnProperty('markAll') && data.markAll !== this.isSectionComplete(this.section)) {
           this.markSchedule(this.section.sections, data.markAll);
        }

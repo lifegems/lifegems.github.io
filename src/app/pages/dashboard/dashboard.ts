@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
-import { KingsComponent, KingsTimelineComponent, ReadingSchedulesComponent } from '../../containers';
+import { KingsTimelineComponent, ReadingSchedulesComponent } from '../../containers';
 
 @IonicPage()
 @Component({
@@ -57,7 +57,7 @@ export class DashboardComponent {
    navigateToApp(app: string) {
       switch (app) {
          case 'kings':
-            this.navCtrl.setRoot(KingsComponent);
+            this.navCtrl.setRoot('KingsComponent');
             break;
          case 'timeline':
             this.navCtrl.setRoot(KingsTimelineComponent);

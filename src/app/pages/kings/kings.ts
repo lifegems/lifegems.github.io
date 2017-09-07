@@ -1,14 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ModalController, NavController, Slides } from 'ionic-angular';
-import { KingsListModal } from '../components/kings-list.modal';
+import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
-import * as KingsActions from '../actions/kings.actions';
-import * as kingsState from '../reducers/kings.reducer';
 
+import { KingsListModal } from './components';
+import * as KingsActions from './actions/kings.actions';
+import * as kingsState from './reducers/kings.reducer';
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
   template: `
 <ion-header>
   <ion-navbar>

@@ -11,14 +11,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
 import {
-  ConverterComponent,
-  DashboardComponent,
   KingsComponent,
   KingsTimelineComponent,
   ReadingSchedulesComponent, 
   ScheduleSectionComponent } from './containers';
 import {
-  ConversionItemComponent,
   ExpanderComponent,
   KingsListModal,
   ProfileModal,
@@ -27,6 +24,9 @@ import {
   ScheduleSettingsPopover,
   TimelineListModal,
   TimelineRowComponent } from './components';
+
+import { ConverterModule } from './pages/converter/converter.module';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
@@ -46,9 +46,6 @@ import { timelineReducer } from './reducers/timeline.reducer';
 @NgModule({
   declarations: [
     MyApp,
-    ConversionItemComponent,
-    ConverterComponent,
-    DashboardComponent,
     ExpanderComponent,
     KingsComponent,
     KingsTimelineComponent,
@@ -64,6 +61,8 @@ import { timelineReducer } from './reducers/timeline.reducer';
   ],
   imports: [
     BrowserModule,
+    ConverterModule,
+    DashboardModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
@@ -79,8 +78,6 @@ import { timelineReducer } from './reducers/timeline.reducer';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ConverterComponent,
-    DashboardComponent,
     KingsComponent,
     KingsTimelineComponent,
     KingsListModal,

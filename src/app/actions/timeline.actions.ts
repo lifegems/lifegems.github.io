@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Measure } from '../models/measure.model';
+import { TimelineItem } from '../models/timeline-item.model';
 
 export const INIT            = '[Timeline] Init Timeline';
 export const TIMELINELOADED  = '[Timeline] Loaded Timeline';
@@ -15,7 +15,7 @@ export class InitTimelineAction implements Action {
 export class TimelineLoadedAction implements Action {
   readonly type = TIMELINELOADED;
 
-  constructor(public payload: Measure[]) {}
+  constructor(public payload: TimelineItem[]) {}
 }
 
 export class TimelineFailedAction implements Action {

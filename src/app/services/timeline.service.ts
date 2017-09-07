@@ -4,8 +4,8 @@ import { TimelineItem } from '../models/timeline-item.model';
 
 @Injectable()
 export class TimelineService {
-   getAllItems() {
-      let items: any = [
+   getAllItems(): Observable<TimelineItem[]> {
+      let items: TimelineItem[] = [
          ...bibleBooksCoverage,
          ...events,
          ...kingsOfJudah,

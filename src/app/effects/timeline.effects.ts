@@ -16,8 +16,7 @@ export class TimelineEffects {
       .ofType(timelineActions.INIT)
       .switchMap(() => {
          return this.timelineService.getAllItems()
-            .map((items) => new timelineActions.TimelineLoadedAction(items))
-            .catch(() => new timelineActions.TimelineFailedAction());
+            .map((items) => new timelineActions.TimelineLoadedAction(items));
       });
    
    constructor(private $actions: Actions, private timelineService: TimelineService) {}

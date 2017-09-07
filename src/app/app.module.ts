@@ -30,8 +30,6 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 import { KingsService } from './services/kings.service';
 import { KingsEffects } from './effects/kings.effects';
-import { MeasurementsService } from './services/measurements.service';
-import { MeasurementsEffects } from './effects/measurements.effects';
 import { SchedulesService } from './services/schedules.service';
 import { SchedulesEffects } from './effects/schedules.effects';
 import { TimelineService } from './services/timeline.service';
@@ -39,7 +37,6 @@ import { TimelineEffects } from './effects/timeline.effects';
 
 
 import { kingsReducer } from './reducers/kings.reducer';
-import { measurementsReducer } from './reducers/measurements.reducer';
 import { schedulesReducer } from './reducers/schedules.reducer';
 import { timelineReducer } from './reducers/timeline.reducer';
 
@@ -68,11 +65,10 @@ import { timelineReducer } from './reducers/timeline.reducer';
     IonicStorageModule.forRoot(),
     StoreModule.forRoot({
       kings: kingsReducer,
-      measurements: measurementsReducer,
       schedules: schedulesReducer,
       timeline: timelineReducer,
     }),
-    EffectsModule.forRoot([KingsEffects, MeasurementsEffects, SchedulesEffects, TimelineEffects]),
+    EffectsModule.forRoot([KingsEffects, SchedulesEffects, TimelineEffects]),
     StoreDevtoolsModule.instrument(),
   ],
   bootstrap: [IonicApp],
@@ -92,7 +88,6 @@ import { timelineReducer } from './reducers/timeline.reducer';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KingsService,
-    MeasurementsService,
     SchedulesService,
     TimelineService,
   ]

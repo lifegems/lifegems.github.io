@@ -148,7 +148,7 @@ export function measurementsReducer(state: MeasuresState = initState, action: Ac
 	}
 }
 
-export const getState        = (state) => state.measurements;
+export const getState        = (state) => state.converter.measurements;
 export const getMeasurements = createSelector(getState, (state: MeasuresState) => state.measurements);
 export const getBaseMeasure  = createSelector(getState, (state: MeasuresState) => state.baseMeasure);
 export const getAuxMeasures  = createSelector(getState, (state: MeasuresState) => state.auxMeasures);

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { Measure, MeasureValue } from '../../../models/measure.model';
+import { Measure, MeasureValue } from '../models/measure.model';
 
 @Component({
    selector: 'app-conversion-item',

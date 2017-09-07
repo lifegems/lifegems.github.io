@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
-import { Measure, MeasureValue } from '../../models/measure.model';
-import * as MeasurementActions from '../../actions/measurements.actions';
-import * as measurementsState from '../../reducers/measurements.reducer';
+import { Measure, MeasureValue } from './models/measure.model';
+import * as MeasurementActions from './actions/measurements.actions';
+import * as measurementsState from './reducers/measurements.reducer';
 
 @IonicPage()
 @Component({

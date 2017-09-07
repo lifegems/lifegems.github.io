@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
-import { Store } from '@ngrx/store';
+import { Component } from '@angular/core';
+import { IonicPage, NavController } from 'ionic-angular';
 import { ReadingSchedulesComponent } from '../../containers';
 
 @IonicPage()

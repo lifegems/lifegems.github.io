@@ -3,7 +3,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { IonicPageModule } from 'ionic-angular';
 
-import { TimelineComponent } from './timeline';
+import { TimelineCommponent } from './timeline';
 import { ProfileModal, TimelineListModal, TimelineRowComponent } from './components';
 import { timelineReducer } from './reducers/timeline.reducer';
 import { TimelineService } from './services';
@@ -12,18 +12,19 @@ import { TimelineEffects } from './effects/timeline.effects';
 @NgModule({
    declarations: [
     ProfileModal,
+    TimelineCommponent,
     TimelineListModal,
     TimelineRowComponent
    ],
    imports: [
-      IonicPageModule.forChild(TimelineComponent),
+      IonicPageModule.forChild(TimelineCommponent),
       StoreModule.forFeature('timeline', {
          timeline: timelineReducer
       }),
       EffectsModule.forFeature([TimelineEffects]),
    ],
    entryComponents: [
-      TimelineComponent,
+      TimelineCommponent,
       ProfileModal,
       TimelineListModal,
    ],

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ModalController, NavController, Slides } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
@@ -9,6 +9,9 @@ import * as TimelineActions from './actions/timeline.actions';
 import * as timelineState from './reducers/timeline.reducer';
 import { TimelineItem } from './models/timeline-item.model';
 
+@IonicPage({
+   name: 'TimelineComponent'
+})
 @Component({
 template: `
 <ion-header>
@@ -58,7 +61,7 @@ template: `
 </ion-footer>
 `
 })
-export class TimelineComponent implements OnInit {
+export class TimelineCommponent implements OnInit {
    public groups$: Store<string[]>;
    public items$: Store<TimelineItem[]>;
    public years$: Store<string[]>;

@@ -39,6 +39,7 @@ import { schedulesReducer } from './reducers/schedules.reducer';
     BrowserModule,
     ConverterModule,
     DashboardModule,
+    TimelineModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),

@@ -4,13 +4,12 @@ import { Store } from '@ngrx/store';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
 
-import { TimelineListModal } from '../components/timeline-list.modal';
-import * as TimelineActions from '../actions/timeline.actions';
-import * as timelineState from '../reducers/timeline.reducer';
-import { TimelineItem } from '../models/timeline-item.model';
+import { TimelineListModal } from './components/timeline-list.modal';
+import * as TimelineActions from './actions/timeline.actions';
+import * as timelineState from './reducers/timeline.reducer';
+import { TimelineItem } from './models/timeline-item.model';
 
 @Component({
-selector: 'page-timeline',
 template: `
 <ion-header>
 <ion-navbar>
@@ -59,7 +58,7 @@ template: `
 </ion-footer>
 `
 })
-export class KingsTimelineComponent implements OnInit {
+export class TimelineComponent implements OnInit {
    public groups$: Store<string[]>;
    public items$: Store<TimelineItem[]>;
    public years$: Store<string[]>;

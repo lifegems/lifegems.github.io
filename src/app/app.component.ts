@@ -3,9 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {
-  KingsTimelineComponent,
-  ReadingSchedulesComponent } from './containers';
+import { ReadingSchedulesComponent } from './containers';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +22,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home',      component: 'DashboardComponent' },
       { title: 'Kings',     component: 'KingsComponent' },
-      { title: 'Timeline',  component: KingsTimelineComponent },
+      { title: 'Timeline',  component: 'TimelineComponent' },
       { title: 'Converter', component: 'ConverterComponent' },
       { title: 'Schedule',  component: ReadingSchedulesComponent },
     ];

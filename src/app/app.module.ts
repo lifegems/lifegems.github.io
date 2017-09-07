@@ -11,37 +11,27 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
 import {
-  KingsTimelineComponent,
   ReadingSchedulesComponent, 
   ScheduleSectionComponent } from './containers';
 import {
-  ProfileModal,
   ScheduleItemComponent,
-  ScheduleSettingsPopover,
-  TimelineListModal,
-  TimelineRowComponent } from './components';
+  ScheduleSettingsPopover } from './components';
 
 import { ConverterModule } from './pages/converter/converter.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { KingsModule }     from './pages/kings/kings.module';
+import { TimelineModule }  from './pages/timeline/timeline.module';
 
 import { SchedulesService } from './services/schedules.service';
 import { SchedulesEffects } from './effects/schedules.effects';
-import { TimelineService } from './services/timeline.service';
-import { TimelineEffects } from './effects/timeline.effects';
 
 import { schedulesReducer } from './reducers/schedules.reducer';
-import { timelineReducer } from './reducers/timeline.reducer';
 
 @NgModule({
   declarations: [
     MyApp,
-    KingsTimelineComponent,
     ScheduleItemComponent,
     ScheduleSettingsPopover,
-    TimelineListModal,
-    TimelineRowComponent,
-    ProfileModal,
     ReadingSchedulesComponent,
     ScheduleSectionComponent,
   ],
@@ -55,17 +45,13 @@ import { timelineReducer } from './reducers/timeline.reducer';
     KingsModule,
     StoreModule.forRoot({
       schedules: schedulesReducer,
-      timeline: timelineReducer,
     }),
-    EffectsModule.forRoot([SchedulesEffects, TimelineEffects]),
+    EffectsModule.forRoot([SchedulesEffects]),
     StoreDevtoolsModule.instrument(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    KingsTimelineComponent,
-    ProfileModal,
-    TimelineListModal,
     ReadingSchedulesComponent,
     ScheduleSectionComponent,
     ScheduleSettingsPopover,
@@ -75,7 +61,6 @@ import { timelineReducer } from './reducers/timeline.reducer';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SchedulesService,
-    TimelineService,
   ]
 })
 export class AppModule {}

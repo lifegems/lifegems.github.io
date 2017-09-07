@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/merge';
@@ -16,7 +17,7 @@ import {
 export class SchedulesService {
    private schedules: Schedule[];
 
-   constructor(private storage: Storage) {
+   constructor(private storage: Storage, private http: HttpClient) {
       this.schedules = Object.assign([], [
          watchtowerComplete,
          bibleReadingChrono,
@@ -30,6 +31,7 @@ export class SchedulesService {
    }
 
    getSchedules(): Observable<Schedule[]> {
+      // this.http.get("https://chrome-plateau-178520.appspot.com/schedules").subscribe(r => console.log(r));
       return Observable.create(observer => {
          observer.next(this.schedules);
       });

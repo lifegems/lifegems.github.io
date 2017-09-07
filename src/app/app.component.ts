@@ -3,8 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { ReadingSchedulesComponent } from './containers';
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,7 +22,7 @@ export class MyApp {
       { title: 'Kings',     component: 'KingsComponent' },
       { title: 'Timeline',  component: 'TimelineComponent' },
       { title: 'Converter', component: 'ConverterComponent' },
-      { title: 'Schedule',  component: ReadingSchedulesComponent },
+      { title: 'Schedule',  component: 'SchedulesComponent' },
     ];
 
   }

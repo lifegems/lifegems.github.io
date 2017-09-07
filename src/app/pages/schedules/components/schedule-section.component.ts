@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ModalController, NavController, NavParams, PopoverController, Slides } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
 import { Schedule, Section } from '../models/schedule.model';
 import { ScheduleSettingsPopover } from '../components';
-import { ReadingSchedulesComponent } from '../containers';
+import { SchedulesComponent } from '../schedules';
 import * as schedulesActions from '../actions/schedules.actions';
 import * as schedulesReducer from '../reducers/schedules.reducer';
 
@@ -123,7 +123,7 @@ export class ScheduleSectionComponent implements OnInit {
        }
        if (data && data.clearData) {
           this.store.dispatch(new schedulesActions.ClearScheduleAction(this.key));
-          this.navCtrl.setRoot(ReadingSchedulesComponent);
+          this.navCtrl.setRoot(SchedulesComponent);
        }
      });
    }

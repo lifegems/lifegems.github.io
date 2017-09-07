@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { ModalController, NavController, Slides } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
-import { ScheduleSectionComponent } from './schedule-section.component';
-import { Schedule, Section } from '../models/schedule.model';
-import * as schedulesActions from '../actions/schedules.actions';
-import * as schedulesReducer from '../reducers/schedules.reducer';
+import { ScheduleSectionComponent } from './components/schedule-section.component';
+import { Schedule, Section } from './models/schedule.model';
+import * as schedulesActions from './actions/schedules.actions';
+import * as schedulesReducer from './reducers/schedules.reducer';
 
+@IonicPage()
 @Component({
-  selector: 'page-schedules',
   template: `
 <ion-header>
   <ion-navbar>
@@ -33,7 +33,7 @@ import * as schedulesReducer from '../reducers/schedules.reducer';
 </ion-footer>
 `
 })
-export class ReadingSchedulesComponent implements OnInit {
+export class SchedulesComponent implements OnInit {
    public schedules$: Store<Schedule[]>;
 
    constructor(public navCtrl: NavController, public store: Store<schedulesReducer.SchedulesState>) {

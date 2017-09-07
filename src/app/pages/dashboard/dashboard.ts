@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { ReadingSchedulesComponent } from '../../containers';
 
 @IonicPage()
 @Component({
@@ -65,7 +64,7 @@ export class DashboardComponent {
             this.navCtrl.setRoot('ConverterComponent');
             break;
          case 'schedules':
-            this.navCtrl.setRoot(ReadingSchedulesComponent);
+            this.navCtrl.setRoot('SchedulesComponent');
             break;
       }
    }

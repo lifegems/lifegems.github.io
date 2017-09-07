@@ -10,58 +10,39 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
-import {
-  ReadingSchedulesComponent, 
-  ScheduleSectionComponent } from './containers';
-import {
-  ScheduleItemComponent,
-  ScheduleSettingsPopover } from './components';
 
 import { ConverterModule } from './pages/converter/converter.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { KingsModule }     from './pages/kings/kings.module';
+import { SchedulesModule } from './pages/schedules/schedules.module';
 import { TimelineModule }  from './pages/timeline/timeline.module';
-
-import { SchedulesService } from './services/schedules.service';
-import { SchedulesEffects } from './effects/schedules.effects';
-
-import { schedulesReducer } from './reducers/schedules.reducer';
 
 @NgModule({
   declarations: [
     MyApp,
-    ScheduleItemComponent,
-    ScheduleSettingsPopover,
-    ReadingSchedulesComponent,
-    ScheduleSectionComponent,
   ],
   imports: [
     BrowserModule,
     ConverterModule,
     DashboardModule,
+    KingsModule,
+    SchedulesModule,
     TimelineModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    KingsModule,
-    StoreModule.forRoot({
-      schedules: schedulesReducer,
-    }),
-    EffectsModule.forRoot([SchedulesEffects]),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ReadingSchedulesComponent,
-    ScheduleSectionComponent,
-    ScheduleSettingsPopover,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SchedulesService,
   ]
 })
 export class AppModule {}

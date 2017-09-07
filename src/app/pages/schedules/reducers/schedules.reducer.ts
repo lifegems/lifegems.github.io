@@ -33,5 +33,5 @@ export function schedulesReducer(state: SchedulesState = initState, action: Acti
 	}
 }
 
-export const getState     = (state) => state.schedules;
+export const getState     = (state) => state.schedules.schedules;
 export const getSchedules = createSelector(getState, (state: SchedulesState) => state.schedules);

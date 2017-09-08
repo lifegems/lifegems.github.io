@@ -10,6 +10,11 @@ import { IonicPage, NavController } from 'ionic-angular';
          <ion-icon name="menu"></ion-icon>
        </button>
        <ion-title>Dashboard</ion-title>
+       <ion-buttons end>
+          <button ion-button icon-only (click)="showProfile()">
+             <ion-icon name="md-person"></ion-icon>
+          </button>
+       </ion-buttons>
      </ion-navbar>
    </ion-header>
    
@@ -67,5 +72,9 @@ export class DashboardComponent {
             this.navCtrl.setRoot('SchedulesComponent');
             break;
       }
+   }
+
+   showProfile() {
+     this.navCtrl.push('ProfileComponent')
    }
 }

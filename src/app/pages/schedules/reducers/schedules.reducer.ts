@@ -5,15 +5,21 @@ import { Schedule, Section } from '../models/schedule.model';
 export type Action =  scheduleActions.ALL;
 
 export interface SchedulesState {
+	remoteSchedules: any[];
 	schedules: Schedule[];
 }
 
 const initState: SchedulesState = {
+	remoteSchedules: [],
 	schedules: [],
 }
 
 export function schedulesReducer(state: SchedulesState = initState, action: Action) {
 	switch(action.type) {
+		case scheduleActions.LOADREMOTESCHEDULES:
+			return Object.assign({}, state, {
+				remoteSchedules: action.payload//.sort((a, b) => a.name.localeCompare(b.name))
+			});
 		case scheduleActions.LOADSCHEDULES:
 			return Object.assign({}, state, {
 				schedules: action.payload.sort((a, b) => a.name.localeCompare(b.name))
@@ -35,3 +41,4 @@ export function schedulesReducer(state: SchedulesState = initState, action: Acti
 
 export const getState     = (state) => state.schedules;
 export const getSchedules = createSelector(getState, (state: SchedulesState) => state.schedules);
+export const getRemoteSchedules = createSelector(getState, (state: SchedulesState) => state.remoteSchedules);

@@ -18,6 +18,14 @@ export class SchedulesEffects {
          return this.schedulesService.getSchedules()
             .map((schedules) => new schedulesActions.SchedulesLoadedAction(schedules));
       });
+
+   @Effect()
+   $loadRemoteSchedules: Observable<Action> = this.$actions
+      .ofType(schedulesActions.INITREMOTE)
+      .switchMap(() => {
+      return this.schedulesService.getRemoteSchedules()
+            .map((schedules) => new schedulesActions.RemoteSchedulesLoadedAction(schedules));
+      });
    
    @Effect()
    $loadSavedSchedule: Observable<Action> = this.$actions

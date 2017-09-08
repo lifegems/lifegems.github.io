@@ -4,6 +4,8 @@ import { Schedule } from '../models/schedule.model';
 
 export const CLEARSCHEDULE     = '[Schedules] Clear Schedule';
 export const INIT              = '[Schedules] Init Schedules';
+export const INITREMOTE        = '[Schedules] Init Remote Schedules';
+export const LOADREMOTESCHEDULES = '[Schedules] Load Remote Schedules';
 export const LOADSCHEDULES     = '[Schedules] Load Schedules';
 export const FAILSCHEDULES     = '[Schedules] Fail Schedules';
 export const LOADSAVEDSCHEDULE = '[Schedules] Load Saved Schedule';
@@ -20,10 +22,20 @@ export class InitSchedulesAction implements Action {
   readonly type = INIT;
 }
 
+export class InitRemoteSchedulesAction implements Action {
+  readonly type = INITREMOTE;
+}
+
 export class SchedulesLoadedAction implements Action {
   readonly type = LOADSCHEDULES;
 
   constructor(public payload: Schedule[]) {}
+}
+
+export class RemoteSchedulesLoadedAction implements Action {
+  readonly type = LOADREMOTESCHEDULES;
+
+  constructor(public payload: Object) {}
 }
 
 export class SchedulesFailedAction implements Action {
@@ -49,6 +61,8 @@ export class SaveSuccessAction implements Action {
 export type ALL
  = ClearScheduleAction
  | InitSchedulesAction
+ | InitRemoteSchedulesAction
+ | RemoteSchedulesLoadedAction
  | SchedulesLoadedAction
  | SchedulesFailedAction
  | LoadSavedScheduleAction

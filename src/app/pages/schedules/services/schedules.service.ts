@@ -29,9 +29,12 @@ export class SchedulesService {
    clearSchedule(scheduleKey: string) {
       return Observable.fromPromise(this.storage.set(scheduleKey, JSON.stringify(this.schedules.find(s => s.name == scheduleKey))));
    }
+   
+   getRemoteSchedules(): Observable<any[]> {
+      return this.http.get<any[]>("https://chrome-plateau-178520.appspot.com/schedules");
+   }
 
    getSchedules(): Observable<Schedule[]> {
-      // this.http.get("https://chrome-plateau-178520.appspot.com/schedules").subscribe(r => console.log(r));
       return Observable.create(observer => {
          observer.next(this.schedules);
       });

@@ -10,12 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MyApp } from './app.component';
-
-import { ConverterModule } from './pages/converter/converter.module';
-import { DashboardModule } from './pages/dashboard/dashboard.module';
-import { KingsModule }     from './pages/kings/kings.module';
-import { SchedulesModule } from './pages/schedules/schedules.module';
-import { TimelineModule }  from './pages/timeline/timeline.module';
+import { PagesModule }  from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -23,11 +18,7 @@ import { TimelineModule }  from './pages/timeline/timeline.module';
   ],
   imports: [
     BrowserModule,
-    ConverterModule,
-    DashboardModule,
-    KingsModule,
-    SchedulesModule,
-    TimelineModule,
+    PagesModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),

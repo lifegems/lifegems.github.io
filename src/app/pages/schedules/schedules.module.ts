@@ -18,9 +18,7 @@ import { schedulesReducer } from './reducers/schedules.reducer';
    ],
    imports: [
       IonicPageModule.forChild(SchedulesComponent),
-      StoreModule.forFeature('schedules', {
-         schedules: schedulesReducer
-      }),
+      StoreModule.forFeature('schedules', schedulesReducer),
       EffectsModule.forFeature([SchedulesEffects]),
    ],
    entryComponents: [

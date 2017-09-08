@@ -18,9 +18,7 @@ import { kingsReducer } from './reducers/kings.reducer';
    ],
    imports: [
       IonicPageModule.forChild(KingsComponent),
-      StoreModule.forFeature('kings', {
-         kings: kingsReducer
-      }),
+      StoreModule.forFeature('kings', kingsReducer),
       EffectsModule.forFeature([KingsEffects]),
    ],
    entryComponents: [

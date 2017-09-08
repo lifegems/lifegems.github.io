@@ -54,7 +54,7 @@ export function kingsReducer(state: KingsState = initState, action: Action) {
 	}
 }
 
-export const getState = (state) => state.kings.kings;
+export const getState = (state) => state.kings;
 export const getKings = createSelector(getState, (state: KingsState) => state.kings);
 export const getSelectedKing = createSelector(getState, (state: KingsState) => state.selectedKing);
 export const getShowPriests = createSelector(getState, (state: KingsState) => state.showPriests);

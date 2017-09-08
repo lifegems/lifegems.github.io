@@ -107,7 +107,7 @@ export function timelineReducer(state: TimelineState = initState, action: Action
 	}
 }
 
-export const getState = (state) => state.timeline.timeline;
+export const getState = (state) => state.timeline;
 export const getGroups = createSelector(getState, (state: TimelineState) => state.groups);
 export const getItems = createSelector(getState, (state: TimelineState) => state.items);
 export const getYears = createSelector(getState, (state: TimelineState) => state.years);

@@ -16,9 +16,7 @@ import { MeasurementsService } from './services/measurements.service';
    ],
    imports: [
       IonicPageModule.forChild(ConverterComponent),
-      StoreModule.forFeature('converter', {
-         measurements: measurementsReducer
-      }),
+      StoreModule.forFeature('converter', measurementsReducer),
       EffectsModule.forFeature([MeasurementsEffects]),
    ],
    entryComponents: [

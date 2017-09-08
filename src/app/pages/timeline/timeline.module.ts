@@ -18,9 +18,7 @@ import { TimelineEffects } from './effects/timeline.effects';
    ],
    imports: [
       IonicPageModule.forChild(TimelineCommponent),
-      StoreModule.forFeature('timeline', {
-         timeline: timelineReducer
-      }),
+      StoreModule.forFeature('timeline', timelineReducer),
       EffectsModule.forFeature([TimelineEffects]),
    ],
    entryComponents: [

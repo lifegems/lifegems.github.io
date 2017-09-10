@@ -16,20 +16,20 @@ import * as schedulesReducer from './reducers/schedules.reducer';
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Schedules</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="showAvailableSchedules()">
-        <ion-icon name="md-download"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
    <ion-list>
-      <ion-item detail-push *ngFor="let schedule of (schedules$ | async)" (click)="showSection(schedule)">
+      <ion-item *ngFor="let s of (remote$ | async)" (click)="tapSchedule(s)">
+         {{ s.name }}
+         <ion-icon name="ios-cloud-download-outline" item-end *ngIf="!wasDownloaded(s.id, (local$ | async)) && !isDownloading(s.id)"></ion-icon>
+         <ion-spinner name="bubbles" item-end *ngIf="!wasDownloaded(s.id, (local$ | async)) && isDownloading(s.id)"></ion-spinner>
+      </ion-item>
+      <!--<ion-item detail-push *ngFor="let schedule of (remote$ | async)" (click)="showSection(schedule)">
          {{schedule.name}}
          <ion-icon *ngIf="schedule.sections.length > 0 && schedule.complete" color="secondary" name="md-checkmark-circle"></ion-icon>
-      </ion-item>
+      </ion-item>-->
    </ion-list>
 </ion-content>
 
@@ -39,26 +39,47 @@ import * as schedulesReducer from './reducers/schedules.reducer';
 `
 })
 export class SchedulesComponent implements OnInit {
-   public schedules$: Store<Schedule[]>;
+   public remote$: Store<any[]>;
+   public local$: Store<any[]>;
+   public downloading: Number[] = [];
 
    constructor(public modalCtrl: ModalController, public navCtrl: NavController, public store: Store<schedulesReducer.SchedulesState>) {
       this.store.dispatch(new schedulesActions.InitSchedulesAction());
    }
 
    ngOnInit() {
-      this.schedules$ = this.store.select(schedulesReducer.getSchedules);
+      this.remote$ = this.store.select(schedulesReducer.getRemoteSchedules);
+      this.local$ = this.store.select(schedulesReducer.getLocalSchedules);
    }
 
+   isDownloading(id) {
+      return this.downloading.indexOf(id) > -1;
+   }
+
+   wasDownloaded(id: number, downloaded: any[]) {
+      console.log(downloaded);
+      return (downloaded.length > 0 && downloaded.map(d => d.schedule.id).indexOf(id) > -1);
+   }
+
+   tapSchedule(s) {
+      // if downloaded, show items
+      this.local$.subscribe(local => {
+         if (this.wasDownloaded(s.id, local)) {
+            alert("show schedule");
+         } else {
+            // otherwise download
+            this.downloading.push(s.id);
+            this.store.dispatch(new schedulesActions.InitDownloadScheduleAction(s));
+         }
+      }).unsubscribe();
+   }
+
+   /* deprecated functions */
    showSection(section: Schedule) {
       this.navCtrl.push(ScheduleSectionComponent, {
          key: section.name,
-         schedules: this.schedules$,
+         schedules: this.remote$,
          section: section,
       });
-   }
-   
-   showAvailableSchedules() {
-      this.store.dispatch(new schedulesActions.InitRemoteSchedulesAction());
-      this.modalCtrl.create(RemoteSchedulesModal).present();
    }
 }

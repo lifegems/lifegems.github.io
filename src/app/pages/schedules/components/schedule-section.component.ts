@@ -92,7 +92,7 @@ export class ScheduleSectionComponent implements OnInit {
    markSchedule(sections: Section[], complete: boolean) {
       this.markAll(sections, complete);
       this.schedules$.subscribe(s => {
-         this.store.dispatch(new schedulesActions.SaveScheduleAction({key: this.key, schedules: s}));
+        //  this.store.dispatch(new schedulesActions.SaveScheduleAction({key: this.key, schedules: s}));
       }).unsubscribe();
    }
 
@@ -122,7 +122,7 @@ export class ScheduleSectionComponent implements OnInit {
           this.markSchedule(this.section.sections, data.markAll);
        }
        if (data && data.clearData) {
-          this.store.dispatch(new schedulesActions.ClearScheduleAction(this.key));
+          // this.store.dispatch(new schedulesActions.ClearScheduleAction(this.key));
           this.navCtrl.setRoot(SchedulesComponent);
        }
      });
@@ -139,7 +139,7 @@ export class ScheduleSectionComponent implements OnInit {
          section.complete = !section.complete;
          this.section.complete = this.isSectionComplete(this.section);
          this.schedules$.subscribe(s => {
-            this.store.dispatch(new schedulesActions.SaveScheduleAction({key: this.key, schedules: s}));
+            // this.store.dispatch(new schedulesActions.SaveScheduleAction({key: this.key, schedules: s}));
          }).unsubscribe();
       }
    }

@@ -15,6 +15,7 @@ import {
 
 @Injectable()
 export class SchedulesService {
+   private baseUri: string = "https://chrome-plateau-178520.appspot.com";
    private schedules: Schedule[];
 
    constructor(private storage: Storage, private http: HttpClient) {
@@ -26,12 +27,33 @@ export class SchedulesService {
       ]);
    }
 
-   clearSchedule(scheduleKey: string) {
-      return Observable.fromPromise(this.storage.set(scheduleKey, JSON.stringify(this.schedules.find(s => s.name == scheduleKey))));
+   downloadRemoteSchedule(id: number): Observable<any> {
+      return this.http.get<any[]>(`${this.baseUri}/checkpoints?scheduleId=${id}`);
+   }
+   
+   getLocalSchedules(): Observable<any[]> {
+      return Observable.fromPromise(this.storage.get('schedules'));
    }
    
    getRemoteSchedules(): Observable<any[]> {
-      return this.http.get<any[]>("https://chrome-plateau-178520.appspot.com/schedules");
+      return this.http.get<any[]>(`${this.baseUri}/schedules`);
+   }
+
+   saveLocalSchedule(payload: {schedule: any, checkpoints: any[]}) {
+      return Observable.fromPromise(this.storage.get('schedules').then(local => {
+         if (local) {
+            local.push(payload);
+         } else {
+            local = [payload];
+         }
+         return Observable.fromPromise(this.storage.set(`schedules`, local));
+      }));
+
+   }
+
+   // deprecated
+   clearSchedule(scheduleKey: string) {
+      return Observable.fromPromise(this.storage.set(scheduleKey, JSON.stringify(this.schedules.find(s => s.name == scheduleKey))));
    }
 
    getSchedules(): Observable<Schedule[]> {

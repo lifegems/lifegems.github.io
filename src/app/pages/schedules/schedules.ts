@@ -20,17 +20,32 @@ import * as schedulesReducer from './reducers/schedules.reducer';
 </ion-header>
 
 <ion-content>
-   <ion-list>
-      <ion-item *ngFor="let s of (remote$ | async)" (click)="tapSchedule(s)">
+   <ion-card *ngFor="let s of (remote$ | async)">
+      <ion-card-header>
          {{ s.name }}
-         <ion-icon name="ios-cloud-download-outline" item-end *ngIf="!wasDownloaded(s.id, (local$ | async)) && !isDownloading(s.id)"></ion-icon>
-         <ion-spinner name="bubbles" item-end *ngIf="!wasDownloaded(s.id, (local$ | async)) && isDownloading(s.id)"></ion-spinner>
-      </ion-item>
-      <!--<ion-item detail-push *ngFor="let schedule of (remote$ | async)" (click)="showSection(schedule)">
-         {{schedule.name}}
-         <ion-icon *ngIf="schedule.sections.length > 0 && schedule.complete" color="secondary" name="md-checkmark-circle"></ion-icon>
-      </ion-item>-->
-   </ion-list>
+      </ion-card-header>
+      <ion-row>
+         <ion-col>
+            <button ion-button icon-left clear small
+               [disabled]="isDownloading(s.id) || wasDownloaded(s.id, (local$ | async))"
+               (click)="tapSchedule(s)">
+               <ion-icon name="ios-cloud-download-outline"
+                  *ngIf="!isDownloading(s.id)"></ion-icon>
+               <ion-spinner name="bubbles"
+                  *ngIf="isDownloading(s.id) && !wasDownloaded(s.id, (local$ | async))"></ion-spinner>
+               <div>Download</div>
+            </button>
+         </ion-col>
+         <ion-col center text-center>
+            <button ion-button icon-left clear small
+               [disabled]="!wasDownloaded(s.id, (local$ | async))"
+               (click)="viewSchedule(s)">
+               <ion-icon name="ios-eye-outline"></ion-icon>
+               <div>View</div>
+            </button>
+         </ion-col>
+      </ion-row>
+   </ion-card>
 </ion-content>
 
 <ion-footer>
@@ -57,21 +72,16 @@ export class SchedulesComponent implements OnInit {
    }
 
    wasDownloaded(id: number, downloaded: any[]) {
-      console.log(downloaded);
       return (downloaded.length > 0 && downloaded.map(d => d.schedule.id).indexOf(id) > -1);
    }
 
    tapSchedule(s) {
-      // if downloaded, show items
-      this.local$.subscribe(local => {
-         if (this.wasDownloaded(s.id, local)) {
-            alert("show schedule");
-         } else {
-            // otherwise download
-            this.downloading.push(s.id);
-            this.store.dispatch(new schedulesActions.InitDownloadScheduleAction(s));
-         }
-      }).unsubscribe();
+      this.downloading.push(s.id);
+      this.store.dispatch(new schedulesActions.InitDownloadScheduleAction(s));
+   }
+
+   viewSchedule(s) {
+      alert("view the schedule");
    }
 
    /* deprecated functions */

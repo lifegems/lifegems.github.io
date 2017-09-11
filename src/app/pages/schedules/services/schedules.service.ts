@@ -19,6 +19,7 @@ export class SchedulesService {
    private schedules: Schedule[];
 
    constructor(private storage: Storage, private http: HttpClient) {
+      // this.storage.clear();
       this.schedules = Object.assign([], [
          watchtowerComplete,
          bibleReadingChrono,

@@ -7,22 +7,30 @@ export type Action =  scheduleActions.ALL;
 export interface SchedulesState {
 	remote: any[];
 	local: any[];
-	schedules: Schedule[];
+	downloading: number[];
 }
 
 const initState: SchedulesState = {
 	remote: [],
 	local: [],
-	schedules: [],
+	downloading: [],
 }
 
 export function schedulesReducer(state: SchedulesState = initState, action: Action) {
 	switch(action.type) {
+		case scheduleActions.INITDOWNLOAD:
+			let newDownloading = Object.assign([], state.downloading);
+			newDownloading.push(action.payload.id);
+			return Object.assign({}, state, {
+				downloading: newDownloading,
+			});
 		case scheduleActions.DOWNLOADSUCCESS:
 			let local = Object.assign([], state.local);
 			local.push(action.payload);
+			let downloading = Object.assign([], state.downloading);
 			return Object.assign({}, state, {
-				local: local
+				downloading: downloading.filter(id => id !== action.payload.schedule.id),
+				local: local,
 			});
 		case scheduleActions.LOCALSCHEDULESLOADED:
 			return Object.assign({}, state, {
@@ -52,7 +60,7 @@ export function schedulesReducer(state: SchedulesState = initState, action: Acti
 	}
 }
 
-export const getState     = (state) => state.schedules;
-export const getSchedules = createSelector(getState, (state: SchedulesState) => state.schedules);
+export const getState     = (state) => state.schedules.schedules;
+export const getDownloading = createSelector(getState, (state: SchedulesState) => state.downloading);
 export const getLocalSchedules = createSelector(getState, (state: SchedulesState) => state.local);
 export const getRemoteSchedules = createSelector(getState, (state: SchedulesState) => state.remote);

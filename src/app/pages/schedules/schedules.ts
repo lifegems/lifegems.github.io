@@ -2,10 +2,12 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
-import { RemoteSchedulesModal, ScheduleSectionComponent } from './components';
+import { RemoteSchedulesModal, ScheduleViewer } from './components';
 import { Schedule, Section } from './models/schedule.model';
 import * as schedulesActions from './actions/schedules.actions';
 import * as schedulesReducer from './reducers/schedules.reducer';
+import * as checkpointsActions from './actions/checkpoints.actions';
+import * as checkpointsReducer from './reducers/checkpoints.reducer';
 
 @IonicPage()
 @Component({
@@ -27,19 +29,19 @@ import * as schedulesReducer from './reducers/schedules.reducer';
       <ion-row>
          <ion-col>
             <button ion-button icon-left clear small
-               [disabled]="isDownloading(s.id) || wasDownloaded(s.id, (local$ | async))"
-               (click)="tapSchedule(s)">
+               [disabled]="!canDownload(s.id, (downloading$ | async), (local$ | async))"
+               (click)="downloadSchedule(s)">
                <ion-icon name="ios-cloud-download-outline"
-                  *ngIf="!isDownloading(s.id)"></ion-icon>
+                  *ngIf="!isDownloading(s.id, (downloading$ | async))"></ion-icon>
                <ion-spinner name="bubbles"
-                  *ngIf="isDownloading(s.id) && !wasDownloaded(s.id, (local$ | async))"></ion-spinner>
+                  *ngIf="isDownloading(s.id, (downloading$ | async))"></ion-spinner>
                <div>Download</div>
             </button>
          </ion-col>
          <ion-col center text-center>
             <button ion-button icon-left clear small
                [disabled]="!wasDownloaded(s.id, (local$ | async))"
-               (click)="viewSchedule(s)">
+               (click)="viewSchedule(s.id)">
                <ion-icon name="ios-eye-outline"></ion-icon>
                <div>View</div>
             </button>
@@ -56,40 +58,46 @@ import * as schedulesReducer from './reducers/schedules.reducer';
 export class SchedulesComponent implements OnInit {
    public remote$: Store<any[]>;
    public local$: Store<any[]>;
-   public downloading: Number[] = [];
+   public downloading$: Store<Number[]>;
 
-   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public store: Store<schedulesReducer.SchedulesState>) {
-      this.store.dispatch(new schedulesActions.InitSchedulesAction());
+   constructor(
+      public modalCtrl: ModalController, 
+      public navCtrl: NavController, 
+      public scheduleStore: Store<schedulesReducer.SchedulesState>,
+      public checkpointsStore: Store<checkpointsReducer.CheckpointsState>
+   ) {
+      this.scheduleStore.dispatch(new schedulesActions.InitSchedulesAction());
+      this.checkpointsStore.dispatch(new checkpointsActions.InitCheckpointsAction());
    }
 
    ngOnInit() {
-      this.remote$ = this.store.select(schedulesReducer.getRemoteSchedules);
-      this.local$ = this.store.select(schedulesReducer.getLocalSchedules);
+      this.remote$      = this.scheduleStore.select(schedulesReducer.getRemoteSchedules);
+      this.local$       = this.scheduleStore.select(schedulesReducer.getLocalSchedules);
+      this.downloading$ = this.scheduleStore.select(schedulesReducer.getDownloading);
    }
 
-   isDownloading(id) {
-      return this.downloading.indexOf(id) > -1;
+   canDownload(id, downloading, local) {
+      return !this.isDownloading(id, downloading) && !this.wasDownloaded(id, local);
+   }
+   
+   downloadSchedule(s) {
+      this.scheduleStore.dispatch(new schedulesActions.InitDownloadScheduleAction(s));
    }
 
-   wasDownloaded(id: number, downloaded: any[]) {
-      return (downloaded.length > 0 && downloaded.map(d => d.schedule.id).indexOf(id) > -1);
+   isDownloading(id, downloading) {
+      return downloading.indexOf(id) > -1;
    }
 
-   tapSchedule(s) {
-      this.downloading.push(s.id);
-      this.store.dispatch(new schedulesActions.InitDownloadScheduleAction(s));
+   wasDownloaded(id: number, local: any[]) {
+      return (local.length > 0 && local.map(d => d.schedule.id).indexOf(id) > -1);
    }
 
-   viewSchedule(s) {
-      alert("view the schedule");
-   }
-
-   /* deprecated functions */
-   showSection(section: Schedule) {
-      this.navCtrl.push(ScheduleSectionComponent, {
-         key: section.name,
-         schedules: this.remote$,
-         section: section,
-      });
+   viewSchedule(id) {
+      this.local$.subscribe(schedules => {
+         let schedule = schedules.find(s => s.schedule.id == id);
+         this.navCtrl.push(ScheduleViewer, {
+            schedule: schedule
+         });
+      }).unsubscribe();
    }
 }

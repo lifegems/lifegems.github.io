@@ -11,15 +11,6 @@ export const INITDOWNLOAD          = '[Schedules] Init Download Schedules';
 export const DOWNLOADSUCCESS       = '[Schedules] Download Success';
 export const SAVELOCALSCHEDULE     = '[Schedules] Save Local Schedule';
 
-// deprecated
-// export const CLEARSCHEDULE     = '[Schedules] Clear Schedule';
-// export const LOADSCHEDULES     = '[Schedules] Load Schedules';
-// export const FAILSCHEDULES     = '[Schedules] Fail Schedules';
-// export const LOADSAVEDSCHEDULE = '[Schedules] Load Saved Schedule';
-// export const SAVESCHEDULE      = '[Schedules] Save Schedule';
-// export const SAVESUCCESS       = '[Schedules] Save Success';
-
-
 export class InitSchedulesAction implements Action {
   readonly type = INIT;
 }
@@ -61,40 +52,6 @@ export class SaveLocalScheduleAction implements Action {
 
   constructor(public payload: {schedule: any, checkpoints: any[]}) {}
 }
-
-
-// deprecated
-// export class ClearScheduleAction implements Action {
-//   readonly type = CLEARSCHEDULE;
-
-//   constructor(public payload: string) {}
-// }
-
-// export class SchedulesLoadedAction implements Action {
-//   readonly type = LOADSCHEDULES;
-
-//   constructor(public payload: Schedule[]) {}
-// }
-
-// export class SchedulesFailedAction implements Action {
-//   readonly type = FAILSCHEDULES;
-// }
-
-// export class LoadSavedScheduleAction implements Action {
-//   readonly type = LOADSAVEDSCHEDULE;
-
-//   constructor(public payload: Schedule) {}
-// }
-
-// export class SaveScheduleAction implements Action {
-//   readonly type = SAVESCHEDULE;
-
-//   constructor(public payload: {key: string, schedules: Schedule[]}) {}
-// }
-
-// export class SaveSuccessAction implements Action {
-//   readonly type = SAVESUCCESS;
-// }
 
 export type ALL
  = InitSchedulesAction

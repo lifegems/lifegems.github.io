@@ -4,32 +4,38 @@ import { StoreModule } from '@ngrx/store';
 import { IonicPageModule } from 'ionic-angular';
 
 import { SchedulesComponent } from './schedules';
-import { RemoteSchedulesModal, ScheduleItemComponent, ScheduleSectionComponent, ScheduleSettingsPopover } from './components';
-import { SchedulesService } from './services';
+import { RemoteSchedulesModal, ScheduleItemComponent, ScheduleViewer, ScheduleSettingsPopover } from './components';
+import { CheckpointsService, SchedulesService } from './services';
 import { SchedulesEffects } from './effects/schedules.effects';
 import { schedulesReducer } from './reducers/schedules.reducer';
+import { checkpointsReducer } from './reducers/checkpoints.reducer';
+import { CheckpointsEffects } from './effects/checkpoints.effects';
 
 @NgModule({
    declarations: [
       RemoteSchedulesModal,
       SchedulesComponent,
       ScheduleItemComponent,
-      ScheduleSectionComponent,
+      ScheduleViewer,
       ScheduleSettingsPopover
    ],
    imports: [
       IonicPageModule.forChild(SchedulesComponent),
-      StoreModule.forFeature('schedules', schedulesReducer),
-      EffectsModule.forFeature([SchedulesEffects]),
+      StoreModule.forFeature('schedules', {
+        checkpoints: checkpointsReducer,
+        schedules: schedulesReducer
+      }),
+      EffectsModule.forFeature([CheckpointsEffects,SchedulesEffects]),
    ],
    entryComponents: [
       RemoteSchedulesModal,
       SchedulesComponent,
-      ScheduleSectionComponent,
+      ScheduleViewer,
       ScheduleSettingsPopover
    ],
    providers: [
-      SchedulesService
+      CheckpointsService,
+      SchedulesService,
    ]
  })
  export class SchedulesModule {}

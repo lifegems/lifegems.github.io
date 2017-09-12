@@ -27,7 +27,8 @@ export class ScheduleItemComponent implements OnInit {
    }
 
    getCompletenessText(checkpointIds: Number[]) {
-      return `${checkpointIds.length}/${this.section.sections.length}`;
+      let completeIds = this.listSectionCompleteIds(this.section, checkpointIds);
+      return `${completeIds.length}/${this.section.sections.length}`;
    }
 
    handleTapSection(section: any): void {
@@ -35,20 +36,26 @@ export class ScheduleItemComponent implements OnInit {
    }
 
    isComplete(checkpointIds: Number[]): boolean {
-      let sectionIds: Number[] = this.getSectionIds(this.section);
-      return sectionIds.filter(sid => checkpointIds.indexOf(sid) == -1).length == 0;
+      let completeIds: Number[] = this.listSectionCompleteIds(this.section, checkpointIds);
+      if (completeIds.indexOf(this.section.id) > -1
+         || this.section.sections.filter(s => completeIds.indexOf(s.id) > -1).length === 0) {
+         return true;
+      }
+      return false;
    }
 
-   getSectionIds(section: {id: Number, sections: any[]}): Number[] {
-      let ids = [];
-      if (section.sections.length > 0) {
+   listSectionCompleteIds(section: {sections: any[], id: Number}, checkpointIds: Number[]): Number[] {
+      let completeIds = [];
+      if (section.sections.length === 0 && checkpointIds.indexOf(section.id) > -1) {
+         completeIds.push(section.id);
+      } else if (section.sections.length > 0) {
          section.sections.forEach(s => {
-            let sIds = this.getSectionIds(s);
-            ids.push(...sIds);
+            let ids = this.listSectionCompleteIds(s, checkpointIds);
+            if (ids.length > 0) {
+               completeIds.push(...ids);
+            }
          });
-      } else {
-         ids.push(section.id);
       }
-      return ids;
+      return completeIds;
    }
 }

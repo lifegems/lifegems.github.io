@@ -34,7 +34,11 @@ export class CheckpointsService {
             checkpointIds: [],
          };
       }
-      updatedSchedule.checkpointIds.push(checkpointId);
+      if (updatedSchedule.checkpointIds.indexOf(checkpointId) == -1) {
+         updatedSchedule.checkpointIds.push(checkpointId);
+      } else {
+         updatedSchedule.checkpointIds = updatedSchedule.checkpointIds.filter(c => c !== checkpointId);
+      }
       local = local.filter(s => s.scheduleId !== scheduleId);
       local.push(updatedSchedule);
       return local;

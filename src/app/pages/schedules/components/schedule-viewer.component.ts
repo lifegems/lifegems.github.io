@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, PopoverController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
-import { Schedule, Section } from '../models/schedule.model';
-import { ScheduleSettingsPopover } from '../components';
-import { SchedulesComponent } from '../schedules';
 import * as checkpointsActions from '../actions/checkpoints.actions';
 import * as checkpointsReducer from '../reducers/checkpoints.reducer';
 
@@ -17,15 +14,11 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
          <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title></ion-title>
-      <ion-buttons end>
-         <button ion-button icon-only>
-         <ion-icon name="md-more"></ion-icon>
-         </button>
-      </ion-buttons>
    </ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
+   <h2 text-center>{{schedule.schedule.name}}</h2>
    <ion-list>
       <ng-template ngFor let-checkpoint [ngForOf]="schedule.checkpoints">
          <ion-item-divider>{{checkpoint.name}}</ion-item-divider>
@@ -37,7 +30,8 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
 </ion-content>
 
 <ion-footer>
-   <ion-toolbar>
+   <ion-toolbar text-center>
+      Progress - {{getCompletenessText(schedule.checkpoints, checkpoints$ | async)}}
    </ion-toolbar>
 </ion-footer>
 `
@@ -58,6 +52,12 @@ export class ScheduleViewer implements OnInit {
       this.checkpoints$ = this.store.select(checkpointsReducer.getLocalCheckpoints);
    }
 
+   getCompletenessText(checkpoints, local) {
+      let schedule = local.find(c => c.scheduleId == this.schedule.schedule.id);
+      let total = checkpoints.map(c => c.sections.length).reduce((a, b) => a + b);
+      return `${schedule.checkpointIds.length}/${total}`;
+   }
+
    handleTapSection(section) {
       if (section.sections.length > 0) {
          this.navCtrl.push(ScheduleViewer, {
@@ -70,7 +70,7 @@ export class ScheduleViewer implements OnInit {
          this.checkpoints$.subscribe(local => {
             this.store.dispatch(new checkpointsActions.InitSaveLocalCheckpointAction({
                local: local,
-               scheduleId: this.schedule.schedule.schedule.id,
+               scheduleId: this.schedule.schedule.id,
                checkpointId: section.id,
             }));
          }).unsubscribe();

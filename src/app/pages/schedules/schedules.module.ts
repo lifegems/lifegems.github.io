@@ -4,7 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import { IonicPageModule } from 'ionic-angular';
 
 import { SchedulesComponent } from './schedules';
-import { RemoteSchedulesModal, ScheduleItemComponent, ScheduleViewer, ScheduleSettingsPopover } from './components';
+import { RemoteSchedulesModal, ScheduleItemComponent, ScheduleViewer } from './components';
 import { CheckpointsService, SchedulesService } from './services';
 import { SchedulesEffects } from './effects/schedules.effects';
 import { schedulesReducer } from './reducers/schedules.reducer';
@@ -17,7 +17,6 @@ import { CheckpointsEffects } from './effects/checkpoints.effects';
       SchedulesComponent,
       ScheduleItemComponent,
       ScheduleViewer,
-      ScheduleSettingsPopover
    ],
    imports: [
       IonicPageModule.forChild(SchedulesComponent),
@@ -31,7 +30,6 @@ import { CheckpointsEffects } from './effects/checkpoints.effects';
       RemoteSchedulesModal,
       SchedulesComponent,
       ScheduleViewer,
-      ScheduleSettingsPopover
    ],
    providers: [
       CheckpointsService,

@@ -27,20 +27,21 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
          {{ s.name }}
       </ion-card-header>
       <ion-row>
-         <ion-col>
-            <button ion-button icon-left clear small
-               [disabled]="!canDownload(s.id, (downloading$ | async), (local$ | async))"
-               (click)="downloadSchedule(s)">
-               <ion-icon name="ios-cloud-download-outline"
-                  *ngIf="!isDownloading(s.id, (downloading$ | async))"></ion-icon>
-               <ion-spinner name="bubbles"
-                  *ngIf="isDownloading(s.id, (downloading$ | async))"></ion-spinner>
-               <div>Download</div>
-            </button>
+         <ion-col padding-top text-center>
+            <ion-note *ngIf="wasDownloaded(s.id, (local$ | async))">{{getCompletenessText(s.id, local$ | async, checkpoints$ | async)}}</ion-note>
          </ion-col>
          <ion-col center text-center>
             <button ion-button icon-left clear small
-               [disabled]="!wasDownloaded(s.id, (local$ | async))"
+               *ngIf="isDownloading(s.id, (downloading$ | async)) || canDownload(s.id, (downloading$ | async), (local$ | async))"
+               (click)="downloadSchedule(s)">
+               <ion-icon name="ios-cloud-download-outline"
+               *ngIf="!isDownloading(s.id, (downloading$ | async))"></ion-icon>
+               <ion-spinner name="bubbles"
+               *ngIf="isDownloading(s.id, (downloading$ | async))"></ion-spinner>
+               <div>Download</div>
+            </button>
+            <button ion-button icon-left clear small
+               *ngIf="wasDownloaded(s.id, (local$ | async))"
                (click)="viewSchedule(s.id)">
                <ion-icon name="ios-eye-outline"></ion-icon>
                <div>View</div>
@@ -59,6 +60,7 @@ export class SchedulesComponent implements OnInit {
    public remote$: Store<any[]>;
    public local$: Store<any[]>;
    public downloading$: Store<Number[]>;
+   public checkpoints$: Store<any[]>;
 
    constructor(
       public modalCtrl: ModalController, 
@@ -74,6 +76,7 @@ export class SchedulesComponent implements OnInit {
       this.remote$      = this.scheduleStore.select(schedulesReducer.getRemoteSchedules);
       this.local$       = this.scheduleStore.select(schedulesReducer.getLocalSchedules);
       this.downloading$ = this.scheduleStore.select(schedulesReducer.getDownloading);
+      this.checkpoints$ = this.scheduleStore.select(checkpointsReducer.getLocalCheckpoints);
    }
 
    canDownload(id, downloading, local) {
@@ -82,6 +85,14 @@ export class SchedulesComponent implements OnInit {
    
    downloadSchedule(s) {
       this.scheduleStore.dispatch(new schedulesActions.InitDownloadScheduleAction(s));
+   }
+   
+   getCompletenessText(sid, localSchedules, localCheckpoints) {
+      let schedule = localSchedules.find(s => s.id == sid);
+      let completeIds = (schedule) ? schedule.checkpointIds.length : 0;
+      // let total = localSchedule.map(c => c.sections.length).reduce((a, b) => a + b);
+      // return `${schedule.checkpointIds.length}/${total}`;
+      return "";//`2/${completeIds}`;
    }
 
    isDownloading(id, downloading) {

@@ -54,8 +54,9 @@ export class ScheduleViewer implements OnInit {
 
    getCompletenessText(checkpoints, local) {
       let schedule = local.find(c => c.scheduleId == this.schedule.schedule.id);
+      let complete = (schedule) ? schedule.checkpointIds.length : 0;
       let total = checkpoints.map(c => c.sections.length).reduce((a, b) => a + b);
-      return `${schedule.checkpointIds.length}/${total}`;
+      return `${complete}/${total}`;
    }
 
    handleTapSection(section) {

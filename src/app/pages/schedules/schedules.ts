@@ -18,33 +18,31 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Schedules</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showDownloadableSchedules()">
+        <ion-icon name="md-download"></ion-icon>
+      </button>
+    </ion-buttons>    
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-   <ion-card *ngFor="let s of (remote$ | async)">
+   <div text-center *ngIf="(local$ | async).length == 0">
+      <h3><ion-icon name="md-sad"></ion-icon> No Schedules!</h3>
+      <p>Tap <ion-icon color="primary" name="md-download"></ion-icon> to view schedules<br />available for download.</p>
+   </div>
+   <ion-card *ngFor="let s of (local$ | async)">
       <ion-card-header>
-         {{ s.name }}
+         {{s.schedule.name}}
       </ion-card-header>
       <ion-row>
          <ion-col padding-top text-center>
-            <ion-note *ngIf="wasDownloaded(s.id, (local$ | async))">{{getCompletenessText(s.id, local$ | async, checkpoints$ | async)}}</ion-note>
+            {{ getCompletenessText(s.schedule.id, (local$ | async), (checkpoints$ | async)) }}
          </ion-col>
-         <ion-col center text-center>
-            <button ion-button icon-left clear small
-               *ngIf="isDownloading(s.id, (downloading$ | async)) || canDownload(s.id, (downloading$ | async), (local$ | async))"
-               (click)="downloadSchedule(s)">
-               <ion-icon name="ios-cloud-download-outline"
-               *ngIf="!isDownloading(s.id, (downloading$ | async))"></ion-icon>
-               <ion-spinner name="bubbles"
-               *ngIf="isDownloading(s.id, (downloading$ | async))"></ion-spinner>
-               <div>Download</div>
-            </button>
-            <button ion-button icon-left clear small
-               *ngIf="wasDownloaded(s.id, (local$ | async))"
-               (click)="viewSchedule(s.id)">
+         <ion-col>
+            <button ion-button icon-left clear small (click)="viewSchedule(s.schedule.id)">
                <ion-icon name="ios-eye-outline"></ion-icon>
-               <div>View</div>
+               <div>View Schedule</div>
             </button>
          </ion-col>
       </ion-row>
@@ -68,12 +66,11 @@ export class SchedulesComponent implements OnInit {
       public scheduleStore: Store<schedulesReducer.SchedulesState>,
       public checkpointsStore: Store<checkpointsReducer.CheckpointsState>
    ) {
-      this.scheduleStore.dispatch(new schedulesActions.InitSchedulesAction());
+      this.scheduleStore.dispatch(new schedulesActions.InitLocalSchedulesAction());
       this.checkpointsStore.dispatch(new checkpointsActions.InitCheckpointsAction());
    }
 
    ngOnInit() {
-      this.remote$      = this.scheduleStore.select(schedulesReducer.getRemoteSchedules);
       this.local$       = this.scheduleStore.select(schedulesReducer.getLocalSchedules);
       this.downloading$ = this.scheduleStore.select(schedulesReducer.getDownloading);
       this.checkpoints$ = this.scheduleStore.select(checkpointsReducer.getLocalCheckpoints);
@@ -88,15 +85,19 @@ export class SchedulesComponent implements OnInit {
    }
    
    getCompletenessText(sid, localSchedules, localCheckpoints) {
-      let schedule = localSchedules.find(s => s.id == sid);
-      let completeIds = (schedule) ? schedule.checkpointIds.length : 0;
-      // let total = localSchedule.map(c => c.sections.length).reduce((a, b) => a + b);
-      // return `${schedule.checkpointIds.length}/${total}`;
-      return "";//`2/${completeIds}`;
+      let schedule   = localSchedules.find(s => sid == s.schedule.id);
+      let total      = (schedule) ? schedule.checkpoints.map(c => (c) ? c.sections.length : 0).reduce((a,b) => a + b) : 0;
+      let checkpoint = localCheckpoints.find(s => s.scheduleId == sid);
+      let complete   = (checkpoint) ? checkpoint.checkpointIds.length : 0;
+      return `${complete}/${total}`;
    }
 
    isDownloading(id, downloading) {
       return downloading.indexOf(id) > -1;
+   }
+
+   showDownloadableSchedules() {
+      this.modalCtrl.create(RemoteSchedulesModal).present();
    }
 
    wasDownloaded(id: number, local: any[]) {

@@ -10,6 +10,8 @@ export const REMOTESCHEDULESLOADED = '[Schedules] Remote Schedules Loaded';
 export const INITDOWNLOAD          = '[Schedules] Init Download Schedules';
 export const DOWNLOADSUCCESS       = '[Schedules] Download Success';
 export const SAVELOCALSCHEDULE     = '[Schedules] Save Local Schedule';
+export const INITDELETELOCAL       = '[Schedules] Init Delete Local Schedule';
+export const DELETELOCALSUCCESS    = '[Schedules] Delete Local Schedule Success';
 
 export class InitSchedulesAction implements Action {
   readonly type = INIT;
@@ -27,6 +29,18 @@ export class InitDownloadScheduleAction implements Action {
   readonly type = INITDOWNLOAD;
 
   constructor(public payload: any) {}
+}
+
+export class InitDeleteLocalScheduleAction implements Action {
+  readonly type = INITDELETELOCAL;
+
+  constructor(public payload: Number) {}
+}
+
+export class DeleteLocalSuccessAction implements Action {
+  readonly type = DELETELOCALSUCCESS;
+
+  constructor(public payload: Number) {}
 }
 
 export class DownloadSuccessAction implements Action {
@@ -61,4 +75,6 @@ export type ALL
  | RemoteSchedulesLoadedAction
  | InitDownloadScheduleAction
  | DownloadSuccessAction
- | SaveLocalScheduleAction;
+ | SaveLocalScheduleAction
+ | InitDeleteLocalScheduleAction
+ | DeleteLocalSuccessAction;

@@ -40,21 +40,11 @@ export function schedulesReducer(state: SchedulesState = initState, action: Acti
 			return Object.assign({}, state, {
 				remote: action.payload
 			});
-		// deprecated
-		// case scheduleActions.LOADSCHEDULES:
-		// 	return Object.assign({}, state, {
-		// 		schedules: action.payload.sort((a, b) => a.name.localeCompare(b.name))
-		// 	});
-		// case scheduleActions.LOADSAVEDSCHEDULE:
-		// 	let updated = Object.assign([], state.schedules).filter((s: Schedule) => s.name !== action.payload.name);
-		// 	updated.push(action.payload);
-		// 	return Object.assign({}, state, {
-		// 		schedules: updated.sort((a, b) => a.name.localeCompare(b.name))
-		// 	});
-		// case scheduleActions.SAVESCHEDULE:
-		// 	return Object.assign({}, state, {
-		// 		schedules: action.payload.schedules.sort((a, b) => a.name.localeCompare(b.name))
-		// 	})
+		case scheduleActions.DELETELOCALSUCCESS:
+			let localSchedules = Object.assign([], state.local);
+			return Object.assign({}, state, {
+				local: localSchedules.filter(s => s.schedule.id !== action.payload)
+			});			
 		default:
 			return Object.assign({}, state);
 	}

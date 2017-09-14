@@ -28,6 +28,17 @@ export class SchedulesService {
       ]);
    }
 
+   deleteLocalSchedule(id: Number): Observable<any> {
+      return Observable.fromPromise(this.storage.get('schedules').then(local => {
+         if (local) {
+            local = local.filter(s => s.schedule.id !== id);
+         } else {
+            local = [];
+         }
+         return Observable.fromPromise(this.storage.set(`schedules`, local));
+      }));
+   }
+
    downloadRemoteSchedule(id: number): Observable<any> {
       return this.http.get<any[]>(`${this.baseUri}/checkpoints?scheduleId=${id}`);
    }

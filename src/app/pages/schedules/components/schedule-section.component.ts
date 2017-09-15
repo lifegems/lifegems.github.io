@@ -1,35 +1,38 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as checkpointsReducer from '../reducers/checkpoints.reducer';
 
 @Component({
    selector: 'app-schedule-section',
    template: `
-   <ng-template ngFor let-checkpoint [ngForOf]="schedule.checkpoints">
-      <ion-item-divider>{{checkpoint.name}}</ion-item-divider>
+   <ion-item-divider (click)="toggleCollapse()">
+      {{checkpoint.name}}
+      <ion-icon *ngIf="!isCollapsed" item-end name="ios-arrow-up"></ion-icon>
+      <ion-icon *ngIf="isCollapsed" item-end name="ios-arrow-down"></ion-icon>
+   </ion-item-divider>
+   <ng-template [ngIf]="!isCollapsed">
       <ng-template ngFor let-section [ngForOf]="checkpoint.sections">
-         <app-schedule-item [section]="section" (tapSection)="handleTapSection($event)"></app-schedule-item>
+         <app-schedule-item [section]="section" (tapSection)="handleTapCheckpoint($event)"></app-schedule-item>
       </ng-template>
    </ng-template>
    `
 })
 export class ScheduleSectionComponent implements OnInit {
-   @Input() checkpoints: { schedule: any, checkpoints: any[] };
-   @Output() tapSection: EventEmitter<{ schedule: any, checkpoints: any[] }> = new EventEmitter<{ schedule: any, checkpoints: any[] }>();
-   public checkpoints$: Store<{scheduleId: Number, checkpointIds: Number[]}[]>;
+   @Input() schedule: any;
+   @Input() checkpoint: any[];
+   @Output() tapCheckpoint: EventEmitter<any> = new EventEmitter<any>();
 
-   constructor(public store: Store<checkpointsReducer.CheckpointsState>) {}
+   public isCollapsed: boolean;
 
-   ngOnInit() {
-      this.checkpoints$ = this.store.select(checkpointsReducer.getLocalCheckpoints);
+   constructor() {
+      this.isCollapsed = true;
    }
 
-   // handleTapSection(section: any): void {
-   //    this.tapSection.emit(section);
-   // }
+   ngOnInit() {}
 
-   // isComplete(checkpoints: {scheduleId: Number, checkpointIds: Number[]}[] ): boolean {
-   //    let checkpoint = checkpoints.find(c => c.scheduleId == this.section.schedule);
-   //    return (checkpoint) ? checkpoint.checkpointIds.indexOf(this.section.id) > -1 : false;
-   // }
+   handleTapCheckpoint(checkpoint) {
+      this.tapCheckpoint.emit(checkpoint);
+   }
+
+   toggleCollapse() {
+      this.isCollapsed = !this.isCollapsed;
+   }
 }

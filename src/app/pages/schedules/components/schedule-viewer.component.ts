@@ -52,7 +52,7 @@ export class ScheduleViewer implements OnInit {
    getCompletenessText(checkpoints, local) {
       let schedule = local.find(c => c.scheduleId == this.schedule.schedule.id);
       let complete = (schedule) ? schedule.checkpointIds.length : 0;
-      let total = checkpoints.map(c => c.sections.length).reduce((a, b) => a + b);
+      let total = checkpoints.map(c => c.sections.length).reduce((a, b) => a + b, 0);
       return `${complete}/${total}`;
    }
 

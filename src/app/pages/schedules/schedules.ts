@@ -40,15 +40,28 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
             {{ getCompletenessText(s.schedule.id, (local$ | async), (checkpoints$ | async)) }}
          </ion-col>
          <ion-col>
-            <button ion-button icon-left clear small (click)="viewSchedule(s.schedule.id)">
+            <button ion-button icon-left clear small
+               *ngIf="hasCheckpoints(s.checkpoints)"
+               (click)="viewSchedule(s.schedule.id)">
                <ion-icon name="ios-eye-outline"></ion-icon>
                <div>View Schedule</div>
             </button>
+            <p ion-text color="danger" text-center padding-top
+               *ngIf="!hasCheckpoints(s.checkpoints)">
+               <ion-icon name="md-warning"></ion-icon>
+               No Checkpoints
+            </p>
          </ion-col>
       </ion-row>
-      <ion-list>
-         <ion-list-header>Next Reading</ion-list-header>
-         <app-schedule-section *ngIf="hasCheckpoints(checkpoints$ | async)" [schedule]="s.schedule" [checkpoint]="getNextCheckpoint(s, (checkpoints$ | async))" (tapCheckpoint)="handleTapSection(s.schedule, $event)"></app-schedule-section>
+      <ion-list *ngIf="hasCheckpoints(s.checkpoints) && isScheduleComplete(s.schedule.id, (local$ | async), (checkpoints$ | async))">
+         <ion-list-header color="secondary">
+            Completed
+            <ion-icon name="md-checkmark"></ion-icon>
+         </ion-list-header>
+      </ion-list>
+      <ion-list *ngIf="hasCheckpoints(s.checkpoints) && !isScheduleComplete(s.schedule.id, (local$ | async), (checkpoints$ | async))">
+         <ion-list-header>Next Checkpoint</ion-list-header>
+         <app-schedule-section [schedule]="s.schedule" [checkpoint]="getNextCheckpoint(s, (checkpoints$ | async))" (tapCheckpoint)="handleTapSection(s.schedule, $event)"></app-schedule-section>
       </ion-list>
    </ion-card>
 </ion-content>
@@ -89,16 +102,24 @@ export class SchedulesComponent implements OnInit {
    }
    
    getCompletenessText(sid, localSchedules, localCheckpoints) {
-      let schedule   = localSchedules.find(s => sid == s.schedule.id);
-      let total      = (schedule) ? schedule.checkpoints.map(c => (c) ? c.sections.length : 0).reduce((a,b) => a + b) : 0;
-      let checkpoint = localCheckpoints.find(s => s.scheduleId == sid);
-      let complete   = (checkpoint) ? checkpoint.checkpointIds.length : 0;
+      let total    = this.getCheckpointsTotal(sid, localSchedules);
+      let complete = this.getCheckpointsCompleted(sid, localCheckpoints);
       return `${complete}/${total}`;
+   }
+
+   getCheckpointsCompleted(sid, localCheckpoints) {
+      let checkpoint = localCheckpoints.find(s => s.scheduleId == sid);
+      return (checkpoint) ? checkpoint.checkpointIds.length : 0;
+   }
+
+   getCheckpointsTotal(sid, localSchedules) {
+      let schedule   = localSchedules.find(s => sid == s.schedule.id);
+      return (schedule) ? schedule.checkpoints.map(c => (c) ? c.sections.length : 0).reduce((a,b) => a + b, 0) : 0;
    }
 
    getNextCheckpoint(schedule, checkpoints) {
       let checks = checkpoints.find(c => c.scheduleId == schedule.schedule.id);
-      return schedule.checkpoints.find(c => c.sections.map(s => s.id).filter(id => checks.checkpointIds.indexOf(id) === -1).length > 0);
+      return schedule.checkpoints.find(c => c.sections.map(s => s.id).filter(id => (checks) ? checks.checkpointIds.indexOf(id) === -1 : true).length > 0);
    }
    
    handleTapSection(schedule, section) {
@@ -126,6 +147,12 @@ export class SchedulesComponent implements OnInit {
 
    isDownloading(id, downloading) {
       return downloading.indexOf(id) > -1;
+   }
+
+   isScheduleComplete(sid, localSchedules, localCheckpoints) {
+      let total    = this.getCheckpointsTotal(sid, localSchedules);
+      let complete = this.getCheckpointsCompleted(sid, localCheckpoints);
+      return total === complete;
    }
 
    showDownloadableSchedules() {

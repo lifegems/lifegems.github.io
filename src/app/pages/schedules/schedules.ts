@@ -46,6 +46,10 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
             </button>
          </ion-col>
       </ion-row>
+      <ion-list>
+         <ion-list-header>Next Reading</ion-list-header>
+         <app-schedule-section *ngIf="hasCheckpoints(checkpoints$ | async)" [schedule]="s.schedule" [checkpoint]="getNextCheckpoint(s, (checkpoints$ | async))" (tapCheckpoint)="handleTapSection(s.schedule, $event)"></app-schedule-section>
+      </ion-list>
    </ion-card>
 </ion-content>
 
@@ -90,6 +94,34 @@ export class SchedulesComponent implements OnInit {
       let checkpoint = localCheckpoints.find(s => s.scheduleId == sid);
       let complete   = (checkpoint) ? checkpoint.checkpointIds.length : 0;
       return `${complete}/${total}`;
+   }
+
+   getNextCheckpoint(schedule, checkpoints) {
+      let checks = checkpoints.find(c => c.scheduleId == schedule.schedule.id);
+      return schedule.checkpoints.find(c => c.sections.map(s => s.id).filter(id => checks.checkpointIds.indexOf(id) === -1).length > 0);
+   }
+   
+   handleTapSection(schedule, section) {
+      if (section.sections.length > 0) {
+         this.navCtrl.push(ScheduleViewer, {
+            schedule: {
+               schedule: schedule,
+               checkpoints: section.sections,
+            }
+         });
+      } else {
+         this.checkpoints$.subscribe(local => {
+            this.checkpointsStore.dispatch(new checkpointsActions.InitSaveLocalCheckpointAction({
+               local: local,
+               scheduleId: schedule.id,
+               checkpointId: section.id,
+            }));
+         }).unsubscribe();
+      }
+   }
+
+   hasCheckpoints(checkpoints) {
+      return (checkpoints) ? checkpoints.length > 0 : false;
    }
 
    isDownloading(id, downloading) {

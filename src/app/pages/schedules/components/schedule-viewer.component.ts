@@ -22,10 +22,6 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
    <ion-list>
       <ng-template ngFor let-checkpoint [ngForOf]="schedule.checkpoints">
          <app-schedule-section [schedule]="schedule.schedule" [checkpoint]="checkpoint" (tapCheckpoint)="handleTapSection($event)"></app-schedule-section>
-         <!--<ion-item-divider>{{checkpoint.name}}</ion-item-divider>
-         <ng-template ngFor let-section [ngForOf]="checkpoint.sections">
-            <app-schedule-item [section]="section" (tapSection)="handleTapSection($event)"></app-schedule-item>
-         </ng-template>-->
       </ng-template>
    </ion-list>
 </ion-content>

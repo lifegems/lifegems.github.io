@@ -6,8 +6,8 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
    selector: 'app-schedule-item',
    template: `
    <ion-item (click)="handleTapSection(section)">
-      {{section.name}}
-      <ion-icon *ngIf="!isComplete(checkpoints$ | async)" item-end color="secondary" name="md-checkmark"></ion-icon>
+      <span padding-left>{{section.name}}</span>
+      <ion-icon *ngIf="!isComplete(checkpoints$ | async)" item-end color="secondary" name="ios-radio-button-off"></ion-icon>
       <ion-icon *ngIf="isComplete(checkpoints$ | async)" item-end color="secondary" name="md-checkmark-circle"></ion-icon>
    </ion-item>
    `

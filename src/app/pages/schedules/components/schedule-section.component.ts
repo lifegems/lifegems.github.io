@@ -10,8 +10,8 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
    <ion-item-divider class="schedule-divider" (click)="toggleCollapse()">
       {{checkpoint?.name}}
       <ion-icon *ngIf="isCollapsed && isSectionComplete(checkpoints$ | async)" class="section-done" item-end name="md-checkmark"></ion-icon>
-      <ion-icon *ngIf="isCollapsed && !isSectionComplete(checkpoints$ | async)" item-end name="ios-arrow-down"></ion-icon>
-      <ion-icon *ngIf="!isCollapsed" item-end name="ios-arrow-up"></ion-icon>
+      <ion-icon *ngIf="isCollapsed && !isSectionComplete(checkpoints$ | async)" item-end name="ios-add"></ion-icon>
+      <ion-icon *ngIf="!isCollapsed" item-end name="ios-remove"></ion-icon>
    </ion-item-divider>
    <ng-template [ngIf]="!isCollapsed">
       <ng-template ngFor let-section [ngForOf]="checkpoint?.sections">

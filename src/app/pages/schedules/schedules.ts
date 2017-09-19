@@ -60,7 +60,6 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
          </ion-list-header>
       </ion-list>
       <ion-list *ngIf="hasCheckpoints(s.checkpoints) && !isScheduleComplete(s.schedule.id, (local$ | async), (checkpoints$ | async))">
-         <ion-list-header>Next Checkpoint</ion-list-header>
          <app-schedule-section [schedule]="s.schedule" [checkpoint]="getNextCheckpoint(s, (checkpoints$ | async))" (tapCheckpoint)="handleTapSection(s.schedule, $event)"></app-schedule-section>
       </ion-list>
    </ion-card>

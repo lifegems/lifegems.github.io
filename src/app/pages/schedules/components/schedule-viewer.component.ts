@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { NavController, NavParams } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
@@ -14,6 +15,11 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
          <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title></ion-title>
+      <ion-buttons end>
+         <a [href]="getExportScheduleJSON(schedule)" download="{{getExportScheduleName(schedule.schedule)}}">
+            <i class="fa fa-external-link"></i>
+         </a>
+      </ion-buttons>
    </ion-navbar>
 </ion-header>
 
@@ -40,7 +46,8 @@ export class ScheduleViewer implements OnInit {
    constructor(
       public navCtrl: NavController,
       public navParams: NavParams, 
-      public store: Store<checkpointsReducer.CheckpointsState>
+      public store: Store<checkpointsReducer.CheckpointsState>,
+      public sanitizer: DomSanitizer
    ) {
       this.schedule = (this.navParams.get('schedule'));
    }
@@ -54,6 +61,17 @@ export class ScheduleViewer implements OnInit {
       let complete = (schedule) ? schedule.checkpointIds.length : 0;
       let total = checkpoints.map(c => c.sections.length).reduce((a, b) => a + b, 0);
       return `${complete}/${total}`;
+   }
+
+   getExportScheduleJSON(schedule) {
+      let jsonBlob = JSON.stringify(schedule);
+      let uriComp = encodeURIComponent(jsonBlob);
+      let uri = `data:application/json;charset=utf-8,${uriComp}`;
+      return this.sanitizer.bypassSecurityTrustUrl(uri);
+   }
+
+   getExportScheduleName(schedule) {
+      return `${schedule.code}.v${schedule.version}.json`;
    }
 
    handleTapSection(section) {

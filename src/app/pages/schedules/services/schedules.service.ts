@@ -15,7 +15,8 @@ import {
 
 @Injectable()
 export class SchedulesService {
-   private baseUri: string = "https://chrome-plateau-178520.appspot.com";
+   // private baseUri: string = "https://chrome-plateau-178520.appspot.com";
+   private baseUri: string = "https://lifegems.github.io/lifegems-server-gcp/static";
    private schedules: Schedule[];
 
    constructor(private storage: Storage, private http: HttpClient) {
@@ -40,7 +41,7 @@ export class SchedulesService {
    }
 
    downloadRemoteSchedule(id: number): Observable<any> {
-      return this.http.get<any[]>(`${this.baseUri}/checkpoints?scheduleId=${id}`);
+      return this.http.get<any[]>(`${this.baseUri}/schedules/${id}.json`);    //   /checkpoints?scheduleId=${id}`);
    }
    
    getLocalSchedules(): Observable<any[]> {
@@ -48,7 +49,7 @@ export class SchedulesService {
    }
    
    getRemoteSchedules(): Observable<any[]> {
-      return this.http.get<any[]>(`${this.baseUri}/schedules`);
+      return this.http.get<any[]>(`${this.baseUri}/schedules.json`);
    }
 
    saveLocalSchedule(payload: {schedule: any, checkpoints: any[]}) {

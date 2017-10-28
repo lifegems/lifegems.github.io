@@ -25280,6 +25280,14 @@ ion-navbar.toolbar {
   color: blue;
 }
 
+.schedule-divider {
+  border-bottom: 0.5px solid lightgray;
+}
+
+.section-done {
+  color: yellowgreen;
+}
+
 .disabled {
   color: lightgray;
 }

@@ -96,6 +96,13 @@ export class SchedulesService {
       return Observable.fromPromise(this.storage.get('pinned'));
    }
 
+   removeLocalPinned(pinned: number) {
+      return Observable.fromPromise(this.storage.get('pinned').then((savedPinned) => {
+         savedPinned = savedPinned ? savedPinned.filter(s => s !== pinned) : [];
+         return Observable.fromPromise(this.storage.set(`pinned`, savedPinned));
+      }));
+   }
+
    saveLocalPinned(pinned: number) {
       return Observable.fromPromise(this.storage.get('pinned').then((savedPinned) => {
          if (savedPinned) {

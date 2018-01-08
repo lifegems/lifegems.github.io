@@ -82,6 +82,14 @@ export class SchedulesEffects {
          return this.schedulesService.saveLocalPinned(action.payload)
             .map(() => new schedulesActions.PinScheduleSuccessAction(action.payload))
       });
+   
+   @Effect()
+   localUnpinSchedule: Observable<Action> = this.$actions
+      .ofType(schedulesActions.UNPINSCHEDULES)
+      .switchMap((action: schedulesActions.UnpinScheduleAction) => {
+         return this.schedulesService.removeLocalPinned(action.payload)
+            .map(() => new schedulesActions.UnpinScheduleSuccessAction(action.payload))
+      });
 
    constructor(private $actions: Actions, private schedulesService: SchedulesService) { }
 }

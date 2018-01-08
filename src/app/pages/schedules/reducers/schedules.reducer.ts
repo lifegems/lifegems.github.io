@@ -67,7 +67,7 @@ export function schedulesReducer(state: SchedulesState = initState, action: Acti
 					action.payload
 				]
 			};
-		case scheduleActions.UNPINSCHEDULES:
+		case scheduleActions.UNPINSCHEDULESSUCCESS:
 			return {
 				...state,
 				pinned: [

@@ -1,20 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 100:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__checkpoints_service__ = __webpack_require__(314);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__checkpoints_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__schedules_service__ = __webpack_require__(318);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__schedules_service__["a"]; });
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 102:
+/***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97,24 +83,24 @@ webpackEmptyAsyncContext.id = 134;
 
 /***/ }),
 
-/***/ 177:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"pages/converter/converter.module": [
-		178
+		179
 	],
 	"pages/dashboard/dashboard.module": [
-		185
+		189
 	],
 	"pages/kings/kings.module": [
-		186
+		190
 	],
 	"pages/schedules/schedules.module": [
-		191
+		195
 	],
 	"pages/timeline/timeline.module": [
-		197
+		201
 	]
 };
 function webpackAsyncContext(req) {
@@ -129,11 +115,11 @@ webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
 module.exports = webpackAsyncContext;
-webpackAsyncContext.id = 177;
+webpackAsyncContext.id = 178;
 
 /***/ }),
 
-/***/ 178:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -143,11 +129,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__converter__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__effects_measurements_effects__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_measurements_reducer__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_measurements_service__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__converter__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__effects_measurements_effects__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_measurements_reducer__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_measurements_service__ = __webpack_require__(188);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -192,7 +178,7 @@ ConverterModule = __decorate([
 
 /***/ }),
 
-/***/ 182:
+/***/ 186:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -342,7 +328,7 @@ var getTypes = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSel
 
 /***/ }),
 
-/***/ 184:
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -428,7 +414,7 @@ var Measurements = [
 
 /***/ }),
 
-/***/ 185:
+/***/ 189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -436,7 +422,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardModule", function() { return DashboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -469,7 +455,7 @@ DashboardModule = __decorate([
 
 /***/ }),
 
-/***/ 186:
+/***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -479,11 +465,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__kings__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_kings_service__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__effects_kings_effects__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reducers_kings_reducer__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__kings__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_kings_service__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__effects_kings_effects__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reducers_kings_reducer__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -531,15 +517,15 @@ KingsModule = __decorate([
 
 /***/ }),
 
-/***/ 188:
+/***/ 192:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__expander_component__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__expander_component__ = __webpack_require__(325);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__expander_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kings_list_modal__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__kings_list_modal__ = __webpack_require__(326);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__kings_list_modal__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__person_card_component__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__person_card_component__ = __webpack_require__(327);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__person_card_component__["a"]; });
 
 
@@ -548,7 +534,7 @@ KingsModule = __decorate([
 
 /***/ }),
 
-/***/ 189:
+/***/ 193:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -615,7 +601,7 @@ var getShowSons = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* create
 
 /***/ }),
 
-/***/ 190:
+/***/ 194:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -925,7 +911,7 @@ var kings = [
 
 /***/ }),
 
-/***/ 191:
+/***/ 195:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -935,13 +921,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__schedules__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__effects_schedules_effects__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reducers_schedules_reducer__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__reducers_checkpoints_reducer__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__effects_checkpoints_effects__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__schedules__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__effects_schedules_effects__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reducers_schedules_reducer__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__reducers_checkpoints_reducer__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__effects_checkpoints_effects__ = __webpack_require__(346);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -969,22 +955,23 @@ SchedulesModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_5__components__["a" /* RemoteSchedulesModal */],
             __WEBPACK_IMPORTED_MODULE_4__schedules__["a" /* SchedulesComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components__["b" /* ScheduleItemComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components__["c" /* ScheduleSectionComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components__["d" /* ScheduleViewer */],
+            __WEBPACK_IMPORTED_MODULE_5__components__["b" /* ScheduleCardComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components__["c" /* ScheduleItemComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components__["d" /* ScheduleSectionComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components__["e" /* ScheduleViewer */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_4__schedules__["a" /* SchedulesComponent */]),
             __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["i" /* StoreModule */].forFeature('schedules', {
                 checkpoints: __WEBPACK_IMPORTED_MODULE_9__reducers_checkpoints_reducer__["a" /* checkpointsReducer */],
-                schedules: __WEBPACK_IMPORTED_MODULE_8__reducers_schedules_reducer__["e" /* schedulesReducer */]
+                schedules: __WEBPACK_IMPORTED_MODULE_8__reducers_schedules_reducer__["g" /* schedulesReducer */]
             }),
             __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["c" /* EffectsModule */].forFeature([__WEBPACK_IMPORTED_MODULE_10__effects_checkpoints_effects__["a" /* CheckpointsEffects */], __WEBPACK_IMPORTED_MODULE_7__effects_schedules_effects__["a" /* SchedulesEffects */]]),
         ],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_5__components__["a" /* RemoteSchedulesModal */],
             __WEBPACK_IMPORTED_MODULE_4__schedules__["a" /* SchedulesComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components__["d" /* ScheduleViewer */],
+            __WEBPACK_IMPORTED_MODULE_5__components__["e" /* ScheduleViewer */],
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_6__services__["a" /* CheckpointsService */],
@@ -997,18 +984,21 @@ SchedulesModule = __decorate([
 
 /***/ }),
 
-/***/ 192:
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__remote_schedules_component__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__remote_schedules_component__ = __webpack_require__(330);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__remote_schedules_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__schedule_item_component__ = __webpack_require__(311);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__schedule_item_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schedule_section_component__ = __webpack_require__(312);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__schedule_section_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__schedule_viewer_component__ = __webpack_require__(313);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__schedule_viewer_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__schedule_card_component__ = __webpack_require__(331);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__schedule_card_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schedule_item_component__ = __webpack_require__(332);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__schedule_item_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__schedule_section_component__ = __webpack_require__(333);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__schedule_section_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__schedule_viewer_component__ = __webpack_require__(334);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__schedule_viewer_component__["a"]; });
+
 
 
 
@@ -1017,7 +1007,7 @@ SchedulesModule = __decorate([
 
 /***/ }),
 
-/***/ 197:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1027,11 +1017,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timeline__ = __webpack_require__(326);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reducers_timeline_reducer__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__effects_timeline_effects__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timeline__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reducers_timeline_reducer__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__effects_timeline_effects__ = __webpack_require__(351);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1080,7 +1070,7 @@ TimelineModule = __decorate([
 
 /***/ }),
 
-/***/ 198:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1143,14 +1133,14 @@ TimelineListModal = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
 ], TimelineListModal);
 
 //# sourceMappingURL=timeline-list.modal.js.map
 
 /***/ }),
 
-/***/ 199:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1161,7 +1151,7 @@ TimelineListModal = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getYears; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getTimelineData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_timeline_actions__ = __webpack_require__(101);
 
 
 var initState = {
@@ -1264,7 +1254,7 @@ var getTimelineData = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* cr
 
 /***/ }),
 
-/***/ 200:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1304,31 +1294,31 @@ ProfileModal = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
 ], ProfileModal);
 
 //# sourceMappingURL=profile.modal.js.map
 
 /***/ }),
 
-/***/ 201:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timeline_service__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timeline_service__ = __webpack_require__(350);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__timeline_service__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 245:
+/***/ 249:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(265);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1336,23 +1326,23 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 258:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngrx_effects__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngrx_store_devtools__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_pages_module__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngrx_store_devtools__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_pages_module__ = __webpack_require__(385);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1415,7 +1405,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 298:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1424,7 +1414,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__ = __webpack_require__(186);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1491,18 +1481,18 @@ ConverterComponent = __decorate([
 
 /***/ }),
 
-/***/ 299:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__conversion_item_component__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__conversion_item_component__ = __webpack_require__(318);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__conversion_item_component__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 300:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1553,11 +1543,11 @@ __decorate([
     __metadata("design:type", Array)
 ], ConversionItemComponent.prototype, "measurements", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ConversionItemComponent.prototype, "changeValue", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ConversionItemComponent.prototype, "changeMeasure", void 0);
 ConversionItemComponent = __decorate([
@@ -1572,7 +1562,7 @@ ConversionItemComponent = __decorate([
 
 /***/ }),
 
-/***/ 301:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1581,16 +1571,16 @@ ConversionItemComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__actions_measurements_actions__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_measurements_service__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_measurements_service__ = __webpack_require__(188);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1646,7 +1636,7 @@ MeasurementsEffects = __decorate([
 
 /***/ }),
 
-/***/ 303:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1699,7 +1689,7 @@ DashboardComponent = __decorate([
 
 /***/ }),
 
-/***/ 304:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1707,13 +1697,13 @@ DashboardComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_kings_reducer__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1777,7 +1767,7 @@ var KingsComponent = (function () {
     return KingsComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */]),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */]),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */])
 ], KingsComponent.prototype, "slides", void 0);
 KingsComponent = __decorate([
@@ -1792,7 +1782,7 @@ KingsComponent = __decorate([
 
 /***/ }),
 
-/***/ 305:
+/***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1835,7 +1825,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], ExpanderComponent.prototype, "toggleExpander", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ExpanderComponent.prototype, "toggleExpanderChange", void 0);
 ExpanderComponent = __decorate([
@@ -1849,7 +1839,7 @@ ExpanderComponent = __decorate([
 
 /***/ }),
 
-/***/ 306:
+/***/ 326:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1895,14 +1885,14 @@ KingsListModal = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
 ], KingsListModal);
 
 //# sourceMappingURL=kings-list.modal.js.map
 
 /***/ }),
 
-/***/ 307:
+/***/ 327:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1947,7 +1937,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], PersonCardComponent.prototype, "toggleSons", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], PersonCardComponent.prototype, "toggleSonsChange", void 0);
 __decorate([
@@ -1955,7 +1945,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], PersonCardComponent.prototype, "togglePriests", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], PersonCardComponent.prototype, "togglePriestsChange", void 0);
 __decorate([
@@ -1963,7 +1953,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], PersonCardComponent.prototype, "toggleProphets", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], PersonCardComponent.prototype, "toggleProphetsChange", void 0);
 PersonCardComponent = __decorate([
@@ -1978,7 +1968,7 @@ PersonCardComponent = __decorate([
 
 /***/ }),
 
-/***/ 308:
+/***/ 328:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1987,14 +1977,14 @@ PersonCardComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_kings_actions__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_kings_service__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_kings_service__ = __webpack_require__(194);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2040,7 +2030,7 @@ KingsEffects = __decorate([
 
 /***/ }),
 
-/***/ 309:
+/***/ 329:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2048,11 +2038,11 @@ KingsEffects = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_checkpoints_actions__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_checkpoints_reducer__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_checkpoints_actions__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_checkpoints_reducer__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2071,46 +2061,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var SchedulesComponent = (function () {
-    function SchedulesComponent(modalCtrl, navCtrl, scheduleStore, checkpointsStore) {
+    function SchedulesComponent(modalCtrl, navCtrl, scheduleStore, checkpointsStore, toast) {
         this.modalCtrl = modalCtrl;
         this.navCtrl = navCtrl;
         this.scheduleStore = scheduleStore;
         this.checkpointsStore = checkpointsStore;
-        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["l" /* InitLocalSchedulesAction */]());
+        this.toast = toast;
+        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["n" /* InitLocalSchedulesAction */]());
+        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["x" /* PinnedLoadedAction */]());
         this.checkpointsStore.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_checkpoints_actions__["d" /* InitCheckpointsAction */]());
     }
     SchedulesComponent.prototype.ngOnInit = function () {
-        this.local$ = this.scheduleStore.select(__WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__["b" /* getLocalSchedules */]);
+        this.list$ = this.scheduleStore.select(__WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__["b" /* getList */]);
+        this.local$ = this.scheduleStore.select(__WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__["c" /* getLocalSchedules */]);
+        this.pinned$ = this.scheduleStore.select(__WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__["d" /* getPinned */]);
         this.downloading$ = this.scheduleStore.select(__WEBPACK_IMPORTED_MODULE_5__reducers_schedules_reducer__["a" /* getDownloading */]);
         this.checkpoints$ = this.scheduleStore.select(__WEBPACK_IMPORTED_MODULE_7__reducers_checkpoints_reducer__["b" /* getLocalCheckpoints */]);
     };
-    SchedulesComponent.prototype.canDownload = function (id, downloading, local) {
-        return !this.isDownloading(id, downloading) && !this.wasDownloaded(id, local);
+    SchedulesComponent.prototype.changeScheduleList = function (scheduleListName) {
+        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["b" /* ChangeScheduleListAction */](scheduleListName));
     };
-    SchedulesComponent.prototype.downloadSchedule = function (s) {
-        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["k" /* InitDownloadScheduleAction */](s));
-    };
-    SchedulesComponent.prototype.getCompletenessText = function (sid, localSchedules, localCheckpoints) {
-        var total = this.getCheckpointsTotal(sid, localSchedules);
-        var complete = this.getCheckpointsCompleted(sid, localCheckpoints);
-        return complete + "/" + total;
-    };
-    SchedulesComponent.prototype.getCheckpointsCompleted = function (sid, localCheckpoints) {
-        var checkpoint = localCheckpoints.find(function (s) { return s.scheduleId == sid; });
-        return (checkpoint) ? checkpoint.checkpointIds.length : 0;
-    };
-    SchedulesComponent.prototype.getCheckpointsTotal = function (sid, localSchedules) {
-        var schedule = localSchedules.find(function (s) { return sid == s.schedule.id; });
-        return (schedule) ? schedule.checkpoints.map(function (c) { return (c) ? c.sections.length : 0; }).reduce(function (a, b) { return a + b; }, 0) : 0;
-    };
-    SchedulesComponent.prototype.getNextCheckpoint = function (schedule, checkpoints) {
-        var checks = checkpoints.find(function (c) { return c.scheduleId == schedule.schedule.id; });
-        return schedule.checkpoints.find(function (c) { return c.sections.map(function (s) { return s.id; }).filter(function (id) { return (checks) ? checks.checkpointIds.indexOf(id) === -1 : true; }).length > 0; });
+    SchedulesComponent.prototype.getPinnedSchedules = function (schedules, pinned) {
+        return schedules.filter(function (s) { return pinned.indexOf(s.schedule.id) > -1; });
     };
     SchedulesComponent.prototype.handleTapSection = function (schedule, section) {
         var _this = this;
         if (section.sections.length > 0) {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__components__["d" /* ScheduleViewer */], {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__components__["e" /* ScheduleViewer */], {
                 schedule: {
                     schedule: schedule,
                     checkpoints: section.sections,
@@ -2127,50 +2104,53 @@ var SchedulesComponent = (function () {
             }).unsubscribe();
         }
     };
-    SchedulesComponent.prototype.hasCheckpoints = function (checkpoints) {
-        return (checkpoints) ? checkpoints.length > 0 : false;
-    };
-    SchedulesComponent.prototype.isDownloading = function (id, downloading) {
-        return downloading.indexOf(id) > -1;
-    };
-    SchedulesComponent.prototype.isScheduleComplete = function (sid, localSchedules, localCheckpoints) {
-        var total = this.getCheckpointsTotal(sid, localSchedules);
-        var complete = this.getCheckpointsCompleted(sid, localCheckpoints);
-        return total === complete;
-    };
     SchedulesComponent.prototype.showDownloadableSchedules = function () {
         this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__components__["a" /* RemoteSchedulesModal */]).present();
-    };
-    SchedulesComponent.prototype.wasDownloaded = function (id, local) {
-        return (local.length > 0 && local.map(function (d) { return d.schedule.id; }).indexOf(id) > -1);
     };
     SchedulesComponent.prototype.viewSchedule = function (id) {
         var _this = this;
         this.local$.subscribe(function (schedules) {
             var schedule = schedules.find(function (s) { return s.schedule.id == id; });
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__components__["d" /* ScheduleViewer */], {
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__components__["e" /* ScheduleViewer */], {
                 schedule: schedule
             });
         }).unsubscribe();
+    };
+    SchedulesComponent.prototype.pinSchedule = function (id) {
+        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["v" /* PinScheduleAction */](id));
+        this.toast.create({
+            message: "This schedule is now pinned.",
+            duration: 2000,
+            position: 'middle'
+        }).present();
+    };
+    SchedulesComponent.prototype.unpinSchedule = function (id) {
+        this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["F" /* UnpinScheduleAction */](id));
+        this.toast.create({
+            message: "This schedule is now unpinned.",
+            duration: 2000,
+            position: 'middle'
+        }).present();
     };
     return SchedulesComponent;
 }());
 SchedulesComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Schedules</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)=\"showDownloadableSchedules()\">\n        <ion-icon name=\"md-download\"></ion-icon>\n      </button>\n    </ion-buttons>    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <div text-center *ngIf=\"(local$ | async).length == 0\">\n      <h3><ion-icon name=\"md-sad\"></ion-icon> No Schedules!</h3>\n      <p>Tap <ion-icon color=\"primary\" name=\"md-download\"></ion-icon> to view schedules<br />available for download.</p>\n   </div>\n   <ion-card *ngFor=\"let s of (local$ | async)\">\n      <ion-card-header>\n         {{s.schedule.name}}\n      </ion-card-header>\n      <ion-row>\n         <ion-col padding-top text-center>\n            {{ getCompletenessText(s.schedule.id, (local$ | async), (checkpoints$ | async)) }}\n         </ion-col>\n         <ion-col>\n            <button ion-button icon-left clear small\n               *ngIf=\"hasCheckpoints(s.checkpoints)\"\n               (click)=\"viewSchedule(s.schedule.id)\">\n               <ion-icon name=\"ios-eye-outline\"></ion-icon>\n               <div>View Schedule</div>\n            </button>\n            <p ion-text color=\"danger\" text-center padding-top\n               *ngIf=\"!hasCheckpoints(s.checkpoints)\">\n               <ion-icon name=\"md-warning\"></ion-icon>\n               No Checkpoints\n            </p>\n         </ion-col>\n      </ion-row>\n      <ion-list *ngIf=\"hasCheckpoints(s.checkpoints) && isScheduleComplete(s.schedule.id, (local$ | async), (checkpoints$ | async))\">\n         <ion-list-header color=\"secondary\">\n            Completed\n            <ion-icon name=\"md-checkmark\"></ion-icon>\n         </ion-list-header>\n      </ion-list>\n      <ion-list *ngIf=\"hasCheckpoints(s.checkpoints) && !isScheduleComplete(s.schedule.id, (local$ | async), (checkpoints$ | async))\">\n         <app-schedule-section [schedule]=\"s.schedule\" [checkpoint]=\"getNextCheckpoint(s, (checkpoints$ | async))\" (tapCheckpoint)=\"handleTapSection(s.schedule, $event)\"></app-schedule-section>\n      </ion-list>\n   </ion-card>\n</ion-content>\n\n<ion-footer>\n  \n</ion-footer>\n"
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Schedules</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)=\"showDownloadableSchedules()\">\n        <ion-icon name=\"md-download\"></ion-icon>\n      </button>\n    </ion-buttons>    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-segment (ngModelChange)=\"changeScheduleList($event)\" [ngModel]=\"(list$ | async)\" padding>\n      <ion-segment-button value=\"pinned\">\n         Pinned\n      </ion-segment-button>\n      <ion-segment-button value=\"all\">\n         All\n      </ion-segment-button>\n   </ion-segment>\n\n   <div text-center *ngIf=\"(local$ | async).length == 0\">\n      <h3><ion-icon name=\"md-sad\"></ion-icon> No Schedules!</h3>\n      <p>Tap <ion-icon (tap)=\"showDownloadableSchedules()\" color=\"primary\" name=\"md-download\"></ion-icon> to view schedules<br />available for download.</p>\n   </div>\n   \n   <div [ngSwitch]=\"list$ | async\">\n      <ng-template [ngSwitchCase]=\"'all'\">\n         <schedule-card\n            *ngFor=\"let s of (local$ | async)\"\n            (onViewSchedule)=\"viewSchedule($event)\"\n            (onTapCheckpoint)=\"handleTapSection(s.schedule, $event)\"\n            (onTapPin)=\"pinSchedule(s.schedule.id)\"\n            (onTapUnpin)=\"unpinSchedule(s.schedule.id)\"\n            [schedule]=\"s\"\n            [pinned]=\"pinned$ | async\"\n            [checkpoints]=\"(checkpoints$ | async)\">\n         </schedule-card>\n      </ng-template>\n\n      <ng-template [ngSwitchCase]=\"'pinned'\">\n         <schedule-card \n            *ngFor=\"let s of getPinnedSchedules((local$ | async), (pinned$ | async))\"\n            (onViewSchedule)=\"viewSchedule($event)\"\n            (onTapCheckpoint)=\"handleTapSection(s.schedule, $event)\"\n            (onTapPin)=\"pinSchedule(s.schedule.id)\"\n            (onTapUnpin)=\"unpinSchedule(s.schedule.id)\"\n            [schedule]=\"s\"\n            [pinned]=\"pinned$ | async\"\n            [checkpoints]=\"(checkpoints$ | async)\">\n         </schedule-card>\n      </ng-template>\n   </div>\n</ion-content>\n\n<ion-footer>\n  \n</ion-footer>\n"
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */],
-        __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+        __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
 ], SchedulesComponent);
 
 //# sourceMappingURL=schedules.js.map
 
 /***/ }),
 
-/***/ 310:
+/***/ 330:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2178,8 +2158,8 @@ SchedulesComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2199,26 +2179,26 @@ var RemoteSchedulesModal = (function () {
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.store = store;
-        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__["m" /* InitRemoteSchedulesAction */]());
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__["o" /* InitRemoteSchedulesAction */]());
     }
     RemoteSchedulesModal.prototype.ngOnInit = function () {
         this.downloading$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["a" /* getDownloading */]);
-        this.local$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["b" /* getLocalSchedules */]);
-        this.remote$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["c" /* getRemoteSchedules */]);
-        this.schedule$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["d" /* getState */]);
+        this.local$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["c" /* getLocalSchedules */]);
+        this.remote$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["e" /* getRemoteSchedules */]);
+        this.schedule$ = this.store.select(__WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__["f" /* getState */]);
     };
     RemoteSchedulesModal.prototype.dismiss = function () {
         this.viewCtrl.dismiss();
     };
     RemoteSchedulesModal.prototype.deleteSchedule = function (id, slideItem) {
-        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__["j" /* InitDeleteLocalScheduleAction */](id));
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__["l" /* InitDeleteLocalScheduleAction */](id));
         slideItem.close();
     };
     RemoteSchedulesModal.prototype.downloadSchedule = function (schedule) {
         var _this = this;
         this.schedule$.subscribe(function (state) {
             if (_this.canDownload(schedule.id, state.downloading, state.local)) {
-                _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__["k" /* InitDownloadScheduleAction */](schedule));
+                _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__["m" /* InitDownloadScheduleAction */](schedule));
             }
         }).unsubscribe();
     };
@@ -2237,21 +2217,133 @@ RemoteSchedulesModal = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         template: "\n   <ion-header>\n      <ion-toolbar>\n         <ion-title>Tap to Download</ion-title>\n         <ion-buttons end>\n            <button ion-button (click)=\"dismiss()\">\n               <span ion-text color=\"primary\" showWhen=\"ios\">Done</span>\n               <ion-icon name=\"md-close\" showWhen=\"android, windows\"></ion-icon>\n            </button>\n         </ion-buttons>\n      </ion-toolbar>\n   </ion-header>\n   <ion-content>\n      <ion-list>\n         <ion-item-sliding #slideItem *ngFor=\"let s of (remote$ | async)\">\n            <ion-item (click)=\"downloadSchedule(s)\">\n               {{ s.name }}\n               <!-- Not downloaded -->\n               <ion-icon *ngIf=\"canDownload(s.id, (downloading$ | async), (local$ | async))\" item-end name=\"ios-cloud-download-outline\"></ion-icon>\n               <!-- Downloading -->\n               <ion-spinner item-end *ngIf=\"isDownloading(s.id, (downloading$ | async))\" name=\"bubbles\"></ion-spinner>\n               <!-- Downloaded -->\n               <ion-icon color=\"primary\" *ngIf=\"wasDownloaded(s.id, (local$ | async))\" item-end name=\"md-checkmark\"></ion-icon>\n            </ion-item>\n            <ion-item-options side=\"right\">\n               <button *ngIf=\"wasDownloaded(s.id, (local$ | async))\" color=\"danger\" ion-button (click)=\"deleteSchedule(s.id, slideItem)\">\n                  <ion-icon name=\"md-trash\"></ion-icon>\n                  Delete\n               </button>\n            </ion-item-options>\n         </ion-item-sliding> \n      </ion-list>\n   </ion-content>\n"
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
 ], RemoteSchedulesModal);
 
 //# sourceMappingURL=remote-schedules.component.js.map
 
 /***/ }),
 
-/***/ 311:
+/***/ 331:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleCardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ScheduleCardComponent = (function () {
+    function ScheduleCardComponent() {
+        this.onViewSchedule = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.onTapCheckpoint = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.onTapPin = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.onTapUnpin = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ScheduleCardComponent.prototype.ngOnInit = function () { };
+    ScheduleCardComponent.prototype.getCompletenessText = function () {
+        var total = this.getCheckpointsTotal();
+        var complete = this.getCheckpointsCompleted();
+        return ((complete / total) * 100).toFixed(1) + "%";
+    };
+    ScheduleCardComponent.prototype.getCheckpointsCompleted = function () {
+        var _this = this;
+        var checkpoint = this.checkpoints.find(function (s) { return s.scheduleId == _this.schedule.schedule.id; });
+        return (checkpoint) ? checkpoint.checkpointIds.length : 0;
+    };
+    ScheduleCardComponent.prototype.getCheckpointsTotal = function () {
+        return (this.schedule) ? this.schedule.checkpoints.map(function (c) { return (c) ? c.sections.length : 0; }).reduce(function (a, b) { return a + b; }, 0) : 0;
+    };
+    ScheduleCardComponent.prototype.getNextCheckpoint = function () {
+        var _this = this;
+        var checks = this.checkpoints.find(function (c) { return c.scheduleId == _this.schedule.schedule.id; });
+        return this.schedule.checkpoints.find(function (c) { return c.sections.map(function (s) { return s.id; }).filter(function (id) { return (checks) ? checks.checkpointIds.indexOf(id) === -1 : true; }).length > 0; });
+    };
+    ScheduleCardComponent.prototype.hasCheckpoints = function () {
+        return (this.schedule.checkpoints) ? this.schedule.checkpoints.length > 0 : false;
+    };
+    ScheduleCardComponent.prototype.isPinned = function () {
+        var _this = this;
+        return this.pinned.filter(function (p) { return p === _this.schedule.schedule.id; }).length > 0;
+    };
+    ScheduleCardComponent.prototype.isScheduleComplete = function () {
+        var total = this.getCheckpointsTotal();
+        var complete = this.getCheckpointsCompleted();
+        return total === complete;
+    };
+    ScheduleCardComponent.prototype.tapCheckpoint = function (checkpoint) {
+        this.onTapCheckpoint.emit(checkpoint);
+    };
+    ScheduleCardComponent.prototype.viewSchedule = function () {
+        this.onViewSchedule.emit(this.schedule.schedule.id);
+    };
+    ScheduleCardComponent.prototype.tapPin = function () {
+        this.onTapPin.emit();
+    };
+    ScheduleCardComponent.prototype.tapUnpin = function () {
+        this.onTapUnpin.emit();
+    };
+    return ScheduleCardComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Array)
+], ScheduleCardComponent.prototype, "checkpoints", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], ScheduleCardComponent.prototype, "nextCheckpoint", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], ScheduleCardComponent.prototype, "schedule", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Array)
+], ScheduleCardComponent.prototype, "pinned", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleCardComponent.prototype, "onViewSchedule", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleCardComponent.prototype, "onTapCheckpoint", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleCardComponent.prototype, "onTapPin", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleCardComponent.prototype, "onTapUnpin", void 0);
+ScheduleCardComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'schedule-card',
+        template: "\n   <ion-card>\n      <ion-card-header>\n         <div text-left>{{schedule.schedule.name}}</div>\n         <div text-right>\n            <a style=\"color:#488aff\" *ngIf=\"!isPinned(pinned)\" (click)=\"tapPin()\">\n               <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45 up-15\"></i>\n            </a>\n            <a style=\"color:#488aff\" *ngIf=\"isPinned(pinned)\" (click)=\"tapUnpin()\">\n               <i class=\"fas fa-thumbtack\" data-fa-transform=\"rotate-45 up-15\"></i>\n            </a>\n         </div>\n      </ion-card-header>\n      <ion-row>\n         <ion-col padding-top text-center>\n            {{ getCompletenessText() }}\n         </ion-col>\n         <ion-col>\n            <button ion-button icon-left clear small\n               *ngIf=\"schedule.checkpoints.length > 0\"\n               (click)=\"viewSchedule()\">\n               <ion-icon name=\"ios-eye-outline\"></ion-icon>\n               <div>View Schedule</div>\n            </button>\n            <p ion-text color=\"danger\" text-center padding-top\n               *ngIf=\"!schedule.checkpoints.length > 0\">\n               <ion-icon name=\"md-warning\"></ion-icon>\n               No Checkpoints\n            </p>\n         </ion-col>\n      </ion-row>\n      <ion-list *ngIf=\"hasCheckpoints() && isScheduleComplete()\">\n         <ion-list-header color=\"secondary\">\n            Completed\n            <ion-icon name=\"md-checkmark\"></ion-icon>\n         </ion-list-header>\n      </ion-list>\n      <ion-list *ngIf=\"hasCheckpoints() && !isScheduleComplete()\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"getNextCheckpoint()\" (tapCheckpoint)=\"tapCheckpoint($event)\"></app-schedule-section>\n      </ion-list>\n   </ion-card>\n   "
+    }),
+    __metadata("design:paramtypes", [])
+], ScheduleCardComponent);
+
+//# sourceMappingURL=schedule-card.component.js.map
+
+/***/ }),
+
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleItemComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_checkpoints_reducer__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_checkpoints_reducer__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2287,7 +2379,7 @@ __decorate([
     __metadata("design:type", Object)
 ], ScheduleItemComponent.prototype, "section", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ScheduleItemComponent.prototype, "tapSection", void 0);
 ScheduleItemComponent = __decorate([
@@ -2302,14 +2394,14 @@ ScheduleItemComponent = __decorate([
 
 /***/ }),
 
-/***/ 312:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleSectionComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_checkpoints_reducer__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers_checkpoints_reducer__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2355,7 +2447,7 @@ __decorate([
     __metadata("design:type", Object)
 ], ScheduleSectionComponent.prototype, "checkpoint", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ScheduleSectionComponent.prototype, "tapCheckpoint", void 0);
 ScheduleSectionComponent = __decorate([
@@ -2370,7 +2462,7 @@ ScheduleSectionComponent = __decorate([
 
 /***/ }),
 
-/***/ 313:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2379,8 +2471,10 @@ ScheduleSectionComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_checkpoints_actions__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_checkpoints_reducer__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_checkpoints_actions__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_checkpoints_reducer__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reducers_schedules_reducer__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__actions_schedules_actions__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2396,16 +2490,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var ScheduleViewer = ScheduleViewer_1 = (function () {
-    function ScheduleViewer(navCtrl, navParams, store, sanitizer) {
+    function ScheduleViewer(navCtrl, navParams, store, sanitizer, toast) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.store = store;
         this.sanitizer = sanitizer;
+        this.toast = toast;
         this.schedule = (this.navParams.get('schedule'));
     }
     ScheduleViewer.prototype.ngOnInit = function () {
         this.checkpoints$ = this.store.select(__WEBPACK_IMPORTED_MODULE_5__reducers_checkpoints_reducer__["b" /* getLocalCheckpoints */]);
+        this.pinned$ = this.store.select(__WEBPACK_IMPORTED_MODULE_6__reducers_schedules_reducer__["d" /* getPinned */]);
     };
     ScheduleViewer.prototype.getCompletenessText = function (checkpoints, local) {
         var _this = this;
@@ -2443,17 +2541,38 @@ var ScheduleViewer = ScheduleViewer_1 = (function () {
             }).unsubscribe();
         }
     };
+    ScheduleViewer.prototype.isPinned = function (pinnedSchedules) {
+        var _this = this;
+        return pinnedSchedules.filter(function (p) { return p === _this.schedule.schedule.id; }).length > 0;
+    };
+    ScheduleViewer.prototype.pinSchedule = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_7__actions_schedules_actions__["v" /* PinScheduleAction */](this.schedule.schedule.id));
+        this.toast.create({
+            message: "This schedule is now pinned.",
+            duration: 2000,
+            position: 'middle'
+        }).present();
+    };
+    ScheduleViewer.prototype.unpinSchedule = function () {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_7__actions_schedules_actions__["F" /* UnpinScheduleAction */](this.schedule.schedule.id));
+        this.toast.create({
+            message: "This schedule is now unpinned.",
+            duration: 2000,
+            position: 'middle'
+        }).present();
+    };
     return ScheduleViewer;
 }());
 ScheduleViewer = ScheduleViewer_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-schedule-section',
-        template: "\n<ion-header>\n   <ion-navbar>\n      <button ion-button menuToggle>\n         <ion-icon name=\"menu\"></ion-icon>\n      </button>\n      <ion-title></ion-title>\n      <ion-buttons end>\n         <a [href]=\"getExportScheduleJSON(schedule)\" download=\"{{getExportScheduleName(schedule.schedule)}}\">\n            <i class=\"fa fa-external-link\"></i>\n         </a>\n      </ion-buttons>\n   </ion-navbar>\n</ion-header>\n\n<ion-content no-padding>\n   <h2 text-center>{{schedule.schedule.name}}</h2>\n   <ion-list>\n      <ng-template ngFor let-checkpoint [ngForOf]=\"schedule.checkpoints\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"checkpoint\" (tapCheckpoint)=\"handleTapSection($event)\"></app-schedule-section>\n      </ng-template>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n   <ion-toolbar text-center>\n      Progress - {{getCompletenessText(schedule.checkpoints, checkpoints$ | async)}}\n   </ion-toolbar>\n</ion-footer>\n"
+        template: "\n<ion-header>\n   <ion-navbar>\n      <button ion-button menuToggle>\n         <ion-icon name=\"menu\"></ion-icon>\n      </button>\n      <ion-title></ion-title>\n      <ion-buttons end>\n         <!-- <a [href]=\"getExportScheduleJSON(schedule)\" download=\"{{getExportScheduleName(schedule.schedule)}}\">\n            <i class=\"fa fa-external-link\"></i>\n         </a> -->\n         <button *ngIf=\"!isPinned(pinned$ | async)\" ion-button icon-only (click)=\"pinSchedule()\">\n            <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45 left-3\"></i>\n         </button>\n         <button *ngIf=\"isPinned(pinned$ | async)\" ion-button icon-only (click)=\"unpinSchedule()\">\n            <span class=\"fa-layers\">\n               <i class=\"fas fa-thumbtack\" data-fa-transform=\"rotate-45 left-3\"></i>\n            </span>\n         </button>\n      </ion-buttons>\n   </ion-navbar>\n</ion-header>\n\n<ion-content no-padding>\n   <h2 text-center>{{schedule.schedule.name}}</h2>\n   <ion-list>\n      <ng-template ngFor let-checkpoint [ngForOf]=\"schedule.checkpoints\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"checkpoint\" (tapCheckpoint)=\"handleTapSection($event)\"></app-schedule-section>\n      </ng-template>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n   <ion-toolbar text-center>\n      Progress - {{getCompletenessText(schedule.checkpoints, checkpoints$ | async)}}\n   </ion-toolbar>\n</ion-footer>\n"
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["h" /* Store */],
-        __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]])
+        __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */]])
 ], ScheduleViewer);
 
 var ScheduleViewer_1;
@@ -2461,20 +2580,20 @@ var ScheduleViewer_1;
 
 /***/ }),
 
-/***/ 314:
+/***/ 335:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckpointsService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2536,21 +2655,21 @@ CheckpointsService = __decorate([
 
 /***/ }),
 
-/***/ 318:
+/***/ 339:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchedulesService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__schedules__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__schedules__ = __webpack_require__(340);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2633,6 +2752,28 @@ var SchedulesService = (function () {
     SchedulesService.prototype.saveSchedule = function (key, schedules) {
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromPromise(this.storage.set(key, JSON.stringify(schedules.find(function (s) { return s.name == key; }))));
     };
+    SchedulesService.prototype.getLocalPinned = function () {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromPromise(this.storage.get('pinned'));
+    };
+    SchedulesService.prototype.removeLocalPinned = function (pinned) {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromPromise(this.storage.get('pinned').then(function (savedPinned) {
+            savedPinned = savedPinned ? savedPinned.filter(function (s) { return s !== pinned; }) : [];
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromPromise(_this.storage.set("pinned", savedPinned));
+        }));
+    };
+    SchedulesService.prototype.saveLocalPinned = function (pinned) {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromPromise(this.storage.get('pinned').then(function (savedPinned) {
+            if (savedPinned) {
+                savedPinned.push(pinned);
+            }
+            else {
+                savedPinned = [pinned];
+            }
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromPromise(_this.storage.set("pinned", savedPinned));
+        }));
+    };
     return SchedulesService;
 }());
 SchedulesService = __decorate([
@@ -2644,17 +2785,17 @@ SchedulesService = __decorate([
 
 /***/ }),
 
-/***/ 319:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__watchtower_complete__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__watchtower_complete__ = __webpack_require__(341);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__watchtower_complete__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bible_reading_chrono__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bible_reading_chrono__ = __webpack_require__(342);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__bible_reading_chrono__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bible_reading_cover__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bible_reading_cover__ = __webpack_require__(343);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__bible_reading_cover__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__memorial_reading__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__memorial_reading__ = __webpack_require__(344);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__memorial_reading__["a"]; });
 
 
@@ -2664,7 +2805,7 @@ SchedulesService = __decorate([
 
 /***/ }),
 
-/***/ 320:
+/***/ 341:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3339,7 +3480,7 @@ var watchtowerComplete = {
 
 /***/ }),
 
-/***/ 321:
+/***/ 342:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6062,7 +6203,7 @@ var bibleReadingChrono = {
 
 /***/ }),
 
-/***/ 322:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9436,7 +9577,7 @@ var bibleReadingCover = {
 
 /***/ }),
 
-/***/ 323:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9545,7 +9686,7 @@ var memorialReading = {
 
 /***/ }),
 
-/***/ 324:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9554,18 +9695,18 @@ var memorialReading = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9591,43 +9732,64 @@ var SchedulesEffects = (function () {
         this.$actions = $actions;
         this.schedulesService = schedulesService;
         this.$initSchedules = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["e" /* INIT */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["g" /* INIT */])
             .mergeMap(function () { return [
-            new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["m" /* InitRemoteSchedulesAction */](),
-            new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["l" /* InitLocalSchedulesAction */]()
+            new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["o" /* InitRemoteSchedulesAction */](),
+            new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["n" /* InitLocalSchedulesAction */]()
         ]; });
         this.$loadLocalSchedules = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["h" /* INITLOCAL */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["j" /* INITLOCAL */])
             .switchMap(function () {
             return _this.schedulesService.getLocalSchedules()
                 .map(function (schedules) {
                 var payload = (schedules) ? schedules : [];
-                return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["o" /* LocalSchedulesLoadedAction */](payload);
+                return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["q" /* LocalSchedulesLoadedAction */](payload);
             });
         });
         this.$loadRemoteSchedules = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["i" /* INITREMOTE */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["k" /* INITREMOTE */])
             .switchMap(function () {
             return _this.schedulesService.getRemoteSchedules()
-                .map(function (schedules) { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["q" /* RemoteSchedulesLoadedAction */](schedules); });
+                .map(function (schedules) { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["A" /* RemoteSchedulesLoadedAction */](schedules); });
         });
         this.$downloadRemoteSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["g" /* INITDOWNLOAD */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["i" /* INITDOWNLOAD */])
             .switchMap(function (action) {
             return _this.schedulesService.downloadRemoteSchedule(action.payload.id)
-                .map(function (checkpoints) { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["s" /* SaveLocalScheduleAction */]({ schedule: action.payload, checkpoints: checkpoints }); });
+                .map(function (checkpoints) { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["C" /* SaveLocalScheduleAction */]({ schedule: action.payload, checkpoints: checkpoints }); });
         });
         this.$saveLocalSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["r" /* SAVELOCALSCHEDULE */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["B" /* SAVELOCALSCHEDULE */])
             .switchMap(function (action) {
             return _this.schedulesService.saveLocalSchedule(action.payload)
-                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["d" /* DownloadSuccessAction */](action.payload); });
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["f" /* DownloadSuccessAction */](action.payload); });
         });
         this.$deleteLocalSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["f" /* INITDELETELOCAL */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["h" /* INITDELETELOCAL */])
             .switchMap(function (action) {
             return _this.schedulesService.deleteLocalSchedule(action.payload)
-                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["c" /* DeleteLocalSuccessAction */](action.payload); });
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["e" /* DeleteLocalSuccessAction */](action.payload); });
+        });
+        this.loadLocalPinned = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["r" /* PINNEDLOADED */])
+            .switchMap(function (action) {
+            return _this.schedulesService.getLocalPinned()
+                .map(function (data) {
+                var pinned = data ? data : [];
+                return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["y" /* PinnedLoadedSuccessAction */](pinned);
+            });
+        });
+        this.localPinSchedule = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["t" /* PINSCHEDULES */])
+            .switchMap(function (action) {
+            return _this.schedulesService.saveLocalPinned(action.payload)
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["w" /* PinScheduleSuccessAction */](action.payload); });
+        });
+        this.localUnpinSchedule = this.$actions
+            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["D" /* UNPINSCHEDULES */])
+            .switchMap(function (action) {
+            return _this.schedulesService.removeLocalPinned(action.payload)
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["G" /* UnpinScheduleSuccessAction */](action.payload); });
         });
     }
     return SchedulesEffects;
@@ -9656,6 +9818,18 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
 ], SchedulesEffects.prototype, "$deleteLocalSchedule", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "loadLocalPinned", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "localPinSchedule", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["b" /* Effect */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], SchedulesEffects.prototype, "localUnpinSchedule", void 0);
 SchedulesEffects = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_9__services__["b" /* SchedulesService */]])
@@ -9665,7 +9839,7 @@ SchedulesEffects = __decorate([
 
 /***/ }),
 
-/***/ 325:
+/***/ 346:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9674,18 +9848,18 @@ SchedulesEffects = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_checkpoints_actions__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_checkpoints_actions__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9755,7 +9929,7 @@ CheckpointsEffects = __decorate([
 
 /***/ }),
 
-/***/ 326:
+/***/ 347:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9763,13 +9937,13 @@ CheckpointsEffects = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_timeline_list_modal__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_timeline_list_modal__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reducers_timeline_reducer__ = __webpack_require__(203);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9858,15 +10032,15 @@ TimelineCommponent = __decorate([
 
 /***/ }),
 
-/***/ 327:
+/***/ 348:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__profile_modal__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__profile_modal__ = __webpack_require__(204);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__profile_modal__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__timeline_list_modal__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__timeline_list_modal__ = __webpack_require__(202);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__timeline_list_modal__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timeline_row_component__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timeline_row_component__ = __webpack_require__(349);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__timeline_row_component__["a"]; });
 
 
@@ -9875,14 +10049,14 @@ TimelineCommponent = __decorate([
 
 /***/ }),
 
-/***/ 328:
+/***/ 349:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineRowComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_profile_modal__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_profile_modal__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9970,7 +10144,7 @@ TimelineRowComponent = __decorate([
 
 /***/ }),
 
-/***/ 329:
+/***/ 350:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10134,7 +10308,7 @@ var events = [
 
 /***/ }),
 
-/***/ 330:
+/***/ 351:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10143,14 +10317,14 @@ var events = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions_timeline_actions__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10195,15 +10369,15 @@ TimelineEffects = __decorate([
 
 /***/ }),
 
-/***/ 360:
+/***/ 384:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10250,11 +10424,11 @@ var MyApp = (function () {
     return MyApp;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/michalik/Documents/code/kings/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/michalik/Documents/code/kings/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/michalik/Documents/code/lifegems.github.io/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/michalik/Documents/code/lifegems.github.io/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -10263,17 +10437,17 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 361:
+/***/ 385:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PagesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__converter_converter_module__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_dashboard_module__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kings_kings_module__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__schedules_schedules_module__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__timeline_timeline_module__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__converter_converter_module__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_dashboard_module__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kings_kings_module__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__schedules_schedules_module__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__timeline_timeline_module__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10307,72 +10481,50 @@ PagesModule = __decorate([
 
 /***/ }),
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = checkpointsReducer;
-/* unused harmony export getState */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getLocalCheckpoints; });
-/* unused harmony export getRemoteCheckpoitns */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__ = __webpack_require__(58);
-
-
-var initState = {
-    remote: [],
-    local: [],
-};
-function checkpointsReducer(state, action) {
-    if (state === void 0) { state = initState; }
-    switch (action.type) {
-        case __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__["k" /* SAVELOCALSUCCESS */]:
-            return Object.assign({}, state, {
-                local: action.payload
-            });
-        case __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__["h" /* LOCALCHECKPOINTSLOADED */]:
-            return Object.assign({}, state, {
-                local: action.payload
-            });
-        case __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__["j" /* REMOTECHECKPOINTSLOADED */]:
-            return Object.assign({}, state, {
-                remote: action.payload
-            });
-        default:
-            return Object.assign({}, state);
-    }
-}
-var getState = function (state) { return state.schedules.checkpoints; };
-var getLocalCheckpoints = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.local; });
-var getRemoteCheckpoitns = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.remote; });
-//# sourceMappingURL=checkpoints.reducer.js.map
-
-/***/ }),
-
-/***/ 57:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return INIT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return INITLOCAL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return LOCALSCHEDULESLOADED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return INITREMOTE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return REMOTESCHEDULESLOADED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return INITDOWNLOAD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DOWNLOADSUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return SAVELOCALSCHEDULE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return INITDELETELOCAL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DELETELOCALSUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return INIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return INITLOCAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return LOCALSCHEDULESLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return INITREMOTE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return REMOTESCHEDULESLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return INITDOWNLOAD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DOWNLOADSUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return SAVELOCALSCHEDULE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return INITDELETELOCAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DELETELOCALSUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CHANGESCHEDULELIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return PINNEDLOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return PINNEDLOADEDSUCCESS; });
+/* unused harmony export PINNEDLOADEDFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return PINSCHEDULES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return PINSCHEDULESSUCCESS; });
+/* unused harmony export PINSCHEDULESFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return UNPINSCHEDULES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return UNPINSCHEDULESSUCCESS; });
+/* unused harmony export UNPINSCHEDULESFAILED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ChangeScheduleListAction; });
 /* unused harmony export InitSchedulesAction */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return InitLocalSchedulesAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return InitRemoteSchedulesAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return InitDownloadScheduleAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return InitDeleteLocalScheduleAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DeleteLocalSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DownloadSuccessAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return RemoteSchedulesLoadedAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return LocalSchedulesLoadedAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return SaveLocalScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return InitLocalSchedulesAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return InitRemoteSchedulesAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return InitDownloadScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return InitDeleteLocalScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return DeleteLocalSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return DownloadSuccessAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return RemoteSchedulesLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return LocalSchedulesLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return SaveLocalScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return PinnedLoadedAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return PinnedLoadedSuccessAction; });
+/* unused harmony export PinnedLoadedFailedAction */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return PinScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return PinScheduleSuccessAction; });
+/* unused harmony export PinScheduleFailedAction */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return UnpinScheduleAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return UnpinScheduleSuccessAction; });
+/* unused harmony export UnpinScheduleFailedAction */
 var INIT = '[Schedules] Init Schedules';
 var INITLOCAL = '[Schedules] Init Local Schedules';
 var LOCALSCHEDULESLOADED = '[Schedules] Local Schedules Loaded';
@@ -10383,6 +10535,24 @@ var DOWNLOADSUCCESS = '[Schedules] Download Success';
 var SAVELOCALSCHEDULE = '[Schedules] Save Local Schedule';
 var INITDELETELOCAL = '[Schedules] Init Delete Local Schedule';
 var DELETELOCALSUCCESS = '[Schedules] Delete Local Schedule Success';
+var CHANGESCHEDULELIST = '[Schedules] Change Schedule List';
+var PINNEDLOADED = '[Schedule] Pinned Schedules Loaded';
+var PINNEDLOADEDSUCCESS = '[Schedule] Pinned Schedules Loaded Success';
+var PINNEDLOADEDFAILED = '[Schedule] Pinned Schedules Loaded Failed';
+var PINSCHEDULES = '[Schedule] Pin Schedule';
+var PINSCHEDULESSUCCESS = '[Schedule] Pin Schedule Success';
+var PINSCHEDULESFAILED = '[Schedule] Pin Schedule Failed';
+var UNPINSCHEDULES = '[Schedule] Unpin Schedule';
+var UNPINSCHEDULESSUCCESS = '[Schedule] Unpin Schedule Success';
+var UNPINSCHEDULESFAILED = '[Schedule] Unpin Schedule Failed';
+var ChangeScheduleListAction = (function () {
+    function ChangeScheduleListAction(payload) {
+        this.payload = payload;
+        this.type = CHANGESCHEDULELIST;
+    }
+    return ChangeScheduleListAction;
+}());
+
 var InitSchedulesAction = (function () {
     function InitSchedulesAction() {
         this.type = INIT;
@@ -10460,11 +10630,206 @@ var SaveLocalScheduleAction = (function () {
     return SaveLocalScheduleAction;
 }());
 
+var PinnedLoadedAction = (function () {
+    function PinnedLoadedAction() {
+        this.type = PINNEDLOADED;
+    }
+    return PinnedLoadedAction;
+}());
+
+var PinnedLoadedSuccessAction = (function () {
+    function PinnedLoadedSuccessAction(payload) {
+        this.payload = payload;
+        this.type = PINNEDLOADEDSUCCESS;
+    }
+    return PinnedLoadedSuccessAction;
+}());
+
+var PinnedLoadedFailedAction = (function () {
+    function PinnedLoadedFailedAction() {
+        this.type = PINNEDLOADEDFAILED;
+    }
+    return PinnedLoadedFailedAction;
+}());
+
+var PinScheduleAction = (function () {
+    function PinScheduleAction(payload) {
+        this.payload = payload;
+        this.type = PINSCHEDULES;
+    }
+    return PinScheduleAction;
+}());
+
+var PinScheduleSuccessAction = (function () {
+    function PinScheduleSuccessAction(payload) {
+        this.payload = payload;
+        this.type = PINSCHEDULESSUCCESS;
+    }
+    return PinScheduleSuccessAction;
+}());
+
+var PinScheduleFailedAction = (function () {
+    function PinScheduleFailedAction() {
+        this.type = PINSCHEDULESFAILED;
+    }
+    return PinScheduleFailedAction;
+}());
+
+var UnpinScheduleAction = (function () {
+    function UnpinScheduleAction(payload) {
+        this.payload = payload;
+        this.type = UNPINSCHEDULES;
+    }
+    return UnpinScheduleAction;
+}());
+
+var UnpinScheduleSuccessAction = (function () {
+    function UnpinScheduleSuccessAction(payload) {
+        this.payload = payload;
+        this.type = UNPINSCHEDULESSUCCESS;
+    }
+    return UnpinScheduleSuccessAction;
+}());
+
+var UnpinScheduleFailedAction = (function () {
+    function UnpinScheduleFailedAction(payload) {
+        this.payload = payload;
+        this.type = UNPINSCHEDULESFAILED;
+    }
+    return UnpinScheduleFailedAction;
+}());
+
 //# sourceMappingURL=schedules.actions.js.map
 
 /***/ }),
 
-/***/ 58:
+/***/ 51:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = checkpointsReducer;
+/* unused harmony export getState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getLocalCheckpoints; });
+/* unused harmony export getRemoteCheckpoitns */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__ = __webpack_require__(60);
+
+
+var initState = {
+    remote: [],
+    local: [],
+};
+function checkpointsReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__["k" /* SAVELOCALSUCCESS */]:
+            return Object.assign({}, state, {
+                local: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__["h" /* LOCALCHECKPOINTSLOADED */]:
+            return Object.assign({}, state, {
+                local: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_checkpoints_actions__["j" /* REMOTECHECKPOINTSLOADED */]:
+            return Object.assign({}, state, {
+                remote: action.payload
+            });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.schedules.checkpoints; };
+var getLocalCheckpoints = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.local; });
+var getRemoteCheckpoitns = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.remote; });
+//# sourceMappingURL=checkpoints.reducer.js.map
+
+/***/ }),
+
+/***/ 59:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["g"] = schedulesReducer;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return getState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getDownloading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getPinned; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getLocalSchedules; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return getRemoteSchedules; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__ = __webpack_require__(50);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+
+
+var initState = {
+    remote: [],
+    local: [],
+    downloading: [],
+    list: 'pinned',
+    pinned: []
+};
+function schedulesReducer(state, action) {
+    if (state === void 0) { state = initState; }
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["a" /* CHANGESCHEDULELIST */]:
+            return __assign({}, state, { list: action.payload });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["i" /* INITDOWNLOAD */]:
+            var newDownloading = Object.assign([], state.downloading);
+            newDownloading.push(action.payload.id);
+            return Object.assign({}, state, {
+                downloading: newDownloading,
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["d" /* DOWNLOADSUCCESS */]:
+            var local = Object.assign([], state.local);
+            local.push(action.payload);
+            var downloading = Object.assign([], state.downloading);
+            return Object.assign({}, state, {
+                downloading: downloading.filter(function (id) { return id !== action.payload.schedule.id; }),
+                local: local,
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["p" /* LOCALSCHEDULESLOADED */]:
+            return Object.assign({}, state, {
+                local: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["z" /* REMOTESCHEDULESLOADED */]:
+            return Object.assign({}, state, {
+                remote: action.payload
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["c" /* DELETELOCALSUCCESS */]:
+            var localSchedules = Object.assign([], state.local);
+            return Object.assign({}, state, {
+                local: localSchedules.filter(function (s) { return s.schedule.id !== action.payload; })
+            });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["s" /* PINNEDLOADEDSUCCESS */]:
+            return __assign({}, state, { pinned: action.payload });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["u" /* PINSCHEDULESSUCCESS */]:
+            return __assign({}, state, { pinned: state.pinned.concat([
+                    action.payload
+                ]) });
+        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["E" /* UNPINSCHEDULESSUCCESS */]:
+            return __assign({}, state, { pinned: state.pinned.filter(function (p) { return p !== action.payload; }).slice() });
+        default:
+            return Object.assign({}, state);
+    }
+}
+var getState = function (state) { return state.schedules.schedules; };
+var getDownloading = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.downloading; });
+var getList = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.list; });
+var getPinned = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.pinned; });
+var getLocalSchedules = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.local; });
+var getRemoteSchedules = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.remote; });
+//# sourceMappingURL=schedules.reducer.js.map
+
+/***/ }),
+
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10765,61 +11130,15 @@ var ToggleSonsAction = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["e"] = schedulesReducer;
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getDownloading; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getLocalSchedules; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getRemoteSchedules; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__checkpoints_service__ = __webpack_require__(335);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__checkpoints_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__schedules_service__ = __webpack_require__(339);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__schedules_service__["a"]; });
 
 
-var initState = {
-    remote: [],
-    local: [],
-    downloading: [],
-};
-function schedulesReducer(state, action) {
-    if (state === void 0) { state = initState; }
-    switch (action.type) {
-        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["g" /* INITDOWNLOAD */]:
-            var newDownloading = Object.assign([], state.downloading);
-            newDownloading.push(action.payload.id);
-            return Object.assign({}, state, {
-                downloading: newDownloading,
-            });
-        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["b" /* DOWNLOADSUCCESS */]:
-            var local = Object.assign([], state.local);
-            local.push(action.payload);
-            var downloading = Object.assign([], state.downloading);
-            return Object.assign({}, state, {
-                downloading: downloading.filter(function (id) { return id !== action.payload.schedule.id; }),
-                local: local,
-            });
-        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["n" /* LOCALSCHEDULESLOADED */]:
-            return Object.assign({}, state, {
-                local: action.payload
-            });
-        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["p" /* REMOTESCHEDULESLOADED */]:
-            return Object.assign({}, state, {
-                remote: action.payload
-            });
-        case __WEBPACK_IMPORTED_MODULE_1__actions_schedules_actions__["a" /* DELETELOCALSUCCESS */]:
-            var localSchedules = Object.assign([], state.local);
-            return Object.assign({}, state, {
-                local: localSchedules.filter(function (s) { return s.schedule.id !== action.payload; })
-            });
-        default:
-            return Object.assign({}, state);
-    }
-}
-var getState = function (state) { return state.schedules.schedules; };
-var getDownloading = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.downloading; });
-var getLocalSchedules = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.local; });
-var getRemoteSchedules = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* createSelector */])(getState, function (state) { return state.remote; });
-//# sourceMappingURL=schedules.reducer.js.map
+//# sourceMappingURL=index.js.map
 
 /***/ })
 
-},[245]);
+},[249]);
 //# sourceMappingURL=main.js.map

@@ -13,8 +13,15 @@ export const SAVELOCALSCHEDULE     = '[Schedules] Save Local Schedule';
 export const INITDELETELOCAL       = '[Schedules] Init Delete Local Schedule';
 export const DELETELOCALSUCCESS    = '[Schedules] Delete Local Schedule Success';
 export const CHANGESCHEDULELIST    = '[Schedules] Change Schedule List';
+export const PINNEDLOADED          = '[Schedule] Pinned Schedules Loaded';
+export const PINNEDLOADEDSUCCESS   = '[Schedule] Pinned Schedules Loaded Success';
+export const PINNEDLOADEDFAILED    = '[Schedule] Pinned Schedules Loaded Failed';
 export const PINSCHEDULES          = '[Schedule] Pin Schedule';
+export const PINSCHEDULESSUCCESS   = '[Schedule] Pin Schedule Success';
+export const PINSCHEDULESFAILED    = '[Schedule] Pin Schedule Failed';
 export const UNPINSCHEDULES        = '[Schedule] Unpin Schedule';
+export const UNPINSCHEDULESSUCCESS = '[Schedule] Unpin Schedule Success';
+export const UNPINSCHEDULESFAILED  = '[Schedule] Unpin Schedule Failed';
 
 export class ChangeScheduleListAction implements Action {
   readonly type = CHANGESCHEDULELIST;
@@ -75,13 +82,45 @@ export class SaveLocalScheduleAction implements Action {
   constructor(public payload: {schedule: any, checkpoints: any[]}) {}
 }
 
+export class PinnedLoadedAction implements Action {
+  readonly type = PINNEDLOADED;
+}
+
+export class PinnedLoadedSuccessAction implements Action {
+  readonly type = PINNEDLOADEDSUCCESS;
+  constructor(public payload: number[]) {}
+}
+
+export class PinnedLoadedFailedAction implements Action {
+  readonly type = PINNEDLOADEDFAILED;
+}
+
 export class PinScheduleAction implements Action {
   readonly type = PINSCHEDULES;
   constructor(public payload: number) {}
 }
 
+export class PinScheduleSuccessAction implements Action {
+  readonly type = PINSCHEDULESSUCCESS;
+  constructor(public payload: number) {}
+}
+
+export class PinScheduleFailedAction implements Action {
+  readonly type = PINSCHEDULESFAILED;
+}
+
 export class UnpinScheduleAction implements Action {
   readonly type = UNPINSCHEDULES;
+  constructor(public payload: number) {}
+}
+
+export class UnpinScheduleSuccessAction implements Action {
+  readonly type = UNPINSCHEDULESSUCCESS;
+  constructor(public payload: number) {}
+}
+
+export class UnpinScheduleFailedAction implements Action {
+  readonly type = UNPINSCHEDULESFAILED;
   constructor(public payload: number) {}
 }
 
@@ -97,5 +136,12 @@ export type ALL
  | InitDeleteLocalScheduleAction
  | DeleteLocalSuccessAction
  | ChangeScheduleListAction
+ | PinnedLoadedAction
+ | PinnedLoadedSuccessAction
+ | PinnedLoadedFailedAction
  | PinScheduleAction
+ | PinScheduleSuccessAction
+ | PinScheduleFailedAction
+ | UnpinScheduleSuccessAction
+ | UnpinScheduleFailedAction
  | UnpinScheduleAction;

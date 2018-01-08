@@ -16,7 +16,7 @@ const initState: SchedulesState = {
 	remote: [],
 	local: [],
 	downloading: [],
-	list: 'all',
+	list: 'pinned',
 	pinned: []
 }
 
@@ -54,7 +54,12 @@ export function schedulesReducer(state: SchedulesState = initState, action: Acti
 			return Object.assign({}, state, {
 				local: localSchedules.filter(s => s.schedule.id !== action.payload)
 			});
-		case scheduleActions.PINSCHEDULES:
+		case scheduleActions.PINNEDLOADEDSUCCESS:
+			return {
+				...state,
+				pinned: action.payload
+			};
+		case scheduleActions.PINSCHEDULESSUCCESS:
 			return {
 				...state,
 				pinned: [

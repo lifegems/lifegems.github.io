@@ -84,6 +84,7 @@ export class SchedulesComponent implements OnInit {
       public checkpointsStore: Store<checkpointsReducer.CheckpointsState>
    ) {
       this.scheduleStore.dispatch(new schedulesActions.InitLocalSchedulesAction());
+      this.scheduleStore.dispatch(new schedulesActions.PinnedLoadedAction());
       this.checkpointsStore.dispatch(new checkpointsActions.InitCheckpointsAction());
    }
 

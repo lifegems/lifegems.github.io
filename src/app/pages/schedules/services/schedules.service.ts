@@ -91,4 +91,19 @@ export class SchedulesService {
    saveSchedule(key: string, schedules: Schedule[]) {
       return Observable.fromPromise(this.storage.set(key, JSON.stringify(schedules.find(s => s.name == key))));
    }
+
+   getLocalPinned() {
+      return Observable.fromPromise(this.storage.get('pinned'));
+   }
+
+   saveLocalPinned(pinned: number) {
+      return Observable.fromPromise(this.storage.get('pinned').then((savedPinned) => {
+         if (savedPinned) {
+            savedPinned.push(pinned);
+         } else {
+            savedPinned = [pinned];
+         }
+         return Observable.fromPromise(this.storage.set(`pinned`, savedPinned));
+      }));
+   }
 }

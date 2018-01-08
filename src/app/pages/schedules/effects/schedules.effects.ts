@@ -45,9 +45,9 @@ export class SchedulesEffects {
       .ofType(schedulesActions.INITDOWNLOAD)
       .switchMap((action: schedulesActions.InitDownloadScheduleAction) => {
          return this.schedulesService.downloadRemoteSchedule(action.payload.id)
-            .map((checkpoints) => new schedulesActions.SaveLocalScheduleAction({schedule: action.payload, checkpoints: checkpoints}));
+            .map((checkpoints) => new schedulesActions.SaveLocalScheduleAction({ schedule: action.payload, checkpoints: checkpoints }));
       });
-      
+
    @Effect()
    $saveLocalSchedule: Observable<Action> = this.$actions
       .ofType(schedulesActions.SAVELOCALSCHEDULE)
@@ -63,6 +63,25 @@ export class SchedulesEffects {
          return this.schedulesService.deleteLocalSchedule(action.payload)
             .map(() => new schedulesActions.DeleteLocalSuccessAction(action.payload));
       });
+
+   @Effect()
+   loadLocalPinned: Observable<Action> = this.$actions
+      .ofType(schedulesActions.PINNEDLOADED)
+      .switchMap((action: schedulesActions.PinnedLoadedAction) => {
+         return this.schedulesService.getLocalPinned()
+            .map((data: number[]) => {
+               let pinned = data ? data : [];
+               return new schedulesActions.PinnedLoadedSuccessAction(pinned);
+            });
+      });
    
-   constructor(private $actions: Actions, private schedulesService: SchedulesService) {}
+   @Effect()
+   localPinSchedule: Observable<Action> = this.$actions
+      .ofType(schedulesActions.PINSCHEDULES)
+      .switchMap((action: schedulesActions.PinScheduleAction) => {
+         return this.schedulesService.saveLocalPinned(action.payload)
+            .map(() => new schedulesActions.PinScheduleSuccessAction(action.payload))
+      });
+
+   constructor(private $actions: Actions, private schedulesService: SchedulesService) { }
 }

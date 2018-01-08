@@ -7,7 +7,15 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
    template: `
    <ion-card>
       <ion-card-header>
-         {{schedule.schedule.name}}
+         <div text-left>{{schedule.schedule.name}}</div>
+         <div text-right>
+            <a style="color:#488aff" *ngIf="!isPinned(pinned)" (click)="tapPin()">
+               <i class="far fa-thumbtack" data-fa-transform="rotate-45 up-15"></i>
+            </a>
+            <a style="color:#488aff" *ngIf="isPinned(pinned)" (click)="tapUnpin()">
+               <i class="fas fa-thumbtack" data-fa-transform="rotate-45 up-15"></i>
+            </a>
+         </div>
       </ion-card-header>
       <ion-row>
          <ion-col padding-top text-center>
@@ -43,8 +51,11 @@ export class ScheduleCardComponent implements OnInit {
    @Input() checkpoints: any[];
    @Input() nextCheckpoint: any;
    @Input() schedule: any;
+   @Input() pinned: number[];
    @Output() onViewSchedule: EventEmitter<number> = new EventEmitter<number>();
    @Output() onTapCheckpoint: EventEmitter<number> = new EventEmitter<number>();
+   @Output() onTapPin: EventEmitter<null> = new EventEmitter<null>();
+   @Output() onTapUnpin: EventEmitter<null> = new EventEmitter<null>();
 
    constructor() { }
 
@@ -74,6 +85,10 @@ export class ScheduleCardComponent implements OnInit {
       return (this.schedule.checkpoints) ? this.schedule.checkpoints.length > 0 : false;
    }
 
+   isPinned() {
+      return this.pinned.filter(p => p === this.schedule.schedule.id).length > 0;
+   }
+
    isScheduleComplete() {
       let total = this.getCheckpointsTotal();
       let complete = this.getCheckpointsCompleted();
@@ -86,5 +101,13 @@ export class ScheduleCardComponent implements OnInit {
 
    viewSchedule() {
       this.onViewSchedule.emit(this.schedule.schedule.id);
+   }
+
+   tapPin() {
+      this.onTapPin.emit();
+   }
+
+   tapUnpin() {
+      this.onTapUnpin.emit();
    }
 }

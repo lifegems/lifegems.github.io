@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { IonicPage, ModalController, NavController, Slides } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, Slides, ToastController } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
 import { RemoteSchedulesModal, ScheduleViewer } from './components';
@@ -47,7 +47,10 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
             *ngFor="let s of (local$ | async)"
             (onViewSchedule)="viewSchedule($event)"
             (onTapCheckpoint)="handleTapSection(s.schedule, $event)"
+            (onTapPin)="pinSchedule(s.schedule.id)"
+            (onTapUnpin)="unpinSchedule(s.schedule.id)"
             [schedule]="s"
+            [pinned]="pinned$ | async"
             [checkpoints]="(checkpoints$ | async)">
          </schedule-card>
       </ng-template>
@@ -57,7 +60,10 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
             *ngFor="let s of getPinnedSchedules((local$ | async), (pinned$ | async))"
             (onViewSchedule)="viewSchedule($event)"
             (onTapCheckpoint)="handleTapSection(s.schedule, $event)"
+            (onTapPin)="pinSchedule(s.schedule.id)"
+            (onTapUnpin)="unpinSchedule(s.schedule.id)"
             [schedule]="s"
+            [pinned]="pinned$ | async"
             [checkpoints]="(checkpoints$ | async)">
          </schedule-card>
       </ng-template>
@@ -81,7 +87,8 @@ export class SchedulesComponent implements OnInit {
       public modalCtrl: ModalController,
       public navCtrl: NavController,
       public scheduleStore: Store<schedulesReducer.SchedulesState>,
-      public checkpointsStore: Store<checkpointsReducer.CheckpointsState>
+      public checkpointsStore: Store<checkpointsReducer.CheckpointsState>,
+      public toast: ToastController
    ) {
       this.scheduleStore.dispatch(new schedulesActions.InitLocalSchedulesAction());
       this.scheduleStore.dispatch(new schedulesActions.PinnedLoadedAction());
@@ -134,5 +141,23 @@ export class SchedulesComponent implements OnInit {
             schedule: schedule
          });
       }).unsubscribe();
+   }
+
+   pinSchedule(id) {
+      this.scheduleStore.dispatch(new schedulesActions.PinScheduleAction(id));
+      this.toast.create({
+         message: `This schedule is now pinned.`,
+         duration: 2000,
+         position: 'middle'
+      }).present();
+   }
+
+   unpinSchedule(id) {
+      this.scheduleStore.dispatch(new schedulesActions.UnpinScheduleAction(id));
+      this.toast.create({
+         message: `This schedule is now unpinned.`,
+         duration: 2000,
+         position: 'middle'
+      }).present();
    }
 }

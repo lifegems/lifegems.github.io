@@ -12,6 +12,14 @@ export const DOWNLOADSUCCESS       = '[Schedules] Download Success';
 export const SAVELOCALSCHEDULE     = '[Schedules] Save Local Schedule';
 export const INITDELETELOCAL       = '[Schedules] Init Delete Local Schedule';
 export const DELETELOCALSUCCESS    = '[Schedules] Delete Local Schedule Success';
+export const CHANGESCHEDULELIST    = '[Schedules] Change Schedule List';
+export const PINSCHEDULES          = '[Schedule] Pin Schedule';
+export const UNPINSCHEDULES        = '[Schedule] Unpin Schedule';
+
+export class ChangeScheduleListAction implements Action {
+  readonly type = CHANGESCHEDULELIST;
+  public constructor(public payload: string) { }
+}
 
 export class InitSchedulesAction implements Action {
   readonly type = INIT;
@@ -67,6 +75,16 @@ export class SaveLocalScheduleAction implements Action {
   constructor(public payload: {schedule: any, checkpoints: any[]}) {}
 }
 
+export class PinScheduleAction implements Action {
+  readonly type = PINSCHEDULES;
+  constructor(public payload: number) {}
+}
+
+export class UnpinScheduleAction implements Action {
+  readonly type = UNPINSCHEDULES;
+  constructor(public payload: number) {}
+}
+
 export type ALL
  = InitSchedulesAction
  | InitLocalSchedulesAction
@@ -77,4 +95,7 @@ export type ALL
  | DownloadSuccessAction
  | SaveLocalScheduleAction
  | InitDeleteLocalScheduleAction
- | DeleteLocalSuccessAction;
+ | DeleteLocalSuccessAction
+ | ChangeScheduleListAction
+ | PinScheduleAction
+ | UnpinScheduleAction;

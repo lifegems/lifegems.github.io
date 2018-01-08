@@ -4,7 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import { IonicPageModule } from 'ionic-angular';
 
 import { SchedulesComponent } from './schedules';
-import { RemoteSchedulesModal, ScheduleItemComponent, ScheduleSectionComponent, ScheduleViewer } from './components';
+import { RemoteSchedulesModal, ScheduleCardComponent, ScheduleItemComponent, ScheduleSectionComponent, ScheduleViewer } from './components';
 import { CheckpointsService, SchedulesService } from './services';
 import { SchedulesEffects } from './effects/schedules.effects';
 import { schedulesReducer } from './reducers/schedules.reducer';
@@ -15,6 +15,7 @@ import { CheckpointsEffects } from './effects/checkpoints.effects';
    declarations: [
       RemoteSchedulesModal,
       SchedulesComponent,
+      ScheduleCardComponent,
       ScheduleItemComponent,
       ScheduleSectionComponent,
       ScheduleViewer,

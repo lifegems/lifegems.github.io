@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 
 import * as checkpointsActions from '../actions/checkpoints.actions';
 import * as checkpointsReducer from '../reducers/checkpoints.reducer';
+import * as schedulesReducer from '../reducers/schedules.reducer';
+import * as schedulesActions from '../actions/schedules.actions';
 
 @Component({
-  selector: 'page-schedule-section',
-  template: `
+   selector: 'page-schedule-section',
+   template: `
 <ion-header>
    <ion-navbar>
       <button ion-button menuToggle>
@@ -16,9 +18,17 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
       </button>
       <ion-title></ion-title>
       <ion-buttons end>
-         <a [href]="getExportScheduleJSON(schedule)" download="{{getExportScheduleName(schedule.schedule)}}">
+         <!-- <a [href]="getExportScheduleJSON(schedule)" download="{{getExportScheduleName(schedule.schedule)}}">
             <i class="fa fa-external-link"></i>
-         </a>
+         </a> -->
+         <button *ngIf="!isPinned(pinned$ | async)" ion-button icon-only (click)="pinSchedule()">
+            <i class="far fa-thumbtack" data-fa-transform="rotate-45 left-3"></i>
+         </button>
+         <button *ngIf="isPinned(pinned$ | async)" ion-button icon-only (click)="unpinSchedule()">
+            <span class="fa-layers">
+               <i class="fas fa-thumbtack" data-fa-transform="rotate-45 left-3"></i>
+            </span>
+         </button>
       </ion-buttons>
    </ion-navbar>
 </ion-header>
@@ -42,18 +52,21 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
 export class ScheduleViewer implements OnInit {
    public schedule: any;
    public checkpoints$: Store<any[]>;
+   public pinned$: Store<any[]>;
 
    constructor(
       public navCtrl: NavController,
-      public navParams: NavParams, 
+      public navParams: NavParams,
       public store: Store<checkpointsReducer.CheckpointsState>,
-      public sanitizer: DomSanitizer
+      public sanitizer: DomSanitizer,
+      public toast: ToastController
    ) {
       this.schedule = (this.navParams.get('schedule'));
    }
 
    ngOnInit() {
       this.checkpoints$ = this.store.select(checkpointsReducer.getLocalCheckpoints);
+      this.pinned$ = this.store.select(schedulesReducer.getPinned);
    }
 
    getCompletenessText(checkpoints, local) {
@@ -91,5 +104,27 @@ export class ScheduleViewer implements OnInit {
             }));
          }).unsubscribe();
       }
+   }
+
+   isPinned(pinnedSchedules: any[]) {
+      return pinnedSchedules.filter(p => p === this.schedule.schedule.id).length > 0;
+   }
+
+   pinSchedule() {
+      this.store.dispatch(new schedulesActions.PinScheduleAction(this.schedule.schedule.id));
+      this.toast.create({
+         message: `This schedule is now pinned.`,
+         duration: 2000,
+         position: 'middle'
+      }).present();
+   }
+
+   unpinSchedule() {
+      this.store.dispatch(new schedulesActions.UnpinScheduleAction(this.schedule.schedule.id));
+      this.toast.create({
+         message: `This schedule is now unpinned.`,
+         duration: 2000,
+         position: 'middle'
+      }).present();
    }
 }

@@ -110,7 +110,10 @@ export class ScheduleViewer implements OnInit {
       let prevCheckpoints: number[] = [].concat(...this.schedule.checkpoints.map(c => c.sections)).map(s => s.id).filter(c => c < section.id);
       this.checkpoints$.subscribe(checkpoints => {
          let otherCheckpoints: any[] = checkpoints.filter(s => this.schedule.schedule.id !== s.scheduleId);
-         let theseCheckpoints: { checkpointIds: number[] } = checkpoints.find(s => this.schedule.schedule.id === s.scheduleId);
+         let theseCheckpoints: { checkpointIds: number[] } = checkpoints.find(s => this.schedule.schedule.id === s.scheduleId) || {
+            scheduleId: this.schedule.schedule.id,
+            checkpointIds: []
+         };
          theseCheckpoints.checkpointIds = [
             ...theseCheckpoints.checkpointIds,
             ...prevCheckpoints

@@ -22,7 +22,7 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
       <button ion-button icon-only (click)="showDownloadableSchedules()">
         <ion-icon name="md-download"></ion-icon>
       </button>
-    </ion-buttons>    
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -40,7 +40,7 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
       <h3><ion-icon name="md-sad"></ion-icon> No Schedules!</h3>
       <p>Tap <ion-icon (tap)="showDownloadableSchedules()" color="primary" name="md-download"></ion-icon> to view schedules<br />available for download.</p>
    </div>
-   
+
    <div [ngSwitch]="list$ | async">
       <ng-template [ngSwitchCase]="'all'">
          <schedule-card
@@ -56,7 +56,11 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
       </ng-template>
 
       <ng-template [ngSwitchCase]="'pinned'">
-         <schedule-card 
+         <div text-center *ngIf="(pinned$ | async).length == 0 && (local$ | async).length > 0">
+            <h3>No pinned schedules yet!</h3>
+            <p>Pin a schedule by using <i class="far fa-thumbtack" data-fa-transform="rotate-45"></i></p>
+         </div>
+         <schedule-card
             *ngFor="let s of getPinnedSchedules((local$ | async), (pinned$ | async))"
             (onViewSchedule)="viewSchedule($event)"
             (onTapCheckpoint)="handleTapSection(s.schedule, $event)"
@@ -71,7 +75,7 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
 </ion-content>
 
 <ion-footer>
-  
+
 </ion-footer>
 `
 })
@@ -145,19 +149,9 @@ export class SchedulesComponent implements OnInit {
 
    pinSchedule(id) {
       this.scheduleStore.dispatch(new schedulesActions.PinScheduleAction(id));
-      this.toast.create({
-         message: `This schedule is now pinned.`,
-         duration: 2000,
-         position: 'middle'
-      }).present();
    }
 
    unpinSchedule(id) {
       this.scheduleStore.dispatch(new schedulesActions.UnpinScheduleAction(id));
-      this.toast.create({
-         message: `This schedule is now unpinned.`,
-         duration: 2000,
-         position: 'middle'
-      }).present();
    }
 }

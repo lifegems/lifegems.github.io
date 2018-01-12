@@ -22,14 +22,13 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
             {{ getCompletenessText() }}
          </ion-col>
          <ion-col>
-            <button ion-button icon-left clear small
-               *ngIf="schedule.checkpoints.length > 0"
-               (click)="viewSchedule()">
-               <ion-icon name="ios-eye-outline"></ion-icon>
-               <div>View Schedule</div>
-            </button>
+             <div text-center (click)="viewSchedule()">
+               <a *ngIf="schedule.checkpoints.length > 0">
+                  <i class="far fa-list-alt fa-2x"></i>
+               </a>
+             </div>
             <p ion-text color="danger" text-center padding-top
-               *ngIf="!schedule.checkpoints.length > 0">
+               *ngIf="schedule.checkpoints.length == 0">
                <ion-icon name="md-warning"></ion-icon>
                No Checkpoints
             </p>

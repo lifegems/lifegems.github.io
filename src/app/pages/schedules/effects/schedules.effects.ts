@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
+import { ToastController } from 'ionic-angular';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -74,22 +75,36 @@ export class SchedulesEffects {
                return new schedulesActions.PinnedLoadedSuccessAction(pinned);
             });
       });
-   
+
    @Effect()
    localPinSchedule: Observable<Action> = this.$actions
       .ofType(schedulesActions.PINSCHEDULES)
       .switchMap((action: schedulesActions.PinScheduleAction) => {
+         this.toast.create({
+            message: 'This schedule is now pinned.',
+            duration: 2000,
+            position: 'middle'
+         }).present();
          return this.schedulesService.saveLocalPinned(action.payload)
             .map(() => new schedulesActions.PinScheduleSuccessAction(action.payload))
       });
-   
+
    @Effect()
    localUnpinSchedule: Observable<Action> = this.$actions
       .ofType(schedulesActions.UNPINSCHEDULES)
       .switchMap((action: schedulesActions.UnpinScheduleAction) => {
+         this.toast.create({
+            message: 'This schedule is now unpinned.',
+            duration: 2000,
+            position: 'middle'
+         }).present();
          return this.schedulesService.removeLocalPinned(action.payload)
             .map(() => new schedulesActions.UnpinScheduleSuccessAction(action.payload))
       });
 
-   constructor(private $actions: Actions, private schedulesService: SchedulesService) { }
+   constructor(
+      private $actions: Actions,
+      private schedulesService: SchedulesService,
+      private toast: ToastController
+   ) { }
 }

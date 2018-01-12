@@ -128,7 +128,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__converter__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__effects_measurements_effects__ = __webpack_require__(319);
@@ -421,7 +421,7 @@ var Measurements = [
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardModule", function() { return DashboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -464,7 +464,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__kings__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_kings_service__ = __webpack_require__(194);
@@ -920,7 +920,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__schedules__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services__ = __webpack_require__(99);
@@ -1016,7 +1016,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timeline__ = __webpack_require__(347);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__reducers_timeline_reducer__ = __webpack_require__(203);
@@ -1076,7 +1076,7 @@ TimelineModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineListModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1260,7 +1260,7 @@ var getTimelineData = Object(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["l" /* cr
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1334,7 +1334,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(248);
@@ -1411,7 +1411,7 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverterComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_measurements_actions__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_measurements_reducer__ = __webpack_require__(186);
@@ -1642,7 +1642,7 @@ MeasurementsEffects = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1695,7 +1695,7 @@ DashboardComponent = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
@@ -1845,7 +1845,7 @@ ExpanderComponent = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KingsListModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2036,7 +2036,7 @@ KingsEffects = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchedulesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__ = __webpack_require__(50);
@@ -2104,6 +2104,24 @@ var SchedulesComponent = (function () {
             }).unsubscribe();
         }
     };
+    SchedulesComponent.prototype.handleTapPrevSection = function (schedule, section) {
+        var _this = this;
+        this.local$.subscribe(function (local) {
+            var localSchedule = local.find(function (l) { return l.schedule.id === schedule.id; });
+            var prevCheckpoints = [].concat.apply([], localSchedule.checkpoints.map(function (c) { return c.sections; })).map(function (s) { return s.id; }).filter(function (c) { return c < section.id; });
+            _this.checkpoints$.subscribe(function (checkpoints) {
+                var otherCheckpoints = checkpoints.filter(function (s) { return schedule.id !== s.scheduleId; });
+                var theseCheckpoints = checkpoints.find(function (s) { return schedule.id === s.scheduleId; });
+                theseCheckpoints.checkpointIds = theseCheckpoints.checkpointIds.concat(prevCheckpoints).filter(function (el, i, a) { return i === a.indexOf(el); });
+                var updatedCheckpoints = otherCheckpoints.concat([theseCheckpoints]);
+                _this.checkpointsStore.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_checkpoints_actions__["g" /* InitSaveLocalCheckpointAction */]({
+                    local: updatedCheckpoints,
+                    scheduleId: schedule.id,
+                    checkpointId: section.id,
+                }));
+            }).unsubscribe();
+        });
+    };
     SchedulesComponent.prototype.showDownloadableSchedules = function () {
         this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__components__["a" /* RemoteSchedulesModal */]).present();
     };
@@ -2118,26 +2136,16 @@ var SchedulesComponent = (function () {
     };
     SchedulesComponent.prototype.pinSchedule = function (id) {
         this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["v" /* PinScheduleAction */](id));
-        this.toast.create({
-            message: "This schedule is now pinned.",
-            duration: 2000,
-            position: 'middle'
-        }).present();
     };
     SchedulesComponent.prototype.unpinSchedule = function (id) {
         this.scheduleStore.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_schedules_actions__["F" /* UnpinScheduleAction */](id));
-        this.toast.create({
-            message: "This schedule is now unpinned.",
-            duration: 2000,
-            position: 'middle'
-        }).present();
     };
     return SchedulesComponent;
 }());
 SchedulesComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Schedules</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)=\"showDownloadableSchedules()\">\n        <ion-icon name=\"md-download\"></ion-icon>\n      </button>\n    </ion-buttons>    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-segment (ngModelChange)=\"changeScheduleList($event)\" [ngModel]=\"(list$ | async)\" padding>\n      <ion-segment-button value=\"pinned\">\n         Pinned\n      </ion-segment-button>\n      <ion-segment-button value=\"all\">\n         All\n      </ion-segment-button>\n   </ion-segment>\n\n   <div text-center *ngIf=\"(local$ | async).length == 0\">\n      <h3><ion-icon name=\"md-sad\"></ion-icon> No Schedules!</h3>\n      <p>Tap <ion-icon (tap)=\"showDownloadableSchedules()\" color=\"primary\" name=\"md-download\"></ion-icon> to view schedules<br />available for download.</p>\n   </div>\n   \n   <div [ngSwitch]=\"list$ | async\">\n      <ng-template [ngSwitchCase]=\"'all'\">\n         <schedule-card\n            *ngFor=\"let s of (local$ | async)\"\n            (onViewSchedule)=\"viewSchedule($event)\"\n            (onTapCheckpoint)=\"handleTapSection(s.schedule, $event)\"\n            (onTapPin)=\"pinSchedule(s.schedule.id)\"\n            (onTapUnpin)=\"unpinSchedule(s.schedule.id)\"\n            [schedule]=\"s\"\n            [pinned]=\"pinned$ | async\"\n            [checkpoints]=\"(checkpoints$ | async)\">\n         </schedule-card>\n      </ng-template>\n\n      <ng-template [ngSwitchCase]=\"'pinned'\">\n         <schedule-card \n            *ngFor=\"let s of getPinnedSchedules((local$ | async), (pinned$ | async))\"\n            (onViewSchedule)=\"viewSchedule($event)\"\n            (onTapCheckpoint)=\"handleTapSection(s.schedule, $event)\"\n            (onTapPin)=\"pinSchedule(s.schedule.id)\"\n            (onTapUnpin)=\"unpinSchedule(s.schedule.id)\"\n            [schedule]=\"s\"\n            [pinned]=\"pinned$ | async\"\n            [checkpoints]=\"(checkpoints$ | async)\">\n         </schedule-card>\n      </ng-template>\n   </div>\n</ion-content>\n\n<ion-footer>\n  \n</ion-footer>\n"
+        template: "\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name=\"menu\"></ion-icon>\n    </button>\n    <ion-title>Schedules</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)=\"showDownloadableSchedules()\">\n        <ion-icon name=\"md-download\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-segment (ngModelChange)=\"changeScheduleList($event)\" [ngModel]=\"(list$ | async)\" padding>\n      <ion-segment-button value=\"pinned\">\n         Pinned\n      </ion-segment-button>\n      <ion-segment-button value=\"all\">\n         All\n      </ion-segment-button>\n   </ion-segment>\n\n   <div text-center *ngIf=\"(local$ | async).length == 0\">\n      <h3><ion-icon name=\"md-sad\"></ion-icon> No Schedules!</h3>\n      <p>Tap <ion-icon (tap)=\"showDownloadableSchedules()\" color=\"primary\" name=\"md-download\"></ion-icon> to view schedules<br />available for download.</p>\n   </div>\n\n   <div [ngSwitch]=\"list$ | async\">\n      <ng-template [ngSwitchCase]=\"'all'\">\n         <schedule-card\n            *ngFor=\"let s of (local$ | async)\"\n            (onViewSchedule)=\"viewSchedule($event)\"\n            (onTapCheckpoint)=\"handleTapSection(s.schedule, $event)\"\n            (onTapPrevCheckpoint)=\"handleTapPrevSection(s.schedule, $event)\"\n            (onTapPin)=\"pinSchedule(s.schedule.id)\"\n            (onTapUnpin)=\"unpinSchedule(s.schedule.id)\"\n            [schedule]=\"s\"\n            [pinned]=\"pinned$ | async\"\n            [checkpoints]=\"(checkpoints$ | async)\">\n         </schedule-card>\n      </ng-template>\n\n      <ng-template [ngSwitchCase]=\"'pinned'\">\n         <div text-center *ngIf=\"(pinned$ | async).length == 0 && (local$ | async).length > 0\">\n            <h3>No pinned schedules yet!</h3>\n            <p>Pin a schedule by using <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45\"></i></p>\n         </div>\n         <schedule-card\n            *ngFor=\"let s of getPinnedSchedules((local$ | async), (pinned$ | async))\"\n            (onViewSchedule)=\"viewSchedule($event)\"\n            (onTapCheckpoint)=\"handleTapSection(s.schedule, $event)\"\n            (onTapPrevCheckpoint)=\"handleTapPrevSection(s.schedule, $event)\"\n            (onTapPin)=\"pinSchedule(s.schedule.id)\"\n            (onTapUnpin)=\"unpinSchedule(s.schedule.id)\"\n            [schedule]=\"s\"\n            [pinned]=\"pinned$ | async\"\n            [checkpoints]=\"(checkpoints$ | async)\">\n         </schedule-card>\n      </ng-template>\n   </div>\n</ion-content>\n\n<ion-footer>\n\n</ion-footer>\n"
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
@@ -2156,7 +2164,7 @@ SchedulesComponent = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RemoteSchedulesModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_schedules_actions__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_schedules_reducer__ = __webpack_require__(59);
@@ -2244,6 +2252,7 @@ var ScheduleCardComponent = (function () {
     function ScheduleCardComponent() {
         this.onViewSchedule = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.onTapCheckpoint = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.onTapPrevCheckpoint = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.onTapPin = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.onTapUnpin = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
     }
@@ -2280,6 +2289,9 @@ var ScheduleCardComponent = (function () {
     };
     ScheduleCardComponent.prototype.tapCheckpoint = function (checkpoint) {
         this.onTapCheckpoint.emit(checkpoint);
+    };
+    ScheduleCardComponent.prototype.tapPrevCheckpoint = function (checkpoint) {
+        this.onTapPrevCheckpoint.emit(checkpoint);
     };
     ScheduleCardComponent.prototype.viewSchedule = function () {
         this.onViewSchedule.emit(this.schedule.schedule.id);
@@ -2319,6 +2331,10 @@ __decorate([
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleCardComponent.prototype, "onTapPrevCheckpoint", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ScheduleCardComponent.prototype, "onTapPin", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
@@ -2327,7 +2343,7 @@ __decorate([
 ScheduleCardComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'schedule-card',
-        template: "\n   <ion-card>\n      <ion-card-header>\n         <div text-left>{{schedule.schedule.name}}</div>\n         <div text-right>\n            <a style=\"color:#488aff\" *ngIf=\"!isPinned(pinned)\" (click)=\"tapPin()\">\n               <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45 up-15\"></i>\n            </a>\n            <a style=\"color:#488aff\" *ngIf=\"isPinned(pinned)\" (click)=\"tapUnpin()\">\n               <i class=\"fas fa-thumbtack\" data-fa-transform=\"rotate-45 up-15\"></i>\n            </a>\n         </div>\n      </ion-card-header>\n      <ion-row>\n         <ion-col padding-top text-center>\n            {{ getCompletenessText() }}\n         </ion-col>\n         <ion-col>\n            <button ion-button icon-left clear small\n               *ngIf=\"schedule.checkpoints.length > 0\"\n               (click)=\"viewSchedule()\">\n               <ion-icon name=\"ios-eye-outline\"></ion-icon>\n               <div>View Schedule</div>\n            </button>\n            <p ion-text color=\"danger\" text-center padding-top\n               *ngIf=\"!schedule.checkpoints.length > 0\">\n               <ion-icon name=\"md-warning\"></ion-icon>\n               No Checkpoints\n            </p>\n         </ion-col>\n      </ion-row>\n      <ion-list *ngIf=\"hasCheckpoints() && isScheduleComplete()\">\n         <ion-list-header color=\"secondary\">\n            Completed\n            <ion-icon name=\"md-checkmark\"></ion-icon>\n         </ion-list-header>\n      </ion-list>\n      <ion-list *ngIf=\"hasCheckpoints() && !isScheduleComplete()\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"getNextCheckpoint()\" (tapCheckpoint)=\"tapCheckpoint($event)\"></app-schedule-section>\n      </ion-list>\n   </ion-card>\n   "
+        template: "\n   <ion-card>\n      <ion-card-header>\n         <div text-left>{{schedule.schedule.name}}</div>\n         <div text-right>\n            <a style=\"color:#488aff\" *ngIf=\"!isPinned(pinned)\" (click)=\"tapPin()\">\n               <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45 up-15\"></i>\n            </a>\n            <a style=\"color:#488aff\" *ngIf=\"isPinned(pinned)\" (click)=\"tapUnpin()\">\n               <i class=\"fas fa-thumbtack\" data-fa-transform=\"rotate-45 up-15\"></i>\n            </a>\n         </div>\n      </ion-card-header>\n      <ion-row>\n         <ion-col padding-top text-center>\n            {{ getCompletenessText() }}\n         </ion-col>\n         <ion-col>\n             <div text-center (click)=\"viewSchedule()\">\n               <a *ngIf=\"schedule.checkpoints.length > 0\">\n                  <i class=\"far fa-list-alt fa-2x\"></i>\n               </a>\n             </div>\n            <p ion-text color=\"danger\" text-center padding-top\n               *ngIf=\"schedule.checkpoints.length == 0\">\n               <ion-icon name=\"md-warning\"></ion-icon>\n               No Checkpoints\n            </p>\n         </ion-col>\n      </ion-row>\n      <ion-list *ngIf=\"hasCheckpoints() && isScheduleComplete()\">\n         <ion-list-header color=\"secondary\">\n            Completed\n            <ion-icon name=\"md-checkmark\"></ion-icon>\n         </ion-list-header>\n      </ion-list>\n      <ion-list *ngIf=\"hasCheckpoints() && !isScheduleComplete()\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"getNextCheckpoint()\" (tapCheckpoint)=\"tapCheckpoint($event)\" (tapPrevCheckpoints)=\"tapPrevCheckpoint($event)\"></app-schedule-section>\n      </ion-list>\n   </ion-card>\n   "
     }),
     __metadata("design:paramtypes", [])
 ], ScheduleCardComponent);
@@ -2360,6 +2376,7 @@ var ScheduleItemComponent = (function () {
     function ScheduleItemComponent(store) {
         this.store = store;
         this.tapSection = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.tapPrevSections = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
     }
     ScheduleItemComponent.prototype.ngOnInit = function () {
         this.checkpoints$ = this.store.select(__WEBPACK_IMPORTED_MODULE_2__reducers_checkpoints_reducer__["b" /* getLocalCheckpoints */]);
@@ -2372,6 +2389,9 @@ var ScheduleItemComponent = (function () {
         var checkpoint = checkpoints.find(function (c) { return c.scheduleId == _this.section.schedule; });
         return (checkpoint) ? checkpoint.checkpointIds.indexOf(this.section.id) > -1 : false;
     };
+    ScheduleItemComponent.prototype.handleTapPrevSections = function (section) {
+        this.tapPrevSections.emit(section);
+    };
     return ScheduleItemComponent;
 }());
 __decorate([
@@ -2382,10 +2402,14 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ScheduleItemComponent.prototype, "tapSection", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleItemComponent.prototype, "tapPrevSections", void 0);
 ScheduleItemComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'app-schedule-item',
-        template: "\n   <ion-item (click)=\"handleTapSection(section)\">\n      <span padding-left>{{section.name}}</span>\n      <ion-icon *ngIf=\"!isComplete(checkpoints$ | async)\" item-end color=\"secondary\" name=\"ios-radio-button-off\"></ion-icon>\n      <ion-icon *ngIf=\"isComplete(checkpoints$ | async)\" item-end color=\"secondary\" name=\"md-checkmark-circle\"></ion-icon>\n   </ion-item>\n   "
+        template: "\n   <!--<ion-item (click)=\"handleTapSection(section)\">\n      <span padding-left>{{section.name}}</span>\n      <ion-icon *ngIf=\"!isComplete(checkpoints$ | async)\" item-end color=\"secondary\" name=\"ios-radio-button-off\"></ion-icon>\n      <ion-icon *ngIf=\"isComplete(checkpoints$ | async)\" item-end color=\"secondary\" name=\"md-checkmark-circle\"></ion-icon>\n   </ion-item>-->\n   <ion-item-sliding #slideItem>\n      <ion-item (click)=\"handleTapSection(section)\">\n         <span padding-left>{{section.name}}</span>\n         <ion-icon *ngIf=\"!isComplete(checkpoints$ | async)\" item-end color=\"secondary\" name=\"ios-radio-button-off\"></ion-icon>\n         <ion-icon *ngIf=\"isComplete(checkpoints$ | async)\" item-end color=\"secondary\" name=\"md-checkmark-circle\"></ion-icon>\n      </ion-item>\n      <ion-item-options side=\"left\">\n         <button color=\"secondary\" ion-button (click)=\"handleTapPrevSections(section)\">\n            <span class=\"fa-layers fa-fw\">\n               <i class=\"fas fa-check\" data-fa-transform=\"left-10 up-7 shrink-6\"></i>\n               <i class=\"fas fa-check\" data-fa-transform=\"left-10 shrink-6\"></i>\n               <i class=\"fas fa-check\" data-fa-transform=\"left-10 down-7 shrink-6\"></i>\n               <i class=\"far fa-bars\" data-fa-transform=\"grow-5 right-4\"></i>\n            </span>\n         </button>\n      </ion-item-options>\n   </ion-item-sliding>\n   "
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_store__["h" /* Store */]])
 ], ScheduleItemComponent);
@@ -2418,6 +2442,7 @@ var ScheduleSectionComponent = (function () {
     function ScheduleSectionComponent(store) {
         this.store = store;
         this.tapCheckpoint = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.tapPrevCheckpoints = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.isCollapsed = true;
     }
     ScheduleSectionComponent.prototype.ngOnInit = function () {
@@ -2425,6 +2450,9 @@ var ScheduleSectionComponent = (function () {
     };
     ScheduleSectionComponent.prototype.handleTapCheckpoint = function (checkpoint) {
         this.tapCheckpoint.emit(checkpoint);
+    };
+    ScheduleSectionComponent.prototype.handleTapPrevCheckpoints = function (checkpoint) {
+        this.tapPrevCheckpoints.emit(checkpoint);
     };
     ScheduleSectionComponent.prototype.isSectionComplete = function (local) {
         var _this = this;
@@ -2450,10 +2478,14 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
 ], ScheduleSectionComponent.prototype, "tapCheckpoint", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+], ScheduleSectionComponent.prototype, "tapPrevCheckpoints", void 0);
 ScheduleSectionComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'app-schedule-section',
-        template: "\n   <ion-item-divider class=\"schedule-divider\" (click)=\"toggleCollapse()\">\n      {{checkpoint?.name}}\n      <ion-icon *ngIf=\"isCollapsed && isSectionComplete(checkpoints$ | async)\" class=\"section-done\" item-end name=\"md-checkmark\"></ion-icon>\n      <ion-icon *ngIf=\"isCollapsed && !isSectionComplete(checkpoints$ | async)\" item-end name=\"ios-add\"></ion-icon>\n      <ion-icon *ngIf=\"!isCollapsed\" item-end name=\"ios-remove\"></ion-icon>\n   </ion-item-divider>\n   <ng-template [ngIf]=\"!isCollapsed\">\n      <ng-template ngFor let-section [ngForOf]=\"checkpoint?.sections\">\n         <app-schedule-item [section]=\"section\" (tapSection)=\"handleTapCheckpoint($event)\"></app-schedule-item>\n      </ng-template>\n   </ng-template>\n   "
+        template: "\n   <ion-item-divider class=\"schedule-divider\" (click)=\"toggleCollapse()\">\n      {{checkpoint?.name}}\n      <ion-icon *ngIf=\"isCollapsed && isSectionComplete(checkpoints$ | async)\" class=\"section-done\" item-end name=\"md-checkmark\"></ion-icon>\n      <ion-icon *ngIf=\"isCollapsed && !isSectionComplete(checkpoints$ | async)\" item-end name=\"ios-add\"></ion-icon>\n      <ion-icon *ngIf=\"!isCollapsed\" item-end name=\"ios-remove\"></ion-icon>\n   </ion-item-divider>\n   <ng-template [ngIf]=\"!isCollapsed\">\n      <ng-template ngFor let-section [ngForOf]=\"checkpoint?.sections\">\n         <app-schedule-item [section]=\"section\" (tapSection)=\"handleTapCheckpoint($event)\" (tapPrevSections)=\"handleTapPrevCheckpoints($event)\"></app-schedule-item>\n      </ng-template>\n   </ng-template>\n   "
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_store__["h" /* Store */]])
 ], ScheduleSectionComponent);
@@ -2469,7 +2501,7 @@ ScheduleSectionComponent = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScheduleViewer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_checkpoints_actions__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_checkpoints_reducer__ = __webpack_require__(51);
@@ -2541,6 +2573,21 @@ var ScheduleViewer = ScheduleViewer_1 = (function () {
             }).unsubscribe();
         }
     };
+    ScheduleViewer.prototype.handleTapPrevSection = function (section) {
+        var _this = this;
+        var prevCheckpoints = [].concat.apply([], this.schedule.checkpoints.map(function (c) { return c.sections; })).map(function (s) { return s.id; }).filter(function (c) { return c < section.id; });
+        this.checkpoints$.subscribe(function (checkpoints) {
+            var otherCheckpoints = checkpoints.filter(function (s) { return _this.schedule.schedule.id !== s.scheduleId; });
+            var theseCheckpoints = checkpoints.find(function (s) { return _this.schedule.schedule.id === s.scheduleId; });
+            theseCheckpoints.checkpointIds = theseCheckpoints.checkpointIds.concat(prevCheckpoints).filter(function (el, i, a) { return i === a.indexOf(el); });
+            var updatedCheckpoints = otherCheckpoints.concat([theseCheckpoints]);
+            _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_checkpoints_actions__["g" /* InitSaveLocalCheckpointAction */]({
+                local: updatedCheckpoints,
+                scheduleId: _this.schedule.schedule.id,
+                checkpointId: section.id,
+            }));
+        }).unsubscribe();
+    };
     ScheduleViewer.prototype.isPinned = function (pinnedSchedules) {
         var _this = this;
         return pinnedSchedules.filter(function (p) { return p === _this.schedule.schedule.id; }).length > 0;
@@ -2566,7 +2613,7 @@ var ScheduleViewer = ScheduleViewer_1 = (function () {
 ScheduleViewer = ScheduleViewer_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-schedule-section',
-        template: "\n<ion-header>\n   <ion-navbar>\n      <button ion-button menuToggle>\n         <ion-icon name=\"menu\"></ion-icon>\n      </button>\n      <ion-title></ion-title>\n      <ion-buttons end>\n         <!-- <a [href]=\"getExportScheduleJSON(schedule)\" download=\"{{getExportScheduleName(schedule.schedule)}}\">\n            <i class=\"fa fa-external-link\"></i>\n         </a> -->\n         <button *ngIf=\"!isPinned(pinned$ | async)\" ion-button icon-only (click)=\"pinSchedule()\">\n            <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45 left-3\"></i>\n         </button>\n         <button *ngIf=\"isPinned(pinned$ | async)\" ion-button icon-only (click)=\"unpinSchedule()\">\n            <span class=\"fa-layers\">\n               <i class=\"fas fa-thumbtack\" data-fa-transform=\"rotate-45 left-3\"></i>\n            </span>\n         </button>\n      </ion-buttons>\n   </ion-navbar>\n</ion-header>\n\n<ion-content no-padding>\n   <h2 text-center>{{schedule.schedule.name}}</h2>\n   <ion-list>\n      <ng-template ngFor let-checkpoint [ngForOf]=\"schedule.checkpoints\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"checkpoint\" (tapCheckpoint)=\"handleTapSection($event)\"></app-schedule-section>\n      </ng-template>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n   <ion-toolbar text-center>\n      Progress - {{getCompletenessText(schedule.checkpoints, checkpoints$ | async)}}\n   </ion-toolbar>\n</ion-footer>\n"
+        template: "\n<ion-header>\n   <ion-navbar>\n      <button ion-button menuToggle>\n         <ion-icon name=\"menu\"></ion-icon>\n      </button>\n      <ion-title></ion-title>\n      <ion-buttons end>\n         <!-- <a [href]=\"getExportScheduleJSON(schedule)\" download=\"{{getExportScheduleName(schedule.schedule)}}\">\n            <i class=\"fa fa-external-link\"></i>\n         </a> -->\n         <button *ngIf=\"!isPinned(pinned$ | async)\" ion-button icon-only (click)=\"pinSchedule()\">\n            <i class=\"far fa-thumbtack\" data-fa-transform=\"rotate-45 left-3\"></i>\n         </button>\n         <button *ngIf=\"isPinned(pinned$ | async)\" ion-button icon-only (click)=\"unpinSchedule()\">\n            <span class=\"fa-layers\">\n               <i class=\"fas fa-thumbtack\" data-fa-transform=\"rotate-45 left-3\"></i>\n            </span>\n         </button>\n      </ion-buttons>\n   </ion-navbar>\n</ion-header>\n\n<ion-content no-padding>\n   <h2 text-center>{{schedule.schedule.name}}</h2>\n   <ion-list>\n      <ng-template ngFor let-checkpoint [ngForOf]=\"schedule.checkpoints\">\n         <app-schedule-section [schedule]=\"schedule.schedule\" [checkpoint]=\"checkpoint\" (tapCheckpoint)=\"handleTapSection($event)\" (tapPrevCheckpoints)=\"handleTapPrevSection($event)\"></app-schedule-section>\n      </ng-template>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n   <ion-toolbar text-center>\n      Progress - {{getCompletenessText(schedule.checkpoints, checkpoints$ | async)}}\n   </ion-toolbar>\n</ion-footer>\n"
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */],
@@ -9695,18 +9742,19 @@ var memorialReading = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_of__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_mergeMap__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_mergeMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_switchMap__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9726,70 +9774,82 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SchedulesEffects = (function () {
-    function SchedulesEffects($actions, schedulesService) {
+    function SchedulesEffects($actions, schedulesService, toast) {
         var _this = this;
         this.$actions = $actions;
         this.schedulesService = schedulesService;
+        this.toast = toast;
         this.$initSchedules = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["g" /* INIT */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["g" /* INIT */])
             .mergeMap(function () { return [
-            new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["o" /* InitRemoteSchedulesAction */](),
-            new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["n" /* InitLocalSchedulesAction */]()
+            new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["o" /* InitRemoteSchedulesAction */](),
+            new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["n" /* InitLocalSchedulesAction */]()
         ]; });
         this.$loadLocalSchedules = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["j" /* INITLOCAL */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["j" /* INITLOCAL */])
             .switchMap(function () {
             return _this.schedulesService.getLocalSchedules()
                 .map(function (schedules) {
                 var payload = (schedules) ? schedules : [];
-                return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["q" /* LocalSchedulesLoadedAction */](payload);
+                return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["q" /* LocalSchedulesLoadedAction */](payload);
             });
         });
         this.$loadRemoteSchedules = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["k" /* INITREMOTE */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["k" /* INITREMOTE */])
             .switchMap(function () {
             return _this.schedulesService.getRemoteSchedules()
-                .map(function (schedules) { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["A" /* RemoteSchedulesLoadedAction */](schedules); });
+                .map(function (schedules) { return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["A" /* RemoteSchedulesLoadedAction */](schedules); });
         });
         this.$downloadRemoteSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["i" /* INITDOWNLOAD */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["i" /* INITDOWNLOAD */])
             .switchMap(function (action) {
             return _this.schedulesService.downloadRemoteSchedule(action.payload.id)
-                .map(function (checkpoints) { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["C" /* SaveLocalScheduleAction */]({ schedule: action.payload, checkpoints: checkpoints }); });
+                .map(function (checkpoints) { return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["C" /* SaveLocalScheduleAction */]({ schedule: action.payload, checkpoints: checkpoints }); });
         });
         this.$saveLocalSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["B" /* SAVELOCALSCHEDULE */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["B" /* SAVELOCALSCHEDULE */])
             .switchMap(function (action) {
             return _this.schedulesService.saveLocalSchedule(action.payload)
-                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["f" /* DownloadSuccessAction */](action.payload); });
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["f" /* DownloadSuccessAction */](action.payload); });
         });
         this.$deleteLocalSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["h" /* INITDELETELOCAL */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["h" /* INITDELETELOCAL */])
             .switchMap(function (action) {
             return _this.schedulesService.deleteLocalSchedule(action.payload)
-                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["e" /* DeleteLocalSuccessAction */](action.payload); });
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["e" /* DeleteLocalSuccessAction */](action.payload); });
         });
         this.loadLocalPinned = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["r" /* PINNEDLOADED */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["r" /* PINNEDLOADED */])
             .switchMap(function (action) {
             return _this.schedulesService.getLocalPinned()
                 .map(function (data) {
                 var pinned = data ? data : [];
-                return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["y" /* PinnedLoadedSuccessAction */](pinned);
+                return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["y" /* PinnedLoadedSuccessAction */](pinned);
             });
         });
         this.localPinSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["t" /* PINSCHEDULES */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["t" /* PINSCHEDULES */])
             .switchMap(function (action) {
+            _this.toast.create({
+                message: 'This schedule is now pinned.',
+                duration: 2000,
+                position: 'middle'
+            }).present();
             return _this.schedulesService.saveLocalPinned(action.payload)
-                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["w" /* PinScheduleSuccessAction */](action.payload); });
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["w" /* PinScheduleSuccessAction */](action.payload); });
         });
         this.localUnpinSchedule = this.$actions
-            .ofType(__WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["D" /* UNPINSCHEDULES */])
+            .ofType(__WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["D" /* UNPINSCHEDULES */])
             .switchMap(function (action) {
+            _this.toast.create({
+                message: 'This schedule is now unpinned.',
+                duration: 2000,
+                position: 'middle'
+            }).present();
             return _this.schedulesService.removeLocalPinned(action.payload)
-                .map(function () { return new __WEBPACK_IMPORTED_MODULE_8__actions_schedules_actions__["G" /* UnpinScheduleSuccessAction */](action.payload); });
+                .map(function () { return new __WEBPACK_IMPORTED_MODULE_9__actions_schedules_actions__["G" /* UnpinScheduleSuccessAction */](action.payload); });
         });
     }
     return SchedulesEffects;
@@ -9832,7 +9892,9 @@ __decorate([
 ], SchedulesEffects.prototype, "localUnpinSchedule", void 0);
 SchedulesEffects = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */], __WEBPACK_IMPORTED_MODULE_9__services__["b" /* SchedulesService */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */],
+        __WEBPACK_IMPORTED_MODULE_10__services__["b" /* SchedulesService */],
+        __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ToastController */]])
 ], SchedulesEffects);
 
 //# sourceMappingURL=schedules.effects.js.map
@@ -9935,7 +9997,7 @@ CheckpointsEffects = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineCommponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
@@ -10055,7 +10117,7 @@ TimelineCommponent = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineRowComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_profile_modal__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10375,7 +10437,7 @@ TimelineEffects = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

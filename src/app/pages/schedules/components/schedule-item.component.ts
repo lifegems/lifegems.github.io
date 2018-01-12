@@ -17,7 +17,7 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
          <ion-icon *ngIf="isComplete(checkpoints$ | async)" item-end color="secondary" name="md-checkmark-circle"></ion-icon>
       </ion-item>
       <ion-item-options side="left">
-         <button color="secondary" ion-button (click)="markUpToThisPoint()">
+         <button color="secondary" ion-button (click)="handleTapPrevSections(section)">
             <span class="fa-layers fa-fw">
                <i class="fas fa-check" data-fa-transform="left-10 up-7 shrink-6"></i>
                <i class="fas fa-check" data-fa-transform="left-10 shrink-6"></i>
@@ -32,6 +32,7 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
 export class ScheduleItemComponent implements OnInit {
    @Input() section: { code: String, id: Number, parent: String, schedule: Number, sections: any[] };
    @Output() tapSection: EventEmitter<{ schedule: any, checkpoints: any[] }> = new EventEmitter<{ schedule: any, checkpoints: any[] }>();
+   @Output() tapPrevSections: EventEmitter<{ schedule: any, checkpoints: any[] }> = new EventEmitter<{ schedule: any, checkpoints: any[] }>();
    public checkpoints$: Store<{scheduleId: Number, checkpointIds: Number[]}[]>;
 
    constructor(public store: Store<checkpointsReducer.CheckpointsState>) {}
@@ -49,8 +50,7 @@ export class ScheduleItemComponent implements OnInit {
       return (checkpoint) ? checkpoint.checkpointIds.indexOf(this.section.id) > -1 : false;
    }
 
-   markUpToThisPoint() {
-      //replace with action
-      console.log("Marking up to this.");
+   handleTapPrevSections(section: any): void {
+      this.tapPrevSections.emit(section);
    }
 }

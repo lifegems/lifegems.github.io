@@ -8,6 +8,7 @@ import * as schedulesActions from './actions/schedules.actions';
 import * as schedulesReducer from './reducers/schedules.reducer';
 import * as checkpointsActions from './actions/checkpoints.actions';
 import * as checkpointsReducer from './reducers/checkpoints.reducer';
+import { updateDate } from 'ionic-angular/util/datetime-util';
 
 @IonicPage()
 @Component({
@@ -47,6 +48,7 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
             *ngFor="let s of (local$ | async)"
             (onViewSchedule)="viewSchedule($event)"
             (onTapCheckpoint)="handleTapSection(s.schedule, $event)"
+            (onTapPrevCheckpoint)="handleTapPrevSection(s.schedule, $event)"
             (onTapPin)="pinSchedule(s.schedule.id)"
             (onTapUnpin)="unpinSchedule(s.schedule.id)"
             [schedule]="s"
@@ -64,6 +66,7 @@ import * as checkpointsReducer from './reducers/checkpoints.reducer';
             *ngFor="let s of getPinnedSchedules((local$ | async), (pinned$ | async))"
             (onViewSchedule)="viewSchedule($event)"
             (onTapCheckpoint)="handleTapSection(s.schedule, $event)"
+            (onTapPrevCheckpoint)="handleTapPrevSection(s.schedule, $event)"
             (onTapPin)="pinSchedule(s.schedule.id)"
             (onTapUnpin)="unpinSchedule(s.schedule.id)"
             [schedule]="s"
@@ -132,6 +135,28 @@ export class SchedulesComponent implements OnInit {
             }));
          }).unsubscribe();
       }
+   }
+
+   handleTapPrevSection(schedule, section) {
+      this.local$.subscribe(local => {
+         let localSchedule = local.find(l => l.schedule.id === schedule.id);
+         let prevCheckpoints: number[] = [].concat(...localSchedule.checkpoints.map(c => c.sections)).map(s => s.id).filter(c => c < section.id);
+         this.checkpoints$.subscribe(checkpoints => {
+            let otherCheckpoints: any[] = checkpoints.filter(s => schedule.id !== s.scheduleId);
+            let theseCheckpoints: { checkpointIds: number[] } = checkpoints.find(s => schedule.id === s.scheduleId);
+            theseCheckpoints.checkpointIds = [
+               ...theseCheckpoints.checkpointIds,
+               ...prevCheckpoints
+            ].filter((el, i, a) => i === a.indexOf(el));
+
+            let updatedCheckpoints = [...otherCheckpoints, theseCheckpoints];
+            this.checkpointsStore.dispatch(new checkpointsActions.InitSaveLocalCheckpointAction({
+               local: updatedCheckpoints,
+               scheduleId: schedule.id,
+               checkpointId: section.id,
+            }));
+         }).unsubscribe();
+      });
    }
 
    showDownloadableSchedules() {

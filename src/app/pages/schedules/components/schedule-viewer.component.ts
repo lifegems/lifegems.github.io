@@ -37,7 +37,7 @@ import * as schedulesActions from '../actions/schedules.actions';
    <h2 text-center>{{schedule.schedule.name}}</h2>
    <ion-list>
       <ng-template ngFor let-checkpoint [ngForOf]="schedule.checkpoints">
-         <app-schedule-section [schedule]="schedule.schedule" [checkpoint]="checkpoint" (tapCheckpoint)="handleTapSection($event)"></app-schedule-section>
+         <app-schedule-section [schedule]="schedule.schedule" [checkpoint]="checkpoint" (tapCheckpoint)="handleTapSection($event)" (tapPrevCheckpoints)="handleTapPrevSection($event)"></app-schedule-section>
       </ng-template>
    </ion-list>
 </ion-content>
@@ -104,6 +104,25 @@ export class ScheduleViewer implements OnInit {
             }));
          }).unsubscribe();
       }
+   }
+
+   handleTapPrevSection(section) {
+      let prevCheckpoints: number[] = [].concat(...this.schedule.checkpoints.map(c => c.sections)).map(s => s.id).filter(c => c < section.id);
+      this.checkpoints$.subscribe(checkpoints => {
+         let otherCheckpoints: any[] = checkpoints.filter(s => this.schedule.schedule.id !== s.scheduleId);
+         let theseCheckpoints: { checkpointIds: number[] } = checkpoints.find(s => this.schedule.schedule.id === s.scheduleId);
+         theseCheckpoints.checkpointIds = [
+            ...theseCheckpoints.checkpointIds,
+            ...prevCheckpoints
+         ].filter((el, i, a) => i === a.indexOf(el));
+
+         let updatedCheckpoints = [...otherCheckpoints, theseCheckpoints];
+         this.store.dispatch(new checkpointsActions.InitSaveLocalCheckpointAction({
+            local: updatedCheckpoints,
+            scheduleId: this.schedule.schedule.id,
+            checkpointId: section.id,
+         }));
+      }).unsubscribe();
    }
 
    isPinned(pinnedSchedules: any[]) {

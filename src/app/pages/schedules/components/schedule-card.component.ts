@@ -41,7 +41,7 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
          </ion-list-header>
       </ion-list>
       <ion-list *ngIf="hasCheckpoints() && !isScheduleComplete()">
-         <app-schedule-section [schedule]="schedule.schedule" [checkpoint]="getNextCheckpoint()" (tapCheckpoint)="tapCheckpoint($event)"></app-schedule-section>
+         <app-schedule-section [schedule]="schedule.schedule" [checkpoint]="getNextCheckpoint()" (tapCheckpoint)="tapCheckpoint($event)" (tapPrevCheckpoints)="tapPrevCheckpoint($event)"></app-schedule-section>
       </ion-list>
    </ion-card>
    `
@@ -53,6 +53,7 @@ export class ScheduleCardComponent implements OnInit {
    @Input() pinned: number[];
    @Output() onViewSchedule: EventEmitter<number> = new EventEmitter<number>();
    @Output() onTapCheckpoint: EventEmitter<number> = new EventEmitter<number>();
+   @Output() onTapPrevCheckpoint: EventEmitter<number> = new EventEmitter<number>();
    @Output() onTapPin: EventEmitter<null> = new EventEmitter<null>();
    @Output() onTapUnpin: EventEmitter<null> = new EventEmitter<null>();
 
@@ -96,6 +97,10 @@ export class ScheduleCardComponent implements OnInit {
 
    tapCheckpoint(checkpoint) {
       this.onTapCheckpoint.emit(checkpoint);
+   }
+
+   tapPrevCheckpoint(checkpoint) {
+      this.onTapPrevCheckpoint.emit(checkpoint);
    }
 
    viewSchedule() {

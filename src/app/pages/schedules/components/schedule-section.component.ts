@@ -15,7 +15,7 @@ import * as checkpointsReducer from '../reducers/checkpoints.reducer';
    </ion-item-divider>
    <ng-template [ngIf]="!isCollapsed">
       <ng-template ngFor let-section [ngForOf]="checkpoint?.sections">
-         <app-schedule-item [section]="section" (tapSection)="handleTapCheckpoint($event)"></app-schedule-item>
+         <app-schedule-item [section]="section" (tapSection)="handleTapCheckpoint($event)" (tapPrevSections)="handleTapPrevCheckpoints($event)"></app-schedule-item>
       </ng-template>
    </ng-template>
    `
@@ -24,6 +24,7 @@ export class ScheduleSectionComponent implements OnInit {
    @Input() schedule: any;
    @Input() checkpoint: any;
    @Output() tapCheckpoint: EventEmitter<any> = new EventEmitter<any>();
+   @Output() tapPrevCheckpoints: EventEmitter<any> = new EventEmitter<any>();
 
    public checkpoints$: Store<{scheduleId: Number, checkpointIds: Number[]}[]>;
    public isCollapsed: boolean;
@@ -38,6 +39,10 @@ export class ScheduleSectionComponent implements OnInit {
 
    handleTapCheckpoint(checkpoint) {
       this.tapCheckpoint.emit(checkpoint);
+   }
+
+   handleTapPrevCheckpoints(checkpoint) {
+      this.tapPrevCheckpoints.emit(checkpoint);
    }
 
    isSectionComplete(local: {scheduleId: Number, checkpointIds: Number[] }[]) {

@@ -2111,7 +2111,10 @@ var SchedulesComponent = (function () {
             var prevCheckpoints = [].concat.apply([], localSchedule.checkpoints.map(function (c) { return c.sections; })).map(function (s) { return s.id; }).filter(function (c) { return c < section.id; });
             _this.checkpoints$.subscribe(function (checkpoints) {
                 var otherCheckpoints = checkpoints.filter(function (s) { return schedule.id !== s.scheduleId; });
-                var theseCheckpoints = checkpoints.find(function (s) { return schedule.id === s.scheduleId; });
+                var theseCheckpoints = checkpoints.find(function (s) { return schedule.id === s.scheduleId; }) || {
+                    scheduleId: schedule.id,
+                    checkpointIds: []
+                };
                 theseCheckpoints.checkpointIds = theseCheckpoints.checkpointIds.concat(prevCheckpoints).filter(function (el, i, a) { return i === a.indexOf(el); });
                 var updatedCheckpoints = otherCheckpoints.concat([theseCheckpoints]);
                 _this.checkpointsStore.dispatch(new __WEBPACK_IMPORTED_MODULE_6__actions_checkpoints_actions__["g" /* InitSaveLocalCheckpointAction */]({
@@ -2578,7 +2581,10 @@ var ScheduleViewer = ScheduleViewer_1 = (function () {
         var prevCheckpoints = [].concat.apply([], this.schedule.checkpoints.map(function (c) { return c.sections; })).map(function (s) { return s.id; }).filter(function (c) { return c < section.id; });
         this.checkpoints$.subscribe(function (checkpoints) {
             var otherCheckpoints = checkpoints.filter(function (s) { return _this.schedule.schedule.id !== s.scheduleId; });
-            var theseCheckpoints = checkpoints.find(function (s) { return _this.schedule.schedule.id === s.scheduleId; });
+            var theseCheckpoints = checkpoints.find(function (s) { return _this.schedule.schedule.id === s.scheduleId; }) || {
+                scheduleId: _this.schedule.schedule.id,
+                checkpointIds: []
+            };
             theseCheckpoints.checkpointIds = theseCheckpoints.checkpointIds.concat(prevCheckpoints).filter(function (el, i, a) { return i === a.indexOf(el); });
             var updatedCheckpoints = otherCheckpoints.concat([theseCheckpoints]);
             _this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_4__actions_checkpoints_actions__["g" /* InitSaveLocalCheckpointAction */]({
